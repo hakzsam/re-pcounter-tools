@@ -1,0 +1,64 @@
+=== Cache L1 ===
+
+Event# 1
+Name      = l1_local_load_hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory load
+            accesses. In case of perfect coalescing this increments by 1, 2,
+            and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+PreSrc    = 0
+
+Event# 2
+Name      = l1_local_load_miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory load
+            accesses. In case of perfect coalescing this increments by 1, 2,
+            and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+PreSrc    = 1
+
+Event# 3
+Name      = l1_local_store_hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory store
+            accesses. In case of perfect coalescing this increments by 1, 2,
+            and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+PreSrc    = 2
+
+Event# 4
+Name      = l1_local_store_miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory store
+            accesses. In case of perfect coalescing this increments by 1, 2,
+            and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+PreSrc    = 3
+
+Event# 5
+Name      = l1_global_load_hit
+Longdesc  = Number of cache lines that hit in L1 cache for global memory load
+            accesses. In case of perfect coalescing this increments by 1, 2,
+            and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+PreSrc    = 5
+
+Event# 6
+Name      = l1_global_load_miss
+Longdesc  = Number of cache lines that miss in L1 cache for global memory load
+            accesses. In case of perfect coalescing this increments by 1, 2,
+            and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+PreSrc    = 6
+
+All of these events use the quad event mode state described below and
+the QUAD_ACK_TRIGGER register :
+register: 18009c, value: 00040002, mask: ffffffff
+    ==> PCOUNTER.GPC_DOM[0].CTRL[0] => {
+        MODE = QUAD                     |
+        CTR_MODE = SIMPLE               |
+        EVENT_CTR_PERIOD = ONE          |
+        EVENT_IMPORT_MODE = CONTINUOUS  |
+        FLAG_IMPORT_MODE = CONTINUOUS   |
+        UNK9 = 0                        |
+        UNK18 = 0x1                     |
+        PERIODIC_PERIOD = DISABLED      |
+        QUAD_STATE = EMPTY              |
+        UNK26 = 0                       |
+        SINGLE_STATE = INACTIVE
+    }
+
+And :
+register: 180044, value: 0000aaaa, mask: ffffffff
+    ==> PCOUNTER.GPC_DOM[0].PRE_OP[0] => { FUNC = 0xaaaa | ARG2 = SRC2 | ARG3_SRC = SRC3 }
