@@ -1,0 +1,40 @@
+(w) register: 504600, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0
+(w) register: 504e00, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0x1].MP.PM_UNK000 => 0
+(r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0
+(w) register: 504600, value: 80000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0x80000000
+(w) register: 504604, value: 002d2d2d, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SIGSEL[0] => { 0 = 0x2d | 1 = 0x2d | 2 = 0x2d | 3 = 0 }
+(w) register: 504608, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
+(w) register: 50465c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
+(w) register: 504660, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0] => { 0 = 0 | 1 = 0 }
+(w) register: 504664, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0x1] => { 0 = 0 | 1 = 0 }
+(w) register: 504668, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0x2] => { 0 = 0 | 1 = 0 }
+(w) register: 50466c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0x3] => { 0 = 0 | 1 = 0 }
+(w) register: 504730, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0] => { GRP0 = 0 | SIG0 = 0 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 504734, value: 00000011, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x1] => { GRP0 = 0x1 | SIG0 = 0x1 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 504738, value: 00000022, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x2] => { GRP0 = 0x2 | SIG0 = 0x2 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(r) register: 504674, value: 00005972, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0] => 0x5972
+(r) register: 504678, value: 00009ee9, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x1] => 0x9ee9
+(r) register: 50467c, value: 00002c0f, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x2] => 0x2c0f
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(w) register: 504674, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0] => 0
+(w) register: 504678, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x1] => 0
+(w) register: 50467c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x2] => 0
+(w) register: 504680, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x3] => 0
+(w) register: 504684, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x4] => 0
+(w) register: 504688, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x5] => 0
+(w) register: 50468c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x6] => 0
+(w) register: 504690, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x7] => 0
+(r) register: 504600, value: 80000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0x80000000
+(w) register: 504600, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0
+
+Expected result: inst_executed=[ 149376 ]
+
+Significant values:
+reg: 504604 => 002d2d2d
+reg: 504734 => 00000011
+reg: 504738 => 00000022
+
+The result seems to be :
+0x5972 + 0x9ee9 + 0x2c0f + 0x9ee9 + 0x2c0f * 3 = 0x24780 (149376).
+
+or: 0x5972 + 0x9ee9 * 2 + 0x2c0f * 4
