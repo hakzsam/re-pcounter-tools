@@ -173,6 +173,7 @@ int main(int argc, char **argv)
                "--mmt-trace-file=/dev/nvidia0",
                "--mmt-trace-nvidia-ioctls",
                profile_sample,
+               "inst_executed",
                NULL);
 
         if (errno == ENOENT) {
