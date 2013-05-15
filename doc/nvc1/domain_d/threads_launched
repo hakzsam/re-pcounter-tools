@@ -1,0 +1,49 @@
+(w) register: 504600, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0
+(w) register: 504e00, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0x1].MP.PM_UNK000 => 0
+(r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0
+(w) register: 504600, value: 80000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0x80000000
+(w) register: 504604, value: 26262626, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SIGSEL[0] => { 0 = 0x26 | 1 = 0x26 | 2 = 0x26 | 3 = 0x26 }
+(w) register: 504608, value: 00002626, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SIGSEL[0x1] => { 0 = 0x26 | 1 = 0x26 | 2 = 0 | 3 = 0 }
+(w) register: 50465c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
+(w) register: 504660, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0] => { 0 = 0 | 1 = 0 }
+(w) register: 504664, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0x1] => { 0 = 0 | 1 = 0 }
+(w) register: 504668, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0x2] => { 0 = 0 | 1 = 0 }
+(w) register: 50466c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_FUNC[0x3] => { 0 = 0 | 1 = 0 }
+(w) register: 504730, value: 00000010, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0] => { GRP0 = 0 | SIG0 = 0x1 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 504734, value: 00000021, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x1] => { GRP0 = 0x1 | SIG0 = 0x2 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 504738, value: 00000032, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x2] => { GRP0 = 0x2 | SIG0 = 0x3 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 50473c, value: 00000043, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x3] => { GRP0 = 0x3 | SIG0 = 0x4 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 504740, value: 00000054, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x4] => { GRP0 = 0x4 | SIG0 = 0x5 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(w) register: 504744, value: 00000065, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_SRCSEL[0x5] => { GRP0 = 0x5 | SIG0 = 0x6 | GRP1 = 0 | SIG1 = 0 | GRP2 = 0 | SIG2 = 0 | GRP3 = 0 | SIG3 = 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000318, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x5] => 0x318
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(w) register: 504674, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0] => 0
+(w) register: 504678, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x1] => 0
+(w) register: 50467c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x2] => 0
+(w) register: 504680, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x3] => 0
+(w) register: 504684, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x4] => 0
+(w) register: 504688, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x5] => 0
+(w) register: 50468c, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x6] => 0
+(w) register: 504690, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_COUNTER[0x7] => 0
+(r) register: 504600, value: 80000000, mask: 00000000 ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0x80000000
+(w) register: 504600, value: 00000000, mask: ffffffff ==> PGRAPH.GPC[0].TP[0].MP.PM_UNK000 => 0
+
+Expected result: threads_launched=[ 25344 ]
+
+Significant values:
+reg: 504604 => 26262626 (SIGSEL)
+reg: 504608 => 00000026 (SIGSEL)
+reg: 504730 => 00000010 (SRCSEL)
+reg: 504734 => 00000021 (SRCSEL)
+reg: 504738 => 00000032 (SRCSEL)
+reg: 50473c => 00000043 (SRCSEL)
+reg: 504740 => 00000054 (SRCSEL)
+reg: 504744 => 00000065 (SRCSEL)
+
+The result seems to be:
+0x318 * 0x20 (number of threads per block??) = 0x6300 (25344)
