@@ -24,11 +24,14 @@ else
     OBJ = o
 endif
 
-cupti_events: cupti_events.$(OBJ)
-	nvcc -o $@ cupti_events.$(OBJ) $(LIBS)
+cupti_events: cupti_events.$(OBJ) cupti_extras.$(OBJ)
+	nvcc -o $@ cupti_events.$(OBJ) cupti_extras.$(OBJ) $(LIBS)
 
 cupti_events.$(OBJ): cupti_events.cpp
 	nvcc -c $(INCLUDES) $<
 
+cupti_extras.$(OBJ): cupti_extras.cpp
+	nvcc -c $(INCLUDES) $<
+
 clean:
-	rm -f cupti_events cupti_events.$(OBJ)
+	rm -f cupti_events cupti_events.$(OBJ) cupti_extras.$(OBJ)
