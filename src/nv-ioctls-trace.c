@@ -9,62 +9,12 @@
 
 #include <cupti.h>
 
-#define PROFILE_CONFIG "/tmp/compute_profile_config.txt"
-
 /**
  * TODO:
  *  - do not hardcode chipset (use nvalist).
- *  - use CUPti instead of these bad env vars.
  *  - do not use lookup through popen() (it's bad).
  *  - use env vars for setting valgrind-mmt.
  */
-
-static void init_profiler(char *profile_config, int profile_csv,
-                          char *profile_log)
-{
-    // Set to either 1 or 0 (or unset) to enable or disable profiling.
-    setenv("COMPUTE_PROFILE", "1", 1);
-
-    // Set to either 1 (set) or 0 (unset) to enable or disable a comma separated
-    // version of the log output.
-    if (profile_csv) {
-        setenv("COMPUTE_PROFILE_CSV=", "1", 1);
-    } else {
-        setenv("COMPUTE_PROFILE_CSV=", "0", 1);
-    }
-
-    // Set to the desired file path for profiling output. If there is no
-    // log path specified, the profiler will log data to ./compute_profile.log.
-    // In case of multiple devices you can add '%d' in the COMPUTE_PROFILE_LOG
-    // name. This will generate separate profiler output files for each device
-    // - with '%d' substituted by the device number.
-    if (profile_log) {
-        setenv("COMPUTE_PROFILE_LOG", profile_log, 1);
-    }
-
-    // Used to specify a config file for enabling performance counters in the GPU. 
-    setenv("COMPUTE_PROFILE_CONFIG", profile_config, 1);
-}
-
-static int create_profile_config(const char *filename, char *signal)
-{
-    FILE *f;
-
-    if (!(f = fopen(filename, "w+"))) {
-        perror("fopen");
-        return -errno;
-    }
-
-    fwrite(signal, strlen(signal), 1, f);
-    fwrite("\n", 1, 1, f);
-
-    if (fclose(f) < 0) {
-        perror("fclose");
-        return -errno;
-    }
-
-    return 0;
-}
 
 static int lookup(const char *reg, const char *val)
 {
@@ -93,62 +43,18 @@ static int lookup(const char *reg, const char *val)
 
 int main(int argc, char **argv)
 {
-    char *profile_sample = NULL, *profile_signal = NULL, *profile_log = NULL;
+    char *profile_signal = NULL;
     char trace_log[1024];
-    int profile_csv = 0;
     char line[1024];
     pid_t pid;
     FILE *f;
-    int ret;
-    int c;
 
-    if (argc < 3) {
+    if (argc < 2) {
         fprintf(stderr,
-                "Usage: %s <profile_sample> <profile_signal> [options]\n", argv[0]);
+                "Usage: %s <profile_signal>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
-    profile_sample = argv[1];
-    profile_signal = argv[2];
-
-    while (1) {
-        static struct option long_options[] = {
-            {"csv",     no_argument,        0, 'c'},
-            {"log",     required_argument,  0, 'l'},
-            {0, 0, 0, 0}
-        };
-
-        /* getopt_long stores the option index here. */
-        int option_index = 0;
-
-        argv -= 2;
-        argv += 2;
-        c = getopt_long(argc, argv, "c:l:", long_options, &option_index);
-
-        /* Detect the end of the options. */
-        if (c == -1)
-            break;
-
-        switch (c) {
-            case 'c':
-                profile_csv = 1;
-                break;
-            case 'l':
-                profile_log = optarg;
-                break;
-            case '?':
-                /* getopt_long already printed an error message. */
-                break;
-            default:
-                abort ();
-        }
-    }
-
-    // Create the config file for enabling performance counters in the GPU.
-    if ((ret = create_profile_config(PROFILE_CONFIG, profile_signal)) < 0)
-        return ret;
-
-    // Init environnement variables in order to enable profiling.
-    init_profiler(PROFILE_CONFIG, profile_csv, profile_log);
+    profile_signal = argv[1];
 
     if ((pid = fork()) < 0) {
         perror("fork");
@@ -164,7 +70,6 @@ int main(int argc, char **argv)
     }
 
     if (pid == 0) {
-        dup2(fileno(f), 1);
         dup2(fileno(f), 2);
 
         // Launch valgrind-mmt with a CUDA/OpenCL sample.
@@ -172,8 +77,8 @@ int main(int argc, char **argv)
                "--tool=mmt",
                "--mmt-trace-file=/dev/nvidia0",
                "--mmt-trace-nvidia-ioctls",
-               profile_sample,
-               "inst_executed",
+               "callback_event/callback_event",
+                profile_signal,
                NULL);
 
         if (errno == ENOENT) {
