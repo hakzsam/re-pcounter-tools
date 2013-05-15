@@ -1,14 +1,9 @@
 #include <stdio.h>
 #include <cuda.h>
 
-#define DEVICE_NAME 512
+#include "cuda_extras.h"
 
-#define CHECK_CU_ERROR(err, cufunc)                                            \
-    if (err != CUDA_SUCCESS) {                                                 \
-        fprintf(stderr, "%s:%d:Error %d for CUDA Driver API function '%s'.\n", \
-                __FILE__, __LINE__, err, cufunc);                              \
-        exit(-1);                                                              \
-    }
+#define DEVICE_NAME 512
 
 struct device_info {
     int id;                         /**< device id */
@@ -86,17 +81,9 @@ int main(int argc, char **argv)
     CUresult res;
     int count;
 
-    // Init CUDA environment.
-    res = cuInit(0);
-    CHECK_CU_ERROR(res, "cuInit");
-
-    // Returns the number of compute-capable devices.
-    res = cuDeviceGetCount(&count);
-    CHECK_CU_ERROR(res, "cuDeviceGetCount");
-
-    if (count == 0) {
+    if (!cuda_init()) {
         fprintf(stderr, "There is no device supporting CUDA.\n");
-        return -1;
+        exit(-1);
     }
 
     // Returns and displays informations about the device.

@@ -1,7 +1,4 @@
-#
-# Copyright 2011-2012 NVIDIA Corporation. All rights reserved
-# 
-ROOT=/opt/cuda/extras/CUPTI/
+ROOT=/opt/cuda/extras/CUPTI
 INCLUDES=-I$(ROOT)/include
 
 ifndef OS
@@ -24,11 +21,14 @@ else
     OBJ = o
 endif
 
-cuinfo: cuinfo.$(OBJ)
-	nvcc -o $@ cuinfo.$(OBJ) $(LIBS)
+cuinfo: cuinfo.$(OBJ) cuda_extras.$(OBJ)
+	nvcc -o $@ cuinfo.$(OBJ) cuda_extras.$(OBJ) $(LIBS)
 
 cuinfo.$(OBJ): cuinfo.cpp
 	nvcc -c $(INCLUDES) $<
 
+cuda_extras.$(OBJ): cuda_extras.cpp
+	nvcc -c $(INCLUDES) $<
+
 clean:
-	rm -f cuinfo cuinfo.$(OBJ)
+	rm -f cuinfo cuinfo.$(OBJ) cuda_extras.$(OBJ)
