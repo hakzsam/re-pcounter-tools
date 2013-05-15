@@ -11,13 +11,6 @@
 #define DESC_LONG       2048
 #define CATEGORY_LENGTH sizeof(CUpti_EventCategory)
 
-#define CHECK_CU_ERROR(err, cufunc)                                            \
-    if (err != CUDA_SUCCESS) {                                                 \
-        fprintf(stderr, "%s:%d:Error %d for CUDA Driver API function '%s'.\n", \
-                __FILE__, __LINE__, err, cufunc);                              \
-        exit(-1);                                                              \
-    }
-
 #define CHECK_CUPTI_ERROR(err, cuptifunc)                                 \
     if (err != CUPTI_SUCCESS) {                                           \
         const char *errstr;                                               \

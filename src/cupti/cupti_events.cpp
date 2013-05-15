@@ -2,6 +2,7 @@
 #include <cuda.h>
 #include <cupti.h>
 
+#include "cuda_extras.h"
 #include "cupti_extras.h"
 
 int main(int argc, char **argv)
@@ -11,50 +12,20 @@ int main(int argc, char **argv)
     CUptiResult cuptiErr = CUPTI_SUCCESS;
     int ret = 0;
     int deviceId = 0;
-    int deviceCount = 0;
-    int computeCapabilityMajor = 0, computeCapabilityMinor = 0;
-    char deviceName[32];
-    CUpti_EventDomainID domainId = 0;
-    size_t size = 0;
     struct domain *domains;
     uint32_t numDomains;
+    struct device_info *device_info = NULL;
 
-    err = cuInit(0);
-    CHECK_CU_ERROR(err, "cuInit");
-
-    // number of devices
-    err = cuDeviceGetCount(&deviceCount);
-    CHECK_CU_ERROR(err, "cuDeviceGetCount");
-
-    if (deviceCount == 0) {
+    if (!cuda_init()) {
         fprintf(stderr, "There is no device supporting CUDA.\n");
-        ret = -2;
-        goto fail;
+        return -1;
     }
 
-    // device id
-    err = cuDeviceGet(&dev, deviceId);
-    if (err == CUDA_ERROR_INVALID_DEVICE) {
-        printf("Device (%d) out of range\n", deviceId);
-        goto fail;
+    device_info = cuda_get_device_info(deviceId);
+    if (device_info) {
+        cuda_print_device_info(device_info);
     }
-    CHECK_CU_ERROR(err, "cuDeviceGet");
-
-    // device name
-    err = cuDeviceGetName(deviceName, 32, dev);
-    CHECK_CU_ERROR(err, "cuDeviceGetName");
-
-    // device compute capability
-    err = cuDeviceComputeCapability(&computeCapabilityMajor,
-                                    &computeCapabilityMinor,
-                                    dev);
-    CHECK_CU_ERROR(err, "cuDeviceComputeCapability");
-
-    // display some useful informattions about the device
-    printf("CUDA Device Id  : %d\n", deviceId);
-    printf("CUDA Device Name: %s\n", deviceName);
-    printf("CUDA Compute Capability: %d.%d\n\n", computeCapabilityMajor,
-           computeCapabilityMinor);
+    free(device_info);
 
     // get list of domains
     if (!(domains = cupti_getDomains(dev, &numDomains))) {

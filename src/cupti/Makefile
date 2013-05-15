@@ -2,7 +2,7 @@
 # Copyright 2011-2012 NVIDIA Corporation. All rights reserved
 # 
 ROOT=/opt/cuda/extras/CUPTI/
-INCLUDES=-I$(ROOT)/include
+INCLUDES=-I$(ROOT)/include -I../cuda
 
 ifndef OS
  OS   := $(shell uname)
@@ -24,8 +24,8 @@ else
     OBJ = o
 endif
 
-cupti_events: cupti_events.$(OBJ) cupti_extras.$(OBJ)
-	nvcc -o $@ cupti_events.$(OBJ) cupti_extras.$(OBJ) $(LIBS)
+cupti_events: cupti_events.$(OBJ) cupti_extras.$(OBJ) cuda_extras.$(OBJ)
+	nvcc -o $@ cupti_events.$(OBJ) cupti_extras.$(OBJ) cuda_extras.$(OBJ) $(LIBS)
 
 cupti_events.$(OBJ): cupti_events.cpp
 	nvcc -c $(INCLUDES) $<
@@ -33,5 +33,7 @@ cupti_events.$(OBJ): cupti_events.cpp
 cupti_extras.$(OBJ): cupti_extras.cpp
 	nvcc -c $(INCLUDES) $<
 
+cuda_extras.$(OBJ): ../cuda/cuda_extras.cpp
+	nvcc -c $(INCLUDES) $<
 clean:
-	rm -f cupti_events cupti_events.$(OBJ) cupti_extras.$(OBJ)
+	rm -f cupti_events cupti_events.$(OBJ) cupti_extras.$(OBJ) cuda_extras.$(OBJ)
