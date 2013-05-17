@@ -7,6 +7,9 @@
 #include <string.h>
 #include <sys/wait.h>
 
+#include "cuda/cuda_extras.h"
+#include "cupti/cupti_extras.h"
+
 /**
  * TODO:
  *  - do not hardcode chipset (use nvalist).
@@ -39,28 +42,18 @@ static int lookup(const char *reg, const char *val)
     return 0;
 }
 
-int main(int argc, char **argv)
+static int mmiotrace(const char *event)
 {
-    char *profile_signal = NULL;
-    char trace_log[1024];
-    char line[1024];
+    char trace_log[1204], line[1024];
     pid_t pid;
     FILE *f;
 
-    if (argc < 2) {
-        fprintf(stderr,
-                "Usage: %s <profile_signal>\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
-    profile_signal = argv[1];
+    sprintf(trace_log, "%s.trace", event);
 
     if ((pid = fork()) < 0) {
         perror("fork");
         return -errno;
     }
-
-    // Build filepath of trace log.
-    sprintf(trace_log, "%s.trace", profile_signal);
 
     if (!(f = fopen(trace_log, "w+"))) {
         perror("fopen");
@@ -70,14 +63,13 @@ int main(int argc, char **argv)
     if (pid == 0) {
         dup2(fileno(f), 2);
 
-        // Launch valgrind-mmt with a CUDA/OpenCL sample.
         execlp("/usr/local/bin/valgrind", "valgrind",
-               "--tool=mmt",
-               "--mmt-trace-file=/dev/nvidia0",
-               "--mmt-trace-nvidia-ioctls",
-               "callback_event/callback_event",
-                profile_signal,
-               NULL);
+                "--tool=mmt",
+                "--mmt-trace-file=/dev/nvidia0",
+                "--mmt-trace-nvidia-ioctls",
+                "callback_event/callback_event",
+                event,
+                NULL);
 
         if (errno == ENOENT) {
             fprintf(stderr, "No such file or directory.\n");
@@ -89,7 +81,7 @@ int main(int argc, char **argv)
         if (waitpid(pid, &status, 0) < 0) {
             if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
                 fprintf(stderr, "Failed to execute child process.\n");
-                return EXIT_FAILURE;
+                exit(EXIT_FAILURE);
             }
         }
     }
@@ -129,7 +121,53 @@ int main(int argc, char **argv)
         return -errno;
     }
 
-    printf("Trace of '%s' saved in the file '%s'\n", profile_signal, trace_log);
+    printf("Trace of '%s' saved in the file '%s'\n", event, trace_log);
 
-    return EXIT_SUCCESS;
+    return 0;
+}
+
+int main(int argc, char **argv)
+{
+    struct domain *domains;
+    uint32_t num_domains;
+    char *event_name;
+    int ret = 0;
+
+    if (argc < 2) {
+        fprintf(stderr,
+                "Usage: %s <event_name>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+    event_name = argv[1];
+
+    if (!cuda_init()) {
+        fprintf(stderr, "There is no device supporting CUDA.\n");
+        return -1;
+    }
+
+    domains = cupti_getDomains(0, &num_domains);
+    if (!domains) {
+        fprintf(stderr, "Failed to get domains.\n");
+        return -1;
+    }
+
+    for (uint32_t i = 0; i < num_domains; i++) {
+        struct domain *d = &domains[i];
+
+        if (!(d->events = cupti_getEventByDomain(d->id, &d->numEvents))) {
+            fprintf(stderr, "Failed to get events.\n");
+            return -1;
+        }
+
+        for (uint32_t j = 0; j < d->numEvents; j++) {
+            ptiData *event = &d->events[j];
+
+            if ((ret = mmiotrace(event->name)) < 0)
+                return ret;
+        }
+    }
+
+    free(domains);
+
+    return ret;
 }
