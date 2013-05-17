@@ -7,8 +7,6 @@
 #include <string.h>
 #include <sys/wait.h>
 
-#include <cupti.h>
-
 /**
  * TODO:
  *  - do not hardcode chipset (use nvalist).

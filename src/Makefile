@@ -1,6 +1,6 @@
 GCC		= gcc
 CFLAGS		= -g -Wall
-EXEC		= nv-ioctls-trace
+EXEC		= mmiotrace
 OBJ		= $(EXEC).o
 SRC		= $(EXEC).c
 
