@@ -7,15 +7,303 @@
 #include <string.h>
 #include <sys/wait.h>
 
-#include "cuda/cuda_extras.h"
-#include "cupti/cupti_extras.h"
+#include <cuda.h>
+#include <cupti.h>
 
 /**
  * TODO:
  *  - do not hardcode chipset (use nvalist).
  *  - do not use lookup through popen() (it's bad).
  *  - use env vars for setting valgrind-mmt.
+ *  - fix memleaks.
+ *  - check error codes.
  */
+
+#define NAME_SHORT      64
+#define NAME_LONG       128
+#define DESC_SHORT      512
+#define DESC_LONG       2048
+#define CATEGORY_LENGTH sizeof(CUpti_EventCategory)
+
+#define CHECK_CU_ERROR(err, cufunc)                                            \
+    if (err != CUDA_SUCCESS) {                                                 \
+        fprintf(stderr, "%s:%d:Error %d for CUDA Driver API function '%s'.\n", \
+                __FILE__, __LINE__, err, cufunc);                              \
+        exit(-1);                                                              \
+    }
+
+#define CHECK_CUPTI_ERROR(err, cuptifunc)                                 \
+    if (err != CUPTI_SUCCESS) {                                           \
+        const char *errstr;                                               \
+        cuptiGetResultString(err, &errstr);                               \
+        fprintf(stderr, "%s:%d:Error %s for CUPTI API function '%s'.\n",  \
+                __FILE__, __LINE__, errstr, cuptifunc);                   \
+        exit(-1);                                                         \
+    }
+
+#define SET_OPTS_FLAG(f)    (opts_flag |= (1 << f))
+#define IS_OPTS_FLAG(f)     ((opts_flag & (1 << f)) ? 1 : 0)
+
+static unsigned int opts_flag = 0;
+
+struct cupti_event {
+    CUpti_EventID id;                   // event id
+    char name[NAME_SHORT];              // event name
+    char short_desc[DESC_SHORT];        // short desc of the event
+    char long_desc[DESC_LONG];          // long desc of the event
+    CUpti_EventCategory category;       // category of the event
+};
+
+struct cupti_domain {
+    CUpti_EventDomainID id;             // domain id
+    char name[NAME_SHORT];              // domain name
+    uint32_t profiled_inst;             // number of domain instances (profiled)
+    uint32_t total_inst;                // number of domain instances (total)
+    struct cupti_event *events;         // array of events
+    uint32_t num_events;                // number of events
+};
+
+enum flags {
+    FLAG_DEVICE_ID = 0,
+    FLAG_DOMAIN_ID,
+    FLAG_LIST_DOMAINS,
+    FLAG_LIST_EVENTS,
+    FLAG_LIST_METRICS
+};
+
+static void usage()
+{
+    printf("Usage: cupti_trace\n");
+    printf("       --help                                                : displays help message\n");
+    printf("       --device <dev_id> --list-domains                      : displays supported domains for specified device\n");
+    printf("       --device <dev_id> --list-metrics                      : displays supported metrics for specified device\n");
+    printf("       --device <dev_id> --domain <domain_id> --list-events  : displays supported events for specified domain and device\n");
+    printf("Note: default device is 0 and default domain is first domain for device\n");
+}
+
+static void check_null_terminator(char *str, size_t len, size_t max_len)
+{
+    if (len >= max_len) {
+        str[max_len - 1] = '\0';
+    }
+}
+
+struct cupti_domain *cupti_get_domains(CUdevice device, uint32_t *num_domains)
+{
+    CUptiResult cupti_ret = CUPTI_SUCCESS;
+    CUpti_EventDomainID *domain_id = NULL;
+    struct cupti_domain *domains = NULL;
+    size_t size = 0;
+    uint32_t i;
+
+    cupti_ret = cuptiDeviceGetNumEventDomains(device, num_domains);
+    CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceGetNumEventDomains");
+
+    if (*num_domains == 0) {
+        fprintf(stderr, "No domain is exposed by device = %d.\n", device);
+        cupti_ret = CUPTI_ERROR_UNKNOWN;
+        goto fail;
+    }
+
+    size = sizeof(CUpti_EventDomainID) * (*num_domains);
+    domain_id = (CUpti_EventDomainID *)calloc(1, size);
+    if (domain_id == NULL) {
+        fprintf(stderr, "Failed to allocate memory to domain ID.\n");
+        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        goto fail;
+    }
+
+    domains = (struct cupti_domain *)calloc(1, sizeof(*domains) * (*num_domains));
+    if (!domains) {
+        fprintf(stderr, "Failed to allocated memory to domain data.\n");
+        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        goto fail;
+    }
+
+    cupti_ret = cuptiDeviceEnumEventDomains(device, &size, domain_id);
+    CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEnumEventDomains");
+
+    // enum domains
+    for (i = 0; i < *num_domains; i++) {
+        struct cupti_domain *d = &domains[i];
+
+        // domain id
+        d->id = domain_id[i];
+
+        // domain name
+        size = NAME_SHORT;
+        cupti_ret = cuptiEventDomainGetAttribute(d->id,
+                                                 CUPTI_EVENT_DOMAIN_ATTR_NAME,
+                                                 &size,
+                                                 (void *)d->name);
+        check_null_terminator(d->name, size, NAME_SHORT);
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainGetAttribute");
+
+        // num of profiled instances in the domain
+        size = sizeof(d->profiled_inst);
+        cupti_ret = cuptiDeviceGetEventDomainAttribute(device,
+                                                       d->id,
+                                                       CUPTI_EVENT_DOMAIN_ATTR_INSTANCE_COUNT,
+                                                       &size,
+                                                       (void *)&d->profiled_inst);
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEventDomainGetAttribute");
+
+        // num of total instances in the domain
+        size = sizeof(d->total_inst);
+        cupti_ret = cuptiDeviceGetEventDomainAttribute(device,
+                                                       d->id,
+                                                       CUPTI_EVENT_DOMAIN_ATTR_TOTAL_INSTANCE_COUNT,
+                                                       &size,
+                                                       (void *)&d->total_inst);
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEventDomainGetAttribute");
+    }
+
+fail:
+    free(domain_id);
+    if (cupti_ret != CUPTI_SUCCESS)
+        return NULL;
+
+    return domains;
+}
+
+static int list_domains(CUdevice dev)
+{
+    struct cupti_domain *domains = NULL;
+    uint32_t num_domains, i;
+
+    if (!(domains = cupti_get_domains(dev, &num_domains)))
+        return -1;
+
+    for (i = 0; i < num_domains; i++) {
+        struct cupti_domain *d = &domains[i];
+
+        printf ("Domain# %d\n",                     i + 1);
+        printf ("Id         = %d\n",                d->id);
+        printf ("Name       = %s\n",                d->name);
+        printf ("Profiled instance count = %d\n",   d->profiled_inst);
+        printf ("Total instance count = %d\n",      d->total_inst);
+    }
+
+    free(domains);
+    return 0;
+}
+
+static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain,
+                                                      uint32_t *num_events)
+{
+    CUptiResult cupti_ret = CUPTI_SUCCESS;
+    struct cupti_event *events = NULL;
+    CUpti_EventID *event_id = NULL;
+    size_t size = 0;
+    uint32_t i;
+
+    // query num of events available in the domain
+    cupti_ret = cuptiEventDomainGetNumEvents(domain,
+                                             num_events);
+    CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainGetNumEvents");
+
+    size = sizeof(CUpti_EventID) * (*num_events);
+    event_id = (CUpti_EventID *)malloc(size);
+    if (event_id == NULL) {
+        fprintf(stderr, "Failed to allocate memory to event ID\n");
+        return NULL;
+    }
+    memset(event_id, 0, size);
+
+    if (!(events = (struct cupti_event *)malloc(sizeof(*events) * (*num_events)))) {
+        fprintf(stderr, "Failed to allocate memory to event data.\n");
+        return NULL;
+    }
+
+    cupti_ret = cuptiEventDomainEnumEvents(domain,
+                                           &size,
+                                           event_id);
+    CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainEnum_events");
+
+    // query event info
+    for (i = 0; i < *num_events; i++) {
+        struct cupti_event *event = &events[i];
+
+        event->id = event_id[i];
+
+        // event name
+        size = NAME_SHORT;
+        cupti_ret = cuptiEventGetAttribute(event->id,
+                                           CUPTI_EVENT_ATTR_NAME,
+                                           &size,
+                                           (uint8_t *)event->name);
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        check_null_terminator(events->name, size, NAME_SHORT);
+
+        // event short desc
+        size = DESC_SHORT;
+        cupti_ret = cuptiEventGetAttribute(event->id,
+                                           CUPTI_EVENT_ATTR_SHORT_DESCRIPTION,
+                                           &size,
+                                           (uint8_t *)event->short_desc);
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        check_null_terminator(events->short_desc, size, NAME_SHORT);
+
+        // event long desc
+        size = DESC_LONG;
+        cupti_ret = cuptiEventGetAttribute(event->id,
+                                           CUPTI_EVENT_ATTR_LONG_DESCRIPTION,
+                                           &size,
+                                           (uint8_t *)event->long_desc);
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        check_null_terminator(events->short_desc, size, NAME_SHORT);
+
+        size = CATEGORY_LENGTH;
+        cupti_ret = cuptiEventGetAttribute(events->id,
+                                           CUPTI_EVENT_ATTR_CATEGORY,
+                                           &size,
+                                           (&event->category));
+        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+    }
+
+    return events;
+}
+
+
+static int list_events(CUpti_EventDomainID domain_id)
+{
+    struct cupti_event *events = NULL;
+    uint32_t num_events, i;
+
+    if (!(events = cupti_get_events_by_domain(domain_id, &num_events)))
+        return -1;
+
+    for (i = 0; i < num_events; i++) {
+        struct cupti_event *e = &events[i];
+
+        printf("Event# %d\n",       i + 1);
+        printf("Id        = %d\n",  e->id);
+        printf("Name      = %s\n",  e->name);
+        printf("Shortdesc = %s\n",  e->short_desc);
+        printf("Longdesc  = %s\n",  e->long_desc);
+
+        switch (e->category) {
+            case CUPTI_EVENT_CATEGORY_INSTRUCTION:
+                printf("Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION\n\n");
+                break;
+            case CUPTI_EVENT_CATEGORY_MEMORY:
+                printf("Category  = CUPTI_EVENT_CATEGORY_MEMORY\n\n");
+                break;
+            case CUPTI_EVENT_CATEGORY_CACHE:
+                printf("Category  = CUPTI_EVENT_CATEGORY_CACHE\n\n");
+                break;
+            case CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER:
+                printf("Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER\n\n");
+                break;
+            default:
+                fprintf(stderr, "\n Invalid category!\n");
+                break;
+        }
+    }
+
+    free(events);
+    return 0;
+}
 
 static int lookup(const char *reg, const char *val)
 {
@@ -126,48 +414,216 @@ static int mmiotrace(const char *event)
     return 0;
 }
 
-int main(int argc, char **argv)
+static int run(CUdevice dev)
 {
-    struct domain *domains;
-    uint32_t num_domains;
-    char *event_name;
-    int ret = 0;
+    struct cupti_domain *domains = NULL;
+    uint32_t num_domains, i, j;
+    int ret;
 
-    if (argc < 2) {
-        fprintf(stderr,
-                "Usage: %s <event_name>\n", argv[0]);
-        return EXIT_FAILURE;
-    }
-    event_name = argv[1];
-
-    if (!cuda_init()) {
-        fprintf(stderr, "There is no device supporting CUDA.\n");
-        return -1;
-    }
-
-    domains = cupti_getDomains(0, &num_domains);
+    domains = cupti_get_domains(dev, &num_domains);
     if (!domains) {
         fprintf(stderr, "Failed to get domains.\n");
         return -1;
     }
 
-    for (uint32_t i = 0; i < num_domains; i++) {
-        struct domain *d = &domains[i];
+    for (i = 0; i < num_domains; i++) {
+        struct cupti_domain *d = &domains[i];
 
-        if (!(d->events = cupti_getEventByDomain(d->id, &d->numEvents))) {
+        if (!(d->events = cupti_get_events_by_domain(d->id, &d->num_events))) {
             fprintf(stderr, "Failed to get events.\n");
             return -1;
         }
 
-        for (uint32_t j = 0; j < d->numEvents; j++) {
-            ptiData *event = &d->events[j];
+        for (j = 0; j < d->num_events; j++) {
+            struct cupti_event *e = &d->events[j];
 
-            if ((ret = mmiotrace(event->name)) < 0)
+            if ((ret = mmiotrace(e->name)) < 0)
                 return ret;
         }
     }
 
     free(domains);
+    return 0;
+}
 
+int main(int argc, char **argv)
+{
+    CUdevice dev;
+    CUresult cuda_ret;
+    int device_id;
+    int device_count;
+    int c;
+    int ret = 0;
+    CUpti_EventDomainID domain_id = 0;
+    CUptiResult cupti_ret = CUPTI_SUCCESS;
+    size_t size;
+
+    // Initialize the driver API.
+    cuda_ret = cuInit(0);
+    CHECK_CU_ERROR(cuda_ret, "cuInit");
+
+    // Return the number of devices with compute capability greater than or
+    // equal to 1.0 that are available for execution.
+    cuda_ret = cuDeviceGetCount(&device_count);
+    CHECK_CU_ERROR(cuda_ret, "cuDeviceGetCount");
+
+    if (device_count == 0) {
+        fprintf(stderr, "There is no device supporting CUDA.\n");
+        ret = -1;
+        goto fail;
+    }
+
+    while (1) {
+        static struct option long_options[] = {
+            {"device",          required_argument,  0,  'd'},
+            {"domain",          required_argument,  0,  'o'},
+            {"help",            no_argument,        0,  'h'},
+            {"list-events",     no_argument,        0,  'e'},
+            {"list-metrics",    no_argument,        0,  'm'},
+            {"list-domains",    no_argument,        0,  'n'},
+            {0, 0, 0, 0}
+        };
+        // getopt_long stores the option index here.
+        int option_index = 0;
+
+        c = getopt_long (argc, argv, "d:ehmno", long_options, &option_index);
+
+        // Detect the end of the options.
+        if (c == -1)
+            break;
+
+        switch (c) {
+            /*
+            case 0:
+                if (long_options[option_index].flag != 0)
+                    break;
+                printf ("option %s", long_options[option_index].name);
+                if (optarg)
+                    printf (" with arg %s", optarg);
+                printf ("\n");
+                break;
+            */
+            case 'd':
+                device_id = atoi(optarg);
+                SET_OPTS_FLAG(FLAG_DEVICE_ID);
+                break;
+            case 'e':
+                SET_OPTS_FLAG(FLAG_LIST_EVENTS);
+                break;
+            case 'm':
+                SET_OPTS_FLAG(FLAG_LIST_METRICS);
+                break;
+            case 'n':
+                SET_OPTS_FLAG(FLAG_LIST_DOMAINS);
+                break;
+            case 'o':
+                domain_id = atoi(optarg);
+                SET_OPTS_FLAG(FLAG_DOMAIN_ID);
+                break;
+            case 'h':
+            case '?':
+                usage();
+                exit(0);
+                break;
+            default:
+                abort();
+                break;
+        }
+    }
+
+    if (!IS_OPTS_FLAG(FLAG_DEVICE_ID)) {
+        printf("Assuming default device id 0.\n");
+        device_id = 0;
+    }
+
+    // Return a device handle given an ordinal in the range.
+    cuda_ret = cuDeviceGet(&dev, device_id);
+    CHECK_CU_ERROR(cuda_ret, "cuDeviceGet");
+
+    if (IS_OPTS_FLAG(FLAG_LIST_DOMAINS)) {
+        if (list_domains(dev) < 0) {
+            fprintf(stderr, "Cannot list domains.\n");
+            return EXIT_FAILURE;
+        }
+    } else if (IS_OPTS_FLAG(FLAG_LIST_EVENTS)) {
+        if (!IS_OPTS_FLAG(FLAG_DOMAIN_ID)) {
+            // Query first domain on the device.
+            size = sizeof(CUpti_EventDomainID);
+            cupti_ret = cuptiDeviceEnumEventDomains(dev, &size,
+                                                    (CUpti_EventDomainID *)&domain_id);
+            CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEnumEventDomains");
+            printf("Assuming default domain id %d.\n", domain_id);
+        } else {
+            // Validate the domain on the device.
+            CUpti_EventDomainID *domain_id_arr = NULL;
+            uint32_t max_domains = 0, i = 0;
+
+            cupti_ret = cuptiDeviceGetNumEventDomains(dev, &max_domains);
+            CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceGetNumEventDomains");
+
+            if (max_domains == 0) {
+                printf("No domain is exposed by dev = %d.\n", dev);
+                cupti_ret = CUPTI_ERROR_UNKNOWN;
+                goto fail;
+            }
+
+            size = sizeof(CUpti_EventDomainID) * max_domains;
+            domain_id_arr = (CUpti_EventDomainID*)malloc(size);
+            if (domain_id_arr == NULL) {
+                printf("Failed to allocate memory to domain ID.\n");
+                cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+                goto fail;
+            }
+            memset(domain_id_arr, 0, size);
+
+            // enum domains
+            cupti_ret = cuptiDeviceEnumEventDomains(dev, &size, domain_id_arr);
+            CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEnumEventDomains");
+
+            for (i = 0; i < max_domains; i++) {
+                if (domain_id_arr[i] == domain_id) {
+                    break;
+                }
+            }
+            free(domain_id_arr);
+
+            if (i == max_domains) {
+                printf("Domain Id %d is not supported by device.\n", domain_id);
+                goto fail;
+            }
+        }
+
+        if (list_events(domain_id) < 0) {
+            fprintf(stderr, "Cannot list events\n");
+            return EXIT_FAILURE;
+        }
+    } else if (IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
+        fprintf(stderr, "Work in progress! ;)\n");
+        return -1;
+    }
+
+    if (IS_OPTS_FLAG(FLAG_LIST_DOMAINS) || IS_OPTS_FLAG(FLAG_LIST_EVENTS)
+        || IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
+        // Do not try to trace ioctls calls.
+        return 0;
+    }
+
+    if (run(dev) < 0) {
+        fprintf(stderr, "Cannot trace ioctl calls.\n");
+        goto fail;
+    }
+
+    /*
+    // Print any remaining command line arguments (not options).
+    if (optind < argc) {
+        printf ("non-option ARGV-elements: ");
+        while (optind < argc)
+            printf ("%s ", argv[optind++]);
+        putchar ('\n');
+    }
+    */
+
+fail:
+   // cudaDeviceSynchronize();
     return ret;
 }
