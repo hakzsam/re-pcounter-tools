@@ -45,7 +45,7 @@
 
 static unsigned int opts_flag = 0;
 
-struct cupti_event {
+struct event {
     CUpti_EventID id;                   // event id
     char name[NAME_SHORT];              // event name
     char short_desc[DESC_SHORT];        // short desc of the event
@@ -53,12 +53,12 @@ struct cupti_event {
     CUpti_EventCategory category;       // category of the event
 };
 
-struct cupti_domain {
+struct domain {
     CUpti_EventDomainID id;             // domain id
     char name[NAME_SHORT];              // domain name
     uint32_t profiled_inst;             // number of domain instances (profiled)
     uint32_t total_inst;                // number of domain instances (total)
-    struct cupti_event *events;         // array of events
+    struct event *events;         // array of events
     uint32_t num_events;                // number of events
 };
 
@@ -89,20 +89,20 @@ static void check_null_terminator(char *str, size_t len, size_t max_len)
     }
 }
 
-struct cupti_domain *cupti_get_domains(CUdevice device, uint32_t *num_domains)
+struct domain *get_domains(CUdevice device, uint32_t *num_domains)
 {
-    CUptiResult cupti_ret = CUPTI_SUCCESS;
     CUpti_EventDomainID *domain_id = NULL;
-    struct cupti_domain *domains = NULL;
+    CUptiResult ret = CUPTI_SUCCESS;
+    struct domain *domains = NULL;
     size_t size = 0;
     uint32_t i;
 
-    cupti_ret = cuptiDeviceGetNumEventDomains(device, num_domains);
-    CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceGetNumEventDomains");
+    ret = cuptiDeviceGetNumEventDomains(device, num_domains);
+    CHECK_CUPTI_ERROR(ret, "cuptiDeviceGetNumEventDomains");
 
     if (*num_domains == 0) {
         fprintf(stderr, "No domain is exposed by device = %d.\n", device);
-        cupti_ret = CUPTI_ERROR_UNKNOWN;
+        ret = CUPTI_ERROR_UNKNOWN;
         goto fail;
     }
 
@@ -110,58 +110,58 @@ struct cupti_domain *cupti_get_domains(CUdevice device, uint32_t *num_domains)
     domain_id = (CUpti_EventDomainID *)calloc(1, size);
     if (domain_id == NULL) {
         fprintf(stderr, "Failed to allocate memory to domain ID.\n");
-        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        ret = CUPTI_ERROR_OUT_OF_MEMORY;
         goto fail;
     }
 
-    domains = (struct cupti_domain *)calloc(1, sizeof(*domains) * (*num_domains));
+    domains = (struct domain *)calloc(1, sizeof(*domains) * (*num_domains));
     if (!domains) {
         fprintf(stderr, "Failed to allocated memory to domain data.\n");
-        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        ret = CUPTI_ERROR_OUT_OF_MEMORY;
         goto fail;
     }
 
-    cupti_ret = cuptiDeviceEnumEventDomains(device, &size, domain_id);
-    CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEnumEventDomains");
+    ret = cuptiDeviceEnumEventDomains(device, &size, domain_id);
+    CHECK_CUPTI_ERROR(ret, "cuptiDeviceEnumEventDomains");
 
     // enum domains
     for (i = 0; i < *num_domains; i++) {
-        struct cupti_domain *d = &domains[i];
+        struct domain *d = &domains[i];
 
         // domain id
         d->id = domain_id[i];
 
         // domain name
         size = NAME_SHORT;
-        cupti_ret = cuptiEventDomainGetAttribute(d->id,
+        ret = cuptiEventDomainGetAttribute(d->id,
                                                  CUPTI_EVENT_DOMAIN_ATTR_NAME,
                                                  &size,
                                                  (void *)d->name);
         check_null_terminator(d->name, size, NAME_SHORT);
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiEventDomainGetAttribute");
 
         // num of profiled instances in the domain
         size = sizeof(d->profiled_inst);
-        cupti_ret = cuptiDeviceGetEventDomainAttribute(device,
+        ret = cuptiDeviceGetEventDomainAttribute(device,
                                                        d->id,
                                                        CUPTI_EVENT_DOMAIN_ATTR_INSTANCE_COUNT,
                                                        &size,
                                                        (void *)&d->profiled_inst);
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEventDomainGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
 
         // num of total instances in the domain
         size = sizeof(d->total_inst);
-        cupti_ret = cuptiDeviceGetEventDomainAttribute(device,
+        ret = cuptiDeviceGetEventDomainAttribute(device,
                                                        d->id,
                                                        CUPTI_EVENT_DOMAIN_ATTR_TOTAL_INSTANCE_COUNT,
                                                        &size,
                                                        (void *)&d->total_inst);
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEventDomainGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
     }
 
 fail:
     free(domain_id);
-    if (cupti_ret != CUPTI_SUCCESS)
+    if (ret != CUPTI_SUCCESS)
         return NULL;
 
     return domains;
@@ -169,14 +169,14 @@ fail:
 
 static int list_domains(CUdevice dev)
 {
-    struct cupti_domain *domains = NULL;
+    struct domain *domains = NULL;
     uint32_t num_domains, i;
 
-    if (!(domains = cupti_get_domains(dev, &num_domains)))
+    if (!(domains = get_domains(dev, &num_domains)))
         return -1;
 
     for (i = 0; i < num_domains; i++) {
-        struct cupti_domain *d = &domains[i];
+        struct domain *d = &domains[i];
 
         printf("Domain# %d\n",                     i + 1);
         printf("Id         = %d\n",                d->id);
@@ -189,21 +189,20 @@ static int list_domains(CUdevice dev)
     return 0;
 }
 
-static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain,
-                                                      uint32_t *num_events)
+static struct event *get_events_by_domain(CUpti_EventDomainID domain, uint32_t *num_events)
 {
-    CUptiResult cupti_ret = CUPTI_SUCCESS;
-    struct cupti_event *events = NULL;
+    CUptiResult ret = CUPTI_SUCCESS;
     CUpti_EventID *event_id = NULL;
+    struct event *events = NULL;
     size_t size = 0;
     uint32_t i;
 
-    cupti_ret = cuptiEventDomainGetNumEvents(domain, num_events);
-    CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainGetNumEvents");
+    ret = cuptiEventDomainGetNumEvents(domain, num_events);
+    CHECK_CUPTI_ERROR(ret, "cuptiEventDomainGetNumEvents");
 
     if (*num_events == 0) {
         fprintf(stderr, "No event is exposed by domain = %d.\n", domain);
-        cupti_ret = CUPTI_ERROR_UNKNOWN;
+        ret = CUPTI_ERROR_UNKNOWN;
         goto fail;
     }
 
@@ -211,68 +210,68 @@ static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain
     event_id = (CUpti_EventID *)malloc(size);
     if (event_id == NULL) {
         fprintf(stderr, "Failed to allocate memory to event ID.\n");
-        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        ret = CUPTI_ERROR_OUT_OF_MEMORY;
         goto fail;
     }
     memset(event_id, 0, size);
 
-    if (!(events = (struct cupti_event *)malloc(sizeof(*events) * (*num_events)))) {
+    if (!(events = (struct event *)malloc(sizeof(*events) * (*num_events)))) {
         fprintf(stderr, "Failed to allocate memory to event data.\n");
-        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        ret = CUPTI_ERROR_OUT_OF_MEMORY;
         goto fail;
     }
 
-    cupti_ret = cuptiEventDomainEnumEvents(domain,
+    ret = cuptiEventDomainEnumEvents(domain,
                                            &size,
                                            event_id);
-    CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainEnum_events");
+    CHECK_CUPTI_ERROR(ret, "cuptiEventDomainEnum_events");
 
     // enum events
     for (i = 0; i < *num_events; i++) {
-        struct cupti_event *event = &events[i];
+        struct event *event = &events[i];
 
         // event id
         event->id = event_id[i];
 
         // event name
         size = NAME_SHORT;
-        cupti_ret = cuptiEventGetAttribute(event->id,
+        ret = cuptiEventGetAttribute(event->id,
                                            CUPTI_EVENT_ATTR_NAME,
                                            &size,
                                            (uint8_t *)event->name);
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
         check_null_terminator(events->name, size, NAME_SHORT);
 
         // event short desc
         size = DESC_SHORT;
-        cupti_ret = cuptiEventGetAttribute(event->id,
+        ret = cuptiEventGetAttribute(event->id,
                                            CUPTI_EVENT_ATTR_SHORT_DESCRIPTION,
                                            &size,
                                            (uint8_t *)event->short_desc);
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
         check_null_terminator(events->short_desc, size, NAME_SHORT);
 
         // event long desc
         size = DESC_LONG;
-        cupti_ret = cuptiEventGetAttribute(event->id,
+        ret = cuptiEventGetAttribute(event->id,
                                            CUPTI_EVENT_ATTR_LONG_DESCRIPTION,
                                            &size,
                                            (uint8_t *)event->long_desc);
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
         check_null_terminator(events->short_desc, size, NAME_SHORT);
 
         // event category
         size = CATEGORY_LENGTH;
-        cupti_ret = cuptiEventGetAttribute(events->id,
+        ret = cuptiEventGetAttribute(events->id,
                                            CUPTI_EVENT_ATTR_CATEGORY,
                                            &size,
                                            (&event->category));
-        CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
+        CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
     }
 
 fail:
     free(event_id);
-    if (cupti_ret != CUPTI_SUCCESS)
+    if (ret != CUPTI_SUCCESS)
         return NULL;
 
     return events;
@@ -281,14 +280,14 @@ fail:
 
 static int list_events(CUpti_EventDomainID domain_id)
 {
-    struct cupti_event *events = NULL;
+    struct event *events = NULL;
     uint32_t num_events, i;
 
-    if (!(events = cupti_get_events_by_domain(domain_id, &num_events)))
+    if (!(events = get_events_by_domain(domain_id, &num_events)))
         return -1;
 
     for (i = 0; i < num_events; i++) {
-        struct cupti_event *e = &events[i];
+        struct event *e = &events[i];
 
         printf("Event# %d\n",       i + 1);
         printf("Id        = %d\n",  e->id);
@@ -429,26 +428,26 @@ static int mmiotrace(const char *chipset, const char *event)
 
 static int run(CUdevice dev, const char *chipset)
 {
-    struct cupti_domain *domains = NULL;
+    struct domain *domains = NULL;
     uint32_t num_domains, i, j;
     int ret;
 
-    domains = cupti_get_domains(dev, &num_domains);
+    domains = get_domains(dev, &num_domains);
     if (!domains) {
         fprintf(stderr, "Failed to get domains.\n");
         return -1;
     }
 
     for (i = 0; i < num_domains; i++) {
-        struct cupti_domain *d = &domains[i];
+        struct domain *d = &domains[i];
 
-        if (!(d->events = cupti_get_events_by_domain(d->id, &d->num_events))) {
+        if (!(d->events = get_events_by_domain(d->id, &d->num_events))) {
             fprintf(stderr, "Failed to get events.\n");
             return -1;
         }
 
         for (j = 0; j < d->num_events; j++) {
-            struct cupti_event *e = &d->events[j];
+            struct event *e = &d->events[j];
 
             if ((ret = mmiotrace(chipset, e->name)) < 0)
                 return ret;
