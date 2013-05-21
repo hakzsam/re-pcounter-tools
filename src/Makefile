@@ -21,6 +21,8 @@ else
     OBJ = o
 endif
 
+all: cupti_trace cuda_sample
+
 cupti_trace: cupti_trace.$(OBJ)
 	nvcc -o $@ cupti_trace.$(OBJ) $(LIBS)
 
