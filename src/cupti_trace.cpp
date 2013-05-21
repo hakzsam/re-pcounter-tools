@@ -298,7 +298,7 @@ static int list_events(CUpti_EventDomainID domain_id)
                 printf("Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER\n\n");
                 break;
             default:
-                fprintf(stderr, "\n Invalid category!\n");
+                printf("Category  = CUPTI_EVENT_CATEGORY_UNKNOWN\n\n");
                 break;
         }
     }
