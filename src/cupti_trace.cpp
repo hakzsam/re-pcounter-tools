@@ -413,7 +413,7 @@ static int mmiotrace(const char *chipset, const char *event)
                (dir ? 'w' : 'r'), reg, val, mask);
 
         if (lookup(chipset, reg, val) < 0) {
-            fprintf(stderr, "Cannot run lookup.\n");
+            fprintf(stderr, "Cannot trace_all_events lookup.\n");
             return -1;
         }
     }
@@ -427,7 +427,7 @@ static int mmiotrace(const char *chipset, const char *event)
     return 0;
 }
 
-static int run(CUdevice dev, const char *chipset)
+static int trace_all_events(CUdevice dev, const char *chipset)
 {
     struct domain *domains = NULL;
     uint32_t num_domains, i, j;
@@ -585,11 +585,11 @@ int main(int argc, char **argv)
     if (IS_OPTS_FLAG(FLAG_TRACE)) {
         // Check if the CUDA sample has been compiled by the user.
         if (!file_exists(CUDA_SAMPLE)) {
-            fprintf(stderr, "CUDA sample not found! Please run 'make cuda_sample'.\n");
+            fprintf(stderr, "CUDA sample not found! Please trace_all_events 'make cuda_sample'.\n");
             return -1;
         }
 
-        if ((ret = run(dev, chipset)) < 0) {
+        if ((ret = trace_all_events(dev, chipset)) < 0) {
             fprintf(stderr, "Cannot trace ioctl calls.\n");
             return ret;
         }
