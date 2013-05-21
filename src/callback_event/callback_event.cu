@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cuda.h>
+
 #include <cupti.h>
 
 #define CHECK_CUPTI_ERROR(err, cuptifunc)                                 \
@@ -26,79 +27,81 @@ typedef struct RuntimeApiTrace_st {
 } RuntimeApiTrace_t;
 
 // Device code
-__global__ void VecAdd(const int* A, const int* B, int* C, int N)
+__global__ void vec_add(const int* A, const int* B, int* C, int N)
 {
     int i = blockDim.x * blockIdx.x + threadIdx.x;
     if (i < N)
         C[i] = A[i] + B[i];
 }
 
-static void initVec(int *vec, int n)
+static void init_vec(int *vec, int n)
 {
-    for (int i=0; i< n; i++)
+    int i;
+
+    for (i = 0; i < n; i++)
         vec[i] = i;
 }
 
 static int run_vector_add()
 {
-  int N = 50000;
-  size_t size = N * sizeof(int);
-  int threadsPerBlock = 0;
-  int blocksPerGrid = 0;
-  int sum, i;
-  int *h_A, *h_B, *h_C;
-  int *d_A, *d_B, *d_C;
+    int N = 50000;
+    size_t size = N * sizeof(int);
+    int threadsPerBlock = 0;
+    int blocksPerGrid = 0;
+    int sum, i;
+    int *h_A, *h_B, *h_C;
+    int *d_A, *d_B, *d_C;
 
-  // Allocate input vectors h_A and h_B in host memory
-  h_A = (int*)malloc(size);
-  h_B = (int*)malloc(size);
-  h_C = (int*)malloc(size);
+    // Allocate input vectors h_A and h_B in host memory
+    h_A = (int*)malloc(size);
+    h_B = (int*)malloc(size);
+    h_C = (int*)malloc(size);
 
-  // Initialize input vectors
-  initVec(h_A, N);
-  initVec(h_B, N);
-  memset(h_C, 0, size);
+    // Initialize input vectors
+    init_vec(h_A, N);
+    init_vec(h_B, N);
+    memset(h_C, 0, size);
 
-  // Allocate vectors in device memory
-  cudaMalloc((void**)&d_A, size);
-  cudaMalloc((void**)&d_B, size);
-  cudaMalloc((void**)&d_C, size);
+    // Allocate vectors in device memory
+    cudaMalloc((void**)&d_A, size);
+    cudaMalloc((void**)&d_B, size);
+    cudaMalloc((void**)&d_C, size);
 
-  // Copy vectors from host memory to device memory
-  cudaMemcpy(d_A, h_A, size, cudaMemcpyHostToDevice);
-  cudaMemcpy(d_B, h_B, size, cudaMemcpyHostToDevice);
+    // Copy vectors from host memory to device memory
+    cudaMemcpy(d_A, h_A, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, h_B, size, cudaMemcpyHostToDevice);
 
-  // Invoke kernel
-  threadsPerBlock = 256;
-  blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
+    // Invoke kernel
+    threadsPerBlock = 256;
+    blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
 
-  VecAdd<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, N);
-    
-  // Copy result from device memory to host memory
-  // h_C contains the result in host memory
-  cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
-    
-  // Verify result
-  for (i = 0; i < N; ++i) {
-    sum = h_A[i] + h_B[i];
-    if (h_C[i] != sum) {
-      printf("kernel execution FAILED\n");
-      goto Error;
+    vec_add<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, N);
+
+    // Copy result from device memory to host memory
+    // h_C contains the result in host memory
+    cudaMemcpy(h_C, d_C, size, cudaMemcpyDeviceToHost);
+
+    // Verify result
+    for (i = 0; i < N; ++i) {
+        sum = h_A[i] + h_B[i];
+        if (h_C[i] != sum) {
+            printf("kernel execution FAILED\n");
+            goto Error;
+        }
     }
-  }
 
-  return 0;
+    return 0;
 Error:
-  return -1;
+    return -1;
 }
 
-void CUPTIAPI
-getEventValueCallback(void *userdata, CUpti_CallbackDomain domain,
-        CUpti_CallbackId cbid, const CUpti_CallbackData *cbInfo)
+void CUPTIAPI getEventValueCallback(void *userdata, CUpti_CallbackDomain domain,
+                                    CUpti_CallbackId cbid,
+                                    const CUpti_CallbackData *cbInfo)
 {
     CUptiResult cuptiErr;
     RuntimeApiTrace_t *traceData = (RuntimeApiTrace_t*)userdata;
-    size_t bytesRead; 
+    size_t bytesRead;
 
     // This callback is enabled only for launch so we shouldn't see anything else.
     if (cbid != CUPTI_RUNTIME_TRACE_CBID_cudaLaunch_v3020) {
@@ -129,23 +132,22 @@ getEventValueCallback(void *userdata, CUpti_CallbackDomain domain,
     }
 }
 
-static void
-cleanUp(int *h_A, int *h_B, int *h_C, int *d_A, int *d_B, int *d_C)
+static void cleanUp(int *h_A, int *h_B, int *h_C, int *d_A, int *d_B, int *d_C)
 {
-  if (d_A)
-    cudaFree(d_A);
-  if (d_B)
-    cudaFree(d_B);
-  if (d_C)
-    cudaFree(d_C);
+    if (d_A)
+        cudaFree(d_A);
+    if (d_B)
+        cudaFree(d_B);
+    if (d_C)
+        cudaFree(d_C);
 
-  // Free host memory
-  if (h_A)
-    free(h_A);
-  if (h_B)
-    free(h_B);
-  if (h_C)
-    free(h_C);
+    // Free host memory
+    if (h_A)
+        free(h_A);
+    if (h_B)
+        free(h_B);
+    if (h_C)
+        free(h_C);
 }
 
 static uint64_t cupti_profile_event(CUdevice dev, CUpti_EventID event_id)
@@ -175,13 +177,13 @@ static uint64_t cupti_profile_event(CUdevice dev, CUpti_EventID event_id)
 
     // Initialize a callback subscriber with a callback function and user data.
     cupti_res = cuptiSubscribe(&subscriber,
-                               (CUpti_CallbackFunc)getEventValueCallback,
-                               &trace);
+            (CUpti_CallbackFunc)getEventValueCallback,
+            &trace);
     CHECK_CUPTI_ERROR(cupti_res, "cuptiSubscribe");
 
     // Enable or disabled callbacks for a specific domain and callback ID.
     cupti_res = cuptiEnableCallback(1, subscriber, CUPTI_CB_DOMAIN_RUNTIME_API,
-                                    CUPTI_RUNTIME_TRACE_CBID_cudaLaunch_v3020);
+            CUPTI_RUNTIME_TRACE_CBID_cudaLaunch_v3020);
     CHECK_CUPTI_ERROR(cupti_res, "cuptiEnableCallback");
 
     // Run a CUDA sample.
@@ -237,7 +239,6 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    // Returns a handle to a compute device.
     ret = cuDeviceGet(&dev, device_id);
     CHECK_CU_ERROR(ret, "cuDeviceGet");
 
@@ -246,7 +247,7 @@ int main(int argc, char **argv)
 
     event_val = cupti_profile_event(dev, event_id);
 
-    printf("Event Name : %s \n", event_name);
+    printf("Event Name : %s \n",   event_name);
     printf("Event Value : %llu\n", (unsigned long long)event_val);
 
     cudaDeviceSynchronize();
