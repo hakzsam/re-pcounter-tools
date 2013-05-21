@@ -21,7 +21,7 @@
 #define DESC_SHORT      512
 #define DESC_LONG       2048
 #define CATEGORY_LENGTH sizeof(CUpti_EventCategory)
-#define CUDA_SAMPLE     "cuda_sample"
+#define CUDA_SAMPLE     "./cuda_sample"
 
 #define CHECK_CU_ERROR(err, cufunc)                                            \
     if (err != CUDA_SUCCESS) {                                                 \
