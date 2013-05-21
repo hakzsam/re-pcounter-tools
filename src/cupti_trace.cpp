@@ -603,12 +603,21 @@ int main(int argc, char **argv)
         }
     } else if (IS_OPTS_FLAG(FLAG_LIST_EVENTS)) {
         if (!IS_OPTS_FLAG(FLAG_DOMAIN_ID)) {
-            // Query first domain on the device.
-            size = sizeof(CUpti_EventDomainID);
-            cupti_ret = cuptiDeviceEnumEventDomains(dev, &size,
-                                                    (CUpti_EventDomainID *)&domain_id);
-            CHECK_CUPTI_ERROR(cupti_ret, "cuptiDeviceEnumEventDomains");
-            printf("Assuming default domain id %d.\n", domain_id);
+            // List all events.
+            struct domain *domains = NULL;
+            uint32_t num_domains, i;
+
+            if (!(domains = get_domains(dev, &num_domains)))
+                return -1;
+
+            for (i = 0; i < num_domains; i++) {
+                struct domain *d = &domains[i];
+
+                if (list_events(d->id) < 0) {
+                    fprintf(stderr, "Cannot list events\n");
+                    return EXIT_FAILURE;
+                }
+            }
         } else {
             // Validate the domain on the device.
             CUpti_EventDomainID *domain_id_arr = NULL;
