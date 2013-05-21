@@ -262,6 +262,7 @@ static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain
         CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
     }
 
+    free(event_id);
     return events;
 }
 
