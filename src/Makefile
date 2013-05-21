@@ -1,18 +1,31 @@
-GCC		= gcc
-NVCC		= nvcc
-EXEC		= cupti_trace
-CUDA_PATH	= /opt/cuda
-CUDA_INC_PATH	= $(CUDA_PATH)/include
-CUPTI_PATH	= $(CUDA_PATH)/extras/CUPTI
-CUPTI_INC_PATH	= $(CUPTI_PATH)/include
-INCLUDES	= -I$(CUDA_INC_PATH) -I$(CUPTI_INC_PATH)
-LIBS		= -L$(CUPTI_PATH)/lib64 -lcupti -lcuda
+CUPTI_PATH=/opt/cuda/extras/CUPTI
+INCLUDES=-I$(CUPTI_PATH)/include
 
-cupti_trace: cupti_trace.o
-	$(NVCC) -o $@ $< $(LIBS)
+ifndef OS
+ OS   := $(shell uname)
+ HOST_ARCH := $(shell uname -m)
+endif
 
-cupti_trace.o: cupti_trace.cpp
-	$(NVCC) -c $(INCLUDES) $<
+ifeq ($(OS),Windows_NT)
+    export PATH := $(PATH):$(CUPTI_PATH)/libWin32:$(CUPTI_PATH)/libx64
+    LIBS= -lcuda -L $(CUPTI_PATH)/libWin32 -L $(CUPTI_PATH)/libx64 -lcupti
+    OBJ = obj
+else
+    ifeq ($(OS), Darwin)
+        export DYLD_LIBRARY_PATH := $(DYLD_LIBRARY_PATH):$(CUPTI_PATH)/lib
+        LIBS= -Xlinker -framework -Xlinker cuda -L $(CUPTI_PATH)/lib -lcupti
+    else
+        export LD_LIBRARY_PATH := $(LD_LIBRARY_PATH):$(CUPTI_PATH)/lib:$(CUPTI_PATH)/lib64
+        LIBS= -lcuda -L $(CUPTI_PATH)/lib -L $(CUPTI_PATH)/lib64 -lcupti
+    endif
+    OBJ = o
+endif
+
+cupti_trace: cupti_trace.$(OBJ)
+	nvcc -o $@ cupti_trace.$(OBJ) $(LIBS)
+
+cupti_trace.$(OBJ): cupti_trace.cpp
+	nvcc -c $(INCLUDES) $<
 
 clean:
-	rm -f cupti_trace cupti_trace.o
+	rm -f cupti_trace cupti_trace.$(OBJ)
