@@ -425,6 +425,8 @@ static int trace_event(const char *chipset, const char *event)
     }
 
     printf("Trace of '%s' saved in the file '%s'\n", event, trace_log);
+    fflush(stdout);
+
     return 0;
 }
 
@@ -586,6 +588,7 @@ int main(int argc, char **argv)
     printf("CUDA Device Name: %s\n", device_name);
     printf("CUDA Compute Capability: %d.%d\n", compute_capability_major,
            compute_capability_minor);
+    fflush(stdout);
 
     // Trace ioctl calls.
     if (IS_OPTS_FLAG(FLAG_TRACE)) {
