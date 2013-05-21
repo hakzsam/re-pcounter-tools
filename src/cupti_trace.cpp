@@ -64,6 +64,7 @@ struct domain {
 enum flags {
     FLAG_DEVICE_ID = 0,
     FLAG_DOMAIN_ID,
+    FLAG_EVENT,
     FLAG_LIST_DOMAINS,
     FLAG_LIST_EVENTS,
     FLAG_LIST_METRICS,
@@ -77,7 +78,7 @@ static void usage()
     printf("       --device <dev_id> --list-domains                      : displays supported domains for specified device\n");
     printf("       --device <dev_id> --list-metrics                      : displays supported metrics for specified device\n");
     printf("       --device <dev_id> --domain <domain_id> --list-events  : displays supported events for specified domain and device\n");
-    printf("       --trace <chipset>                                     : traces ioctl calls\n");
+    printf("       --trace <chipset> --event <event_name>                : traces ioctl calls\n");
     printf("Note: default device is 0 and default domain is first domain for device\n");
 }
 
@@ -481,7 +482,7 @@ int main(int argc, char **argv)
     CUpti_EventDomainID domain_id = 0;
     CUptiResult cupti_ret = CUPTI_SUCCESS;
     size_t size;
-    char chipset[128], device_name[128];
+    char chipset[128], device_name[128], event_name[128];
     int compute_capability_major, compute_capability_minor;
 
     if (argc < 2) {
@@ -508,6 +509,7 @@ int main(int argc, char **argv)
         static struct option long_options[] = {
             {"device",          required_argument,  0,  'd'},
             {"domain",          required_argument,  0,  'o'},
+            {"event",           required_argument,  0,  'v'},
             {"help",            no_argument,        0,  'h'},
             {"list-events",     no_argument,        0,  'e'},
             {"list-metrics",    no_argument,        0,  'm'},
@@ -545,6 +547,10 @@ int main(int argc, char **argv)
             case 't':
                 strncpy(chipset, optarg, sizeof(chipset));
                 SET_OPTS_FLAG(FLAG_TRACE);
+                break;
+            case 'v':
+                strncpy(event_name, optarg, sizeof(event_name));
+                SET_OPTS_FLAG(FLAG_EVENT);
                 break;
             case 'h':
             case '?':
@@ -589,9 +595,16 @@ int main(int argc, char **argv)
             return -1;
         }
 
-        if ((ret = trace_all_events(dev, chipset)) < 0) {
-            fprintf(stderr, "Cannot trace ioctl calls.\n");
-            return ret;
+        if (IS_OPTS_FLAG(FLAG_EVENT)) {
+            if ((ret = trace_event(chipset, event_name)) < 0) {
+                fprintf(stderr, "Cannot trace event '%s'.\n", event_name);
+                return ret;
+            }
+        } else {
+            if ((ret = trace_all_events(dev, chipset)) < 0) {
+                fprintf(stderr, "Cannot trace all events.\n");
+                return ret;
+            }
         }
         return ret;
     }
