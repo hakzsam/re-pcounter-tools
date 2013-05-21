@@ -501,16 +501,6 @@ int main(int argc, char **argv)
             break;
 
         switch (c) {
-            /*
-            case 0:
-                if (long_options[option_index].flag != 0)
-                    break;
-                printf ("option %s", long_options[option_index].name);
-                if (optarg)
-                    printf (" with arg %s", optarg);
-                printf ("\n");
-                break;
-            */
             case 'd':
                 device_id = atoi(optarg);
                 SET_OPTS_FLAG(FLAG_DEVICE_ID);
@@ -621,12 +611,6 @@ int main(int argc, char **argv)
     } else if (IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
         fprintf(stderr, "Work in progress! ;)\n");
         return -1;
-    }
-
-    if (IS_OPTS_FLAG(FLAG_LIST_DOMAINS) || IS_OPTS_FLAG(FLAG_LIST_EVENTS)
-        || IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
-        // Do not try to trace ioctls calls.
-        return 0;
     }
 
 fail:
