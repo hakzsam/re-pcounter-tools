@@ -12,7 +12,6 @@
 
 /**
  * TODO:
- *  - do not hardcode chipset (use nvalist).
  *  - do not use lookup through popen() (it's bad).
  *  - use env vars for setting valgrind-mmt.
  *  - fix memleaks.
@@ -68,7 +67,8 @@ enum flags {
     FLAG_DOMAIN_ID,
     FLAG_LIST_DOMAINS,
     FLAG_LIST_EVENTS,
-    FLAG_LIST_METRICS
+    FLAG_LIST_METRICS,
+    FLAG_TRACE
 };
 
 static void usage()
@@ -78,6 +78,7 @@ static void usage()
     printf("       --device <dev_id> --list-domains                      : displays supported domains for specified device\n");
     printf("       --device <dev_id> --list-metrics                      : displays supported metrics for specified device\n");
     printf("       --device <dev_id> --domain <domain_id> --list-events  : displays supported events for specified domain and device\n");
+    printf("       --trace <chipset>                                     : traces ioctl calls\n");
     printf("Note: default device is 0 and default domain is first domain for device\n");
 }
 
@@ -305,13 +306,12 @@ static int list_events(CUpti_EventDomainID domain_id)
     return 0;
 }
 
-static int lookup(const char *reg, const char *val)
+static int lookup(const char *chipset, const char *reg, const char *val)
 {
     char cmd[1024], buf[1024];
     FILE *f;
 
-    /* Do not hardcode chipset name. */
-    sprintf(cmd, "lookup -a NVC1 %s %s 2> /dev/null\n", reg, val);
+    sprintf(cmd, "lookup -a %s %s %s 2> /dev/null\n", chipset, reg, val);
 
     if (!(f = popen(cmd, "r"))) {
         perror("popen");
@@ -330,7 +330,7 @@ static int lookup(const char *reg, const char *val)
     return 0;
 }
 
-static int mmiotrace(const char *event)
+static int mmiotrace(const char *chipset, const char *event)
 {
     char trace_log[1204], line[1024];
     pid_t pid;
@@ -401,7 +401,7 @@ static int mmiotrace(const char *event)
         printf("(%c) register: %s, value: %s, mask: %s ==> ",
                (dir ? 'w' : 'r'), reg, val, mask);
 
-        lookup(reg, val);
+        lookup(chipset, reg, val);
     }
 
     if (fclose(f) < 0) {
@@ -414,7 +414,7 @@ static int mmiotrace(const char *event)
     return 0;
 }
 
-static int run(CUdevice dev)
+static int run(CUdevice dev, const char *chipset)
 {
     struct cupti_domain *domains = NULL;
     uint32_t num_domains, i, j;
@@ -437,7 +437,7 @@ static int run(CUdevice dev)
         for (j = 0; j < d->num_events; j++) {
             struct cupti_event *e = &d->events[j];
 
-            if ((ret = mmiotrace(e->name)) < 0)
+            if ((ret = mmiotrace(chipset, e->name)) < 0)
                 return ret;
         }
     }
@@ -457,6 +457,12 @@ int main(int argc, char **argv)
     CUpti_EventDomainID domain_id = 0;
     CUptiResult cupti_ret = CUPTI_SUCCESS;
     size_t size;
+    char chipset[128];
+
+    if (argc < 2) {
+        usage();
+        return -1;
+    }
 
     // Initialize the driver API.
     cuda_ret = cuInit(0);
@@ -481,12 +487,13 @@ int main(int argc, char **argv)
             {"list-events",     no_argument,        0,  'e'},
             {"list-metrics",    no_argument,        0,  'm'},
             {"list-domains",    no_argument,        0,  'n'},
+            {"trace",           required_argument,  0,  't'},
             {0, 0, 0, 0}
         };
         // getopt_long stores the option index here.
         int option_index = 0;
 
-        c = getopt_long (argc, argv, "d:ehmno", long_options, &option_index);
+        c = getopt_long (argc, argv, "d:ehmnot:", long_options, &option_index);
 
         // Detect the end of the options.
         if (c == -1)
@@ -520,6 +527,10 @@ int main(int argc, char **argv)
                 domain_id = atoi(optarg);
                 SET_OPTS_FLAG(FLAG_DOMAIN_ID);
                 break;
+            case 't':
+                strncpy(chipset, optarg, sizeof(chipset));
+                SET_OPTS_FLAG(FLAG_TRACE);
+                break;
             case 'h':
             case '?':
                 usage();
@@ -539,6 +550,15 @@ int main(int argc, char **argv)
     // Return a device handle given an ordinal in the range.
     cuda_ret = cuDeviceGet(&dev, device_id);
     CHECK_CU_ERROR(cuda_ret, "cuDeviceGet");
+
+    if (IS_OPTS_FLAG(FLAG_TRACE)) {
+        // Trace ioctl calls.
+        if (run(dev, chipset) < 0) {
+            fprintf(stderr, "Cannot trace ioctl calls.\n");
+            return EXIT_FAILURE;
+        }
+        return EXIT_SUCCESS;
+    }
 
     if (IS_OPTS_FLAG(FLAG_LIST_DOMAINS)) {
         if (list_domains(dev) < 0) {
@@ -607,21 +627,6 @@ int main(int argc, char **argv)
         // Do not try to trace ioctls calls.
         return 0;
     }
-
-    if (run(dev) < 0) {
-        fprintf(stderr, "Cannot trace ioctl calls.\n");
-        goto fail;
-    }
-
-    /*
-    // Print any remaining command line arguments (not options).
-    if (optind < argc) {
-        printf ("non-option ARGV-elements: ");
-        while (optind < argc)
-            printf ("%s ", argv[optind++]);
-        putchar ('\n');
-    }
-    */
 
 fail:
    // cudaDeviceSynchronize();
