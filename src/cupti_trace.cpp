@@ -178,11 +178,11 @@ static int list_domains(CUdevice dev)
     for (i = 0; i < num_domains; i++) {
         struct cupti_domain *d = &domains[i];
 
-        printf ("Domain# %d\n",                     i + 1);
-        printf ("Id         = %d\n",                d->id);
-        printf ("Name       = %s\n",                d->name);
-        printf ("Profiled instance count = %d\n",   d->profiled_inst);
-        printf ("Total instance count = %d\n",      d->total_inst);
+        printf("Domain# %d\n",                     i + 1);
+        printf("Id         = %d\n",                d->id);
+        printf("Name       = %s\n",                d->name);
+        printf("Profiled instance count = %d\n",   d->profiled_inst);
+        printf("Total instance count = %d\n\n",    d->total_inst);
     }
 
     free(domains);
