@@ -424,7 +424,7 @@ static int trace_event(const char *chipset, const char *event)
         return -1;
     }
 
-    printf("Trace of '%s' saved in the file '%s'\n", event, trace_log);
+    printf("Trace of '%s' saved in the file '%s'\n\n", event, trace_log);
     fflush(stdout);
 
     return 0;
