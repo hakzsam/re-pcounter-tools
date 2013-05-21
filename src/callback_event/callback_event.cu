@@ -71,8 +71,6 @@ static int run_vector_add()
   // Invoke kernel
   threadsPerBlock = 256;
   blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
-  printf("Launching kernel: blocks %d, thread/block %d\n",
-         blocksPerGrid, threadsPerBlock);
 
   VecAdd<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, N);
     
