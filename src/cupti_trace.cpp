@@ -280,41 +280,44 @@ fail:
     return events;
 }
 
+static void print_event(struct event *e, struct domain *d)
+{
+    printf("Id        = %d\n",      e->id);
+    printf("Domain    = %s (%d)\n", d->name, d->id);
+    printf("Name      = %s\n",      e->name);
+    printf("Shortdesc = %s\n",      e->short_desc);
+    printf("Longdesc  = %s\n",      e->long_desc);
 
-static void list_events(CUpti_EventDomainID domain_id)
+    switch (e->category) {
+        case CUPTI_EVENT_CATEGORY_INSTRUCTION:
+            printf("Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION\n");
+            break;
+        case CUPTI_EVENT_CATEGORY_MEMORY:
+            printf("Category  = CUPTI_EVENT_CATEGORY_MEMORY\n");
+            break;
+        case CUPTI_EVENT_CATEGORY_CACHE:
+            printf("Category  = CUPTI_EVENT_CATEGORY_CACHE\n");
+            break;
+        case CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER:
+            printf("Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER\n");
+            break;
+        default:
+            printf("Category  = CUPTI_EVENT_CATEGORY_UNKNOWN\n");
+            break;
+    }
+}
+
+static void list_events(struct domain *d)
 {
     struct event *events = NULL;
     uint32_t num_events, i;
 
-    if (!(events = get_events_by_domain(domain_id, &num_events)))
+    if (!(events = get_events_by_domain(d->id, &num_events)))
         return;
 
     for (i = 0; i < num_events; i++) {
-        struct event *e = &events[i];
-
-        printf("Event# %d\n",       i + 1);
-        printf("Id        = %d\n",  e->id);
-        printf("Name      = %s\n",  e->name);
-        printf("Shortdesc = %s\n",  e->short_desc);
-        printf("Longdesc  = %s\n",  e->long_desc);
-
-        switch (e->category) {
-            case CUPTI_EVENT_CATEGORY_INSTRUCTION:
-                printf("Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION\n\n");
-                break;
-            case CUPTI_EVENT_CATEGORY_MEMORY:
-                printf("Category  = CUPTI_EVENT_CATEGORY_MEMORY\n\n");
-                break;
-            case CUPTI_EVENT_CATEGORY_CACHE:
-                printf("Category  = CUPTI_EVENT_CATEGORY_CACHE\n\n");
-                break;
-            case CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER:
-                printf("Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER\n\n");
-                break;
-            default:
-                printf("Category  = CUPTI_EVENT_CATEGORY_UNKNOWN\n\n");
-                break;
-        }
+        printf("\nEvent# %d\n", i + 1);
+        print_event(&events[i], d);
     }
     free(events);
 }
@@ -617,20 +620,7 @@ int main(int argc, char **argv)
             return EXIT_FAILURE;
         }
     } else if (IS_OPTS_FLAG(FLAG_LIST_EVENTS)) {
-        if (!IS_OPTS_FLAG(FLAG_DOMAIN_ID)) {
-            // List all events.
-            struct domain *domains = NULL;
-            uint32_t num_domains, i;
-
-            if (!(domains = get_domains(dev, &num_domains)))
-                return -1;
-
-            for (i = 0; i < num_domains; i++) {
-                struct domain *d = &domains[i];
-
-                list_events(d->id);
-            }
-        } else {
+        if (IS_OPTS_FLAG(FLAG_DOMAIN_ID)) {
             // Validate the domain on the device.
             CUpti_EventDomainID *domain_id_arr = NULL;
             uint32_t max_domains = 0, i = 0;
@@ -668,8 +658,22 @@ int main(int argc, char **argv)
                 printf("Domain Id %d is not supported by device.\n", domain_id);
                 goto fail;
             }
+        }
 
-            list_events(domain_id);
+        // List all events.
+        struct domain *domains = NULL;
+        uint32_t num_domains, i;
+
+        if (!(domains = get_domains(dev, &num_domains)))
+            return -1;
+
+        for (i = 0; i < num_domains; i++) {
+            struct domain *d = &domains[i];
+
+            if (IS_OPTS_FLAG(FLAG_DOMAIN_ID) && d->id != domain_id)
+                continue;
+
+            list_events(&domains[i]);
         }
     } else if (IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
         fprintf(stderr, "Work in progress! ;)\n");
