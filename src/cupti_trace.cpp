@@ -641,6 +641,6 @@ int main(int argc, char **argv)
     }
 
 fail:
-   // cudaDeviceSynchronize();
+    cudaDeviceSynchronize();
     return ret;
 }
