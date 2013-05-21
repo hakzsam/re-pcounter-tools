@@ -167,6 +167,14 @@ fail:
     return domains;
 }
 
+static void print_domain(struct domain *d)
+{
+    printf("Id                      = %d\n",    d->id);
+    printf("Name                    = %s\n",    d->name);
+    printf("Profiled instance count = %d\n",    d->profiled_inst);
+    printf("Total instance count    = %d\n",  d->total_inst);
+}
+
 static int list_domains(CUdevice dev)
 {
     struct domain *domains = NULL;
@@ -176,13 +184,8 @@ static int list_domains(CUdevice dev)
         return -1;
 
     for (i = 0; i < num_domains; i++) {
-        struct domain *d = &domains[i];
-
-        printf("Domain# %d\n",                     i + 1);
-        printf("Id         = %d\n",                d->id);
-        printf("Name       = %s\n",                d->name);
-        printf("Profiled instance count = %d\n",   d->profiled_inst);
-        printf("Total instance count = %d\n\n",    d->total_inst);
+        printf("\nDomain# %d\n", i + 1);
+        print_domain(&domains[i]);
     }
 
     free(domains);
