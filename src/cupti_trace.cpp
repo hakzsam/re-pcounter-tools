@@ -417,8 +417,9 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
         }
 
         dir &= 0x00000001;
-        printf("(%c) register: %s, value: %s, mask: %s ==> ",
+        printf("(%c) register: %s, value: %s, mask: %s ",
                (dir ? 'w' : 'r'), reg, val, mask);
+        printf("%s ", (dir ? "<==" : "==>"));
 
         if (lookup(chipset, reg, val) < 0) {
             fprintf(stderr, "Cannot run lookup.\n");
