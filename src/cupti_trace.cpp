@@ -414,7 +414,7 @@ static int trace_event(const char *chipset, const char *event)
                (dir ? 'w' : 'r'), reg, val, mask);
 
         if (lookup(chipset, reg, val) < 0) {
-            fprintf(stderr, "Cannot trace_all_events lookup.\n");
+            fprintf(stderr, "Cannot run lookup.\n");
             return -1;
         }
     }
@@ -594,7 +594,7 @@ int main(int argc, char **argv)
     if (IS_OPTS_FLAG(FLAG_TRACE)) {
         // Check if the CUDA sample has been compiled by the user.
         if (!file_exists(CUDA_SAMPLE)) {
-            fprintf(stderr, "CUDA sample not found! Please trace_all_events 'make cuda_sample'.\n");
+            fprintf(stderr, "CUDA sample not found! Please run 'make cuda_sample'.\n");
             return -1;
         }
 
