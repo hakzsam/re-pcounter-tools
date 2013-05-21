@@ -469,7 +469,8 @@ int main(int argc, char **argv)
     CUpti_EventDomainID domain_id = 0;
     CUptiResult cupti_ret = CUPTI_SUCCESS;
     size_t size;
-    char chipset[128];
+    char chipset[128], device_name[128];
+    int compute_capability_major, compute_capability_minor;
 
     if (argc < 2) {
         usage();
@@ -552,6 +553,21 @@ int main(int argc, char **argv)
     // Return a device handle given an ordinal in the range.
     cuda_ret = cuDeviceGet(&dev, device_id);
     CHECK_CU_ERROR(cuda_ret, "cuDeviceGet");
+
+    // Returns an identifer string for the device.
+    cuda_ret = cuDeviceGetName(device_name, sizeof(device_name), dev);
+    CHECK_CU_ERROR(cuda_ret, "cuDeviceGetName");
+
+    // Returns the compute capability of the device.
+    cuda_ret = cuDeviceComputeCapability(&compute_capability_major,
+                                         &compute_capability_minor,
+                                         dev);
+    CHECK_CU_ERROR(cuda_ret, "cuDeviceComputeCapability");
+
+    printf("CUDA Device Id  : %d\n", device_id);
+    printf("CUDA Device Name: %s\n", device_name);
+    printf("CUDA Compute Capability: %d.%d\n", compute_capability_major,
+           compute_capability_minor);
 
     if (IS_OPTS_FLAG(FLAG_TRACE)) {
         // Trace ioctl calls.
