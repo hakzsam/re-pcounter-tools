@@ -14,8 +14,6 @@
  * TODO:
  *  - do not use lookup through popen() (it's bad).
  *  - use env vars for setting valgrind-mmt.
- *  - fix memleaks.
- *  - check error codes.
  */
 
 #define NAME_SHORT      64
@@ -327,7 +325,7 @@ static int lookup(const char *chipset, const char *reg, const char *val)
 
     if (!(f = popen(cmd, "r"))) {
         perror("popen");
-        return -errno;
+        return -1;
     }
 
     while (fgets(buf, sizeof(buf), f) != NULL) {
@@ -336,7 +334,7 @@ static int lookup(const char *chipset, const char *reg, const char *val)
 
     if (pclose(f) < 0) {
         perror("pclose");
-        return -errno;
+        return -1;
     }
 
     return 0;
@@ -352,12 +350,12 @@ static int mmiotrace(const char *chipset, const char *event)
 
     if ((pid = fork()) < 0) {
         perror("fork");
-        return -errno;
+        return -1;
     }
 
     if (!(f = fopen(trace_log, "w+"))) {
         perror("fopen");
-        return -errno;
+        return -1;
     }
 
     if (pid == 0) {
@@ -413,16 +411,18 @@ static int mmiotrace(const char *chipset, const char *event)
         printf("(%c) register: %s, value: %s, mask: %s ==> ",
                (dir ? 'w' : 'r'), reg, val, mask);
 
-        lookup(chipset, reg, val);
+        if (lookup(chipset, reg, val) < 0) {
+            fprintf(stderr, "Cannot run lookup.\n");
+            return -1;
+        }
     }
 
     if (fclose(f) < 0) {
         perror("fclose");
-        return -errno;
+        return -1;
     }
 
     printf("Trace of '%s' saved in the file '%s'\n", event, trace_log);
-
     return 0;
 }
 
@@ -555,11 +555,11 @@ int main(int argc, char **argv)
 
     if (IS_OPTS_FLAG(FLAG_TRACE)) {
         // Trace ioctl calls.
-        if (run(dev, chipset) < 0) {
+        if ((ret = run(dev, chipset)) < 0) {
             fprintf(stderr, "Cannot trace ioctl calls.\n");
-            return EXIT_FAILURE;
+            return ret;
         }
-        return EXIT_SUCCESS;
+        return ret;
     }
 
     if (IS_OPTS_FLAG(FLAG_LIST_DOMAINS)) {
