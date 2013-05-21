@@ -42,6 +42,24 @@ static void init_vec(int *vec, int n)
         vec[i] = i;
 }
 
+static void clean_up(int *h_A, int *h_B, int *h_C, int *d_A, int *d_B, int *d_C)
+{
+    if (d_A)
+        cudaFree(d_A);
+    if (d_B)
+        cudaFree(d_B);
+    if (d_C)
+        cudaFree(d_C);
+
+    // Free host memory
+    if (h_A)
+        free(h_A);
+    if (h_B)
+        free(h_B);
+    if (h_C)
+        free(h_C);
+}
+
 static int run_vector_add()
 {
     int N = 50000;
@@ -86,12 +104,15 @@ static int run_vector_add()
         sum = h_A[i] + h_B[i];
         if (h_C[i] != sum) {
             printf("kernel execution FAILED\n");
-            goto Error;
+            goto fail;
         }
     }
 
+    clean_up(h_A, h_B, h_C, d_A, d_B, d_C);
     return 0;
-Error:
+
+fail:
+    clean_up(h_A, h_B, h_C, d_A, d_B, d_C);
     return -1;
 }
 
@@ -132,23 +153,6 @@ void CUPTIAPI getEventValueCallback(void *userdata, CUpti_CallbackDomain domain,
     }
 }
 
-static void cleanUp(int *h_A, int *h_B, int *h_C, int *d_A, int *d_B, int *d_C)
-{
-    if (d_A)
-        cudaFree(d_A);
-    if (d_B)
-        cudaFree(d_B);
-    if (d_C)
-        cudaFree(d_C);
-
-    // Free host memory
-    if (h_A)
-        free(h_A);
-    if (h_B)
-        free(h_B);
-    if (h_C)
-        free(h_C);
-}
 
 static uint64_t cupti_profile_event(CUdevice dev, CUpti_EventID event_id)
 {
