@@ -370,7 +370,7 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
     if (pid == 0) {
         dup2(fileno(f), 2);
 
-        execlp("/usr/local/bin/valgrind", "valgrind",
+        execlp("../local/bin/valgrind", "valgrind",
                 "--tool=mmt",
                 "--mmt-trace-file=/dev/nvidia0",
                 "--mmt-trace-nvidia-ioctls",
