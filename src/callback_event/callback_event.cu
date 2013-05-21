@@ -2,8 +2,14 @@
 #include <cuda.h>
 #include <cupti.h>
 
-#include "cuda_extras.h"
 #include "cupti_extras.h"
+
+#define CHECK_CU_ERROR(err, cufunc)                                            \
+    if (err != CUDA_SUCCESS) {                                                 \
+        fprintf(stderr, "%s:%d:Error %d for CUDA Driver API function '%s'.\n", \
+                __FILE__, __LINE__, err, cufunc);                              \
+        exit(-1);                                                              \
+    }
 
 // Structure to hold data collected by callback
 typedef struct RuntimeApiTrace_st {
@@ -197,12 +203,13 @@ static uint64_t cupti_profile_event(CUdevice dev, CUpti_EventID event_id)
 
 int main(int argc, char **argv)
 {
-    struct device_info *device_info = NULL;
     CUpti_EventID event_id;
     uint64_t event_val;
-    int device_num = 0; /* Assuming device 0 by default */
+    int device_id = 0; /* Assuming device 0 by default */
     char *event_name;
     CUdevice dev = 0;
+    int device_count;
+    CUresult ret;
 
     if (argc < 2) {
         fprintf(stderr, "Usage: %s <event_name> [device_num]\n", argv[0]);
@@ -211,18 +218,22 @@ int main(int argc, char **argv)
     event_name = argv[1];
 
     if (argc > 2)
-        device_num = atoi(argv[2]);
+        device_id = atoi(argv[2]);
 
-    if (!cuda_init()) {
+    ret = cuInit(0);
+    CHECK_CU_ERROR(ret, "cuInit");
+
+    ret = cuDeviceGetCount(&device_count);
+    CHECK_CU_ERROR(ret, "cuDeviceGetCount");
+
+    if (device_count == 0) {
         fprintf(stderr, "There is no device supporting CUDA.\n");
         return -1;
     }
 
-    device_info = cuda_get_device_info(device_num);
-    if (device_info) {
-        cuda_print_device_info(device_info);
-    }
-    free(device_info);
+    // Returns a handle to a compute device.
+    ret = cuDeviceGet(&dev, device_id);
+    CHECK_CU_ERROR(ret, "cuDeviceGet");
 
     if (!cupti_findEvent(dev, event_name, &event_id)) {
         fprintf(stderr, "Invalid event name: %s\n", event_name);
