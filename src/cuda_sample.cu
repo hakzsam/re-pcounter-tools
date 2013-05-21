@@ -251,8 +251,7 @@ int main(int argc, char **argv)
 
     event_val = cupti_profile_event(dev, event_id);
 
-    printf("Event Name : %s \n",   event_name);
-    printf("Event Value : %llu (0x%02x)\n", (unsigned long long)event_val,
+    printf("Value     = %llu (0x%02x)\n", (unsigned long long)event_val,
            event_val);
 
     cudaDeviceSynchronize();

@@ -346,13 +346,16 @@ static int lookup(const char *chipset, const char *reg, const char *val)
     return 0;
 }
 
-static int trace_event(const char *chipset, const char *event)
+static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
     char trace_log[1204], line[1024];
     pid_t pid;
     FILE *f;
 
-    sprintf(trace_log, "%s.trace", event);
+    sprintf(trace_log, "%s.trace", e->name);
+
+    // Display information about the event.
+    print_event(e, d);
 
     if ((pid = fork()) < 0) {
         perror("fork");
@@ -372,7 +375,7 @@ static int trace_event(const char *chipset, const char *event)
                 "--mmt-trace-file=/dev/nvidia0",
                 "--mmt-trace-nvidia-ioctls",
                 CUDA_SAMPLE,
-                event,
+                e->name,
                 NULL);
 
         if (errno == ENOENT) {
@@ -428,7 +431,7 @@ static int trace_event(const char *chipset, const char *event)
         return -1;
     }
 
-    printf("Trace of '%s' saved in the file '%s'\n\n", event, trace_log);
+    printf("Trace of '%s' saved in the file '%s'\n\n", e->name, trace_log);
     fflush(stdout);
 
     return 0;
@@ -455,7 +458,7 @@ static int trace_all_events(CUdevice dev, const char *chipset)
         for (j = 0; j < d->num_events; j++) {
             struct event *e = &d->events[j];
 
-            if ((ret = trace_event(chipset, e->name)) < 0)
+            if ((ret = trace_event(chipset, d, e)) < 0)
                 return ret;
         }
     }
@@ -588,7 +591,7 @@ int main(int argc, char **argv)
 
     printf("CUDA Device Id  : %d\n", device_id);
     printf("CUDA Device Name: %s\n", device_name);
-    printf("CUDA Compute Capability: %d.%d\n", compute_capability_major,
+    printf("CUDA Compute Capability: %d.%d\n\n", compute_capability_major,
            compute_capability_minor);
     fflush(stdout);
 
@@ -600,18 +603,33 @@ int main(int argc, char **argv)
             return -1;
         }
 
-        if (IS_OPTS_FLAG(FLAG_EVENT)) {
-            if ((ret = trace_event(chipset, event_name)) < 0) {
-                fprintf(stderr, "Cannot trace event '%s'.\n", event_name);
-                return ret;
-            }
-        } else {
-            if ((ret = trace_all_events(dev, chipset)) < 0) {
-                fprintf(stderr, "Cannot trace all events.\n");
-                return ret;
+        struct domain *domains = NULL;
+        uint32_t num_domains, i, j;
+        int ret;
+
+        domains = get_domains(dev, &num_domains);
+        if (!domains) {
+            fprintf(stderr, "Failed to get domains.\n");
+            return -1;
+        }
+
+        for (i = 0; i < num_domains; i++) {
+            struct domain *d = &domains[i];
+
+            if (!(d->events = get_events_by_domain(d->id, &d->num_events)))
+                continue;
+
+            for (j = 0; j < d->num_events; j++) {
+                struct event *e = &d->events[j];
+
+                if (IS_OPTS_FLAG(FLAG_EVENT) && strcmp(e->name, event_name))
+                    continue;
+
+                if ((ret = trace_event(chipset, d, e)) < 0)
+                    return ret;
             }
         }
-        return ret;
+        goto fail; // BAD HACK!!
     }
 
     if (IS_OPTS_FLAG(FLAG_LIST_DOMAINS)) {
