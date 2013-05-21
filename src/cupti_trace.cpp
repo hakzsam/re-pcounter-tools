@@ -278,13 +278,13 @@ fail:
 }
 
 
-static int list_events(CUpti_EventDomainID domain_id)
+static void list_events(CUpti_EventDomainID domain_id)
 {
     struct event *events = NULL;
     uint32_t num_events, i;
 
     if (!(events = get_events_by_domain(domain_id, &num_events)))
-        return -1;
+        return;
 
     for (i = 0; i < num_events; i++) {
         struct event *e = &events[i];
@@ -313,9 +313,7 @@ static int list_events(CUpti_EventDomainID domain_id)
                 break;
         }
     }
-
     free(events);
-    return 0;
 }
 
 static int lookup(const char *chipset, const char *reg, const char *val)
@@ -445,10 +443,8 @@ static int trace_all_events(CUdevice dev, const char *chipset)
     for (i = 0; i < num_domains; i++) {
         struct domain *d = &domains[i];
 
-        if (!(d->events = get_events_by_domain(d->id, &d->num_events))) {
-            fprintf(stderr, "Failed to get events.\n");
-            return -1;
-        }
+        if (!(d->events = get_events_by_domain(d->id, &d->num_events)))
+            continue;
 
         for (j = 0; j < d->num_events; j++) {
             struct event *e = &d->events[j];
@@ -629,10 +625,7 @@ int main(int argc, char **argv)
             for (i = 0; i < num_domains; i++) {
                 struct domain *d = &domains[i];
 
-                if (list_events(d->id) < 0) {
-                    fprintf(stderr, "Cannot list events\n");
-                    return EXIT_FAILURE;
-                }
+                list_events(d->id);
             }
         } else {
             // Validate the domain on the device.
@@ -672,11 +665,8 @@ int main(int argc, char **argv)
                 printf("Domain Id %d is not supported by device.\n", domain_id);
                 goto fail;
             }
-        }
 
-        if (list_events(domain_id) < 0) {
-            fprintf(stderr, "Cannot list events\n");
-            return EXIT_FAILURE;
+            list_events(domain_id);
         }
     } else if (IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
         fprintf(stderr, "Work in progress! ;)\n");
