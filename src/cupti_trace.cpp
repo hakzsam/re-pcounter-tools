@@ -21,6 +21,7 @@
 #define DESC_SHORT      512
 #define DESC_LONG       2048
 #define CATEGORY_LENGTH sizeof(CUpti_EventCategory)
+#define CUDA_SAMPLE     "cuda_sample"
 
 #define CHECK_CU_ERROR(err, cufunc)                                            \
     if (err != CUDA_SUCCESS) {                                                 \
@@ -365,7 +366,7 @@ static int mmiotrace(const char *chipset, const char *event)
                 "--tool=mmt",
                 "--mmt-trace-file=/dev/nvidia0",
                 "--mmt-trace-nvidia-ioctls",
-                "callback_event/callback_event",
+                CUDA_SAMPLE,
                 event,
                 NULL);
 
@@ -456,6 +457,17 @@ static int run(CUdevice dev, const char *chipset)
 
     free(domains);
     return 0;
+}
+
+static int file_exists(const char *filename)
+{
+    FILE *f;
+
+    if (!(f = fopen(filename, "r")))
+        return 0;
+
+    fclose(f);
+    return 1;
 }
 
 int main(int argc, char **argv)
@@ -569,8 +581,14 @@ int main(int argc, char **argv)
     printf("CUDA Compute Capability: %d.%d\n", compute_capability_major,
            compute_capability_minor);
 
+    // Trace ioctl calls.
     if (IS_OPTS_FLAG(FLAG_TRACE)) {
-        // Trace ioctl calls.
+        // Check if the CUDA sample has been compiled by the user.
+        if (!file_exists(CUDA_SAMPLE)) {
+            fprintf(stderr, "CUDA sample not found! Please run 'make cuda_sample'.\n");
+            return -1;
+        }
+
         if ((ret = run(dev, chipset)) < 0) {
             fprintf(stderr, "Cannot trace ioctl calls.\n");
             return ret;
