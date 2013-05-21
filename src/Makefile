@@ -16,7 +16,7 @@ else
         LIBS= -Xlinker -framework -Xlinker cuda -L $(CUPTI_PATH)/lib -lcupti
     else
         export LD_LIBRARY_PATH := $(LD_LIBRARY_PATH):$(CUPTI_PATH)/lib:$(CUPTI_PATH)/lib64
-        LIBS= -lcuda -L $(CUPTI_PATH)/lib -L $(CUPTI_PATH)/lib64 -lcupti
+        LIBS= -lcuda -L $(CUPTI_PATH)/lib64 -L $(CUPTI_PATH)/lib -lcupti
     endif
     OBJ = o
 endif
