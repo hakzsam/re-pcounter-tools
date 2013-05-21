@@ -21,13 +21,11 @@ else
     OBJ = o
 endif
 
-callback_event: callback_event.$(OBJ) cupti_extras.o
-	nvcc -o $@ callback_event.$(OBJ) cupti_extras.o $(LIBS)
+callback_event: callback_event.$(OBJ)
+	nvcc -o $@ callback_event.$(OBJ) $(LIBS)
 
 callback_event.$(OBJ): callback_event.cu
 	nvcc -c $(INCLUDES) $<
 
-cupti_extras.$(OBJ): ../cupti/cupti_extras.cpp
-	nvcc -c $(INCLUDES) $<
 clean:
-	rm -f callback_event callback_event.$(OBJ) cupti_extras.o
+	rm -f callback_event callback_event.$(OBJ)

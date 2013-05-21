@@ -2,7 +2,14 @@
 #include <cuda.h>
 #include <cupti.h>
 
-#include "cupti_extras.h"
+#define CHECK_CUPTI_ERROR(err, cuptifunc)                                 \
+    if (err != CUPTI_SUCCESS) {                                           \
+        const char *errstr;                                               \
+        cuptiGetResultString(err, &errstr);                               \
+        fprintf(stderr, "%s:%d:Error %s for CUPTI API function '%s'.\n",  \
+                __FILE__, __LINE__, errstr, cuptifunc);                   \
+        exit(-1);                                                         \
+    }
 
 #define CHECK_CU_ERROR(err, cufunc)                                            \
     if (err != CUDA_SUCCESS) {                                                 \
@@ -203,6 +210,7 @@ static uint64_t cupti_profile_event(CUdevice dev, CUpti_EventID event_id)
 
 int main(int argc, char **argv)
 {
+    CUptiResult cupti_ret = CUPTI_SUCCESS;
     CUpti_EventID event_id;
     uint64_t event_val;
     int device_id = 0; /* Assuming device 0 by default */
@@ -235,10 +243,8 @@ int main(int argc, char **argv)
     ret = cuDeviceGet(&dev, device_id);
     CHECK_CU_ERROR(ret, "cuDeviceGet");
 
-    if (!cupti_findEvent(dev, event_name, &event_id)) {
-        fprintf(stderr, "Invalid event name: %s\n", event_name);
-        return -1;
-    }
+    cupti_ret = cuptiEventGetIdFromName(dev, event_name, &event_id);
+    CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetIdFromName");
 
     event_val = cupti_profile_event(dev, event_id);
 
