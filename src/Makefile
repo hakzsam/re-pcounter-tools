@@ -27,5 +27,11 @@ cupti_trace: cupti_trace.$(OBJ)
 cupti_trace.$(OBJ): cupti_trace.cpp
 	nvcc -c $(INCLUDES) $<
 
+cuda_sample: cuda_sample.$(OBJ)
+	nvcc -o $@ cuda_sample.$(OBJ) $(LIBS)
+
+cuda_sample.$(OBJ): cuda_sample.cu
+	nvcc -c $(INCLUDES) $<
+
 clean:
-	rm -f cupti_trace cupti_trace.$(OBJ)
+	rm -f cupti_trace cupti_trace.$(OBJ) cuda_sample cuda_sample.$(OBJ)
