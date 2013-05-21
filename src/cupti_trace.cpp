@@ -198,22 +198,28 @@ static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain
     size_t size = 0;
     uint32_t i;
 
-    // query num of events available in the domain
-    cupti_ret = cuptiEventDomainGetNumEvents(domain,
-                                             num_events);
+    cupti_ret = cuptiEventDomainGetNumEvents(domain, num_events);
     CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainGetNumEvents");
+
+    if (*num_events == 0) {
+        fprintf(stderr, "No event is exposed by domain = %d.\n", domain);
+        cupti_ret = CUPTI_ERROR_UNKNOWN;
+        goto fail;
+    }
 
     size = sizeof(CUpti_EventID) * (*num_events);
     event_id = (CUpti_EventID *)malloc(size);
     if (event_id == NULL) {
-        fprintf(stderr, "Failed to allocate memory to event ID\n");
-        return NULL;
+        fprintf(stderr, "Failed to allocate memory to event ID.\n");
+        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        goto fail;
     }
     memset(event_id, 0, size);
 
     if (!(events = (struct cupti_event *)malloc(sizeof(*events) * (*num_events)))) {
         fprintf(stderr, "Failed to allocate memory to event data.\n");
-        return NULL;
+        cupti_ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        goto fail;
     }
 
     cupti_ret = cuptiEventDomainEnumEvents(domain,
@@ -221,10 +227,11 @@ static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain
                                            event_id);
     CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventDomainEnum_events");
 
-    // query event info
+    // enum events
     for (i = 0; i < *num_events; i++) {
         struct cupti_event *event = &events[i];
 
+        // event id
         event->id = event_id[i];
 
         // event name
@@ -254,6 +261,7 @@ static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain
         CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
         check_null_terminator(events->short_desc, size, NAME_SHORT);
 
+        // event category
         size = CATEGORY_LENGTH;
         cupti_ret = cuptiEventGetAttribute(events->id,
                                            CUPTI_EVENT_ATTR_CATEGORY,
@@ -262,7 +270,11 @@ static struct cupti_event *cupti_get_events_by_domain(CUpti_EventDomainID domain
         CHECK_CUPTI_ERROR(cupti_ret, "cuptiEventGetAttribute");
     }
 
+fail:
     free(event_id);
+    if (cupti_ret != CUPTI_SUCCESS)
+        return NULL;
+
     return events;
 }
 
