@@ -341,7 +341,7 @@ static int lookup(const char *chipset, const char *reg, const char *val)
     return 0;
 }
 
-static int mmiotrace(const char *chipset, const char *event)
+static int trace_event(const char *chipset, const char *event)
 {
     char trace_log[1204], line[1024];
     pid_t pid;
@@ -450,7 +450,7 @@ static int trace_all_events(CUdevice dev, const char *chipset)
         for (j = 0; j < d->num_events; j++) {
             struct event *e = &d->events[j];
 
-            if ((ret = mmiotrace(chipset, e->name)) < 0)
+            if ((ret = trace_event(chipset, e->name)) < 0)
                 return ret;
         }
     }
