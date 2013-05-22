@@ -16,6 +16,7 @@
  *  - use env vars for setting valgrind-mmt.
  */
 
+#define LOOKUP_PATH     "../envytools/build/rnn/lookup"
 #define NAME_SHORT      64
 #define NAME_LONG       128
 #define DESC_SHORT      512
@@ -327,7 +328,8 @@ static int lookup(const char *chipset, const char *reg, const char *val)
     char cmd[1024], buf[1024];
     FILE *f;
 
-    sprintf(cmd, "lookup -a %s %s %s 2> /dev/null\n", chipset, reg, val);
+    sprintf(cmd, "%s -a %s %s %s 2> /dev/null\n", LOOKUP_PATH, chipset, reg,
+            val);
 
     if (!(f = popen(cmd, "r"))) {
         perror("popen");
