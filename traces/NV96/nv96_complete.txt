@@ -1,0 +1,819 @@
+Assuming default device id 0.
+CUDA Device Id  : 0
+CUDA Device Name: GeForce 9500 GT
+CUDA Compute Capability: 1.1
+
+Value     = 0 (0x00)
+Id        = 1034
+Domain    = domain_a (32)
+Name      = tex_cache_hit
+Shortdesc = tex cache hit
+Longdesc  = Number of texture cache misses.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408808, value: 00000003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(r) register: 409808, value: 00000003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(w) register: 408808, value: 00000803, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(w) register: 409808, value: 00000003, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(r) register: 40881c, value: 00000100, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x1c[0m
+(w) register: 40881c, value: 00000900, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x1c[0m
+(w) register: a7c8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x2[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a408, value: 0000001b, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x2[0m] => { [0;32m0[0m = [0;33m0x1b[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a428, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x2[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a708, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x2[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'tex_cache_hit' saved in the file 'tex_cache_hit.trace'
+
+Value     = 0 (0x00)
+Id        = 1033
+Domain    = domain_a (32)
+Name      = tex_cache_miss
+Shortdesc = tex cache miss
+Longdesc  = Number of texture cache hits.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408808, value: 00000003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(r) register: 409808, value: 00000003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(w) register: 408808, value: 00000803, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(w) register: 409808, value: 00000003, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mTEXTURE[0m+[0;1;31m0x8[0m
+(r) register: 40881c, value: 00000100, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x1c[0m
+(w) register: 40881c, value: 00000900, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mTEXTURE[0m+[0;1;31m0x1c[0m
+(w) register: a7c8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x2[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a408, value: 0000001a, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x2[0m] => { [0;32m0[0m = [0;33m0x1a[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a428, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x2[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a708, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x2[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'tex_cache_miss' saved in the file 'tex_cache_miss.trace'
+
+Value     = 0 (0x00)
+Id        = 1001
+Domain    = domain_b (33)
+Name      = gld_incoherent
+Shortdesc = gld uncoalesced
+Longdesc  = Number of non-coalesced global memory loads.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000029, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x29[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'gld_incoherent' saved in the file 'gld_incoherent.trace'
+
+Value     = 3136 (0xc40)
+Id        = 1002
+Domain    = domain_b (33)
+Name      = gld_coherent
+Shortdesc = gld coalesced
+Longdesc  = Number of coalesced global memory loads.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000029, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x29[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0x1[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000c40, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0xc40[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'gld_coherent' saved in the file 'gld_coherent.trace'
+
+Value     = 0 (0x00)
+Id        = 1003
+Domain    = domain_b (33)
+Name      = gst_incoherent
+Shortdesc = gst uncoalesced
+Longdesc  = Number of non-coalesced global memory stores.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000029, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x29[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000002, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0x2[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'gst_incoherent' saved in the file 'gst_incoherent.trace'
+
+Value     = 6272 (0x1880)
+Id        = 1004
+Domain    = domain_b (33)
+Name      = gst_coherent
+Shortdesc = gst coalesced
+Longdesc  = Number of coalesced global memory stores.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000029, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x29[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000003, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0x3[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00001880, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0x1880[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'gst_coherent' saved in the file 'gst_coherent.trace'
+
+Value     = 0 (0x00)
+Id        = 1015
+Domain    = domain_b (33)
+Name      = local_load
+Shortdesc = local load
+Longdesc  = Number of local memory load transactions. Each local load request will generate one transaction irrespective of the size of the transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 0000002a, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x2a[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'local_load' saved in the file 'local_load.trace'
+
+Value     = 0 (0x00)
+Id        = 1016
+Domain    = domain_b (33)
+Name      = local_store
+Shortdesc = local store
+Longdesc  = Number of local memory store transactions. This increments by 2 for each 32-byte transaction, by 4 for each 64-byte transaction and by 8 for each 128-byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 0000002a, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x2a[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0x1[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'local_store' saved in the file 'local_store.trace'
+
+Value     = 98 (0x62)
+Id        = 1017
+Domain    = domain_b (33)
+Name      = cta_launched
+Shortdesc = cta launched
+Longdesc  = Number of threads blocks launched on a TPC.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 0000002b, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;33m0x2b[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000062, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0x62[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'cta_launched' saved in the file 'cta_launched.trace'
+
+Value     = 49 (0x31)
+Id        = 1018
+Domain    = domain_b (33)
+Name      = sm_cta_launched
+Shortdesc = sm cta launched
+Longdesc  = Number of threads blocks launched on a streaming multiprocessor (SM).
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000031, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0x31[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'sm_cta_launched' saved in the file 'sm_cta_launched.trace'
+
+Value     = 392 (0x188)
+Id        = 1019
+Domain    = domain_b (33)
+Name      = branch
+Shortdesc = branch
+Longdesc  = Number of branches taken by threads executing a kernel. This counter will be incremented by one if at least one thread in a warp takes the branch.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000188, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0x188[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'branch' saved in the file 'branch.trace'
+
+Value     = 0 (0x00)
+Id        = 1020
+Domain    = domain_b (33)
+Name      = divergent_branch
+Shortdesc = divergent branch
+Longdesc  = Number of divergent branches within a warp. This counter will be incremented by one if at least one thread in a warp diverges (that is, follows a different execution path) via a data dependent conditional branch.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'divergent_branch' saved in the file 'divergent_branch.trace'
+
+Value     = 5120 (0x1400)
+Id        = 1021
+Domain    = domain_b (33)
+Name      = instructions
+Shortdesc = instructions
+Longdesc  = Number of instructions executed.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00001400, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0x1400[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'instructions' saved in the file 'instructions.trace'
+
+Value     = 0 (0x00)
+Id        = 1022
+Domain    = domain_b (33)
+Name      = warp_serialize
+Shortdesc = warp serialize
+Longdesc  = If two addresses of a memory request fall in the same memory bank, there is a bank conflict and the access has to be serialized. This counter gives the number of thread warps that serialize on address conflicts to either shared or constant memory.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'warp_serialize' saved in the file 'warp_serialize.trace'
+
+Value     = 0 (0x00)
+Id        = 1023
+Domain    = domain_b (33)
+Name      = prof_trigger_00
+Shortdesc = prof trigger 00
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_00' saved in the file 'prof_trigger_00.trace'
+
+Value     = 0 (0x00)
+Id        = 1024
+Domain    = domain_b (33)
+Name      = prof_trigger_01
+Shortdesc = prof trigger 01
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_01' saved in the file 'prof_trigger_01.trace'
+
+Value     = 0 (0x00)
+Id        = 1025
+Domain    = domain_b (33)
+Name      = prof_trigger_02
+Shortdesc = prof trigger 02
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_02' saved in the file 'prof_trigger_02.trace'
+
+Value     = 0 (0x00)
+Id        = 1026
+Domain    = domain_b (33)
+Name      = prof_trigger_03
+Shortdesc = prof trigger 03
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_03' saved in the file 'prof_trigger_03.trace'
+
+Value     = 0 (0x00)
+Id        = 1027
+Domain    = domain_b (33)
+Name      = prof_trigger_04
+Shortdesc = prof trigger 04
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_04' saved in the file 'prof_trigger_04.trace'
+
+Value     = 0 (0x00)
+Id        = 1028
+Domain    = domain_b (33)
+Name      = prof_trigger_05
+Shortdesc = prof trigger 05
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_05' saved in the file 'prof_trigger_05.trace'
+
+Value     = 0 (0x00)
+Id        = 1029
+Domain    = domain_b (33)
+Name      = prof_trigger_06
+Shortdesc = prof trigger 06
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_06' saved in the file 'prof_trigger_06.trace'
+
+Value     = 0 (0x00)
+Id        = 1030
+Domain    = domain_b (33)
+Name      = prof_trigger_07
+Shortdesc = prof trigger 07
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+(r) register: 4008fc, value: 00c30003, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mDISPATCH[0m.[0;32mUNITS[0m => { [0;32mTP_MASK[0m = [0;33m0x3[0m | [0;32mROP_MASK[0m = [0;33m0x3[0m | [0;32mMP_MASK[0m = [0;33m0x3[0m }
+(r) register: 408334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 409334, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 408334, value: 00000001, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(w) register: 409334, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0x1[0m].[0;32mMPC[0m+[0;1;31m0x34[0m
+(r) register: 408330, value: 00000000, mask: 00000000 ==> [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: 408330, value: 00000000, mask: ffffffff <== [0;32mPGRAPH[0m.[0;32mTP[0m[[0;33m0[0m].[0;32mMPC[0m.[0;32mPM_GROUP_SEL[0m => { [0;32m0[0m = [0;35mMP0_FUNC[0m | [0;32m1[0m = [0;35mMP0_FUNC[0m | [0;32m2[0m = [0;35mMP0_FUNC[0m | [0;32m3[0m = [0;35mMP0_FUNC[0m }
+(w) register: a7cc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mCTRL[0m[[0;33m0x3[0m] => { [0;32mMODE[0m = [0;35mQUAD[0m | [0;32mCTR_MODE[0m = [0;35mSIMPLE[0m | [0;32mEVENT_CTR_PERIOD[0m = [0;35mONE[0m | [0;32mEVENT_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mFLAG_IMPORT_MODE[0m = [0;35mCONTINUOUS[0m | [0;32mRECORD_FORMAT[0m = [0;35mLONG[0m | [0;32mPERIODIC_PERIOD[0m = [0;35mDISABLED[0m | [0;32mQUAD_STATE[0m = [0;35mEMPTY[0m | [0;32mSINGLE_STATE[0m = [0;35mINACTIVE[0m }
+(w) register: a40c, value: 00000000, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_SRC[0m[[0;33m0x3[0m] => { [0;32m0[0m = [0;33m0[0m | [0;32m1[0m = [0;33m0[0m | [0;32m2[0m = [0;33m0[0m | [0;32m3[0m = [0;33m0[0m }
+(w) register: a42c, value: 0000aaaa, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mPRE_OP[0m[[0;33m0x3[0m] => { [0;32mFUNC[0m = [0;33m0xaaaa[0m | [0;32mARG2[0m = [0;35mSRC2[0m | [0;32mARG3[0m = [0;35mSRC3[0m }
+(r) register: a70c, value: 00000000, mask: 00000000 ==> [0;32mPCOUNTER[0m.[0;32mCTR_PRE[0m[[0;33m0x3[0m] => [0;33m0[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x1[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7e8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x2[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7ec, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x3[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f0, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x4[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f4, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x5[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7f8, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x6[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: a7fc, value: 00000001, mask: ffffffff <== [0;32mPCOUNTER[0m.[0;32mQUAD_ACK_TRIGGER[0m[[0;33m0x7[0m] => [0;33m0x1[0m
+(w) register: 400084, value: 00000020, mask: ffffffff <== [0;32mPGRAPH[0m+[0;1;31m0x84[0m
+Trace of 'prof_trigger_07' saved in the file 'prof_trigger_07.trace'
+
