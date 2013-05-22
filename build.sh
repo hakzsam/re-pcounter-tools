@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This script builds a modified version of valgrind-mmt which displays
+# Build a modified version of valgrind-mmt which displays
 # NVidia ioctl calls.
 #
 VALGRIND="valgrind-mmt"
@@ -15,3 +15,21 @@ cd $VALGRIND
 git apply ../valgrind/trace_nv_ioctls.diff
 make
 make install
+cd ..
+
+#
+# Build envytools.
+#
+git clone git://github.com/pathscale/envytools.git
+cd envytools
+mkdir build
+cd build
+cmake ..
+make
+cd ../..
+
+#
+# Build cupti_trace.
+#
+cd src
+make
