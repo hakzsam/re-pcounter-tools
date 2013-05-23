@@ -403,9 +403,10 @@ static struct trace *parse_trace(FILE *f)
 
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
-    char trace_log[1204], retval[1024];
+    char trace_log[1204];
     struct trace *t;
     int pipefd[2];
+    int retval;
     pid_t pid;
     FILE *f;
     int i;
@@ -460,9 +461,11 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
     }
 
     // Read and display return value of the CUDA sample through CUPti.
-    memset(retval, 0, sizeof(retval));
-    read(pipefd[0], retval, sizeof(retval));
-    printf("%s\n", retval);
+    char tmp[512];
+    memset(tmp, 0, sizeof(tmp));
+    read(pipefd[0], tmp, sizeof(tmp));
+    retval = atoi(tmp);
+    printf("Value     = %llu (0x%02x) \n", retval, retval);
 
     if (!(t = parse_trace(f)))
         return -1;
