@@ -62,6 +62,18 @@ struct domain {
     uint32_t num_events;                // number of events
 };
 
+struct ioctl_call {
+    int dir;
+    uint32_t reg;
+    uint32_t val;
+    uint32_t mask;
+};
+
+struct trace {
+    struct ioctl_call ioctls[2048];
+    int nb_ioctl;
+};
+
 enum flags {
     FLAG_DEVICE_ID = 0,
     FLAG_DOMAIN_ID,
@@ -323,12 +335,12 @@ static void list_events(struct domain *d)
     free(events);
 }
 
-static int lookup(const char *chipset, const char *reg, const char *val)
+static int lookup(const char *chipset, uint32_t reg, uint32_t val)
 {
     char cmd[1024], buf[1024];
     FILE *f;
 
-    sprintf(cmd, "%s -a %s %s %s 2> /dev/null\n", LOOKUP_PATH, chipset, reg,
+    sprintf(cmd, "%s -a %s %08x %08x 2> /dev/null\n", LOOKUP_PATH, chipset, reg,
             val);
 
     if (!(f = popen(cmd, "r"))) {
@@ -348,11 +360,54 @@ static int lookup(const char *chipset, const char *reg, const char *val)
     return 0;
 }
 
+static struct trace *parse_trace(FILE *f)
+{
+    struct trace *t;
+    char line[1024];
+
+    if (!(t = (struct trace *)malloc(sizeof(*t)))) {
+        perror("malloc");
+        return NULL;
+    }
+
+    t->nb_ioctl   = 0;
+
+    while (fgets (line, sizeof(line), f) != NULL) {
+        char *token, *s;
+        int dir;
+
+        // Only show post ioctl calls.
+        if (!(s = strstr(line, "RETURND")))
+            continue;
+        s += 9; // 'RETURND: '
+
+        token = strtok(s, " ");
+        while (token != NULL) {
+            if (!strncmp(token, "DIR=", 4)) {
+                dir = atoi(token + 4);
+                t->ioctls[t->nb_ioctl].dir = dir & 0x00000001;
+            } else if (!strncmp(token, "MMIO=", 5)) {
+                sscanf(token + 5, "%08x", &t->ioctls[t->nb_ioctl].reg);
+            } else if (!strncmp(token, "VALUE=", 6)) {
+                sscanf(token + 6, "%08x", &t->ioctls[t->nb_ioctl].val);
+            } else if (!strncmp(token, "MASK=", 5)) {
+                sscanf(token + 5, "%08x", &t->ioctls[t->nb_ioctl].mask);
+            }
+            token = strtok(NULL, " ");
+        }
+        t->nb_ioctl++;
+    }
+
+    return t;
+}
+
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
     char trace_log[1204], line[1024];
+    struct trace *t;
     pid_t pid;
     FILE *f;
+    int i;
 
     sprintf(trace_log, "%s.trace", e->name);
 
@@ -395,39 +450,22 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
         }
     }
 
-    while (fgets (line, sizeof(line), f) != NULL) {
-        char *token, *s, *reg, *val, *mask;
-        int dir;
+    if (!(t = parse_trace(f)))
+        return -1;
 
-        // Only show post ioctl calls.
-        if (!(s = strstr(line, "RETURND")))
-            continue;
-        s += 9; // 'RETURND: '
+    for (i = 0; i < t->nb_ioctl; i++) {
+        printf("(%c) register: %06x, value: %08x, mask: %08x ",
+               (t->ioctls[i].dir ? 'w' : 'r'),
+               t->ioctls[i].reg, t->ioctls[i].val,
+               t->ioctls[i].mask);
+        printf("%s ", (t->ioctls[i].dir ? "<==" : "==>"));
 
-        token = strtok(s, " ");
-        while (token != NULL) {
-            if (!strncmp(token, "DIR=", 4)) {
-                dir = atoi(token + 4);
-            } else if (!strncmp(token, "MMIO=", 5)) {
-                reg = token + 5;
-            } else if (!strncmp(token, "VALUE=", 6)) {
-                val = token + 6;
-            } else if (!strncmp(token, "MASK=", 5)) {
-                mask = token + 5;
-            }
-            token = strtok(NULL, " ");
-        }
-
-        dir &= 0x00000001;
-        printf("(%c) register: %s, value: %s, mask: %s ",
-               (dir ? 'w' : 'r'), reg, val, mask);
-        printf("%s ", (dir ? "<==" : "==>"));
-
-        if (lookup(chipset, reg, val) < 0) {
+        if (lookup(chipset, t->ioctls[i].reg, t->ioctls[i].val) < 0) {
             fprintf(stderr, "Cannot run lookup.\n");
             return -1;
         }
     }
+    free(t);
 
     if (fclose(f) < 0) {
         perror("fclose");
