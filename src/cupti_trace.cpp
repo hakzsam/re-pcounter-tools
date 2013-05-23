@@ -6,6 +6,7 @@
 #include <signal.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <math.h>
 
 #include <cuda.h>
 #include <cupti.h>
@@ -72,6 +73,50 @@ struct ioctl_call {
 struct trace {
     struct ioctl_call ioctls[2048];
     int nb_ioctl;
+};
+
+static const char *method0_events[] = {
+    "active_cycles",
+    "active_warps",
+    "atom_count",
+    "branch",
+    "divergent_branch",
+    "gld_inst_128bit",
+    "gld_inst_16bit",
+    "gld_inst_32bit",
+    "gld_inst_64bit",
+    "gld_inst_8bit",
+    "gld_request",
+    "gred_count",
+    "gst_inst_128bit",
+    "gst_inst_16bit",
+    "gst_inst_32bit",
+    "gst_inst_64bit",
+    "gst_inst_8bit",
+    "gst_request",
+    "inst_executed",
+    "inst_issued1_0",
+    "inst_issued1_1",
+    "inst_issued2_0",
+    "inst_issued2_1",
+    "local_load",
+    "local_store",
+    "prof_trigger_00",
+    "prof_trigger_01",
+    "prof_trigger_02",
+    "prof_trigger_03",
+    "prof_trigger_04",
+    "prof_trigger_05",
+    "prof_trigger_06",
+    "prof_trigger_07",
+    "shared_load",
+    "shared_store",
+    "thread_inst_executed_0",
+    "thread_inst_executed_1",
+    "thread_inst_executed_2",
+    "thread_inst_executed_3",
+    "threads_launched",
+    "warps_launched"
 };
 
 enum flags {
@@ -401,6 +446,54 @@ static struct trace *parse_trace(FILE *f)
     return t;
 }
 
+static int get_nb_sources(struct trace *t, uint32_t reg)
+{
+    int nb_sources = 0;
+    int i;
+
+    for (i = 0; i < t->nb_ioctl; i++) {
+        if (t->ioctls[i].reg == reg)
+            break;
+    }
+
+    nb_sources += (t->ioctls[i].val & 0xff)       ? 1 : 0;
+    nb_sources += (t->ioctls[i].val & 0xff00)     ? 1 : 0;
+    nb_sources += (t->ioctls[i].val & 0xff0000)   ? 1 : 0;
+    nb_sources += (t->ioctls[i].val & 0xff000000) ? 1 : 0;
+
+    return nb_sources;
+}
+
+static uint32_t method0(struct trace *t)
+{
+    uint32_t val = 0;
+    int nb_sources;
+    int i, j;
+
+    // Count the number of sources from 0x504604.
+    nb_sources = get_nb_sources(t, 0x504604);
+    if (nb_sources == 4) {
+        // Maybe, more than 4 sources, let's check.
+        nb_sources += get_nb_sources(t, 0x504608);
+    }
+
+    // Find the first counter.
+    for (i = 0; i < t->nb_ioctl; i++) {
+        if (t->ioctls[i].dir)
+            continue;
+
+        if (t->ioctls[i].reg == 0x504674)
+            break;
+    }
+
+    // Compute the result.
+    for (j = 0; j < nb_sources; j++) {
+        val += t->ioctls[i + j].val * pow(2, j);
+    }
+
+    return val;
+}
+
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
     char trace_log[1204];
@@ -480,6 +573,21 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
         if (lookup(chipset, t->ioctls[i].reg, t->ioctls[i].val) < 0) {
             fprintf(stderr, "Cannot run lookup.\n");
             return -1;
+        }
+    }
+
+    for (i = 0; i < sizeof(method0_events) / sizeof(method0_events[0]); i++) {
+        if (!strcmp(e->name, method0_events[i])) {
+            uint32_t val;
+
+            printf("Unit test using method 'method0' : ");
+
+            val = method0(t);
+            if (val == retval) {
+                printf("\e[1;32mPASS\e[m\n");
+            } else {
+                printf("\e[1;31mFAIL (%02x != %02x)\e[m\n", val, retval);
+            }
         }
     }
     free(t);
