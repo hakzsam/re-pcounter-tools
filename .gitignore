@@ -1,3 +1,6 @@
 src/*.o
 src/cuda_sample
 src/cupti_trace
+local/
+envytools/
+valgrind-mmt/
