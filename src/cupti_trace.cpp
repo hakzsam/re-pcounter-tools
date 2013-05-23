@@ -403,8 +403,9 @@ static struct trace *parse_trace(FILE *f)
 
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
-    char trace_log[1204], line[1024];
+    char trace_log[1204], retval[1024];
     struct trace *t;
+    int pipefd[2];
     pid_t pid;
     FILE *f;
     int i;
@@ -413,6 +414,11 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
 
     // Display information about the event.
     print_event(e, d);
+
+    if (pipe(pipefd) < 0) {
+        perror("pipe");
+        return -1;
+    }
 
     if ((pid = fork()) < 0) {
         perror("fork");
@@ -426,6 +432,8 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
 
     if (pid == 0) {
         dup2(fileno(f), 2);
+        dup2(pipefd[1], 1);
+        close(pipefd[0]);
 
         execlp("../local/bin/valgrind", "valgrind",
                 "--tool=mmt",
@@ -442,6 +450,7 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
     } else {
         int status;
 
+        close(pipefd[1]);
         if (waitpid(pid, &status, 0) < 0) {
             if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
                 fprintf(stderr, "Failed to execute child process.\n");
@@ -449,6 +458,11 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
             }
         }
     }
+
+    // Read and display return value of the CUDA sample through CUPti.
+    memset(retval, 0, sizeof(retval));
+    read(pipefd[0], retval, sizeof(retval));
+    printf("%s\n", retval);
 
     if (!(t = parse_trace(f)))
         return -1;
