@@ -539,7 +539,7 @@ static uint32_t method0(struct trace *t)
     return val;
 }
 
-static uint32_t method1(struct trace *t)
+static int get_counter_value(struct trace *t, uint32_t addr, uint32_t *value)
 {
     int found = 0;
     int i;
@@ -549,32 +549,32 @@ static uint32_t method1(struct trace *t)
         if (t->ioctls[i].dir)
             continue;
 
-        if (t->ioctls[i].reg == 0x18008c) {
+        if (t->ioctls[i].reg == addr) {
             found = 1;
             break;
         }
     }
 
-    return found ? t->ioctls[i].val : -1;
+    *value = t->ioctls[i].val;
+    return found;
+}
+
+static uint32_t method1(struct trace *t)
+{
+    uint32_t value;
+    int ret;
+
+    ret = get_counter_value(t, 0x18008c, &value);
+    return ret ? value : -1;
 }
 
 static uint32_t method2(struct trace *t)
 {
-    int found = 0;
-    int i;
+    uint32_t value;
+    int ret;
 
-    // Find the counter (ie. CTR_PRE).
-    for (i = 0; i < t->nb_ioctl; i++) {
-        if (t->ioctls[i].dir)
-            continue;
-
-        if (t->ioctls[i].reg == 0x1a008c) {
-            found = 1;
-            break;
-        }
-    }
-
-    return found ? t->ioctls[i].val : -1;
+    ret = get_counter_value(t, 0x1a008c, &value);
+    return ret ? value : -1;
 }
 
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
