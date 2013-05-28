@@ -75,6 +75,9 @@ struct trace {
     int nb_ioctl;
 };
 
+static uint32_t method0(struct trace *t);
+static uint32_t method1(struct trace *t);
+
 static const char *method0_events[] = {
     "active_cycles",
     "active_warps",
@@ -116,7 +119,8 @@ static const char *method0_events[] = {
     "thread_inst_executed_2",
     "thread_inst_executed_3",
     "threads_launched",
-    "warps_launched"
+    "warps_launched",
+    NULL
 };
 
 static const char *method1_events[] = {
@@ -129,7 +133,18 @@ static const char *method1_events[] = {
     "l1_local_store_miss",
     "l1_shared_bank_conflict",
     "sm_cta_launched",
-    "uncached_global_load_transaction"
+    "uncached_global_load_transaction",
+    NULL
+};
+
+static struct method {
+    const char *name;
+    uint32_t (*func)(struct trace *t);
+    const char **events;
+} methods[] = {
+    {"method0", method0, method0_events},
+    {"method1", method1, method1_events}
+
 };
 
 enum flags {
@@ -534,7 +549,7 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
     int retval;
     pid_t pid;
     FILE *f;
-    int i;
+    int i, j;
 
     sprintf(trace_log, "%s.trace", e->name);
 
@@ -608,34 +623,19 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
         }
     }
 
-    // Method #0
-    for (i = 0; i < sizeof(method0_events) / sizeof(method0_events[0]); i++) {
-        if (!strcmp(e->name, method0_events[i])) {
-            uint32_t val;
+    for (i = 0; i < sizeof(methods) / sizeof(methods[0]); i++) {
+        for (j = 0; methods[i].events[j] != NULL; j++) {
+            if (!strcmp(e->name, methods[i].events[j])) {
+                uint32_t val;
 
-            printf("Unit test using method 'method0' : ");
+                printf("===>> Unit test using method '%s' : ", methods[i].name);
 
-            val = method0(t);
-            if (val == retval) {
-                printf("\e[1;32mPASS\e[m\n");
-            } else {
-                printf("\e[1;31mFAIL (%02x != %02x)\e[m\n", val, retval);
-            }
-        }
-    }
-
-    // Method #1.
-    for (i = 0; i < sizeof(method1_events) / sizeof(method1_events[0]); i++) {
-        if (!strcmp(e->name, method1_events[i])) {
-            uint32_t val;
-
-            printf("Unit test using method 'method1' : ");
-
-            val = method1(t);
-            if (val == retval) {
-                printf("\e[1;32mPASS\e[m\n");
-            } else {
-                printf("\e[1;31mFAIL (%02x != %02x)\e[m\n", val, retval);
+                val = methods[i].func(t);
+                if (val == retval) {
+                    printf("\e[1;32mPASS\e[m\n");
+                } else {
+                    printf("\e[1;31mFAIL (%02x != %02x)\e[m\n", val, retval);
+                }
             }
         }
     }
