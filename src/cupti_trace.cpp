@@ -628,7 +628,7 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
             if (!strcmp(e->name, methods[i].events[j])) {
                 uint32_t val;
 
-                printf("===>> Unit test using method '%s' : ", methods[i].name);
+                printf("Unit test using method '%s' : ", methods[i].name);
 
                 val = methods[i].func(t);
                 if (val == retval) {
