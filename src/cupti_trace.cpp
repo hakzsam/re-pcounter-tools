@@ -77,6 +77,7 @@ struct trace {
 
 static uint32_t method0(struct trace *t);
 static uint32_t method1(struct trace *t);
+static uint32_t method2(struct trace *t);
 
 static const char *method0_events[] = {
     "active_cycles",
@@ -137,13 +138,29 @@ static const char *method1_events[] = {
     NULL
 };
 
+static const char *method2_events[] = {
+    "fb0_subp0_read_sectors",
+    "fb0_subp0_write_sectors",
+    "fb0_subp1_read_sectors",
+    "fb0_subp1_write_sectors",
+    "fb1_subp0_read_sectors",
+    "fb1_subp0_write_sectors",
+    "fb1_subp1_read_sectors",
+    "fb1_subp1_write_sectors",
+    "l2_subp0_read_sector_misses",
+    "l2_subp0_write_sector_misses",
+    "l2_subp1_read_sector_misses",
+    "l2_subp1_write_sector_misses"
+};
+
 static struct method {
     const char *name;
     uint32_t (*func)(struct trace *t);
     const char **events;
 } methods[] = {
     {"method0", method0, method0_events},
-    {"method1", method1, method1_events}
+    {"method1", method1, method1_events},
+    {"method2", method2, method2_events}
 
 };
 
@@ -533,6 +550,25 @@ static uint32_t method1(struct trace *t)
             continue;
 
         if (t->ioctls[i].reg == 0x18008c) {
+            found = 1;
+            break;
+        }
+    }
+
+    return found ? t->ioctls[i].val : -1;
+}
+
+static uint32_t method2(struct trace *t)
+{
+    int found = 0;
+    int i;
+
+    // Find the counter (ie. CTR_PRE).
+    for (i = 0; i < t->nb_ioctl; i++) {
+        if (t->ioctls[i].dir)
+            continue;
+
+        if (t->ioctls[i].reg == 0x1a008c) {
             found = 1;
             break;
         }
