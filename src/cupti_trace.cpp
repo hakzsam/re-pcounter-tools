@@ -119,6 +119,19 @@ static const char *method0_events[] = {
     "warps_launched"
 };
 
+static const char *method1_events[] = {
+    "global_store_transaction",
+    "l1_global_load_hit",
+    "l1_global_load_miss",
+    "l1_local_load_hit",
+    "l1_local_load_miss",
+    "l1_local_store_hit",
+    "l1_local_store_miss",
+    "l1_shared_bank_conflict",
+    "sm_cta_launched",
+    "uncached_global_load_transaction"
+};
+
 enum flags {
     FLAG_DEVICE_ID = 0,
     FLAG_DOMAIN_ID,
@@ -494,6 +507,25 @@ static uint32_t method0(struct trace *t)
     return val;
 }
 
+static uint32_t method1(struct trace *t)
+{
+    int found = 0;
+    int i;
+
+    // Find the counter (ie. CTR_PRE).
+    for (i = 0; i < t->nb_ioctl; i++) {
+        if (t->ioctls[i].dir)
+            continue;
+
+        if (t->ioctls[i].reg == 0x18008c) {
+            found = 1;
+            break;
+        }
+    }
+
+    return found ? t->ioctls[i].val : -1;
+}
+
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
     char trace_log[1204];
@@ -576,6 +608,7 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
         }
     }
 
+    // Method #0
     for (i = 0; i < sizeof(method0_events) / sizeof(method0_events[0]); i++) {
         if (!strcmp(e->name, method0_events[i])) {
             uint32_t val;
@@ -583,6 +616,22 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
             printf("Unit test using method 'method0' : ");
 
             val = method0(t);
+            if (val == retval) {
+                printf("\e[1;32mPASS\e[m\n");
+            } else {
+                printf("\e[1;31mFAIL (%02x != %02x)\e[m\n", val, retval);
+            }
+        }
+    }
+
+    // Method #1.
+    for (i = 0; i < sizeof(method1_events) / sizeof(method1_events[0]); i++) {
+        if (!strcmp(e->name, method1_events[i])) {
+            uint32_t val;
+
+            printf("Unit test using method 'method1' : ");
+
+            val = method1(t);
             if (val == retval) {
                 printf("\e[1;32mPASS\e[m\n");
             } else {
