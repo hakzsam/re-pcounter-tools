@@ -78,6 +78,7 @@ struct trace {
 static uint32_t method0(struct trace *t);
 static uint32_t method1(struct trace *t);
 static uint32_t method2(struct trace *t);
+static uint32_t method3(struct trace *t);
 
 static const char *method0_events[] = {
     "active_cycles",
@@ -150,7 +151,30 @@ static const char *method2_events[] = {
     "l2_subp0_read_sector_misses",
     "l2_subp0_write_sector_misses",
     "l2_subp1_read_sector_misses",
-    "l2_subp1_write_sector_misses"
+    "l2_subp1_write_sector_misses",
+    NULL
+};
+
+static const char *method3_events[] = {
+    "l2_subp0_read_hit_sectors",
+    "l2_subp0_read_sector_queries",
+    "l2_subp0_read_sysmem_sector_queries",
+    "l2_subp0_read_tex_hit_sectors",
+    "l2_subp0_read_tex_sector_queries",
+    "l2_subp0_total_read_sector_queries",
+    "l2_subp0_total_write_sector_queries",
+    "l2_subp0_write_sector_queries",
+    "l2_subp0_write_sysmem_sector_queries",
+    "l2_subp1_read_hit_sectors",
+    "l2_subp1_read_sector_queries",
+    "l2_subp1_read_sysmem_sector_queries",
+    "l2_subp1_read_tex_hit_sectors",
+    "l2_subp1_read_tex_sector_queries",
+    "l2_subp1_total_read_sector_queries",
+    "l2_subp1_total_write_sector_queries",
+    "l2_subp1_write_sector_queries",
+    "l2_subp1_write_sysmem_sector_queries",
+    NULL
 };
 
 static struct method {
@@ -160,8 +184,8 @@ static struct method {
 } methods[] = {
     {"method0", method0, method0_events},
     {"method1", method1, method1_events},
-    {"method2", method2, method2_events}
-
+    {"method2", method2, method2_events},
+    {"method3", method3, method3_events}
 };
 
 enum flags {
@@ -574,6 +598,15 @@ static uint32_t method2(struct trace *t)
     int ret;
 
     ret = get_counter_value(t, 0x1a008c, &value);
+    return ret ? value : -1;
+}
+
+static uint32_t method3(struct trace *t)
+{
+    uint32_t value;
+    int ret;
+
+    ret = get_counter_value(t, 0x1a0080, &value);
     return ret ? value : -1;
 }
 
