@@ -79,6 +79,7 @@ static uint32_t method0(struct trace *t);
 static uint32_t method1(struct trace *t);
 static uint32_t method2(struct trace *t);
 static uint32_t method3(struct trace *t);
+static uint32_t method4(struct trace *t);
 
 static const char *method0_events[] = {
     "active_cycles",
@@ -177,6 +178,13 @@ static const char *method3_events[] = {
     NULL
 };
 
+static const char *method4_events[] = {
+    "tex0_cache_sector_misses",
+    "tex0_cache_sector_queries",
+    "tex1_cache_sector_misses",
+    "tex1_cache_sector_queries"
+};
+
 static struct method {
     const char *name;
     uint32_t (*func)(struct trace *t);
@@ -185,7 +193,8 @@ static struct method {
     {"method0", method0, method0_events},
     {"method1", method1, method1_events},
     {"method2", method2, method2_events},
-    {"method3", method3, method3_events}
+    {"method3", method3, method3_events},
+    {"method4", method4, method4_events}
 };
 
 enum flags {
@@ -607,6 +616,15 @@ static uint32_t method3(struct trace *t)
     int ret;
 
     ret = get_counter_value(t, 0x1a0080, &value);
+    return ret ? value : -1;
+}
+
+static uint32_t method4(struct trace *t)
+{
+    uint32_t value;
+    int ret;
+
+    ret = get_counter_value(t, 0x180080, &value);
     return ret ? value : -1;
 }
 
