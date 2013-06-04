@@ -21,7 +21,7 @@ else
     OBJ = o
 endif
 
-all: cupti_trace cuda_sample
+all: cupti_trace cuda_sample lookup_trace
 
 cupti_trace: cupti_trace.$(OBJ)
 	nvcc -o $@ cupti_trace.$(OBJ) $(LIBS)
@@ -35,5 +35,11 @@ cuda_sample: cuda_sample.$(OBJ)
 cuda_sample.$(OBJ): cuda_sample.cu
 	nvcc -c $(INCLUDES) $<
 
+lookup_trace: lookup_trace.$(OBJ)
+	gcc -o $@ lookup_trace.$(OBJ)
+
+lookup_trace.$(OBJ): lookup_trace.c
+	gcc -c $<
+
 clean:
-	rm -f cupti_trace cupti_trace.$(OBJ) cuda_sample cuda_sample.$(OBJ)
+	rm -f cupti_trace cupti_trace.$(OBJ) cuda_sample cuda_sample.$(OBJ) lookup_trace lookup_trace.$(OBJ)
