@@ -1,0 +1,215 @@
+== MP counters for NVE4 ==
+
+(TODO: Check MP_FUNC with dedma and try to understand gld,gst_inst signals).
+
+=== __l1_global_load_transactions ===
+PM_B_SIGSEL     = 0xf
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x0
+
+=== __l1_global_store_transactions ===
+PM_B_SIGSEL     = 0xf
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x4
+
+=== active_cycles ===
+PM_B_SIGSEL     = 0x2
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x0
+
+=== active_warps ===
+PM_B_SIGSEL     = 0x2
+PM_B_MODE       = 0x222
+PM_B_SRCSEL[0]  = 0x104
+PM_B_SRCSEL[1]  = 0x20c
+PM_B_SRCSEL[2]  = 0x314
+
+=== atom_count ===
+PM_A_SIGSEL     = 0x1c
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x0
+
+=== branch ===
+PM_A_SIGSEL     = 0x1c
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0xc
+
+=== divergent_branch ===
+PM_A_SIGSEL     = 0x1c
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x10
+
+=== gld_inst_128bit ===
+=== gld_inst_16bit ===
+=== gld_inst_32bit ===
+=== gld_inst_64bit ===
+=== gld_inst_8bit ===
+PM_A_SIGSEL     = 0x2
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x0
+
+=== gld_request ===
+PM_A_SIGSEL     = 0x1b
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x10
+
+=== global_ld_mem_divergence_replays ===
+PM_B_SIGSEL     = 0x8
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x10
+
+=== global_st_mem_divergence_replays ===
+PM_B_SIGSEL     = 0x8
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x14
+
+=== global_store_transaction ===
+PM_B_SIGSEL     = 0x11
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x4
+
+=== gred_count ===
+PM_A_SGISEL     = 0x1c
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x8
+
+=== gst_inst_128bit ===
+=== gst_inst_16bit ===
+=== gst_inst_32bit ===
+=== gst_inst_64bit ===
+=== gst_inst_8bit ===
+PM_A_SIGSEL     = 0x2
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x0
+
+=== gst_request ===
+PM_A_SIGSEL     = 0x1B
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x14
+
+=== inst_executed ===
+PM_A_SIGSEL     = 0x4
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x398
+
+=== inst_issued1 ===
+PM_A_SIGSEL     = 0x5
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x4
+
+=== inst_issued2 ===
+PM_A_SIGSEL     = 0x5
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x8
+
+=== l1_global_load_hit ===
+PM_B_SIGSEL     = 0x10
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x10
+
+=== l1_global_load_miss ===
+PM_B_SIGSEL     = 0x10
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x14
+
+=== l1_local_load_hit ===
+PM_B_SIGSEL     = 0x10
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x0
+
+=== l1_local_load_miss ===
+PM_B_SIGSEL     = 0x10
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x4
+
+=== l1_local_store_hit ===
+PM_B_SIGSEL     = 0x10
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x8
+
+=== l1_local_store_miss ===
+PM_B_SIGSEL     = 0x10
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0xc
+
+=== l1_shared_load_transactions ===
+PM_B_SIGSEL     = 0xe
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x8
+
+=== l1_shared_store_transactions ===
+PM_B_SIGSEL     = 0xe
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0xc
+
+=== local_load ===
+PM_A_SIGSEL     = 0x1b
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x8
+
+=== local_load_transactions ===
+PM_B_SIGSEL     = 0xe
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x0
+
+=== local_store ===
+PM_A_SIGSEL     = 0x1b
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0xc
+
+=== local_store_transactions ===
+PM_B_SIGSEL     = 0xe
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x4
+
+=== prof_trigger_00 ===
+=== prof_trigger_01 ===
+=== prof_trigger_02 ===
+=== prof_trigger_03 ===
+=== prof_trigger_04 ===
+=== prof_trigger_05 ===
+=== prof_trigger_06 ===
+=== prof_trigger_07 ===
+PM_A_SIGSEL     = 0x1
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x0 (0: 0, 1:4, 2:8, 3:c, 4:10, 5:14, 6:18, 7:1c)
+
+=== shared_load ===
+PM_A_SIGSEL     = 0x1b
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x0
+
+=== shared_load_replay ===
+PM_B_SIGSEL     = 0x8
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x8
+
+=== shared_store ===
+PM_A_SIGSEL     = 0x1b
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x4
+
+=== shared_store_replay ===
+PM_B_SIGSEL     = 0x8
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0xc
+
+=== sm_cta_launched ===
+PM_B_SIGSEL     = 0x2
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x1c
+
+=== threads_launched ===
+PM_A_SIGSEL     = 0x3
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x398a4188
+
+=== uncached_global_load_transaction ===
+PM_B_SIGSEL     = 0x11
+PM_B_MODE       = 0x2
+PM_B_SRCSEL[0]  = 0x0
+
+=== warps_launched ===
+PM_A_SIGSEL     = 0x3
+PM_A_MODE       = 0x2
+PM_A_SRCSEL[0]  = 0x4
