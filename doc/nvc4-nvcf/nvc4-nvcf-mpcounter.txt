@@ -1,41 +1,134 @@
-active_cycles
-active_warps
-atom_count
-branch
-divergent_branch
-gld_inst_128bit
-gld_inst_16bit
-gld_inst_32bit
-gld_inst_64bit
-gld_inst_8bit
-gld_request
-gred_count
-gst_inst_128bit
-gst_inst_16bit
-gst_inst_32bit
-gst_inst_64bit
-gst_inst_8bit
-gst_request
-inst_executed
-inst_issued1_0
-inst_issued1_1
-inst_issued2_0
-inst_issued2_1
-local_load
-local_store
-prof_trigger_00
-prof_trigger_01
-prof_trigger_02
-prof_trigger_03
-prof_trigger_04
-prof_trigger_05
-prof_trigger_06
-prof_trigger_07
-shared_load
-shared_store
-thread_inst_executed_0
-thread_inst_executed_1
-thread_inst_executed_2
-thread_inst_executed_3
-threads_launched
-warps_launched
+== MP counters on NVC4 *and* NVCF ==
+
+All of the following signals use the LOGOP mode (ie. MP_MODE set to 0x00).
+
+(TODO: Check MP_FUNC with dedma and try to understand gld,gst_inst signals).
+
+=== active_cycles ===
+PM_SIGSEL[0]    = 0x11
+PM_SRCSEL[0]    = 0x00
+
+=== active_warps ===
+PM_SIGSEL[0]    = 0x24242424
+PM_SIGSEL[1]    = 0x2424
+PM_SRCSEL[0]    = 0x10
+PM_SRCSEL[1]    = 0x21
+PM_SRCSEL[2]    = 0x32
+PM_SRCSEL[3]    = 0x43
+PM_SRCSEL[4]    = 0x54
+PM_SRCSEL[5]    = 0x65
+
+=== atom_count ===
+PM_SIGSEL[0]    = 0x63
+PM_SRCSEL[0]    = 0x30
+
+=== branch ===
+PM_SIGSEL[0]    = 0x1a1a
+PM_SRCSEL[0]    = 0x00
+PM_SRCSEL[1]    = 0x11
+
+=== divergent_branch ===
+PM_SIGSEL[0]    = 0x1919
+PM_SRCSEL[0]    = 0x20
+PM_SRCSEL[1]    = 0x31
+
+=== gld_inst_128bit ===
+=== gld_inst_16bit ===
+=== gld_inst_32bit ===
+=== gld_inst_64bit ===
+=== gld_inst_8bit ===
+=== gst_inst_128bit ===
+=== gst_inst_16bit ===
+=== gst_inst_32bit ===
+=== gst_inst_64bit ===
+=== gst_inst_8bit ===
+PM_SIGSEL[0]    = 0x02
+PM_SRCSEL[0]    = 0x00
+
+=== gld_request ===
+PM_SIGSEL[0]    = 0x64
+PM_SRCSEL[0]    = 0x30
+
+=== gred_count ===
+PM_SIGSEL[0]    = 0x63
+PM_SRCSEL[0]    = 0x40
+
+=== gst_request ===
+PM_SIGSEL[0]    = 0x64
+PM_SRCSEL[0]    = 0x60
+
+=== inst_executed ===
+PM_SIGSEL[0]    = 0x2d2d2d
+PM_SRCSEL[0]    = 0x00
+PM_SRCSEL[1]    = 0x11
+PM_SRCSEL[2]    = 0x22
+
+=== inst_issued1_0 ===
+PM_SIGSEL[0]    = 0x7e
+PM_SRCSEL[0]    = 0x10
+
+=== inst_issued1_1 ===
+PM_SIGSEL[0]    = 0x7e
+PM_SRCSEL[0]    = 0x40
+
+=== inst_issued2_0 ===
+PM_SIGSEL[0]    = 0x7e
+PM_SRCSEL[0]    = 0x20
+
+=== inst_issued2_1 ===
+PM_SIGSEL[0]    = 0x7e
+PM_SRCSEL[0]    = 0x50
+
+=== local_load ===
+PM_SIGSEL[0]    = 0x64
+PM_SRCSEL[0]    = 0x20
+
+=== local_store ===
+PM_SIGSEL[0]    = 0x64
+PM_SRCSEL[0]    = 0x50
+
+=== prof_trigger_00 ===
+=== prof_trigger_01 ===
+=== prof_trigger_02 ===
+=== prof_trigger_03 ===
+=== prof_trigger_04 ===
+=== prof_trigger_05 ===
+=== prof_trigger_06 ===
+=== prof_trigger_07 ===
+PM_SIGSEL[0]    = 0x01
+PM_SRCSEL[0]    = 0x00 (0:0x00, 1:0x10, 2:0x20, 3:0x30, 4:0x40, 5:0x50, 6:0x60, 7:0x70)
+
+=== shared_load ===
+PM_SIGSEL[0]    = 0x64
+PM_SRCSEL[0]    = 0x10
+
+=== shared_store ===
+PM_SIGSEL[0]    = 0x64
+PM_SRCSEL[0]    = 0x40
+
+=== thread_inst_executed_0 ===
+=== thread_inst_executed_1 ===
+=== thread_inst_executed_2 ===
+=== thread_inst_executed_3 ===
+PM_SIGSEL[0]    = 0xa3a3a3a3 (0:a3, 1:a5, 2:a4, 3:a6)
+PM_SIGSEL[1]    = 0xa3a3 (0:a3, 1:a5, 2:a4, 3:a6)
+PM_SRCSEL[0]    = 0x00
+PM_SRCSEL[1]    = 0x11
+PM_SRCSEL[2]    = 0x22
+PM_SRCSEL[3]    = 0x33
+PM_SRCSEL[4]    = 0x44
+PM_SRCSEL[5]    = 0x55
+
+=== threads_launched ===
+PM_SIGSEL[0]    = 0x26262626
+PM_SIGSEL[1]    = 0x2626
+PM_SRCSEL[0]    = 0x10
+PM_SRCSEL[1]    = 0x21
+PM_SRCSEL[2]    = 0x32
+PM_SRCSEL[3]    = 0x43
+PM_SRCSEL[4]    = 0x54
+PM_SRCSEL[5]    = 0x65
+
+=== warps_launched ===
+PM_SIGSEL[0]    = 0x26
+PM_SRCSEL[0]    = 0x00
