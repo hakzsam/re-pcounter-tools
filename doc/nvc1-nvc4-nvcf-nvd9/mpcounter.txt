@@ -1,4 +1,4 @@
-== MP counters for NVC1, NVC4 and NVCF ==
+== MP counters for NVC1, NVC4, NVCF and NVD9 ==
 
 All of the following signals use the LOGOP mode (ie. MP_MODE set to 0x00).
 
