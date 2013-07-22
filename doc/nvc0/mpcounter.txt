@@ -1,8 +1,10 @@
 == MP counters for NVC1, NVC4, NVCF and NVD9 ==
 
-All of the following signals use the LOGOP mode (ie. MP_MODE set to 0x00).
+(TODO: Try to understand gld_inst,gst_inst signals).
 
-(TODO: Check MP_FUNC with dedma and try to understand gld,gst_inst signals).
+All of these events have the following common configuration :
+PM_OP_MODE      = 0x0 (ie. LOGOP mode)
+PM_OP_FUNC      = 0xaaaa
 
 === active_cycles ===
 PM_SIGSEL[0]    = 0x11
