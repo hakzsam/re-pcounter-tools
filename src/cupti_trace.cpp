@@ -18,6 +18,7 @@
  */
 
 #define LOOKUP_PATH     "../envytools/build/rnn/lookup"
+#define DEDMA_PATH      "../envytools/build/rnn/dedma"
 #define NAME_SHORT      64
 #define NAME_LONG       128
 #define DESC_SHORT      512
@@ -628,6 +629,71 @@ static uint32_t method4(struct trace *t)
     return ret ? value : -1;
 }
 
+static int dedma(int chipset, int map, const char *file, uint32_t *control)
+{
+    char cmd[1024], buf[1024];
+    FILE *f;
+
+    sprintf(cmd, "%s -m %02x -v %d %s 2> /dev/null\n", DEDMA_PATH, chipset, map,
+            file);
+
+    if (!(f = popen(cmd, "r"))) {
+        perror("popen");
+        return -1;
+    }
+
+    while (fgets(buf, sizeof(buf), f) != NULL) {
+        char *ptr, *token;
+
+        if (!(ptr = strstr(buf, "MP_PM_CONTROL")))
+            continue;
+
+        token = strtok(buf, " ");
+        if (token)
+            *control = strtoul(token, NULL, 16);
+    }
+
+    if (pclose(f) < 0) {
+        perror("pclose");
+        return -1;
+    }
+
+    return 0;
+}
+
+static uint32_t nv50_find_mp_pm_control(int chipset, FILE *f, const char *filename)
+{
+    int map_ids[64];
+    char line[1024];
+    uint32_t control;
+    int i;
+
+    bzero(map_ids, sizeof(map_ids));
+
+    while (fgets (line, sizeof(line), f) != NULL) {
+        char *ptr, *token;
+        int map_id;
+
+        if (!(ptr = strstr(line, "-- w ")))
+            continue;
+        ptr += 5;
+
+        token = strtok(ptr, ":");
+        if (token) {
+            map_id = strtoul(token, NULL, 10);
+            map_ids[map_id] = 1;
+        }
+    }
+
+    for (i = 0; i < sizeof(map_ids) / sizeof(map_ids[0]); i++) {
+        if (map_ids[i] != 0) {
+            dedma(chipset, i, filename, &control);
+        }
+    }
+
+    return control;
+}
+
 static int trace_event(const char *chipset, struct domain *d, struct event *e)
 {
     char trace_log[1204];
@@ -727,6 +793,13 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
         }
     }
     free(t);
+
+    int chipset_id = strtoul(chipset + 2, NULL, 16);
+    if (chipset_id >= 0x50 && chipset_id <= 0xaf) {
+        fseek(f, 0, SEEK_SET);
+        uint32_t control = nv50_find_mp_pm_control(chipset_id, f, trace_log);
+        printf("MP_PM_CONTROL = %08x\n", control);
+    }
 
     if (fclose(f) < 0) {
         perror("fclose");
