@@ -20,7 +20,7 @@ cd ..
 #
 # Build envytools.
 #
-git clone git://github.com/pathscale/envytools.git
+git clone git://github.com/envytools/envytools.git
 cd envytools
 mkdir build
 cd build
