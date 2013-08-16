@@ -1,0 +1,11 @@
+== PCOUNTER for NV86 ==
+
+=== tex_cache_hit ===
+=== tex_cache_miss ===
+=== gld_incoherent ===
+=== gld_coherent ===
+=== gst_incoherent ===
+=== gst_coherent ===
+=== local_load ===
+=== local_store ===
+=== cta_launched ===
