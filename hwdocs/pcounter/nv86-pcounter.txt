@@ -1,0 +1,40 @@
+= NV86 Graphics Counters =
+
+1. The PRIMITIVE signals
+1.1 setup_primitive_count
+1.2 setup_point_count
+1.3 setup_line_count
+1.4 setup_triangle_count
+
+== The PRIMITIVE signals ==
+
+These signals are always on set 1.
+
+signal                   |86| test
+-------------------------+--+--+--+--+--+--+--+--+--+--+--+---------------
+NV_setup_primitive_count |d2| tests/test_setup_primitive_count.c
+NV_setup_point_count     |d3| tests/test_setup_point_count.c
+NV_setup_line_count      |d4| tests/test_setup_line_count.c
+NV_setup_triangle_count  |d5| tests/test_setup_triangle_count.c
+
+=== setup_primitive_count ===
+
+Returns the number of primitives processed in the geometry subsystem. This
+experiments counts points, lines and triangles. To count only triangles,
+use the setup_triangle_count counter. Balance these counts with the number
+of pixels being drawn to see if you could simplify your geometry and use
+bump/displacement maps, for example.
+
+=== setup_point_count ===
+
+The number of points seen by the primitive setup unit (just before
+rasterization).
+
+=== setup_line_count ===
+
+The number of lines seen by the primitive setup unit (just before
+rasterization).
+
+=== setup_triangle_count ===
+
+Returns the number of triangles processed in the geometry subsystem.
