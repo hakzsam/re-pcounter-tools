@@ -6,6 +6,9 @@
 1.3 setup_line_count
 1.4 setup_triangle_count
 1.5 setup_primitive_culled_count
+2. The IA signals
+2.1 input_assembler_busy
+2.2 input_assembler_waits_for_fb
 
 == The PRIMITIVE signals ==
 
@@ -50,3 +53,26 @@ this culling. This includes primitives culled when using backface culling.
 Drawing a fully visible sphere on the screen should cull half of the triangles
 if backface culling is tuerned on and all the triangles are ordered
 consistently (CW or CCW).
+
+== The IA signals ==
+
+These signals are always on set 1 and currently only work on the Linux blob.
+
+signal                          |EVENT_SRC|EVENT_OP
+--------------------------------+---------+-----------------------------
+NV_input_assembler_busy         |68697d7e |f888
+NV_input_assembler_waits_for_fb |74       |aaaa
+
+TOOO: Find out why it doesn't work on Nouveau, we probably miss a mux somewhere.
+
+=== input_assembler_busy ===
+
+The % of time the input assembler unit is busy. This is mainly impacted by both
+the number of vertices processed as well as the size of the attributes on those
+vertices. You can optimize this by reducing vertex size as much as possible and
+using indexed primitives to take advantage of the vertex cache.
+
+=== input_assembler_waits_for_fb ===
+
+This is the amount of time the input assembler unit was waiting for data from
+the frame buffer unit.
