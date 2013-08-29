@@ -9,6 +9,9 @@
 2. The IA signals
 2.1 input_assembler_busy
 2.2 input_assembler_waits_for_fb
+3. The VS signals
+3.1 vertex_shader_busy
+3.2 vertex_shader_instruction_rate
 
 == The PRIMITIVE signals ==
 
@@ -76,3 +79,25 @@ using indexed primitives to take advantage of the vertex cache.
 
 This is the amount of time the input assembler unit was waiting for data from
 the frame buffer unit.
+
+== The VS signals ==
+
+These signals are always on set 3.
+
+[XXX: write me]
+
+=== vertex_shader_busy ===
+
+This is the % of time that shader unit 0 was busy scaled by the ratio of vertex
+shader instructions to all shader type instructions
+(or vertex_shader_instruction_rate). If this value is high but, for instance,
+pixel_shader_busy is slow, it is an indication that you may be verte/geometry
+bound. This can be from geometry that is too detailed or even from vertex
+programs that are overly complex and need to be simplified. In addition, taking
+advantage of the post T&L cache (by reducing vertex size and using indexed
+primitives) can prevent processing the same vertices multiple times.
+
+=== vertex_shader_instruction_rate ===
+
+The % of all shader instructions seen on the first SM unit that were executing
+vertex shaders.
