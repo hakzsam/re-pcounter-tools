@@ -12,6 +12,13 @@
 3. The VS signals
 3.1 vertex_shader_busy
 3.2 vertex_shader_instruction_rate
+4. The GEOM signals
+4.1 geom_busy
+4.2 geom_waits_for_shader
+4.3 geom_vertex_in_count
+4.4 geom_primitive_in_count
+4.5 geom_vertex_out_count
+4.6 geom_primitive_out_count
 
 == The PRIMITIVE signals ==
 
@@ -102,3 +109,49 @@ primitives) can prevent processing the same vertices multiple times.
 
 The % of all shader instructions seen on the first SM unit that were executing
 vertex shaders.
+
+== The GEOM signals ==
+
+These signals are always on set 3.
+
+signal                          |EVENT_SRC|EVENT_OP
+--------------------------------+---------+-----------------------------
+NV_geom_busy                    |3020100  | f888
+NV_geom_busy_waits_for_shader   |3020100  | f888
+NV_geom_vertex_in_count         |3020100  | 22f2
+NV_geom_primitive_in_count      |3020100  | 22f2
+NV_geom_vertex_out_count        |3020100  | 22f2
+NV_geom_primitive_out_count     |3020100  | 22f2
+
+[XXX: Only geom_busy currently works correctly on nouveau and for the others
+we have to find out the related mux.]
+
+=== geom_busy ===
+
+This measures the traffic from the unit that distributes vertex and geometry
+work to the shader units for transforming the vertices. Draw calls with large
+numbers of primitives (or many draw calls with small numbers of primitives) can
+potentially cause this unit to become a bottleneck.
+
+=== geom_waits_for_shader ===
+
+The amount of time the geom unit spent waiting for the shader unit to be
+ready to accept work.
+
+=== geom_vertex_in_count ===
+
+The number of vertices input to the geom unit.
+
+=== geom_primitive_in_count ===
+
+The number of primitives input to the geom unit.
+
+=== geom_vertex_out_count ===
+
+The number of vertices coming out of the geom unit after any geometry shader
+expansion.
+
+=== geom_primitive_out_count ===
+
+The number of primitives coming out the geom unit after any geometry shader
+expansion.
