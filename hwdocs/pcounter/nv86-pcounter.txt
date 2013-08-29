@@ -66,7 +66,8 @@ signal                          |EVENT_SRC|EVENT_OP
 NV_input_assembler_busy         |68697d7e |f888
 NV_input_assembler_waits_for_fb |74       |aaaa
 
-TOOO: Find out why it doesn't work on Nouveau, we probably miss a mux somewhere.
+TOOO: Find out why input_assembler_busy doesn't work on Nouveau,
+we probably misconfigured a mux somewhere.
 
 === input_assembler_busy ===
 
