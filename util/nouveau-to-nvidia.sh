@@ -12,7 +12,8 @@ fi
 sed -i 's/MODULES="nouveau"/#MODULES="nouveau"/' /etc/mkinitcpio.conf
 
 pacman -Rdds --noconfirm nouveau-dri xf86-video-nouveau mesa-libgl #lib32-nouveau-dri lib32-mesa-libgl
-pacman -S --noconfirm nvidia nvidia-utils nvidia-libgl #lib32-nvidia-libgl
+#pacman -S --noconfirm nvidia nvidia-utils nvidia-libgl #lib32-nvidia-libgl
+pacman -S --noconfirm nvidia-304xx nvidia-304xx-utils #lib32-nvidia-libgl
 
 mkinitcpio -p linux
 
