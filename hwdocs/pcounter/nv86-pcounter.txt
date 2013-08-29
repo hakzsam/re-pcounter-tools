@@ -133,6 +133,9 @@ work to the shader units for transforming the vertices. Draw calls with large
 numbers of primitives (or many draw calls with small numbers of primitives) can
 potentially cause this unit to become a bottleneck.
 
+PGRAPH.TP[0].MPC.PM_GROUP_SEL => 0x408330 = 0x3
+PGRAPH.TP[0].MPC+0x34         => 0x408334 = 0x1
+
 === geom_waits_for_shader ===
 
 The amount of time the geom unit spent waiting for the shader unit to be
