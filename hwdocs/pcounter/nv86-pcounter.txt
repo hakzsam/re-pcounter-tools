@@ -337,6 +337,17 @@ The average LOD sourced across all texture reads.
 == The ROP signals ==
 
 [XXX: write me]
+                                    |      EVENT      |
+                                    +-----------------+
+signal                          |SET|    SRC   |  OP  |
+--------------------------------+---+----------+------+
+rop_busy                        | 2 |0x05040302|0xf888|
+rop_waits_for_fb                | 2 |    ??    |  ??  |
+rop_waits_for_shader            | 2 |    ??    |  ??  |
+rop_pixels_killed_earlyz_count  | 2 |    ??    |  ??  |
+rop_pixels_killed_latez_count   | 2 |    ??    |  ??  |
+
+rop_busy must be enabled by writing 0x80000000 to 0x408e50.
 
 === rop_busy ===
 
