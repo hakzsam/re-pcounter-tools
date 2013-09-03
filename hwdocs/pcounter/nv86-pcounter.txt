@@ -253,7 +253,14 @@ pixel shaders.
 
 == The SHADER signals ==
 
-[XXX: write me]
+                                    |      EVENT      |          MPC         |
+                                    +-----------------+--------------+-------+
+signal                          |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
+--------------------------------+---+----------+------+--------------+-------+
+shader_busy                     | 3 |0x2c2c0400|0xeeee|     0x10     |  0x1  |
+shader_waits_for_texture        | 3 |0x01000302|0x22f2|     0x10     |  0x1  |
+shader_waits_for_geom           | 3 |0x03020100|0x22f2|     0x4      |  0x1  |
+shader_waits_for_rop            | 3 |0x2c2c0100|0x2222|     0x5      |  0x1  |
 
 === shader_busy ===
 
