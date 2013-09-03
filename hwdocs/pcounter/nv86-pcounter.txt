@@ -149,19 +149,18 @@ vertex shaders.
 
 == The GEOM signals ==
 
-These signals are always on set 3.
+[XXX: Find out how to activate geom_vertex_in_count
 
-signal                          |EVENT_SRC|EVENT_OP
---------------------------------+---------+-----------------------------
-NV_geom_busy                    |3020100  | f888
-NV_geom_busy_waits_for_shader   |3020100  | f888
-NV_geom_vertex_in_count         |3020100  | 22f2
-NV_geom_primitive_in_count      |3020100  | 22f2
-NV_geom_vertex_out_count        |3020100  | 22f2
-NV_geom_primitive_out_count     |3020100  | 22f2
-
-[XXX: Only geom_busy currently works correctly on nouveau and for the others
-we have to find out the related mux.]
+                                    |      EVENT      |          MPC         |
+                                    +-----------------+--------------+-------+
+signal                          |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
+--------------------------------+---+----------+------+--------------+-------+
+geom_busy                       | 3 |0x03020100|0xf888|     0x3      |  0x1  |
+geom_waits_for_shader           | 3 |0x03020100|0x22f2|     0x3      |  0x1  |
+geom_vertex_in_count            | 1 |    ??    |  ??  |     0x0      |  0x0  |
+geom_primitive_in_count         | 1 |0x0000006e|0xaaaa|     0x0      |  0x0  |
+geom_vertex_out_count           | 1 |0x0000005d|0xaaaa|     0x0      |  0x0  |
+geom_primitive_out_count        | 1 |0x0000005c|0xaaaa|     0x0      |  0x0  |
 
 === geom_busy ===
 
@@ -169,9 +168,6 @@ This measures the traffic from the unit that distributes vertex and geometry
 work to the shader units for transforming the vertices. Draw calls with large
 numbers of primitives (or many draw calls with small numbers of primitives) can
 potentially cause this unit to become a bottleneck.
-
-PGRAPH.TP[0].MPC.PM_GROUP_SEL => 0x408330 = 0x3
-PGRAPH.TP[0].MPC+0x34         => 0x408334 = 0x1
 
 === geom_waits_for_shader ===
 
