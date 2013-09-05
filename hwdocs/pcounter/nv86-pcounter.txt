@@ -95,13 +95,13 @@ consistently (CW or CCW).
 
 == The IA signals ==
 
-These signals are always on set 1 and currently only work on the Linux blob.
-
-signal                       |EVENT_SRC|EVENT_OP
------------------------------+---------+-----------------------------
-input_assembler_busy         |68697d7e |f888
-input_assembler_waits_for_fb |74       |aaaa
-
+                                    |      EVENT      |
+                                    +-----------------|
+signal                          |SET|    SRC   |  OP  |
+--------------------------------+---+----------+------|
+input_assembler_busy            | 1 |0x68697d7e|0xf888|
+input_assembler_waits_for_fb    | 1 |0x00000074|0xaaaa|
+vertex_attribute_count          | 1 |0x68697d7e|0xf888|
 
 [XXX: Find out why input_assembler_busy doesn't work on Nouveau, we probably
 misconfigured a mux somewhere. And try to understand vertex_attribute_count]
