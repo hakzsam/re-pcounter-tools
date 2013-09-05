@@ -289,12 +289,14 @@ times, unblended) this can be a performance bottleneck.
 == The TEXTURE signals ==
 
 [XXX: write me]
+[XXX: Find out why texture_waits_for_fb doesn't work]
+
                                     |      EVENT      |          MPC         |
                                     +-----------------+--------------+-------+
 signal                          |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
 --------------------------------+---+----------+------+--------------+-------+
 texture_busy                    | 3 |0x2c050402|0xeaea|     0x1110   |  0x1  |
-texture_waits_for_fb            | 2 |    ??    |  ??  |     ??       |  ??   |
+texture_waits_for_fb            | 2 |0x0000001c|0xaaaa|     0x0      |  0x0  |
 texture_waits_for_shader        | 3 |0x2c2c0100|0x2222|     0x11     |  0x1  |
 texture_sample_base_level_rate  | ? |    ??    |  ??  |     ??       |  ??   |
 texture_sample_average_level    | ? |    ??    |  ??  |     ??       |  ??   |
