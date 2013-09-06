@@ -209,7 +209,13 @@ geometry shaders.
 
 == The SO signals ==
 
-[XXX: write me]
+[XXX: stream_out_busy doesn't work even on Windows]
+
+                                    |      EVENT      |
+                                    +-----------------|
+signal                          |SET|    SRC   |  OP  |
+--------------------------------+---+----------+------|
+stream_out_busy                 | 1 |0x00005f5e|0x8888|
 
 === stream_out_busy ===
 
