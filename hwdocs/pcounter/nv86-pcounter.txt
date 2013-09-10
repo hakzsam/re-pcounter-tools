@@ -96,15 +96,14 @@ consistently (CW or CCW).
 == The IA signals ==
 
                                     |      EVENT      |
-                                    +-----------------|
-signal                          |SET|    SRC   |  OP  |
---------------------------------+---+----------+------|
-input_assembler_busy            | 1 |0x68697d7e|0xf888|
-input_assembler_waits_for_fb    | 1 |0x00000074|0xaaaa|
-vertex_attribute_count          | 1 |0x68697d7e|0xf888|
+                                    +-----------------+----------+
+signal                          |SET|    SRC   |  OP  | 0x400c0c |
+--------------------------------+---+----------+------+----------+
+input_assembler_busy            | 1 |0x68697d7e|0xf888|0x00000001|
+input_assembler_waits_for_fb    | 1 |0x00000074|0xaaaa|0x00000001|
+vertex_attribute_count          | 1 |0x68697d7e|0xf888|0x00000001|
 
-[XXX: Find out why input_assembler_busy doesn't work on Nouveau, we probably
-misconfigured a mux somewhere. And try to understand vertex_attribute_count]
+NOTE: vertex_attribute_count is probably equal to input_assembler_busy.
 
 === input_assembler_busy ===
 
