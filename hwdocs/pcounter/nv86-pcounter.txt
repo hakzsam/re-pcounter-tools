@@ -130,6 +130,9 @@ These signals are always on set 3.
 
 [XXX: write me]
 
+vertex_shader_busy = vertex_shader_busy_ctr * shader_busy / shader_busy_ctr
+vertex_shader_instruction_rate = vertex_shader_busy_ctr * 100 / shader_busy_ctr
+
 === vertex_shader_busy ===
 
 This is the % of time that shader unit 0 was busy scaled by the ratio of vertex
@@ -195,6 +198,9 @@ expansion.
 
 [XXX: write me]
 
+geometry_shader_busy = geometry_shader_busy_ctr * shader_busy / shader_busy_ctr
+geometry_shader_instruction_rate = geometry_shader_busy_ctr * 100 / shader_busy_ctr
+
 === geometry_shader_busy ===
 
 This is the % of time that shader unit 0 was busy scaled by the ratio of
@@ -238,6 +244,9 @@ The number of pixels killed by the zcull unit in the rasterizer.
 == The PS signals ==
 
 [XXX: write me]
+
+pixel_shader_busy = pixel_shader_busy_ctr * shader_busy / shader_busy_ctr
+pixel_shader_instruction_rate = pixel_shader_busy_ctr * 100 / shader_busy_ctr
 
 === pixel_shader_busy ===
 
