@@ -1,4 +1,6 @@
-= NV86 Graphics Counters =
+= NV50 Graphics Counters =
+
+!!! Only tested on NV86 and NV98 !!!
 
 1. The SETUP signals
 1.1 setup_primitive_count
