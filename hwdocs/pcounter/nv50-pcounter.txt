@@ -50,6 +50,7 @@
 11.3 rop_waits_for_shader
 11.4 rop_pixels_killed_earlyz_count
 11.5 rop_pixels_killed_latez_count
+11.6 rop_samples_in_count
 
 == The SETUP signals ==
 
@@ -364,6 +365,7 @@ The average LOD sourced across all texture reads.
   supported by Nouveau ?
 - Find out how to correctly test rop_waits_for_fb which doesn't move both
   on Windows Seven and Nouveau.
+- Find out how to reproduce rop_samples_in_count.
 ]
                                     |      EVENT      |
                                     +-----------------+----------+
@@ -374,6 +376,7 @@ rop_waits_for_fb                | 2 |0x46473233|0x22f2|0x00000000|
 rop_waits_for_shader            | 2 |0x8c8c0706|0x2222|0x80000000|
 rop_pixels_killed_earlyz_count  | 2 |0x05048c07|0xffff|0x8000001a|
 rop_pixels_killed_latez_count   | 2 |0x05048c07|0xffff|0x8000001b|
+rop_samples_in_count            | ? |    ???   |   ?  |   ???    |
 
 === rop_busy ===
 
@@ -403,3 +406,8 @@ successful in setting up the depth buffer.
 This returns the number of pixels that were killed after the pixel shader ran.
 This can happen if the early Z is unable cull the pixel because of an API
 setup issue like changing the Z direction or modifying Z in the pixel shader.
+
+=== rop_samples_in_count ===
+
+Number of real samples (generated from pixels output by the rasterizer) seen
+by the ROP unit. This counter is displayed as percentage.
