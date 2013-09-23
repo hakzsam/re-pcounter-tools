@@ -227,7 +227,8 @@ geometry shaders.
 
 == The SO signals ==
 
-[XXX: stream_out_busy doesn't work even on Windows]
+[XXX: Write an OpenGL 3.0 program which uses the GL_EXT_transform_feedback for
+testing stream_out_busy]
 
                                     |      EVENT      |
                                     +-----------------|
