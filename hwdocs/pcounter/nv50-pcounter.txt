@@ -299,6 +299,10 @@ pixel shaders.
 
 == The SHADER signals ==
 
+All of the following signals use the single event mode.
+
+[XXX: shader_busy and shader_waits_for_texture are strange on Nouveau...]
+
                                     |      EVENT      |          MPC         |
                                     +-----------------+--------------+-------+
 signal                          |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
