@@ -164,24 +164,16 @@ processing capabilities of the pipeline.
 
 == The GEOM signals ==
 
-[XXX: Find out how to activate geom_vertex_in_count (mux?)]
-
-geom_vertex_in_count:
-PRE   -> 0xecececec / 0x5555
-START -> 0xec767574 / 0xffff
-EVENT -> 0xecececec / 0x5555
-STOP  -> 0xecececec / 0xaaaa
-CTRL  -> 0x30000010
-                                    |      EVENT      |          MPC         |
-                                    +-----------------+--------------+-------+
-signal                          |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
---------------------------------+---+----------+------+--------------+-------+
-geom_busy                       | 3 |0x03020100|0xf888|     0x3      |  0x1  |
-geom_waits_for_shader           | 3 |0x03020100|0x22f2|     0x3      |  0x1  |
-geom_vertex_in_count            | 1 |    ??    |  ??  |     0x0      |  0x0  |
-geom_primitive_in_count         | 1 |0x0000006e|0xaaaa|     0x0      |  0x0  |
-geom_vertex_out_count           | 1 |0x0000005d|0xaaaa|     0x0      |  0x0  |
-geom_primitive_out_count        | 1 |0x0000005c|0xaaaa|     0x0      |  0x0  |
+                                    |       START     |      EVENT      |      |         MPC          |
+                                    +-----------------+-----------------+------+--------------+-------+
+signal                          |SET|    SRC   |  OP  |    SRC   |  OP  | CTRL | PM_GROUP_SEL | UNK34 |
+--------------------------------+---+-----------------+----------+------+-----------------------------+
+geom_busy                       | 3 |          |      |0x03020100|0xf888|      |     0x3      |  0x1  |
+geom_waits_for_shader           | 3 |          |      |0x03020100|0x22f2|      |     0x3      |  0x1  |
+geom_vertex_in_count            | 1 |0xec767574|0xffff|0xecececec|0x5555|0x0010|
+geom_primitive_in_count         | 1 |          |      |0x0000006e|0xaaaa|      |
+geom_vertex_out_count           | 1 |          |      |0x0000005d|0xaaaa|      |
+geom_primitive_out_count        | 1 |          |      |0x0000005c|0xaaaa|      |
 
 === geom_busy ===
 
