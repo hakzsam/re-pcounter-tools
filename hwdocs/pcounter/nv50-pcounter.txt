@@ -102,6 +102,8 @@ consistently (CW or CCW).
 
 == The IA signals ==
 
+All of the following signals use the single event mode.
+
                                     |      EVENT      |
                                     +-----------------+----------+
 signal                          |SET|    SRC   |  OP  | 0x400c0c |
