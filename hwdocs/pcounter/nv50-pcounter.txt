@@ -250,14 +250,13 @@ bottleneck.
 
 == The RASTER signals ==
 
-[XXX: - Find out how to correctly enable rasterizer_tiles_in_count (mux?)]
+[XXX: write me]
 
-rasterizer_tiles_in_count:
-PRE   -> 0xecececec / 0x5555
-START -> 0x0a090807 / 0xffff
-EVENT -> 0x0c0becec / 0xffff
-STOP  -> 0xecececec / 0xaaaa
-CTRL  -> 0x30000020
+                                  |      START      |      EVENT      |
+                                  +-----------------+-----------------+------+
+signal                        |SET|    SRC   |  OP  |    SRC   |  OP  | CTRL |
+------------------------------+---+----------+------+----------+------+------+
+rasterizer_tiles_in_count     | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|0x0020|
 
 === shaded_pixel_count ===
 
