@@ -235,11 +235,13 @@ geometry shaders.
 [XXX: Write an OpenGL 3.0 program which uses the GL_EXT_transform_feedback for
 testing stream_out_busy]
 
+stream_out_busy use the single event mode.
+
                                     |      EVENT      |
                                     +-----------------|
 signal                          |SET|    SRC   |  OP  |
 --------------------------------+---+----------+------|
-stream_out_busy                 | 1 |0x00005f5e|0x8888|
+stream_out_busy                 | 1 |0xecec5f5e|0x8888|
 
 === stream_out_busy ===
 
