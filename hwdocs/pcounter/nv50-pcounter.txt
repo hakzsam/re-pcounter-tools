@@ -164,8 +164,14 @@ processing capabilities of the pipeline.
 
 == The GEOM signals ==
 
-[XXX: Find out how to activate geom_vertex_in_count
+[XXX: Find out how to activate geom_vertex_in_count (mux?)]
 
+geom_vertex_in_count:
+PRE   -> 0xecececec / 0x5555
+START -> 0xec767574 / 0xffff
+EVENT -> 0xecececec / 0x5555
+STOP  -> 0xecececec / 0xaaaa
+CTRL  -> 0x30000010
                                     |      EVENT      |          MPC         |
                                     +-----------------+--------------+-------+
 signal                          |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
@@ -244,7 +250,14 @@ bottleneck.
 
 == The RASTER signals ==
 
-[XXX: write me]
+[XXX: - Find out how to correctly enable rasterizer_tiles_in_count (mux?)]
+
+rasterizer_tiles_in_count:
+PRE   -> 0xecececec / 0x5555
+START -> 0x0a090807 / 0xffff
+EVENT -> 0x0c0becec / 0xffff
+STOP  -> 0xecececec / 0xaaaa
+CTRL  -> 0x30000020
 
 === shaded_pixel_count ===
 
