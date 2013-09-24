@@ -132,7 +132,7 @@ These signals are always on set 3.
 vertex_shader_busy = vertex_shader_busy_ctr * shader_busy / shader_busy_ctr
 vertex_shader_instruction_rate = vertex_shader_busy_ctr * 100 / shader_busy_ctr
 
-NOTE: vertex_attribute_count is probably equal to input_assembler_busy without
+NOTE: vertex_attribute_count is equal to input_assembler_busy without
 any reasons.
 
                                     |      EVENT      |
