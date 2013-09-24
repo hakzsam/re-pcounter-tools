@@ -56,15 +56,17 @@
 
 == The SETUP signals ==
 
+All of the following signals use the single event mode.
+
                                     |      EVENT      |
-                                    +-----------------|
+                                    +-----------------+
 signal                          |SET|    SRC   |  OP  |
---------------------------------+---+----------+------|
-setup_primitive_count           | 1 |0x000000d2|0xaaaa|
-setup_point_count               | 1 |0x000000d3|0xaaaa|
-setup_line_count                | 1 |0x000000d4|0xaaaa|
-setup_triangle_count            | 1 |0x000000d5|0xaaaa|
-setup_primitive_culled_count    | 1 |0x000000a4|0xaaaa|
+--------------------------------+---+----------+------+
+setup_primitive_count           | 1 |0xecececd2|0xaaaa|
+setup_point_count               | 1 |0xecd9d8d3|0x8080|
+setup_line_count                | 1 |0xecd9d8d4|0x8080|
+setup_triangle_count            | 1 |0xecd9d8d5|0x8080|
+setup_primitive_culled_count    | 1 |0xecececa4|0xaaaa|
 
 === setup_primitive_count ===
 
