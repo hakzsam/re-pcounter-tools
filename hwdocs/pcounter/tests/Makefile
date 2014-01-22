@@ -1,6 +1,6 @@
 CC	= gcc
 CFLAGS	= -g -Wall
-LDFLAGS = -lGL -lGLU -lglut
+LDFLAGS = -lGL -lGLU -lglut -lGLEW
 OBJ	= $(wildcard *.o)
 
 all: test_setup_signals
