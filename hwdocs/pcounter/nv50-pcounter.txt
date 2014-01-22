@@ -97,7 +97,7 @@ performing viewport culling, this gives you an indication of the accuracy
 of the algorithm being used, and can give you and idea if you need to improves
 this culling. This includes primitives culled when using backface culling.
 Drawing a fully visible sphere on the screen should cull half of the triangles
-if backface culling is tuerned on and all the triangles are ordered
+if backface culling is turned on and all the triangles are ordered
 consistently (CW or CCW).
 
 == The IA signals ==
