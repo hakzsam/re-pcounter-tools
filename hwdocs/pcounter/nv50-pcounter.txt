@@ -171,13 +171,13 @@ All of the following signals use the single event mode except
 geom_vertex_in_count which uses the b4 event mode.
 
                                     |       START     |      EVENT      |         MPC          |
-                                    +-----------------+-----------------+--------------+-------+
-signal                          |SET|    SRC   |  OP  |    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
---------------------------------+---+-----------------+----------+------+----------------------+
+                                    +-----------------+-----------------+--------------+-------+----------+
+signal                          |SET|    SRC   |  OP  |    SRC   |  OP  | PM_GROUP_SEL | UNK34 | 0x400c0c |
+--------------------------------+---+-----------------+----------+------+----------------------+----------+
 geom_busy                       | 3 |          |      |0x03020100|0xf888|     0x3      |  0x1  |
 geom_waits_for_shader           | 3 |          |      |0x03020100|0x22f2|     0x3      |  0x1  |
 geom_vertex_in_count            | 1 |0xec767574|0xffff|0xecececec|0x5555|
-geom_primitive_in_count         | 1 |          |      |0x0000006e|0xaaaa|
+geom_primitive_in_count         | 1 |          |      |0x0000006e|0xaaaa|              |       |0x00000001|
 geom_vertex_out_count           | 1 |          |      |0x0000005d|0xaaaa|
 geom_primitive_out_count        | 1 |          |      |0x0000005c|0xaaaa|
 
