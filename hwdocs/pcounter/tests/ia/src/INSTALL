@@ -1,0 +1,9 @@
+This project uses CMake to build the source code :
+
+mkdir build
+cd build
+cmake ..
+make
+
+Then, you can run it :
+./pgm3d-viewer <fichier.pgm3d>

@@ -1,0 +1,18 @@
+= OpenGL tests for IA signals =
+
+== Introduction ==
+
+This directory contains an OpenGL program which can be useful to test
+IA signals mainly because it uses a large number of vertices through
+a Vertex Buffer Object.
+
+== Compilation ==
+
+Please, read the INSTALL file in src/.
+
+== Results ==
+
+Tested on NV98.
+
+input_assembler_busy: ~12%
+input_assembler_waits_for_fb : ~57%
