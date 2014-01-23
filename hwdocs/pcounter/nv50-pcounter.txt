@@ -11,10 +11,10 @@
 2. The IA signals
 2.1 input_assembler_busy
 2.2 input_assembler_waits_for_fb
+2.3 vertex_attribute_count
 3. The VS signals
 3.1 vertex_shader_busy
 3.2 vertex_shader_instruction_rate
-3.3 vertex_attribute_count
 4. The GEOM signals
 4.1 geom_busy
 4.2 geom_waits_for_shader
@@ -104,12 +104,16 @@ consistently (CW or CCW).
 
 All of the following signals use the single event mode.
 
+NOTE: vertex_attribute_count is equal to input_assembler_busy without
+any reasons.
+
                                     |      EVENT      |
                                     +-----------------+----------+
 signal                          |SET|    SRC   |  OP  | 0x400c0c |
 --------------------------------+---+----------+------+----------+
 input_assembler_busy            | 1 |0x68697d7e|0xf888|0x00000001|
 input_assembler_waits_for_fb    | 1 |0x00000074|0xaaaa|0x00000001|
+vertex_attribute_count          | 1 |0x68697d7e|0xf888|0x00000001|
 
 === input_assembler_busy ===
 
@@ -123,6 +127,12 @@ using indexed primitives to take advantage of the vertex cache.
 This is the amount of time the input assembler unit was waiting for data from
 the frame buffer unit.
 
+=== vertex_attribute_count ===
+
+The number of vertex attributes that are fetched and passed to the geometry
+unit is returned in this counter. A large number of attributes (or unaligned
+vertices) can hurt vertex cache performance and reduce the overall vertex
+processing capabilities of the pipeline.
 == The VS signals ==
 
 These signals are always on set 3.
@@ -132,16 +142,12 @@ These signals are always on set 3.
 vertex_shader_busy = vertex_shader_busy_ctr * shader_busy / shader_busy_ctr
 vertex_shader_instruction_rate = vertex_shader_busy_ctr * 100 / shader_busy_ctr
 
-NOTE: vertex_attribute_count is equal to input_assembler_busy without
-any reasons.
-
                                     |      EVENT      |
                                     +-----------------+----------+
 signal                          |SET|    SRC   |  OP  | 0x400c0c |
 --------------------------------+---+----------+------+----------+
 vertex_shader_busy              | ? |   ???    |  ??  |    ???   |
 vertex_shader_instruction_rate  | ? |   ???    |  ??  |    ???   |
-vertex_attribute_count          | 1 |0x68697d7e|0xf888|0x00000001|
 
 === vertex_shader_busy ===
 
@@ -158,13 +164,6 @@ primitives) can prevent processing the same vertices multiple times.
 
 The % of all shader instructions seen on the first SM unit that were executing
 vertex shaders.
-
-=== vertex_attribute_count ===
-
-The number of vertex attributes that are fetched and passed to the geometry
-unit is returned in this counter. A large number of attributes (or unaligned
-vertices) can hurt vertex cache performance and reduce the overall vertex
-processing capabilities of the pipeline.
 
 == The GEOM signals ==
 
