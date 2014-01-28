@@ -253,10 +253,11 @@ bottleneck.
 All of the following signals use the B6 event mode.
 
                                   |      START      |      EVENT      |
-                                  +-----------------+-----------------+
-signal                        |SET|    SRC   |  OP  |    SRC   |  OP  |
-------------------------------+---+----------+------+----------+------+
+                                  +-----------------+-----------------+----------+
+signal                        |SET|    SRC   |  OP  |    SRC   |  OP  | 0x408e50 |
+------------------------------+---+----------+------+----------+------+----------+
 rasterizer_tiles_in_count     | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|
+rasterizer_pixels_out_count   | 2 |0x08020100|0xffff|0x8c8c0607|0x8888|0x80000016|
 
 === shaded_pixel_count ===
 
