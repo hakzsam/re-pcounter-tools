@@ -250,13 +250,13 @@ bottleneck.
 
 == The RASTER signals ==
 
-[XXX: write me]
+All of the following signals use the B6 event mode.
 
                                   |      START      |      EVENT      |
-                                  +-----------------+-----------------+------+
-signal                        |SET|    SRC   |  OP  |    SRC   |  OP  | CTRL |
-------------------------------+---+----------+------+----------+------+------+
-rasterizer_tiles_in_count     | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|0x0020|
+                                  +-----------------+-----------------+
+signal                        |SET|    SRC   |  OP  |    SRC   |  OP  |
+------------------------------+---+----------+------+----------+------+
+rasterizer_tiles_in_count     | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|
 
 === shaded_pixel_count ===
 
