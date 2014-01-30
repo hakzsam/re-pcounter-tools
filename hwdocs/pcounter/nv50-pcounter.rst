@@ -459,8 +459,13 @@ The TEXTURE signals
 
 All of the following signals use the single event mode.
 
-[XXX: write me]
-[XXX: Find out why texture_waits_for_fb doesn't work]
+.. _texture-todo:
+TODO
+----
+
+- texture_waits_for_fb doesn't work.
+- texture_sample_base_level_rate must be added.
+- texture_sample_average_level must be added.
 
 +------------------------------------+-----------------+----------------------+
 |                                    |      EVENT      |         MPC          |
