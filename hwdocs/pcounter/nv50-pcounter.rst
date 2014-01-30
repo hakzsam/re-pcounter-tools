@@ -459,7 +459,7 @@ rop_samples_in_count
 --------------------
 
 Number of real samples (generated from pixels output by the rasterizer) seen
-by the ROP unit. This counter is displayed as percentage.
+by the ROP unit.
 
 The TEXTURE signals
 ===================
