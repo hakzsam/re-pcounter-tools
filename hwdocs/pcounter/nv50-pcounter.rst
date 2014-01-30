@@ -482,39 +482,28 @@ All of the following signals use the single event mode.
 texture_busy
 ------------
 
-This is a measurement of how busy the texture unit is. This covers both time
-spent sampling values from the frame buffer (through the texture cache) and
-the time spent computing any filtering that is enabled (like bilinear or
-anisotropic). Reducing both the number of taps and the filtering level will
-help to reduce any bottleneck in the texture unit.
+Time the texture unit is busy.
 
 .. _texture-waits-for-fb:
 texture_waits_for_fb
 --------------------
 
-This is the amount of time the texture unit spent waiting on samples to return
-from the frame buffer unit. It is a potential indication of poor texture cache
-utilization.
+Time the texture unit is stalled waiting for the FB unit.
 
 .. _texture-waits-for-shader:
 texture_waits_for_shader
 ------------------------
 
-This is the amount of time the texture unit spent waiting to send results to
-the shader unit. If the queue between those units gets too full (because the
-shader unit isn't ready to receive thoses values), this can become a
-bottleneck.
+Time the texture unit is stalled waiting for the shader unit.
 
 .. _texture-sample-base-level-rate:
 texture_sample_base_level_rate
 ------------------------------
 
-The percentage of texture samples which read from the base texture level. This
-can be useful to determine if your base texture level is too large and can be
-reduced to the next mipmap level.
+Percentage of texture samples which source the base texture level.
 
 .. _texture-sample-average-level:
 texture_sample_average_level
 ----------------------------
 
-The average LOD sourced across all texture reads.
+Across all texture samples, the average LOD sourced.
