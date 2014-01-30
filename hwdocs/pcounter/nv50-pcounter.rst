@@ -57,7 +57,7 @@ The GEOM signals
 ================
 
 All of the following signals use the single event mode except
-geom_vertex_in_count which uses the b4 event mode.
+geom_vertex_in_count which uses the B4 event mode.
 
 +------------------------------+-----------------+-----------------+----------------------+----------+
 |                              |      START      |      EVENT      |         MPC          |   MUX    |
@@ -390,7 +390,7 @@ The ROP signals
 
 All of the following signals use the single event mode except
 rop_pixels_killed_earlyz_count and rop_pixels_killed_latez_count
-which use the b6 event mode.
+which use the B6 event mode.
 
 [XXX:
 - Find out how to correctly test rop_waits_for_fb.
