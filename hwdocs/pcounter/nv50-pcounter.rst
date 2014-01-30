@@ -392,10 +392,12 @@ All of the following signals use the single event mode except
 rop_pixels_killed_earlyz_count and rop_pixels_killed_latez_count
 which use the B6 event mode.
 
-[XXX:
-- Find out how to correctly test rop_waits_for_fb.
-- Find out how to reproduce rop_samples_in_count.
-]
+.. _rop-todo:
+TODO
+----
+
+- rop_waits_for_fb is always set to 0 on Windows.
+- rop_samples_in_count must be added.
 
 +----------------------------------------+-----------------+-----------------+----------+
 |                                        |      START      |      EVENT      |   MUX    |
