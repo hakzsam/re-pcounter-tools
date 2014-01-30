@@ -419,40 +419,31 @@ which use the b6 event mode.
 rop_busy
 --------
 
-% of time that the ROP unit is actively doing work. This can be high if alpha
-blending is turned on, of overdraw is high, etc.
+Time the ROP unit is busy.
 
 .. _rop-waits-for-fb:
 rop_waits_for_fb
 ----------------
 
-The amount of time the blending unit spent waiting for data from the frame
-buffer unit. If blending is enabled and there is a lot of traffic here (since
-this is a read/modify/write operation) this can become a bottleneck.
+Time the ROP unit is stalled waiting for the FB unit.
 
 .. _rop-waits-for-shader:
 rop_waits_for_shader
 --------------------
 
-This is a measurement of how often the blending unit was waiting on new work
-(fragments to be placed into the render target). If the pixel shaders are
-particularly expensive, the ROP unit could be starved waiting for results.
+Time the ROP unit is stalled waiting for the shader unit.
 
 .. _rop-samples-killed-by-earlyz-count:
 rop_samples_killed_by_earlyz_count
 ------------------------------
 
-This returns the number of pixels that were killed in the early Z hardware.
-This signal will give you an idea of, for instance, a Z only pass was
-successful in setting up the depth buffer.
+Count of samples killed by the early-z stage.
 
 .. _rop-samples-killed-by-latez-count:
 rop_samples_killed_by_latez_count
 -----------------------------
 
-This returns the number of pixels that were killed after the pixel shader ran.
-This can happen if the early Z is unable cull the pixel because of an API
-setup issue like changing the Z direction or modifying Z in the pixel shader.
+Count of samples killed by the late-z stage.
 
 .. _rop-samples-in-count:
 rop_samples_in_count
