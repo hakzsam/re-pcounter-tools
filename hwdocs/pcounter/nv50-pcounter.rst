@@ -408,7 +408,7 @@ which use the b6 event mode.
 +------------------------------------+---+----------+------+----------+------+----------+
 | rop_waits_for_shader               | 2 |          |      |0x8c8c0706|0x2222|0x80000000|
 +------------------------------------+---+----------+------+----------+------+----------+
-| rop_pixels_killed_earlyz_count     | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x8000001a|
+| rop_samples_killed_by_earlyz_count | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x8000001a|
 +------------------------------------+---+----------+------+----------+------+----------+
 | rop_samples_killed_by_latez_count  | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x8000001b|
 +------------------------------------+---+----------+------+----------+------+----------+
@@ -438,8 +438,8 @@ This is a measurement of how often the blending unit was waiting on new work
 (fragments to be placed into the render target). If the pixel shaders are
 particularly expensive, the ROP unit could be starved waiting for results.
 
-.. _rop-pixels-killed-earlyz-count:
-rop_pixels_killed_earlyz_count
+.. _rop-samples-killed-by-earlyz-count:
+rop_samples_killed_by_earlyz_count
 ------------------------------
 
 This returns the number of pixels that were killed in the early Z hardware.
