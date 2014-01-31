@@ -389,17 +389,13 @@ The ROP signals
 ===============
 
 All of the following signals use the single event mode except
-rop_pixels_killed_earlyz_count and rop_pixels_killed_latez_count
-which use the B6 event mode.
+rop_pixels_killed_earlyz_count, rop_pixels_killed_latez_count and
+rop_samples_in_count_1 which use the B6 event mode.
 
 - The signal **rop_waits_for_fb** does not work on Windows (ie. the counter
   is always set to 0), maybe it's a bug in NVPerfKit ?
-
-.. _rop-todo:
-TODO
-----
-
-- rop_samples_in_count must be added.
+- The signal **rop_samples_in_count** is computed as follows (using CTR_EVENT) :
+  rop_samples_in_count = rop_samples_in_count_1 / rop_samples_in_count_0
 
 +----------------------------------------+-----------------+-----------------+----------+
 |                                        |      START      |      EVENT      |   MUX    |
@@ -416,7 +412,9 @@ TODO
 +------------------------------------+---+----------+------+----------+------+----------+
 | rop_samples_killed_by_latez_count  | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x8000001b|
 +------------------------------------+---+----------+------+----------+------+----------+
-| rop_samples_in_count               | ? |     ?    |  ?   |     ?    |   ?  |    ?     |
+| rop_samples_in_count_0             | 2 |    N/A   |  N/A |0x8c8c0607|0x8888|0x80000015|
++------------------------------------+---+----------+------+----------+------+----------+
+| rop_samples_in_count_1             | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x80000015|
 +------------------------------------+---+----------+------+----------+------+----------+
 
 .. _rop-busy:
