@@ -392,11 +392,13 @@ All of the following signals use the single event mode except
 rop_pixels_killed_earlyz_count and rop_pixels_killed_latez_count
 which use the B6 event mode.
 
+- The signal **rop_waits_for_fb** does not work on Windows (ie. the counter
+  is always set to 0), maybe it's a bug in NVPerfKit ?
+
 .. _rop-todo:
 TODO
 ----
 
-- rop_waits_for_fb is always set to 0 on Windows.
 - rop_samples_in_count must be added.
 
 +----------------------------------------+-----------------+-----------------+----------+
@@ -406,7 +408,7 @@ TODO
 +====================================+===+==========+======+==========+======+==========+
 | rop_busy                           | 2 |    N/A   |  N/A |0x05040302|0xf888|0x80000000|
 +------------------------------------+---+----------+------+----------+------+----------+
-| rop_waits_for_fb                   | 2 |    N/A   |  N/A |0x46473233|0x22f2|    N/A   |
+| rop_waits_for_fb                   | ? |     ?    |   ?  |     ?    |   ?  |     ?    |
 +------------------------------------+---+----------+------+----------+------+----------+
 | rop_waits_for_shader               | 2 |    N/A   |  N/A |0x8c8c0706|0x2222|0x80000000|
 +------------------------------------+---+----------+------+----------+------+----------+
