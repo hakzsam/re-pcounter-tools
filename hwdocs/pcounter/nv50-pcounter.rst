@@ -343,15 +343,20 @@ times, unblended) this can be a performance bottleneck.
 The RASTER signals
 ==================
 
-All of the following signals use the B6 event mode except the
-shaded_pixel_count which uses the single event mode.
+All of the following signals use the B6 event mode.
+
+.. _raster-todo:
+TODO
+----
+
+- shaded_pixel_count must be added.
 
 +--------------------------------------------+-----------------+-----------------+----------+----------+
 |                                            |      START      |      EVENT      |   MUX    |    MUX   |
 +----------------------------------------+---+----------+------+----------+------+----------+----------+
 | signal                                 |SET|    SRC   |  OP  |    SRC   |  OP  | 0x408e50 | 0x402ca4 |
 +========================================+===+==========+======+==========+======+==========+==========+
-| shaded_pixel_count                     | 2 |    N/A   | N/A  |0x8c020100|0x0404|0x8000001d|    N/A   |
+| shaded_pixel_count                     | ? |     ?    |   ?  |     ?    |   ?  |     ?    |     ?    |
 +----------------------------------------+---+----------+------+----------+------+----------+----------+
 | rasterizer_tiles_killed_by_zcull_count | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|    N/A   |    0x7   |
 +----------------------------------------+---+----------+------+----------+------+----------+----------+
