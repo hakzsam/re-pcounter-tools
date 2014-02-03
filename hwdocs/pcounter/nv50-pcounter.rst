@@ -288,14 +288,18 @@ The SHADER signals
 
 All of the following signals use the single event mode.
 
-[XXX: shader_busy and shader_waits_for_texture are strange on Nouveau...]
+.. _shader-todo:
+TODO
+----
+
+- shader_busy is always to 0 on Nouveau
 
 +------------------------------+-----------------+----------------------+
 |                              |      EVENT      |         MPC          |
 +--------------------------+---+----------+------+--------------+-------+
 | signal                   |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 |
 +==========================+===+==========+======+==============+=======+
-| shader_busy              | 3 |0x2c2c0400|0xeeee|     0x10     |  0x1  |
+| shader_busy              | 3 |0x2c2c0400|0xeeee|     0x100    |  0x1  |
 +--------------------------+---+----------+------+--------------+-------+
 | shader_waits_for_texture | 3 |0x01000302|0x22f2|     0x10     |  0x1  |
 +--------------------------+---+----------+------+--------------+-------+
