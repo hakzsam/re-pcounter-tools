@@ -288,6 +288,9 @@ The SHADER signals
 
 All of the following signals use the single event mode.
 
+- The signal **shader_busy** is composed as follows :
+  shader_busy = pixel_shader_busy + vertex_shader_busy + geometry_shader_busy
+
 .. _shader-todo:
 TODO
 ----
