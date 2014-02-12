@@ -288,6 +288,9 @@ The SHADER signals
 
 All of the following signals use the single event mode.
 
+- The signal **shader_busy** is composed as follows :
+  shader_busy = pixel_shader_busy + vertex_shader_busy + geometry_shader_busy
+
 .. _shader-todo:
 TODO
 ----
@@ -312,37 +315,25 @@ TODO
 shader_busy
 -----------
 
-This measures the how active the unified shader unit is running any type of
-shader. If you couple this information with the various
-shader_instruction_rate values you can get an idea for the workload the shader
-unit has and which shader types to tune if the shader unit becomes a
-bottleneck.
+Time the shader unit is busy.
 
 .. _shader-waits-for-texture:
 shader_waits_for_texture
 ------------------------
 
-This is the amount of time that the pixel shader unit was stalled waiting for
-a texture fetch. Texture stalls usually happen if textures don't have mipmaps,
-if a high level of anisotropic filtering is used, or if there is poor
-coherency in accessing textures.
+Time the shader unit is stalled waiting for the texture unit.
 
 .. _shader-waits-for-geom:
 shader_waits_for_geom
 ---------------------
 
-This is the amount of time the shader unit spent waiting for the geom unit to
-send work.
+Time the shader unit is stalled waiting for the geometry unit.
 
 .. _shader-waits-for-rop:
 shader_waits_for_rop
 --------------------
 
-This is the % of time that the pixel shader is stalled by the raster
-operations unit (ROP), waiting to blend a pixel and write it to the frame
-buffer. If the application is performing a lot of alpha blending, or event if
-the application has a lot of overdraw (the same pixel being written multiple
-times, unblended) this can be a performance bottleneck.
+Time the shader unit is stalled waiting for the ROP unit.
 
 The RASTER signals
 ==================
