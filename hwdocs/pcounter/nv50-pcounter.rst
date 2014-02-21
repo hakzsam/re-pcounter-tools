@@ -11,7 +11,7 @@ NV50 Graphics Counters
 The GPU signals
 ===============
 
-The following signal uses the single event mode.
+gpu_busy/gpu_idle uses the single event mode.
 
 - gpu_busy = 100% - gpu_idle
 - gpu_idle = 100% - gpu_busy
@@ -144,8 +144,12 @@ expansion.
 The SO signals
 ==============
 
-[XXX: Write an OpenGL 3.0 program which uses the GL_EXT_transform_feedback for
-testing stream_out_busy]
+.. _so-todo:
+TODO
+----
+
+- Write an OpenGL 3.0 program which uses the GL_EXT_transform_feedback for
+  testing stream_out_busy.
 
 stream_out_busy uses the single event mode.
 
