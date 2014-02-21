@@ -371,6 +371,7 @@ TODO
 ----
 
 - shaded_pixel_count must be added.
+- rasterizer_pixels_out_count is wrong.
 
 +--------------------------------------------+-----------------+-----------------+----------+----------+
 |                                            |      START      |      EVENT      |   MUX    |    MUX   |
