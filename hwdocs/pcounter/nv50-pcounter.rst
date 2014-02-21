@@ -364,14 +364,14 @@ Time the shader unit is stalled waiting for the ROP unit.
 The RASTER signals
 ==================
 
-All of the following signals use the B6 event mode.
+All of the following signals use the B6 event mode except
+rasterizer_pixelsout_count_1 which uses the single event mode.
 
 .. _raster-todo:
 TODO
 ----
 
 - shaded_pixel_count must be added.
-- rasterizer_pixels_out_count is wrong.
 
 +--------------------------------------------+-----------------+-----------------+----------+----------+
 |                                            |      START      |      EVENT      |   MUX    |    MUX   |
@@ -384,7 +384,9 @@ TODO
 +----------------------------------------+---+----------+------+----------+------+----------+----------+
 | rasterizer_tiles_in_count              | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|    N/A   |    N/A   |
 +----------------------------------------+---+----------+------+----------+------+----------+----------+
-| rasterizer_pixels_out_count            | 2 |0x08020100|0xffff|0x8c8c0607|0x8888|0x80000016|    N/A   |
+| rasterizer_pixels_out_count_0          | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x80000016|    N/A   |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| rasterizer_pixels_out_count_1          | 2 |    N/A   |  N/A |0x8c8c0607|0x8888|0x80000016|    N/A   |
 +----------------------------------------+---+----------+------+----------+------+----------+----------+
 
 .. _shaded-pixel-count:
