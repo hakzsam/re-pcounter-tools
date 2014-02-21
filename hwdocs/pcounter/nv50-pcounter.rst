@@ -8,6 +8,28 @@ NV50 Graphics Counters
 
 .. contents::
 
+The GPU signals
+===============
+
+The following signal uses the single event mode.
+
+- gpu_busy = 100% - gpu_idle
+- gpu_idle = 100% - gpu_busy
+
++-----------------------+-----------------+
+|                       |      EVENT      |
++-------------------+---+----------+------+
+| signal            |SET|    SRC   |  OP  |
++===================+===+==========+======+
+| gpu_busy/gpu_idle | 1 |0xecececbd|0xaaaa|
++-------------------+---+----------+------+
+
+.. _gpu_busy/gpu_idle:
+gpu_busy/gpu_idle
+-----------------
+
+Time the GPU is busy/idle.
+
 The IA signals
 ==============
 
