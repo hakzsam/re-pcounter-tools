@@ -419,7 +419,7 @@ The ROP signals
 
 All of the following signals use the single event mode except
 rop_pixels_killed_earlyz_count, rop_pixels_killed_latez_count and
-rop_samples_in_count which uses the B6 event mode.
+rop_samples_in_count_1 which uses the B6 event mode.
 
 - The signal **rop_waits_for_fb** does not work on Windows (ie. the counter
   is always set to 0), maybe it's a bug in NVPerfKit ?
