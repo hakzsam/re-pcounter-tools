@@ -365,7 +365,7 @@ The RASTER signals
 ==================
 
 All of the following signals use the B6 event mode except
-rasterizer_pixelsout_count_1 which uses the single event mode.
+rasterizer_pixels_out_count_1 which uses the single event mode.
 
 .. _raster-todo:
 TODO
