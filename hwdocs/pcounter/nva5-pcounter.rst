@@ -11,15 +11,18 @@ NVA5 Graphics Counters
 The GPU signals
 ===============
 
-.. _gpu-todo:
-TODO
-----
+gpu_busy/gpu_idle uses the QUAD event mode.
 
-.. _gpu_busy/gpu_idle:
-gpu_busy/gpu_idle
------------------
+- gpu_busy = 100% - gpu_idle
+- gpu_idle = 100% - gpu_busy
 
-Time the GPU is busy/idle.
++-----------------------+-----------------+
+|                       |      EVENT      |
++-------------------+---+----------+------+
+| signal            |SET|    SRC   |  OP  |
++===================+===+==========+======+
+| gpu_busy/gpu_idle | 1 |0xecececcb|0xaaaa|
++-------------------+---+----------+------+
 
 The IA signals
 ==============
