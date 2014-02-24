@@ -83,48 +83,6 @@ geom_vertex_in_count which uses the QUAD/B4 event mode.
 | geom_primitive_out_count | 1 |          |      |0xececec84|0xaaaa|     N/A      |  N/A  |    N/A   |
 +--------------------------+---+----------+------+----------+------+--------------+-------+----------+
 
-.. _geom-busy:
-geom_busy
----------
-
-This measures the traffic from the unit that distributes vertex and geometry
-work to the shader units for transforming the vertices. Draw calls with large
-numbers of primitives (or many draw calls with small numbers of primitives) can
-potentially cause this unit to become a bottleneck.
-
-.. _geom-waits-for-shader:
-geom_waits_for_shader
----------------------
-
-The amount of time the geom unit spent waiting for the shader unit to be
-ready to accept work.
-
-.. _geom-vertex-in-count:
-geom_vertex_in_count
---------------------
-
-The number of vertices input to the geom unit.
-
-.. _geom-primitive-in-count:
-geom_primitive_in_count
------------------------
-
-The number of primitives input to the geom unit.
-
-.. _geom-vertex-out-count:
-geom_vertex_out_count
----------------------
-
-The number of vertices coming out of the geom unit after any geometry shader
-expansion.
-
-.. _geom-primitive-out-count:
-geom_primitive_out_count
-------------------------
-
-The number of primitives coming out the geom unit after any geometry shader
-expansion.
-
 The SO signals
 ==============
 
