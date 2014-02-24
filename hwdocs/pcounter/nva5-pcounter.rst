@@ -90,13 +90,18 @@ The SO signals
 TODO
 ----
 
-.. _stream-out-busy:
-stream_out_busy
----------------
+- Write an OpenGL 3.0 program which uses the GL_EXT_transform_feedback for
+  testing stream_out_busy.
 
-This unit manages the writing of vertices to the frame buffer when using
-stream out. If a significant number of vertices are written, this can become a
-bottleneck.
+stream_out_busy uses the QUAD event mode.
+
++----------------------------------+-----------------+
+|                                  |      EVENT      |
++------------------------------+---+----------+------+
+| signal                       |SET|    SRC   |  OP  |
++==============================+===+==========+======+
+| stream_out_busy              | 1 |0xecec8786|0x8888|
++------------------------------+---+----------+------+
 
 The SETUP signals
 =================
