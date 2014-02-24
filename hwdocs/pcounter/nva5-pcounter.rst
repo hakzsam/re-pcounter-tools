@@ -119,48 +119,6 @@ All of the following signals use the QUAD event mode.
 | setup_primitive_culled_count | 1 |0xecececb2|0xaaaa|
 +------------------------------+---+----------+------+
 
-.. _setup-primitive-count:
-setup_primitive_count
----------------------
-
-Returns the number of primitives processed in the geometry subsystem. This
-experiments counts points, lines and triangles. To count only triangles,
-use the setup_triangle_count counter. Balance these counts with the number
-of pixels being drawn to see if you could simplify your geometry and use
-bump/displacement maps, for example.
-
-.. _setup-point-count:
-setup_point_count
------------------
-
-The number of points seen by the primitive setup unit (just before
-rasterization).
-
-.. _setup-line-count:
-setup_line_count
-----------------
-
-The number of lines seen by the primitive setup unit (just before
-rasterization).
-
-.. _setup-triangle-count:
-setup_triangle_count
---------------------
-
-Returns the number of triangles processed in the geometry subsystem.
-
-.. _setup-primitive-culled-count:
-setup_primitive_culled_count
-----------------------------
-
-Returns the number of primitives culled in primitive setup. If you are
-performing viewport culling, this gives you an indication of the accuracy
-of the algorithm being used, and can give you and idea if you need to improves
-this culling. This includes primitives culled when using backface culling.
-Drawing a fully visible sphere on the screen should cull half of the triangles
-if backface culling is turned on and all the triangles are ordered
-consistently (CW or CCW).
-
 The VS signals
 ==============
 
