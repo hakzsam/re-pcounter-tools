@@ -27,34 +27,22 @@ gpu_busy/gpu_idle uses the QUAD event mode.
 The IA signals
 ==============
 
-.. _ia-todo:
-TODO
-----
+All of the following signals use the QUAD event mode.
 
-.. _input_assembler_busy:
-input_assembler_busy
---------------------
+NOTE: vertex_attribute_count is equal to input_assembler_busy without
+any reasons.
 
-The % of time the input assembler unit is busy. This is mainly impacted by both
-the number of vertices processed as well as the size of the attributes on those
-vertices. You can optimize this by reducing vertex size as much as possible and
-using indexed primitives to take advantage of the vertex cache.
-
-.. _input_assembler_waits_for_fb:
-input_assembler_waits_for_fb:
------------------------------
-
-This is the amount of time the input assembler unit was waiting for data from
-the frame buffer unit.
-
-.. _vertex-attribute-count:
-vertex_attribute_count
-----------------------
-
-The number of vertex attributes that are fetched and passed to the geometry
-unit is returned in this counter. A large number of attributes (or unaligned
-vertices) can hurt vertex cache performance and reduce the overall vertex
-processing capabilities of the pipeline.
++----------------------------------+-----------------+----------+
+|                                  |      EVENT      |    MUX   |
++------------------------------+---+----------+------+----------+
+| signal                       |SET|    SRC   |  OP  | 0x400c0c |
++==============================+===+==========+======+==========+
+| input_assembler_busy         | 1 |0x48495a5b|0xf888|0x00000001|
++------------------------------+---+----------+------+----------+
+| input_assembler_waits_for_fb | 1 |0xececec51|0xaaaa|0x00000001|
++------------------------------+---+----------+------+----------+
+| vertex_attribute_count       | 1 |0x48495a5b|0xf888|0x00000001|
++------------------------------+---+----------+------+----------+
 
 The GEOM signals
 ================
