@@ -4,8 +4,6 @@
 NVA5 Graphics Counters
 ======================
 
-!!! Only tested on NVA5 !!!
-
 .. contents::
 
 GPU signals
