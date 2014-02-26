@@ -285,36 +285,29 @@ which use the QUAD/B6 event mode.
 TEXTURE signals
 ===============
 
+All the following signals use the QUAD event mode.
+
 .. _texture-todo:
 TODO
 ----
 
-.. _texture-busy:
-texture_busy
-------------
+- texture_sample_base_level_rate
+- texture_sample_average_level
 
-Time the texture unit is busy.
-
-.. _texture-waits-for-fb:
-texture_waits_for_fb
---------------------
-
-Time the texture unit is stalled waiting for the FB unit.
-
-.. _texture-waits-for-shader:
-texture_waits_for_shader
-------------------------
-
-Time the texture unit is stalled waiting for the shader unit.
-
-.. _texture-sample-base-level-rate:
-texture_sample_base_level_rate
-------------------------------
-
-Percentage of texture samples which source the base texture level.
-
-.. _texture-sample-average-level:
-texture_sample_average_level
-----------------------------
-
-Across all texture samples, the average LOD sourced.
++--------------------------------------+-----------------+----------------------+---------------------+
+|                                      |      EVENT      |         MPC          |         MUXS        |
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
+| signal                           |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK34 | 0x408508 | 0x40851c |
++==================================+===+==========+======+==============+=======+==========+==========+
+| texture_busy                     | 3 |0x2c050402|0xeaea|     0x201    |  0x1  |    N/A   |    N/A   |
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
+| texture_waits_for_fb             | 2 |0xcccccc3c|0xaaaa|      N/A     |  N/A  |set bit 11|set bit 11|
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
+| texture_waits_for_shader         | 3 |0x2c2c0100|0x2222|      0x2     |  0x1  |    N/A   |    N/A   |
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
+| texture_sample_base_level_rate_0 | ? |     ?    |  ?   |      ?       |   ?   |     ?    |     ?    |
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
+| texture_sample_base_level_rate_1 | ? |     ?    |  ?   |      ?       |   ?   |     ?    |     ?    |
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
+| texture_sample_average_level     | ? |     ?    |  ?   |      ?       |   ?   |     ?    |     ?    |
++----------------------------------+---+----------+------+--------------+-------+----------+----------+
