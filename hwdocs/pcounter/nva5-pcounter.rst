@@ -258,42 +258,31 @@ The ROP signals
 TODO
 ----
 
-.. _rop-busy:
-rop_busy
---------
+- find out why rop_waits_for_fb does not work on Nouveau
 
-Time the ROP unit is busy.
+All of the following signals use the QUAD event mode except
+rop_samples_killed_by_earlyz_count and rop_samples_killed_by_latez_count
+which use the QUAD/B6 event mode.
 
-.. _rop-waits-for-fb:
-rop_waits_for_fb
-----------------
-
-Time the ROP unit is stalled waiting for the FB unit.
-
-.. _rop-waits-for-shader:
-rop_waits_for_shader
---------------------
-
-Time the ROP unit is stalled waiting for the shader unit.
-
-.. _rop-samples-killed-by-earlyz-count:
-rop_samples_killed_by_earlyz_count
-------------------------------
-
-Count of samples killed by the early-z stage.
-
-.. _rop-samples-killed-by-latez-count:
-rop_samples_killed_by_latez_count
------------------------------
-
-Count of samples killed by the late-z stage.
-
-.. _rop-samples-in-count:
-rop_samples_in_count
---------------------
-
-Number of real samples (generated from pixels output by the rasterizer) seen
-by the ROP unit.
++----------------------------------------+-----------------+----------+
+|                                        |      EVENT      |   MUX    |
++------------------------------------+---+----------+------+----------+
+| signal                             |SET|    SRC   |  OP  | 0x408750 |
++====================================+===+==========+======+==========+
+| rop_busy                           | 2 |0x05040302|0xf888|0x80000000|
++------------------------------------+---+----------+------+----------+
+| rop_waits_for_fb                   | 2 |0x7e7f6667|0x22f2|    N/A   |
++------------------------------------+---+----------+------+----------+
+| rop_waits_for_shader               | 2 |0xcccc0706|0x2222|0x80000000|
++------------------------------------+---+----------+------+----------+
+| rop_samples_killed_by_earlyz_count | 2 |0x0504cc07|0xaaaa|0x8000001a|
++------------------------------------+---+----------+------+----------+
+| rop_samples_killed_by_latez_count  | 2 |0x0504cc07|0xaaaa|0x8000001b|
++------------------------------------+---+----------+------+----------+
+| rop_samples_in_count_0             | 2 |0xcccc0607|0x8888|0x80000015|
++------------------------------------+---+----------+------+----------+
+| rop_samples_in_count_1             | 2 |0x0504cc07|0xaaaa|0x80000015|
++------------------------------------+---+----------+------+----------+
 
 The TEXTURE signals
 ===================
