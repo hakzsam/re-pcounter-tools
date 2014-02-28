@@ -147,15 +147,27 @@ TODO
 SHADER signals
 ==============
 
+All the following signals use the QUAD event mode.
+
 .. _shader-todo:
 TODO
 ----
 
-- shader_busy
-- shader_waits_for_texture
-- shader_waits_for_geom
-- shader_waits_for_rop
+- shader_waits_for_rop (set 3 should always depends on MPC???)
 
++------------------------------+-----------------+----------------------+
+|                              |      EVENT      |         MPC          |
++--------------------------+---+----------+------+--------------+-------+
+| signal                   |SET|    SRC   |  OP  | PM_GROUP_SEL | UNK40 |
++==========================+===+==========+======+==============+=======+
+| shader_busy              | 3 |0x208c0400|0xfefe|  0x503c2814  |  0x1  |
++--------------------------+---+----------+------+--------------+-------+
+| shader_waits_for_texture | 3 |0x01000302|0x22f2|     0x1      |  0x1  |
++--------------------------+---+----------+------+--------------+-------+
+| shader_waits_for_geom    | 3 |0x07060302|0x22f2|  0x523e2a16  |  0x1  |
++--------------------------+---+----------+------+--------------+-------+
+| shader_waits_for_rop     | 3 |0x2c2c0100|0x2222|     N/A      |  N/A  |
++--------------------------+---+----------+------+--------------+-------+
 
 RASTER signals
 ==============
