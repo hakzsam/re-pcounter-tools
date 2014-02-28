@@ -172,14 +172,42 @@ TODO
 RASTER signals
 ==============
 
+XXX: shaded_pixel_count uses the QUAD event mode.
+
+The shaded_pixel_count uses 3 passes to compute its counter value. For each
+pass, it uses a different mux for the register 0x408750. These values are
+0x8000001c, 0x8000001d and 0x80000003.
+
 .. _raster-todo:
 TODO
 ----
 
-- shaded_pixel_count
+- Find out how shaded_pixel_count is computed.
 - rasterizer_tiles_killed_by_zcull_count
 - rasterizer_tiles_in_count
 - rasterizer_pixels_out_count
+
++--------------------------------------------+-----------------+-----------------+----------+----------+
+|                                            |      START      |      EVENT      |   MUX    |    MUX   |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| signal                                 |SET|    SRC   |  OP  |    SRC   |  OP  | 0x408750 | 0x402ca4 |
++========================================+===+==========+======+==========+======+==========+==========+
+| shaded_pixel_count_0                   | 3 |     ?    |   ?  |0x2c0a0602|0xfefe| see above|     ?    |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| shaded_pixel_count_1                   | 3 |     ?    |   ?  |0x2c0b0703|0xfefe| see above|     ?    |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| shaded_pixel_count_2                   | 3 |     ?    |   ?  |0x2c090501|0xfefe| see above|     ?    |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| shaded_pixel_count_3                   | 3 |     ?    |   ?  |0x2c080400|0xfefe| see above|     ?    |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| rasterizer_tiles_killed_by_zcull_count | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|    N/A   |    0x7   |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| rasterizer_tiles_in_count              | 1 |0x0a090807|0xffff|0x0c0becec|0xffff|    N/A   |    N/A   |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| rasterizer_pixels_out_count_0          | 2 |0x03020100|0xffff|0x05048c07|0xffff|0x80000016|    N/A   |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
+| rasterizer_pixels_out_count_1          | 2 |    N/A   |  N/A |0x8c8c0607|0x8888|0x80000016|    N/A   |
++----------------------------------------+---+----------+------+----------+------+----------+----------+
 
 ROP signals
 ===========
