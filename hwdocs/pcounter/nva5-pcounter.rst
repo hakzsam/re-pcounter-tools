@@ -227,8 +227,8 @@ TEXTURE signals
 TODO
 ----
 
-- find out how texture_sample_base_level_rate is computed
-- add doc for texture_sample_average_level
+- find out how texture_sample_base_level_rate/texture_sample_average_level
+  are computed
 
 +--------------------------------------+----------+-----------------+----------------------+---------------------+
 |                                      |   CTRL   |      EVENT      |         MPC          |         MUXS        |
@@ -245,5 +245,7 @@ TODO
 +----------------------------------+---+----------+----------+------+--------------+-------+----------+----------+
 | texture_sample_base_level_rate_1 | 2 |  SIMPLE  |0x83828180|0x0001|      N/A     |  N/A  |set bit 11|    N/A   |
 +----------------------------------+---+----------+----------+------+--------------+-------+----------+----------+
-| texture_sample_average_level     | ? |  SIMPLE  |     ?    |  ?   |      ?       |   ?   |     ?    |     ?    |
+| texture_sample_average_level_0   | 2 |  SIMPLE  |0x83828180|0x7fff|      N/A     |  N/A  |set bit 11|    N/A   |
++----------------------------------+---+----------+----------+------+--------------+-------+----------+----------+
+| texture_sample_average_level_1   | 2 |  SIMPLE  |0x83828180|0x0001|      N/A     |  N/A  |set bit 11|    N/A   | 
 +----------------------------------+---+----------+----------+------+--------------+-------+----------+----------+
