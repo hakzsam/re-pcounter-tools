@@ -167,6 +167,7 @@ TODO
 
 - Find out how shaded_pixel_count is computed
 - Find out how rasterizer_pixels_out_count is computed
+- check set of shaded_pixel_count
 
 +--------------------------------------------+----------+-----------------+----------+----------+
 |                                            |   CTRL   |      EVENT      |   MUX    |    MUX   |
