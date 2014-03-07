@@ -1,0 +1,264 @@
+Event #50
+name    = geom_busy
+type    = GPU
+display = RATIO
+desc    = Time the geometry unit is busy.
+
+Event #52
+name    = geom_primitive_in_count
+type    = GPU
+display = RAW
+desc    = Count of primitives seen by the geometry unit.
+
+Event #53
+name    = geom_primitive_out_count
+type    = GPU
+display = RAW
+desc    = Count of primitives output by the geometry unit.
+
+Event #54
+name    = geom_vertex_in_count
+type    = GPU
+display = RAW
+desc    = Count of vertices seen by the geometry unit.
+
+Event #55
+name    = geom_vertex_out_count
+type    = GPU
+display = RAW
+desc    = Count of vertices output by the geometry unit.
+
+Event #58
+name    = gpu_idle
+type    = GPU
+display = RATIO
+desc    = Time the graphics portion of the chip is idle.
+
+Event #61
+name    = input_assembler_busy
+type    = GPU
+display = RATIO
+desc    = Time the input assembler unit is busy.
+
+Event #62
+name    = input_assembler_waits_for_fb
+type    = GPU
+display = RATIO
+desc    = Time the input assembler unit is stalled waiting for the FB unit.
+
+Event #85
+name    = rasterizer_tiles_in_count
+type    = GPU
+display = RAW
+desc    = Count of tiles (each of which contain 1-8 pixels) seen by the rasterizer stage.
+
+Event #86
+name    = rasterizer_tiles_killed_by_zcull_count
+type    = GPU
+display = RAW
+desc    = Count of tiles (each of which contain 1-8 pixels) killed by the zcull unit.
+
+Event #87
+name    = rop_busy
+type    = GPU
+display = RATIO
+desc    = Time the ROP unit is busy.
+
+Event #88
+name    = rop_samples_killed_by_earlyz_count
+type    = GPU
+display = RAW
+desc    = Count of samples killed by the early-z stage
+
+Event #89
+name    = rop_samples_killed_by_latez_count
+type    = GPU
+display = RAW
+desc    = Count of samples killed by the late-z stage
+
+Event #90
+name    = rop_waits_for_fb
+type    = GPU
+display = RATIO
+desc    = Time the ROP unit is stalled waiting for the FB unit.
+
+Event #91
+name    = rop_waits_for_shader
+type    = GPU
+display = RATIO
+desc    = Time the ROP unit is stalled waiting for the shader unit.
+
+Event #100
+name    = setup_line_count
+type    = GPU
+display = RAW
+desc    = Count of lines seen by the setup unit.
+
+Event #101
+name    = setup_point_count
+type    = GPU
+display = RAW
+desc    = Count of points seen by the setup unit.
+
+Event #102
+name    = setup_primitive_count
+type    = GPU
+display = RAW
+desc    = Count of primitives seen by the setup unit.
+
+Event #103
+name    = setup_primitive_culled_count
+type    = GPU
+display = RAW
+desc    = Count of primitives culled by the setup unit
+
+Event #104
+name    = setup_triangle_count
+type    = GPU
+display = RAW
+desc    = Count of triangles seen by the setup unit.
+
+Event #111
+name    = shader_busy
+type    = GPU
+display = RATIO
+desc    = Time the shader unit is busy.
+
+Event #112
+name    = shader_waits_for_geom
+type    = GPU
+display = RATIO
+desc    = Time the shader unit is stalled waiting for the geometry unit.
+
+Event #113
+name    = shader_waits_for_rop
+type    = GPU
+display = RATIO
+desc    = Time the shader unit is stalled waiting for the ROP unit.
+
+Event #114
+name    = shader_waits_for_texture
+type    = GPU
+display = RATIO
+desc    = Time the shader unit is stalled waiting for the texture unit.
+
+Event #128
+name    = stream_out_busy
+type    = GPU
+display = RATIO
+desc    = Time the stream out interface (after geometry shader) is busy.
+
+Event #132
+name    = tex_cache_hit
+type    = GPU
+display = RATIO
+desc    = Texture cache hit.
+
+Event #133
+name    = tex_cache_miss
+type    = GPU
+display = RATIO
+desc    = Texture cache miss.
+
+Event #137
+name    = texture_busy
+type    = GPU
+display = RATIO
+desc    = Time the texture unit is busy.
+
+Event #138
+name    = texture_waits_for_fb
+type    = GPU
+display = RATIO
+desc    = Time the texture unit is stalled waiting for the FB unit.
+
+Event #139
+name    = texture_waits_for_shader
+type    = GPU
+display = RATIO
+desc    = Time the texture unit is stalled waiting for the shader unit.
+
+Event #230
+name    = gpu_busy
+type    = GPU
+display = RATIO
+desc    = GPU is Busy
+
+Event #231
+name    = vertex_shader_busy
+type    = GPU
+display = RATIO
+desc    = Vertex Shader Unit is Busy
+
+Event #232
+name    = geometry_shader_busy
+type    = GPU
+display = RATIO
+desc    = Geometry Shader Unit is Busy
+
+Event #233
+name    = pixel_shader_busy
+type    = GPU
+display = RATIO
+desc    = Pixel Shader Unit is Busy
+
+Event #234
+name    = vertex_attribute_count
+type    = GPU
+display = RATIO
+desc    = Input Assembler is Busy
+
+Event #235
+name    = vertex_shader_instruction_rate
+type    = GPU
+display = RATIO
+desc    = Percentage of shader instructions belonging to vertex shader threads
+
+Event #236
+name    = geometry_shader_instruction_rate
+type    = GPU
+display = RATIO
+desc    = Percentage of shader instructions belonging to geometry shader threads
+
+Event #237
+name    = pixel_shader_instruction_rate
+type    = GPU
+display = RATIO
+desc    = Percentage of shader instructions belonging to pixel shader threads
+
+Event #238
+name    = geom_waits_for_shader
+type    = GPU
+display = RATIO
+desc    = Time the geometry unit is stalled waiting for the shader.
+
+Event #239
+name    = rasterizer_pixels_out_count
+type    = GPU
+display = RAW
+desc    = Number of pixels generated by the rasterizer.
+
+Event #240
+name    = rop_samples_in_count
+type    = GPU
+display = RAW
+desc    = Number of real samples (generated from pixels output by the rasterizer) seen by the ROP unit.
+
+Event #241
+name    = texture_sample_base_level_rate
+type    = GPU
+display = RATIO
+desc    = Percentage of texture samples which source the base texture level.
+
+Event #242
+name    = texture_sample_average_level
+type    = GPU
+display = RAW
+desc    = Across all texture samples, the average LOD sourced.
+
+Event #243
+name    = shaded_pixel_count
+type    = GPU
+display = RAW
+desc    = Number of rasterized pixels sent to the shading units.
+
