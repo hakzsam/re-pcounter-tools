@@ -1,0 +1,11 @@
+OPTIONS:
+model=bunny
+model-count=1
+render-mode=vbo
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=45.2%
+min=44.7%
+max=45.8%
