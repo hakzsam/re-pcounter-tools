@@ -16,7 +16,11 @@ GPU signals
 gpu_busy/gpu_idle
 -----------------
 
-Time the GPU is busy/idle.
+The % of time the GPU is idle/busy since the last call. Having the GPU idle at
+all is a waste of valuable resources. You want to balance the GPU and CPU
+workloads so that no one processor is starved for work. Time management or
+using multithreading in your application can help balance CPU based tasks
+(world management, etc.) with the rendering pipeline.
 
 IA signals
 ==========
@@ -98,8 +102,8 @@ SO signals
 stream_out_busy
 ---------------
 
-This unit manages the writing of vertices to the frame buffer when using
-stream out. If a significant number of vertices are written, this can become a
+This unit manages the writing of vertices to the frame buffer when using stream
+out. If a significant number of vertices are written, this can become a
 bottleneck.
 
 SETUP signals
@@ -110,9 +114,9 @@ setup_primitive_count
 ---------------------
 
 Returns the number of primitives processed in the geometry subsystem. This
-experiments counts points, lines and triangles. To count only triangles,
-use the setup_triangle_count counter. Balance these counts with the number
-of pixels being drawn to see if you could simplify your geometry and use
+experiments counts points, lines and triangles. To count only triangles, use
+the setup_triangle_count counter. Balance these counts with the number of
+pixels being drawn to see if you could simplify your geometry and use
 bump/displacement maps, for example.
 
 .. _setup-point-count:
@@ -140,12 +144,12 @@ setup_primitive_culled_count
 ----------------------------
 
 Returns the number of primitives culled in primitive setup. If you are
-performing viewport culling, this gives you an indication of the accuracy
-of the algorithm being used, and can give you and idea if you need to improves
+performing viewport culling, this gives you an indication of the accuracy of
+the algorithm being used, and can give you and idea if you need to improves
 this culling. This includes primitives culled when using backface culling.
 Drawing a fully visible sphere on the screen should cull half of the triangles
-if backface culling is turned on and all the triangles are ordered
-consistently (CW or CCW).
+if backface culling is turned on and all the triangles are ordered consistently
+(CW or CCW).
 
 VS signals
 ==========
@@ -158,8 +162,8 @@ vertex_shader_busy
 ------------------
 
 This is the % of time that shader unit 0 was busy scaled by the ratio of vertex
-shader instructions to all shader type instructions
-(or vertex_shader_instruction_rate). If this value is high but, for instance,
+shader instructions to all shader type instructions (or
+vertex_shader_instruction_rate). If this value is high but, for instance,
 pixel_shader_busy is slow, it is an indication that you may be verte/geometry
 bound. This can be from geometry that is too detailed or even from vertex
 programs that are overly complex and need to be simplified. In addition, taking
@@ -224,25 +228,37 @@ SHADER signals
 shader_busy
 -----------
 
-Time the shader unit is busy.
+This measures the how active the unified shader unit is running any type of
+shader. If you coupl e this information with the various
+shader_instruction_rate values you can get an idea for the workload the shader
+unit has and which shader types to tune if the shader unit becomes a
+bottleneck.
 
 .. _shader-waits-for-texture:
 shader_waits_for_texture
 ------------------------
 
-Time the shader unit is stalled waiting for the texture unit.
+This is the amount of time that the pixel shader unit was stalled waiting for
+a texture fetch. Texture stalls usually happen if textures don't have mipmaps,
+if a high level of anisotropic filtering is used, or if there is poor coherency
+in accessing textures.
 
 .. _shader-waits-for-geom:
 shader_waits_for_geom
 ---------------------
 
-Time the shader unit is stalled waiting for the geometry unit.
+This is the amount of time the shader unit spent waiting for the geom unit to
+send work.
 
 .. _shader-waits-for-rop:
 shader_waits_for_rop
 --------------------
 
-Time the shader unit is stalled waiting for the ROP unit.
+This is the % of time that the pixel shader is stalled by the raster operations
+unit (ROP), waiting to blend a pixel and write it to the frame buffer. If the
+application is performing a lot of alpha blending, or even if the application
+has a lot of overdraw (the same pixel being written multiple times, unblended)
+this can be a performance bottleneck.
 
 RASTER signals
 ==============
@@ -258,7 +274,7 @@ shader units.
 rasterizer_tiles_killed_by_zcull_count
 -----------------------------------
 
-Count of tiles (each of which contain 1-8 pixels) killed by the zcull unit.
+The number of pixels killed by the zcull unit in the rasterizer.
 
 .. _rasterizer-tiles-in-count:
 rasterizer_tiles_in_count
@@ -279,31 +295,40 @@ ROP signals
 rop_busy
 --------
 
-Time the ROP unit is busy.
+% of time that the ROP unit is actively doing work. This can be high if alpha
+blending is turned on, of overdraw is high, etc.
 
 .. _rop-waits-for-fb:
 rop_waits_for_fb
 ----------------
 
-Time the ROP unit is stalled waiting for the FB unit.
+The amount of time the blending unit spent waiting for data from the frame
+buffer unit. If blending is enabled and there is a lot of traffic here (since
+this is a read/modify/write operation) this can become a bottleneck.
 
 .. _rop-waits-for-shader:
 rop_waits_for_shader
 --------------------
 
-Time the ROP unit is stalled waiting for the shader unit.
+This is a measurement of how often the blending unit was waiting on new work
+(fragments to be placed into the render target). If the pixel shaders are
+particularly expensive, the ROP unit could be starved waiting for results.
 
 .. _rop-samples-killed-by-earlyz-count:
 rop_samples_killed_by_earlyz_count
 ------------------------------
 
-Count of samples killed by the early-z stage.
+This returns the number of pixels that were killed in the earlyZ hardware. This
+signal will give you an idea of, for instance, a Z only pass was successful in
+setting up the depth buffer.
 
 .. _rop-samples-killed-by-latez-count:
 rop_samples_killed_by_latez_count
 -----------------------------
 
-Count of samples killed by the late-z stage.
+This returns the number of pixels that were killed after the pixel shader ran.
+This can happen if the early Z is unable cull the pixel because of an API setup
+issue like changing the Z direction or modifying Z in the pixel shader.
 
 .. _rop-samples-in-count:
 rop_samples_in_count
@@ -319,28 +344,38 @@ TEXTURE signals
 texture_busy
 ------------
 
-Time the texture unit is busy.
+This is a measu rement of how busy the texture unit is. This covers both time
+spent sampling values from the frame buffer (through the texture cache) and the
+time spent computing any filtering that is enabled (like bilinear or
+anisotropic). Reducing both the number of taps and the filtering level will
+help to reduce any bottleneck in the texture unit.
 
 .. _texture-waits-for-fb:
 texture_waits_for_fb
 --------------------
 
-Time the texture unit is stalled waiting for the FB unit.
+This is the amount of time the texture unit spent waiting on samples to return
+from the frame buffer unit. It is a potential indication of poor texture cache
+utilization.
 
 .. _texture-waits-for-shader:
 texture_waits_for_shader
 ------------------------
 
-Time the texture unit is stalled waiting for the shader unit.
+This is the amount of time the texture unit spent waiting to send results to
+the shader unit. If the queue between those units gets too full (because the
+shader unit isn’t ready to receive those values), this can become a bottleneck.
 
 .. _texture-sample-base-level-rate:
 texture_sample_base_level_rate
 ------------------------------
 
-Percentage of texture samples which source the base texture level.
+The percentage of texture samples which read from the base texture level. This
+can be useful to determine if your base texture level is too large and can be
+reduced to the next mipmap level.
 
 .. _texture-sample-average-level:
 texture_sample_average_level
 ----------------------------
 
-Across all texture samples, the average LOD sourced.
+The average LOD sourced across all texture reads.
