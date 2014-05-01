@@ -124,7 +124,7 @@ shader_busy
 -----------
 
 This measures the how active the unified shader unit is running any
-type of shader. If you coupl e this information with the various
+type of shader. If you couple this information with the various
 shader_instruction_rate values you can get an idea for the workload the
 shader unit has and which shader types to tune if the shader uniti
 becomes a bottleneck.
