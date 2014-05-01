@@ -1,4 +1,4 @@
-.. _nvc0-graphics-counters-intro:
+.. _nvc0-graphics-counter-definitions:
 
 =================================
 NVC0 Graphics Counter Definitions
