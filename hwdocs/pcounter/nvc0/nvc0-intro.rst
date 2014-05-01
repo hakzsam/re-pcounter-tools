@@ -1,8 +1,8 @@
 .. _nvc0-graphics-counters-intro:
 
-===================================
-NVC0 Graphics Counters Introduction
-===================================
+=================================
+NVC0 Graphics Counter Definitions
+=================================
 
 .. contents::
 
