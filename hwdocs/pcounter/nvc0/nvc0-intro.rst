@@ -154,13 +154,13 @@ etc.
 crop_busy
 ---------
 
-XXX: NVPerfKit guide doesn't provide a description.
+Time the crop unit is busy.
 
 .. _zrop-busy:
 zrop_busy
 ---------
 
-XXX: NVPerfKit guide doesn't provide a description.
+Time the zrop unit is busy.
 
 TEXTURE signals
 ===============
