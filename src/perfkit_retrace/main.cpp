@@ -204,10 +204,11 @@ static int perfkit_list_events()
 {
     output = fopen("perfkit_signals.output", "w+");
     if (!output) {
+        printf("Failed to open 'perfkit_signals.output'.\n");
         return -1;
     }
 
-    if (!GetNvPmApi()->EnumCountersByContext(g_hNVPMContext, (NVPMEnumFunc)nvpm_enum_counters_cb) != NVPM_OK)
+    if (GetNvPmApi()->EnumCountersByContext(g_hNVPMContext, (NVPMEnumFunc)nvpm_enum_counters_cb) != NVPM_OK)
         return -1;
 
     if (fclose(output) < 0)
