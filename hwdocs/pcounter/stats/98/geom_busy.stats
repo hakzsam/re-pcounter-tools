@@ -1,0 +1,11 @@
+OPTIONS:
+model=dragon
+model-count=1
+render-mode=array
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=0%
+min=0%
+max=0%

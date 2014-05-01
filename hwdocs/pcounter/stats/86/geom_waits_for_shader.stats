@@ -1,0 +1,11 @@
+OPTIONS:
+model=bunny
+model-count=4
+render-mode=array
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=50.6%
+min=48.6%
+max=51.6%

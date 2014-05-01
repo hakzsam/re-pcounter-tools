@@ -1,0 +1,11 @@
+OPTIONS:
+model=cube
+model-count=1
+render-mode=immediate
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=10.2%
+min=10.2%
+max=10.3%

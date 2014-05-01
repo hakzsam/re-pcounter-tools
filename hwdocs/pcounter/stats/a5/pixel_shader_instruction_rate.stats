@@ -1,0 +1,11 @@
+OPTIONS:
+model=cube
+model-count=1
+render-mode=vbo
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=2.74%
+min=0.00128%
+max=8.1%
