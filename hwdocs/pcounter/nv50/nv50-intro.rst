@@ -1,8 +1,8 @@
-.. _nv50-graphics-counters-intro:
+.. _nv50-graphics-counter-definitions:
 
-===================================
-NV50 Graphics Counters Introduction
-===================================
+=================================
+NV50 Graphics Counter Definitions
+=================================
 
 .. contents::
 
