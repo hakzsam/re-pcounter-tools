@@ -1,0 +1,11 @@
+OPTIONS:
+model=bunny
+model-count=27
+render-mode=immediate
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=3.93%
+min=3.77%
+max=4.09%

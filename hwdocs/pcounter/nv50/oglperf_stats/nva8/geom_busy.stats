@@ -1,0 +1,11 @@
+OPTIONS:
+model=dragon
+model-count=1
+render-mode=array
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+mean=7.15%
+min=3.8%
+max=9.76%
