@@ -146,8 +146,6 @@ The shader_busy signal uses MP counters.
 | shader_waits_for_rop     | 3 |  SIMPLE  |0x2c2c0100|0x2222|  0x523e2a00  |  0x1  |
 +--------------------------+---+----------+----------+------+--------------+-------+
 
-HERE
-
 RASTER signals
 ==============
 
