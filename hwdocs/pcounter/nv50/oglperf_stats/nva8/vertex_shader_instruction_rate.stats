@@ -7,6 +7,6 @@ num-frames=100
 fullscreen=no
 STATS:
 fps=9.53
-mean=0.000218%
-min=0.0002%
-max=0.000235%
+mean=0.000215%
+min=0.000201%
+max=0.000233%
