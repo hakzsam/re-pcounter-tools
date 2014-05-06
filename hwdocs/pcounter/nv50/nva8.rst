@@ -41,6 +41,8 @@ IA signals
 GEOM signals
 ============
 
+The geom_waits_for_shader signal depends of MP counters.
+
 +------------------------------+----------+-----------------+-----------------+----------------------+----------+
 |                              |   CTRL   |      START      |      EVENT      |         MPC          |   MUX    |
 +--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
@@ -130,7 +132,8 @@ TODO
 SHADER signals
 ==============
 
-The shader_busy signal uses MP counters.
+The shader_busy, shader_waits_for_geom and shader_waits_for_rop signals depends
+of MP counters.
 
 +------------------------------+----------+-----------------+----------------------+
 |                              |   CTRL   |      EVENT      |         MPC          |
@@ -210,6 +213,8 @@ TODO
 
 TEXTURE signals
 ===============
+
+The texture_waits_for_shader signal depends of MP counters.
 
 .. _texture-todo:
 TODO
