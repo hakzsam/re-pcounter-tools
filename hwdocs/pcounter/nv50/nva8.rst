@@ -184,12 +184,13 @@ TODO
 ROP signals
 ===========
 
+rop_samples_in_count = rop_samples_in_count_1 / rop_samples_in_count_0
+
 .. _rop-todo:
 TODO
 ----
 
-- find out why rop_waits_for_fb does not work on Nouveau
-- find out how rop_samples_in_count is computed
+- find the mux of rop_waits_for_fb
 
 +----------------------------------------+----------+-----------------+-----------------+----------+
 |                                        |   CTRL   |       START     |      EVENT      |   MUX    |
