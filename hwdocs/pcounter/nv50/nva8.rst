@@ -6,6 +6,8 @@ NVA8 Graphics Counter
 
 .. contents::
 
+NVA8 is similar to NVA5.
+
 All the following signals use QUAD event mode.
 
 GPU signals

@@ -45,12 +45,6 @@ GEOM signals
 
 The geom_waits_for_shader signal depends of MP counters.
 
-.. _geom-todo:
-TODO
-----
-
-- find out why geom_vertex_in_count does not work on Nouveau
-
 +------------------------------+----------+-----------------+-----------------+----------------------+----------+
 |                              |   CTRL   |      START      |      EVENT      |         MPC          |   MUX    |
 +--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
