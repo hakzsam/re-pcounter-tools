@@ -2,10 +2,11 @@ OPTIONS:
 model=dragon
 model-count=1
 render-mode=array
-texture=small
+texture=large
 num-frames=100
 fullscreen=no
 STATS:
-mean=3.56%
-min=3.55%
-max=3.58%
+fps=9.68
+mean=2.07%
+min=1.26%
+max=3.42%

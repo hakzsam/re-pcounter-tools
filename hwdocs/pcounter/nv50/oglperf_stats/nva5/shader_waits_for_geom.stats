@@ -1,12 +1,12 @@
 OPTIONS:
-model=cube
+model=dragon
 model-count=1
 render-mode=vbo
 texture=large
 num-frames=100
 fullscreen=no
 STATS:
-fps=59.7
-mean=0.0498%
-min=0.0412%
-max=0.0635%
+fps=41.7
+mean=1.22e-005%
+min=9.13e-006%
+max=1.56e-005%
