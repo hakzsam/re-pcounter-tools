@@ -11,17 +11,9 @@ All the following signals use QUAD event mode.
 Software/hardware issues
 ========================
 
-.. _nvperfkit:
-NVPerfKit
----------
-
-- **geom_vertex_in_count**, **rasterizer_tiles_killed_by_zcull_count** and
-  **rasterizer_tiles_in_count** always return a counter value very close
-  to the counter cycles, but it should not since my OpenGL sample code does
-  not create as many vertices. However, geom_vertex_out_count works fine.
 - **tex_cache_hit** and **tex_cache_miss** are considered as graphics
-  counters when we list available counters.
-- **rop_waits_for_fb** always returns 0.
+  counters when we list available counters from NVPerfKit
+- **rop_waits_for_fb** always returns 0 on Windows 7 (hardware issue I guess)
 
 
 GPU signals
@@ -58,7 +50,7 @@ GEOM signals
 
 +------------------------------+----------+-----------------+-----------------+----------------------+----------+
 |                              |   CTRL   |      START      |      EVENT      |         MPC          |   MUX    |
-+--------------------------+---+----------+-----------------+----------+------+--------------+-------+----------+
++--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
 | signal                   |SET| CTR_MODE |    SRC   |  OP  |    SRC   |  OP  | PM_GROUP_SEL | UNK34 | 0x400c0c |
 +==========================+===+==========+==========+======+==========+======+==============+=======+==========+
 | geom_busy                | 3 |  SIMPLE  |    N/A   | N/A  |0x03020100|0xf888|      0x3     |  0x1  |    N/A   |
@@ -140,6 +132,9 @@ TODO
 SHADER signals
 ==============
 
+The shader_busy, shader_waits_for_geom and shader_waits_for_rop signals depends
+of MP counters.
+
 +------------------------------+----------+-----------------+----------------------+
 |                              |   CTRL   |      EVENT      |         MPC          |
 +--------------------------+---+----------+----------+------+--------------+-------+
@@ -213,6 +208,8 @@ rop_samples_in_count = rop_samples_in_count_1 / rop_samples_in_count_0
 
 TEXTURE signals
 ===============
+
+The texture_waits_for_shader signal depends of MP counters.
 
 .. _texture-todo:
 TODO
