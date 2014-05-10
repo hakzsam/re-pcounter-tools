@@ -1,12 +1,12 @@
 OPTIONS:
-model=bunny
+model=dragon
 model-count=1
 render-mode=vbo
 texture=large
 num-frames=100
 fullscreen=no
 STATS:
-fps=45.9
-mean=1.41%
-min=1.31%
-max=1.5%
+fps=23.1
+mean=0.00247%
+min=0.00224%
+max=0.00277%

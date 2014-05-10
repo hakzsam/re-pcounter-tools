@@ -2,10 +2,11 @@ OPTIONS:
 model=cube
 model-count=1
 render-mode=vbo
-texture=small
+texture=large
 num-frames=100
 fullscreen=no
 STATS:
-mean=0.043%
-min=0.0232%
-max=0.0598%
+fps=69.1
+mean=0.0595%
+min=0.0292%
+max=0.0795%
