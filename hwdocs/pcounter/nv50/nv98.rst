@@ -6,6 +6,8 @@ NV98 Graphics Counter
 
 .. contents::
 
+NV98 is similar to NV96.
+
 All the following signals use QUAD event mode.
 
 Software/hardware issues
