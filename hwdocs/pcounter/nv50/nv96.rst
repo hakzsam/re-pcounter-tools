@@ -1,10 +1,12 @@
 .. _nv96-graphics-counter:
 
 =====================
-NV98 Graphics Counter
+NV96 Graphics Counter
 =====================
 
 .. contents::
+
+NV96 is similar to NV86.
 
 All the following signals use QUAD event mode.
 
