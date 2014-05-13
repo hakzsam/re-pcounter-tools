@@ -1,0 +1,12 @@
+OPTIONS:
+model=dragon
+model-count=1
+render-mode=vbo
+texture=large
+num-frames=100
+fullscreen=no
+STATS:
+fps=14.1
+mean=0.00296%
+min=0.0029%
+max=0.00304%

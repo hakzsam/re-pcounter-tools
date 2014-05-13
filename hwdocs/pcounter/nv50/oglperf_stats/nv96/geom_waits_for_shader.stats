@@ -1,0 +1,12 @@
+OPTIONS:
+model=bunny
+model-count=4
+render-mode=array
+texture=small
+num-frames=100
+fullscreen=no
+STATS:
+fps=18.1
+mean=13%
+min=12.6%
+max=13.6%
