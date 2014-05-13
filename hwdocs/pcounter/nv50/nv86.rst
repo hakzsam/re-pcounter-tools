@@ -15,7 +15,6 @@ Software/hardware issues
   counters when we list available counters from NVPerfKit
 - **rop_waits_for_fb** always returns 0 on Windows 7 (hardware issue I guess)
 
-
 GPU signals
 ===========
 
