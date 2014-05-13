@@ -2,10 +2,11 @@ OPTIONS:
 model=bunny
 model-count=27
 render-mode=vbo
-texture=small
+texture=large
 num-frames=100
 fullscreen=no
 STATS:
-mean=0.734%
-min=0.733%
-max=0.737%
+fps=4.67
+mean=13.4%
+min=13.1%
+max=14%

@@ -6,6 +6,7 @@ texture=small
 num-frames=100
 fullscreen=no
 STATS:
-mean=0.92%
-min=0.911%
-max=0.926%
+fps=2.46
+mean=0.896%
+min=0.891%
+max=0.899%
