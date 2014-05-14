@@ -6,8 +6,7 @@ NVA5 Graphics Counter
 
 .. contents::
 
-NVA3 and NVA5 are similar except for shaded_pixel_count and
-geom_vertex_in_count (to be verified).
+NVA5 is similar to NVA3.
 
 All the following signals use QUAD event mode.
 
