@@ -4,6 +4,8 @@
 NVA0 Graphics Counters
 ======================
 
+TODO: Check this card again!
+
 .. contents::
 
 All the following signals use QUAD event mode.
