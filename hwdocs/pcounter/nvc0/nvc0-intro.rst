@@ -169,7 +169,7 @@ TEXTURE signals
 texture_busy
 ------------
 
-This is a measu rement of how busy the texture unit is. This covers both
+This is a measurement of how busy the texture unit is. This covers both
 time spent sampling values from the frame buffer (through the texture cache)
 and the time spent computing any filtering that is enabled (like bilinear or
 anisotropic).  Reducing both the number of taps and the filtering level will
