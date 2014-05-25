@@ -1,0 +1,8 @@
+Notes about the behaviours of NVPerfKit.
+
+- It uses a round robin mode for handling multiple hw events using the SIMPLE mode
+  on the same domain (tested with 4 hw events on domain 1).
+- It also uses that mode for handling B4 + SIMPLE mode (tested with gpu_idle and
+  geom_vertex_in_count).
+- It uses a round robin mode for handling two hw events which share the same reg
+  with a different value (mux).
