@@ -1,0 +1,139 @@
+.. _gf108-graphics-counter:
+
+==========================
+GF108 Performance counters
+==========================
+
+.. contents::
+
+Graphics
+========
+
+gpu_busy:
+HUB_DOM[4]:
+MODE: SINGLE
+EVENT: 0x02
+
+setup_primitive_count:
+GPC_DOM[0][0]:
+MODE: SINGLE
+EVENT: 0x56
+
+geom_busy:
+HUB_DOM[4]:
+MODE: SINGLE
+EVENT: 6f6f2f2e/8888
+
+texture_busy:
+GPC_DOM[0][0]:
+MODE: SINGLE
+EVENT: 5b5c5d5e/fffe
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_A -> 80000022
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8 -> 80000000
+
+Common
+======
+
+.. _texture-signals:
+TEXTURE signals
+---------------
+
+tex0_bank_conflicts_gpc0_tpc0 (alias tex0_bank_conflicts):
+GPC_DOM[0][0]
+MODE: SINGLE
+EVENT: 0x61
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8 -> 80000000
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_B -> 80000006
+
+tex0_bank_conflicts_gpc0_tpc1:
+GPC_DOM[0][0]
+MODE: SINGLE
+EVENT: 0x61
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8 -> 80000000
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_B -> 80000006
+
+tex0_cache_sector_misses_gpc0_tpc0 (alias tex0_cache_sector_misses):
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x0d0c0b0a/0xffff
+EVENT: 0xcf0ecfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8   -> 80000003
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_C_D -> 80000004
+
+tex0_cache_sector_misses_gpc0_tpc1:
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x0d0c0b0a/0xffff
+EVENT: 0xcf0ecfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8   -> 80000003
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_C_D -> 80000004
+
+tex0_cache_sector_queries_gpc0_tpc0 (alias tex0_cache_sector_queries):
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x11100f0e/0xffff
+EVENT: 0xcf12cfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8   -> 80000003
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_C_D -> 80000005
+
+tex0_cache_sector_queries_gpc0_tpc1:
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x11100f0e/0xffff
+EVENT: 0xcf12cfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8   -> 80000003
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_C_D -> 80000005
+
+tex0_cache_texel_queries:
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x0d0c0b0a/0xffff
+EVENT: 0xcf0ecfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8   -> 80000003
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_C_D -> 80000003
+
+tex1_bank_conflicts_gpc0_tpc0 (alias tex1_bank_conflicts):
+GPC_DOM[0][0]
+MODE: SINGLE
+EVENT: 0x61
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8 -> 80000008
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_B -> 80000006
+
+tex1_bank_conflicts_gpc0_tpc1:
+GPC_DOM[0][0]
+MODE: SINGLE
+EVENT: 0x61
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8 -> 80000008
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_B -> 80000006
+
+tex1_cache_sector_misses_gpc0_tpc0 (alias tex1_cache_sector_misses):
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x0d0c0b0a/0xffff
+EVENT: 0xcf0ecfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8   -> 80000004
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_C_D -> 80000004
+
+tex1_cache_sector_misses_gpc0_tpc1:
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x0d0c0b0a/0xffff
+EVENT: 0xcf0ecfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8   -> 80000004
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_C_D -> 80000004
+
+tex1_cache_sector_queries_gpc0_tpc0 (alias tex0_cache_sector_queries):
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x11100f0e/0xffff
+EVENT: 0xcf12cfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_UNKC8   -> 80000004
+MUX: PGRAPH.GPC[0].TP[0].TEX.PM_MUX_C_D -> 80000005
+
+tex1_cache_sector_queries_gpc0_tpc1:
+GPC_DOM[0][0]
+MODE: EVENT_B6
+START: 0x11100f0e/0xffff
+EVENT: 0xcf12cfcf/0x5555
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8   -> 80000004
+MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_C_D -> 80000005
