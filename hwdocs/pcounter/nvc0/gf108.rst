@@ -137,3 +137,323 @@ START: 0x11100f0e/0xffff
 EVENT: 0xcf12cfcf/0x5555
 MUX: PGRAPH.GPC[0].TP[1].TEX.PM_UNKC8   -> 80000004
 MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_C_D -> 80000005
+
+Local counters
+==============
+
+- atom_count
+- gred_count
+- inst_issued1_0
+- inst_issued2_0
+- inst_issued1_1
+- inst_issued2_1
+- thread_inst_executed_0
+- thread_inst_executed_1
+- thread_inst_executed_2
+- thread_inst_executed_3
+- inst_executed
+- prof_trigger_00
+- prof_trigger_01
+- prof_trigger_02
+- prof_trigger_03
+- prof_trigger_04
+- prof_trigger_05
+- prof_trigger_06
+- prof_trigger_07
+- active_warps
+- active_cycles
+- branch
+- divergent_branch
+- warps_launched
+- threads_launched
+- local_load
+- local_store
+- gld_request
+- gst_request
+- shared_load
+- shared_store
+- gld_inst_8bit
+- gld_inst_16bit
+- gld_inst_32bit
+- gld_inst_64bit
+-  gld_inst_128bit
+- gst_inst_8bit
+- gst_inst_16bit
+- gst_inst_32bit
+- gst_inst_64bit
+- gst_inst_128bit
+
+Global counters
+===============
+
+GPC domain 0:
+
+- l1_local_load_hit
+
+  - mode: SIMPLE
+  - event_src: 0x00
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_local_load_miss
+
+  - mode: SIMPLE
+  - event_src: 0x01
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_local_store_hit
+
+  - mode: SIMPLE
+  - event_src: 0x02
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_local_store_miss
+
+  - mode: SIMPLE
+  - event_src: 0x03
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_global_load_hit
+
+  - mode: SIMPLE
+  - event_src: 0x05
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_global_load_miss
+
+  - mode: SIMPLE
+  - event_src: 0x06
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- uncached_global_load_transaction
+
+  - mode: SIMPLE
+  - event_src: 0x02
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000002
+
+- global_store_transaction
+
+  - mode: SIMPLE
+  - event_src: 0x03
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000002
+
+- l1_shared_bank_conflict
+
+  - mode: SIMPLE
+  - event_src: 0x00
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000006
+
+- sm_cta_launched
+
+  - mode: SIMPLE
+  - event_src: 0x26
+  - PGRAPH.GPC[0].TPC[0].UNK400.PM_MUX: 0x8000000e
+
+- elapsed_cycles_sm:
+
+  - mode: SIMPLE
+  - event_src: 0x00
+
+- tex0_cache_sector_queries
+- tex0_cache_sector_misses
+- tex1_cache_sector_queries
+- tex1_cache_sector_misses
+
+PART domain 0:
+
+- l2_subp0_write_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x04
+  - PMFB[0]+0x28: 0xc1
+
+- l2_subp1_write_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x04
+  - PMFB[0]+0x28: 0xd1
+
+- l2_subp0_read_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x05
+  - PMFB[0]+0x28: 0xc1
+
+- l2_subp1_read_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x05
+  - PMFB[0]+0x28: 0xd1
+
+- l2_subp0_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013012/0x8080
+  - PMFB[0]+0x28: 0x1001
+
+- l2_subp1_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013012/0x8080
+  - PMFB[0]+0x28: 0x1217
+
+- l2_subp0_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0]+0x28: 0x1001
+
+- l2_subp1_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0]+0x28: 0x1217
+
+- l2_subp0_read_tex_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0]+0x28: 0xc01
+
+- l2_subp1_read_tex_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0]+0x28: 0xe17
+
+- l2_subp0_read_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0]+0x28: 0x1003
+
+- l2_subp1_read_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0]+0x28: 0x1219
+
+- l2_subp0_read_tex_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0]+0x28: 0xc03
+
+- l2_subp1_read_tex_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0]+0x28: 0xe19
+
+- l2_subp0_read_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001130d/0x8080
+  - PMFB[0]+0x28: 0xe01
+
+- l2_subp1_read_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001130d/0x8080
+  - PMFB[0]+0x28: 0x17
+
+- l2_subp0_write_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001120d/0x8080
+  - PMFB[0]+0x28: 0x1
+
+- l2_subp1_write_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001120d/0x8080
+  - PMFB[0]+0x28: 0x17
+
+- l2_subp0_total_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000113/0x8888
+  - PMFB[0]+0x28: 0x1
+
+- l2_subp1_total_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000113/0x8888
+  - PMFB[0]+0x28: 0x17
+
+- l2_subp0_total_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000112/0x8888
+  - PMFB[0]+0x28: 0x1
+
+- l2_subp1_total_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000112/0x8888
+  - PMFB[0]+0x28: 0x17
+
+- fb0_subp0_read_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x14
+  - PBFB[0]+0x100: 0x111
+
+- fb0_subp1_read_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x14
+  - PBFB[0]+0x100: 0x121
+
+- fb0_subp0_write_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x15
+  - PBFB[0]+0x100: 0x111
+
+- fb0_subp1_write_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x15
+  - PBFB[0]+0x100: 0x121
+
+- fb1_subp0_read_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x20
+  - PBFB[0x1]+0x100: 0x111
+
+- fb1_subp1_read_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x20
+  - PBFB[0x1]+0x100: 0x121
+
+- fb1_subp0_write_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x21
+  - PBFB[0x1]+0x100: 0x111
+
+- fb1_subp1_write_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x21
+  - PBFB[0x1]+0x100: 0x121
