@@ -93,17 +93,14 @@ int main(int argc, char **argv)
     char *chipset, *trace;
     struct trace *t;
     FILE *f;
-    int i, code = 0;
+    int i;
 
     if (argc < 3) {
-        fprintf(stderr, "Usage: %s <chipset> <trace> [<nv_perfmon>]\n", argv[0]);
+        fprintf(stderr, "Usage: %s <chipset> <trace>\n", argv[0]);
         return 1;
     }
     chipset = argv[1];
     trace   = argv[2];
-
-    if (argc > 3)
-        code    = atoi(argv[3]); // Hack? :)
 
     if (!(f = fopen(trace, "r+"))) {
         perror("fopen");
@@ -114,23 +111,15 @@ int main(int argc, char **argv)
         return 1;
 
     for (i = 0; i < t->nb_ioctl; i++) {
-        if (!code) {
-            printf("(%c) register: %06x, value: %08x, mask: %08x ",
-                   (t->ioctls[i].dir ? 'w' : 'r'),
-                   t->ioctls[i].reg, t->ioctls[i].val,
-                   t->ioctls[i].mask);
-            printf("%s ", (t->ioctls[i].dir ? "<==" : "==>"));
+        printf("(%c) register: %06x, value: %08x, mask: %08x ",
+               (t->ioctls[i].dir ? 'w' : 'r'),
+               t->ioctls[i].reg, t->ioctls[i].val,
+               t->ioctls[i].mask);
+        printf("%s ", (t->ioctls[i].dir ? "<==" : "==>"));
 
-            if (lookup(chipset, t->ioctls[i].reg, t->ioctls[i].val) < 0) {
-                fprintf(stderr, "Cannot run lookup.\n");
-                return 1;
-            }
-        } else {
-            if (t->ioctls[i].dir) {
-                printf("nv_wr32(priv, 0x%08x, 0x%08x);\n", t->ioctls[i].reg, t->ioctls[i].val);
-            } else {
-                printf("nv_rd32(priv, 0x%08x);\n", t->ioctls[i].reg);
-            }
+        if (lookup(chipset, t->ioctls[i].reg, t->ioctls[i].val) < 0) {
+            fprintf(stderr, "Cannot run lookup.\n");
+            return 1;
         }
     }
     free(t);
