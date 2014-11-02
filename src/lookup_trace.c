@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <inttypes.h>
 
-#define LOOKUP_PATH     "lookup"
+#define LOOKUP_PATH "../envytools/build/rnn/lookup"
 
 struct ioctl_call {
     int dir;
