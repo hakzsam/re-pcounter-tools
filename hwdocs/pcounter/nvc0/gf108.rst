@@ -254,9 +254,36 @@ GPC domain 0:
   - event_src: 0x00
 
 - tex0_cache_sector_queries
+
+  - mode: EVENT_B6
+  - start_src: 0x11100f0e/0xffff
+  - event_src: 0xef1200ef/0xffff
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000005
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000003
+
 - tex0_cache_sector_misses
+
+  - mode: EVENT_B6
+  - start_src: 0x0d0c0b0a/0xffff
+  - event_src: 0xef0e00ef/0xffff
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000004
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000003
+
 - tex1_cache_sector_queries
+
+  - mode: EVENT_B6
+  - start_src: 0x11100f0e/0xffff
+  - event_src: 0xef1200ef/0xffff
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000005
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000004
+
 - tex1_cache_sector_misses
+
+  - mode: EVENT_B6
+  - start_src: 0x0d0c0b0a/0xffff
+  - event_src: 0xef0e00ef/0xffff
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000004
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000004
 
 PART domain 0:
 
