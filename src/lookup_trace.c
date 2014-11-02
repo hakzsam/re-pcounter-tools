@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <inttypes.h>
 
-#define LOOKUP_PATH     "../envytools/build/rnn/lookup"
+#define LOOKUP_PATH     "lookup"
 
 struct ioctl_call {
     int dir;
@@ -27,17 +27,16 @@ static int lookup(const char *chipset, uint32_t reg, uint32_t val)
     char cmd[1024], buf[1024];
     FILE *f;
 
-    sprintf(cmd, "%s -a %s %08x %08x 2> /dev/null\n", LOOKUP_PATH, chipset, reg,
-            val);
+    sprintf(cmd, "%s -a %s %08x %08x 2> /dev/null\n",
+            LOOKUP_PATH, chipset, reg, val);
 
     if (!(f = popen(cmd, "r"))) {
         perror("popen");
         return -1;
     }
 
-    while (fgets(buf, sizeof(buf), f) != NULL) {
+    while (fgets(buf, sizeof(buf), f) != NULL)
         printf("%s", buf);
-    }
 
     if (pclose(f) < 0) {
         perror("pclose");
@@ -52,40 +51,46 @@ static struct trace *parse_trace(FILE *f)
     struct trace *t;
     char line[1024];
 
-    if (!(t = (struct trace *)malloc(sizeof(*t)))) {
+    if (!(t = (struct trace *)calloc(1, sizeof(*t)))) {
         perror("malloc");
         return NULL;
     }
 
-    t->nb_ioctl   = 0;
-
     while (fgets (line, sizeof(line), f) != NULL) {
-        char *token, *s;
-        int dir;
+        char *token;
 
-        // Only show post ioctl calls.
-        if (!(s = strstr(line, "RETURND")))
-            continue;
-        s += 9; // 'RETURND: '
+        // Read/write.
+        token = strstr(line, "dir:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 5, "0x%08x", &t->ioctls[t->nb_ioctl].dir);
 
-        token = strtok(s, " ");
-        while (token != NULL) {
-            if (!strncmp(token, "DIR=", 4)) {
-                dir = atoi(token + 4);
-                t->ioctls[t->nb_ioctl].dir = dir & 0x00000001;
-            } else if (!strncmp(token, "MMIO=", 5)) {
-                sscanf(token + 5, "%08x", &t->ioctls[t->nb_ioctl].reg);
-            } else if (!strncmp(token, "VALUE=", 6)) {
-                sscanf(token + 6, "%08x", &t->ioctls[t->nb_ioctl].val);
-            } else if (!strncmp(token, "MASK=", 5)) {
-                sscanf(token + 5, "%08x", &t->ioctls[t->nb_ioctl].mask);
-            }
-            token = strtok(NULL, " ");
-        }
+        // Register.
+        token = strstr(line, "mmio:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 6, "0x%08x", &t->ioctls[t->nb_ioctl].reg);
+
+        // Value.
+        token = strstr(line, "value:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 7, "0x%08x", &t->ioctls[t->nb_ioctl].val);
+
+        // Mask.
+        token = strstr(line, "mask:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 6, "0x%08x", &t->ioctls[t->nb_ioctl].mask);
+
         t->nb_ioctl++;
     }
 
     return t;
+
+bad_trace:
+    free(t);
+    return NULL;
 }
 
 int main(int argc, char **argv)
@@ -107,8 +112,10 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    if (!(t = parse_trace(f)))
+    if (!(t = parse_trace(f))) {
+        fprintf(stderr, "Failed to parse the trace!\n");
         return 1;
+    }
 
     for (i = 0; i < t->nb_ioctl; i++) {
         printf("(%c) register: %06x, value: %08x, mask: %08x ",
@@ -118,7 +125,7 @@ int main(int argc, char **argv)
         printf("%s ", (t->ioctls[i].dir ? "<==" : "==>"));
 
         if (lookup(chipset, t->ioctls[i].reg, t->ioctls[i].val) < 0) {
-            fprintf(stderr, "Cannot run lookup.\n");
+            fprintf(stderr, "Failed to run lookup!\n");
             return 1;
         }
     }
