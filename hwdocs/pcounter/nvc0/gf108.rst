@@ -141,17 +141,67 @@ MUX: PGRAPH.GPC[0].TP[1].TEX.PM_MUX_C_D -> 80000005
 Local counters
 ==============
 
+GPC 0, TPC 0:
+
 - atom_count
+
+  - pm_sigsel_0: 0x63
+  - pm_srcsel_0: 0x30
+  - pm_mux: 0x80000000
+
 - gred_count
+
+  - pm_sigsel_0: 0x63
+  - pm_srcsel_0: 0x40
+  - pm_mux: 0x80000000
+
 - inst_issued1_0
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x10
+  - pm_mux: 0x80000000
+
 - inst_issued2_0
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x20
+  - pm_mux: 0x80000000
+
 - inst_issued1_1
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x40
+  - pm_mux: 0x80000000
+
 - inst_issued2_1
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x50
+  - pm_mux: 0x80000000
+
 - thread_inst_executed_0
 - thread_inst_executed_1
 - thread_inst_executed_2
 - thread_inst_executed_3
+
+  - pm_sigsel_0: 0xa3a3a3a3 (0: a3, 1: a5, 2: a4, 3: a6)
+  - pm_sigsel_1: 0xa3a3 (0: a3, 1: a5, 2: a4, 3: a6)
+  - pm_srcsel_0: 0x00
+  - pm_srcsel_1: 0x11
+  - pm_srcsel_2: 0x22
+  - pm_srcsel_3: 0x33
+  - pm_srcsel_4: 0x44
+  - pm_srcsel_5: 0x55
+  - pm_mux: 0x80000000
+
 - inst_executed
+
+  - pm_sigsel_0: 0x2d2d2d
+  - pm_srcsel_0: 0x00
+  - pm_srcsel_1: 0x11
+  - pm_srcsel_2: 0x22
+  - pm_mux: 0x80000000
+
 - prof_trigger_00
 - prof_trigger_01
 - prof_trigger_02
@@ -160,23 +210,102 @@ Local counters
 - prof_trigger_05
 - prof_trigger_06
 - prof_trigger_07
+
+  - pm_sigsel_0: 0x01
+  - pm_srcsel_0: 0x00 (0: 00, 1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70)
+  - pm_mux: 0x80000000
+
 - active_warps
+
+  - pm_sigsel_0: 0x24242424
+  - pm_sigsel_1: 0x2424
+  - pm_srcsel_0: 0x10
+  - pm_srcsel_1: 0x21
+  - pm_srcsel_2: 0x32
+  - pm_srcsel_3: 0x43
+  - pm_srcsel_4: 0x54
+  - pm_srcsel_5: 0x65
+  - pm_mux: 0x80000000
+
 - active_cycles
+
+  - pm_sigsel_0: 0x11
+  - pm_srcsel_0: 0x00
+  - pm_mux: 0x80000000
+
 - branch
+
+  - pm_sigsel_0: 0x1a1a
+  - pm_srcsel_0: 0x00
+  - pm_srcsel_1: 0x11
+  - pm_mux: 0x80000000
+
 - divergent_branch
+
+  - pm_sigsel_0: 0x1919
+  - pm_srcsel_0: 0x20
+  - pm_srcsel_1: 0x31
+  - pm_mux: 0x80000000
+
 - warps_launched
+
+  - pm_sigsel_0: 0x26
+  - pm_srcsel_0: 0x00
+  - pm_mux: 0x80000000
+
 - threads_launched
+
+  - pm_sigsel_0: 0x26262626
+  - pm_sigsel_1: 0x2626
+  - pm_srcsel_0: 0x10
+  - pm_srcsel_1: 0x21
+  - pm_srcsel_2: 0x32
+  - pm_srcsel_3: 0x43
+  - pm_srcsel_4: 0x54
+  - pm_srcsel_5: 0x65
+  - pm_mux: 0x80000000
+
 - local_load
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x20
+  - pm_mux: 0x80000000
+
 - local_store
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x50
+  - pm_mux: 0x80000000
+
 - gld_request
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x30
+  - pm_mux: 0x80000000
+
 - gst_request
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x60
+  - pm_mux: 0x80000000
+
 - shared_load
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x10
+  - pm_mux: 0x80000000
+
 - shared_store
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x40
+  - pm_mux: 0x80000000
+
 - gld_inst_8bit
 - gld_inst_16bit
 - gld_inst_32bit
 - gld_inst_64bit
--  gld_inst_128bit
+- gld_inst_128bit
 - gst_inst_8bit
 - gst_inst_16bit
 - gst_inst_32bit
