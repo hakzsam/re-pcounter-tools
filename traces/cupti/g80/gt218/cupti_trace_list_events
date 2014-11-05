@@ -1,0 +1,261 @@
+Assuming default device id 0.
+CUDA Device Id  : 0
+CUDA Device Name: NVS 300
+CUDA Compute Capability: 1.2
+
+
+Event# 1
+Id        = 1034
+Domain    = domain_a (82)
+Name      = tex_cache_hit
+Shortdesc = tex cache hit
+Longdesc  = Number of texture cache misses.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 2
+Id        = 1033
+Domain    = domain_a (82)
+Name      = tex_cache_miss
+Shortdesc = tex cache miss
+Longdesc  = Number of texture cache hits.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 1
+Id        = 1005
+Domain    = domain_b (83)
+Name      = gld_128b
+Shortdesc = gld 128B
+Longdesc  = Number of 128 byte global memory load transactions. This increments by 1 for each 128 byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 1006
+Domain    = domain_b (83)
+Name      = gld_64b
+Shortdesc = gld 64B
+Longdesc  = Number of 64 byte global memory load transactions. This increments by 1 for each 64 byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 1007
+Domain    = domain_b (83)
+Name      = gld_32b
+Shortdesc = gld 32B
+Longdesc  = Number of 32 byte global memory load transactions. This increments by 1 for each 32 byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 1010
+Domain    = domain_b (83)
+Name      = gst_128b
+Shortdesc = gst 128B
+Longdesc  = Number of 128 byte global memory store transactions. This increments by 8 for each 128 byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 1011
+Domain    = domain_b (83)
+Name      = gst_64b
+Shortdesc = gst 64B
+Longdesc  = Number of 64 byte global memory store transactions. This increments by 4 for each 64 byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 6
+Id        = 1012
+Domain    = domain_b (83)
+Name      = gst_32b
+Shortdesc = gst 32B
+Longdesc  = Number of 32 byte global memory store transactions. This increments by 2 for each 32 byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 7
+Id        = 1015
+Domain    = domain_b (83)
+Name      = local_load
+Shortdesc = local load
+Longdesc  = Number of local memory load transactions. Each local load request will generate one transaction irrespective of the size of the transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 8
+Id        = 1016
+Domain    = domain_b (83)
+Name      = local_store
+Shortdesc = local store
+Longdesc  = Number of local memory store transactions. This increments by 2 for each 32-byte transaction, by 4 for each 64-byte transaction and by 8 for each 128-byte transaction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 9
+Id        = 1017
+Domain    = domain_b (83)
+Name      = cta_launched
+Shortdesc = cta launched
+Longdesc  = Number of threads blocks launched on a TPC.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 10
+Id        = 1018
+Domain    = domain_b (83)
+Name      = sm_cta_launched
+Shortdesc = sm cta launched
+Longdesc  = Number of threads blocks launched on a streaming multiprocessor (SM).
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 11
+Id        = 1019
+Domain    = domain_b (83)
+Name      = branch
+Shortdesc = branch
+Longdesc  = Number of branches taken by threads executing a kernel. This counter will be incremented by one if at least one thread in a warp takes the branch.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 12
+Id        = 1020
+Domain    = domain_b (83)
+Name      = divergent_branch
+Shortdesc = divergent branch
+Longdesc  = Number of divergent branches within a warp. This counter will be incremented by one if at least one thread in a warp diverges (that is, follows a different execution path) via a data dependent conditional branch.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 13
+Id        = 1021
+Domain    = domain_b (83)
+Name      = instructions
+Shortdesc = instructions
+Longdesc  = Number of instructions executed.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 14
+Id        = 1022
+Domain    = domain_b (83)
+Name      = warp_serialize
+Shortdesc = warp serialize
+Longdesc  = If two addresses of a memory request fall in the same memory bank, there is a bank conflict and the access has to be serialized. This counter gives the number of thread warps that serialize on address conflicts to either shared or constant memory.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 15
+Id        = 1023
+Domain    = domain_b (83)
+Name      = prof_trigger_00
+Shortdesc = prof trigger 00
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 16
+Id        = 1024
+Domain    = domain_b (83)
+Name      = prof_trigger_01
+Shortdesc = prof trigger 01
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 17
+Id        = 1025
+Domain    = domain_b (83)
+Name      = prof_trigger_02
+Shortdesc = prof trigger 02
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 18
+Id        = 1026
+Domain    = domain_b (83)
+Name      = prof_trigger_03
+Shortdesc = prof trigger 03
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 19
+Id        = 1027
+Domain    = domain_b (83)
+Name      = prof_trigger_04
+Shortdesc = prof trigger 04
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 20
+Id        = 1028
+Domain    = domain_b (83)
+Name      = prof_trigger_05
+Shortdesc = prof trigger 05
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 21
+Id        = 1029
+Domain    = domain_b (83)
+Name      = prof_trigger_06
+Shortdesc = prof trigger 06
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 22
+Id        = 1030
+Domain    = domain_b (83)
+Name      = prof_trigger_07
+Shortdesc = prof trigger 07
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 23
+Id        = 1001
+Domain    = domain_b (83)
+Name      = gld_incoherent
+Shortdesc = gld uncoalesced
+Longdesc  = Number of non-coalesced global memory loads.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 24
+Id        = 1002
+Domain    = domain_b (83)
+Name      = gld_coherent
+Shortdesc = gld coalesced
+Longdesc  = Number of coalesced global memory loads.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 25
+Id        = 1003
+Domain    = domain_b (83)
+Name      = gst_incoherent
+Shortdesc = gst uncoalesced
+Longdesc  = Number of non-coalesced global memory stores.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 26
+Id        = 1004
+Domain    = domain_b (83)
+Name      = gst_coherent
+Shortdesc = gst coalesced
+Longdesc  = Number of coalesced global memory stores.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 27
+Id        = 1008
+Domain    = domain_b (83)
+Name      = gld_request
+Shortdesc = gld request
+Longdesc  = Number of global memory load requests.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 28
+Id        = 1009
+Domain    = domain_b (83)
+Name      = gld_total
+Shortdesc = gld total
+Longdesc  = Total number of global memory load transactions. Transaction size can be 32, 64 or 128 bytes
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 29
+Id        = 1013
+Domain    = domain_b (83)
+Name      = gst_request
+Shortdesc = gst request
+Longdesc  = Number of global memory store requests.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 30
+Id        = 1014
+Domain    = domain_b (83)
+Name      = gst_total
+Shortdesc = gst total
+Longdesc  = Total number of global memory store transactions. Transaction size can be 32, 64 or 128 bytes
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
