@@ -1,0 +1,1133 @@
+Assuming default device id 0.
+CUDA Device Id  : 0
+CUDA Device Name: Tesla K20Xm
+CUDA Compute Capability: 3.5
+
+
+Event# 1
+Id        = 2082
+Domain    = domain_a (401)
+Name      = tex0_cache_sector_queries
+Shortdesc = tex0 cache sector queries
+Longdesc  = Number of texture cache 0 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 2
+Id        = 2083
+Domain    = domain_a (401)
+Name      = tex1_cache_sector_queries
+Shortdesc = tex1 cache sector queries
+Longdesc  = Number of texture cache 1 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 3
+Id        = 2084
+Domain    = domain_a (401)
+Name      = tex2_cache_sector_queries
+Shortdesc = tex2 cache sector queries
+Longdesc  = Number of texture cache 2 requests. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 4
+Id        = 2085
+Domain    = domain_a (401)
+Name      = tex3_cache_sector_queries
+Shortdesc = tex3 cache sector queries
+Longdesc  = Number of texture cache 3 requests. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 5
+Id        = 2086
+Domain    = domain_a (401)
+Name      = tex0_cache_sector_misses
+Shortdesc = tex0 cache sector misses
+Longdesc  = Number of texture cache 0 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 6
+Id        = 2087
+Domain    = domain_a (401)
+Name      = tex1_cache_sector_misses
+Shortdesc = tex1 cache sector misses
+Longdesc  = Number of texture cache 1 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 7
+Id        = 2088
+Domain    = domain_a (401)
+Name      = tex2_cache_sector_misses
+Shortdesc = tex2 cache sector misses
+Longdesc  = Number of texture cache 2 misses. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 8
+Id        = 2089
+Domain    = domain_a (401)
+Name      = tex3_cache_sector_misses
+Shortdesc = tex3 cache sector misses
+Longdesc  = Number of texture cache 3 misses. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 9
+Id        = 2165
+Domain    = domain_a (401)
+Name      = rocache_subp0_gld_warp_count_32b
+Shortdesc = rocache_subp0_gld_warp_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 0 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 10
+Id        = 2166
+Domain    = domain_a (401)
+Name      = rocache_subp1_gld_warp_count_32b
+Shortdesc = rocache_subp1_gld_warp_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 1 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 11
+Id        = 2167
+Domain    = domain_a (401)
+Name      = rocache_subp2_gld_warp_count_32b
+Shortdesc = rocache_subp2_gld_warp_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 2 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 12
+Id        = 2168
+Domain    = domain_a (401)
+Name      = rocache_subp3_gld_warp_count_32b
+Shortdesc = rocache_subp3_gld_warp_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 3 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 13
+Id        = 2169
+Domain    = domain_a (401)
+Name      = rocache_subp0_gld_warp_count_64b
+Shortdesc = rocache_subp0_gld_warp_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 0 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 14
+Id        = 2170
+Domain    = domain_a (401)
+Name      = rocache_subp1_gld_warp_count_64b
+Shortdesc = rocache_subp1_gld_warp_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 1 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 15
+Id        = 2171
+Domain    = domain_a (401)
+Name      = rocache_subp2_gld_warp_count_64b
+Shortdesc = rocache_subp2_gld_warp_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 2 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 16
+Id        = 2172
+Domain    = domain_a (401)
+Name      = rocache_subp3_gld_warp_count_64b
+Shortdesc = rocache_subp3_gld_warp_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 3 of read-only data cache.Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 17
+Id        = 2173
+Domain    = domain_a (401)
+Name      = rocache_subp0_gld_warp_count_128b
+Shortdesc = rocache_subp0_gld_warp_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 0 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 18
+Id        = 2174
+Domain    = domain_a (401)
+Name      = rocache_subp1_gld_warp_count_128b
+Shortdesc = rocache_subp1_gld_warp_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 1 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 19
+Id        = 2175
+Domain    = domain_a (401)
+Name      = rocache_subp2_gld_warp_count_128b
+Shortdesc = rocache_subp2_gld_warp_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 2 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 20
+Id        = 2176
+Domain    = domain_a (401)
+Name      = rocache_subp3_gld_warp_count_128b
+Shortdesc = rocache_subp3_gld_warp_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 3 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 21
+Id        = 2153
+Domain    = domain_a (401)
+Name      = rocache_subp0_gld_thread_count_32b
+Shortdesc = rocache_subp0_gld_thread_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 0 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 22
+Id        = 2154
+Domain    = domain_a (401)
+Name      = rocache_subp1_gld_thread_count_32b
+Shortdesc = rocache_subp1_gld_thread_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 1 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 23
+Id        = 2155
+Domain    = domain_a (401)
+Name      = rocache_subp2_gld_thread_count_32b
+Shortdesc = rocache_subp2_gld_thread_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 2 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 24
+Id        = 2156
+Domain    = domain_a (401)
+Name      = rocache_subp3_gld_thread_count_32b
+Shortdesc = rocache_subp3_gld_thread_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 3 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 25
+Id        = 2157
+Domain    = domain_a (401)
+Name      = rocache_subp0_gld_thread_count_64b
+Shortdesc = rocache_subp0_gld_thread_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 0 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 26
+Id        = 2158
+Domain    = domain_a (401)
+Name      = rocache_subp1_gld_thread_count_64b
+Shortdesc = rocache_subp1_gld_thread_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 1 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 27
+Id        = 2159
+Domain    = domain_a (401)
+Name      = rocache_subp2_gld_thread_count_64b
+Shortdesc = rocache_subp2_gld_thread_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 2 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 28
+Id        = 2160
+Domain    = domain_a (401)
+Name      = rocache_subp3_gld_thread_count_64b
+Shortdesc = rocache_subp3_gld_thread_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 3 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 29
+Id        = 2161
+Domain    = domain_a (401)
+Name      = rocache_subp0_gld_thread_count_128b
+Shortdesc = rocache_subp0_gld_thread_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 0 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 30
+Id        = 2162
+Domain    = domain_a (401)
+Name      = rocache_subp1_gld_thread_count_128b
+Shortdesc = rocache_subp1_gld_thread_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 1 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 31
+Id        = 2163
+Domain    = domain_a (401)
+Name      = rocache_subp2_gld_thread_count_128b
+Shortdesc = rocache_subp2_gld_thread_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 2 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 32
+Id        = 2164
+Domain    = domain_a (401)
+Name      = rocache_subp3_gld_thread_count_128b
+Shortdesc = rocache_subp3_gld_thread_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 3 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 33
+Id        = 2193
+Domain    = domain_a (401)
+Name      = elapsed_cycles_sm
+Shortdesc = elapsed_cycles_sm
+Longdesc  = Elapsed clocks
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 1
+Id        = 2107
+Domain    = domain_b (409)
+Name      = fb_subp0_read_sectors
+Shortdesc = fb subp0 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 2108
+Domain    = domain_b (409)
+Name      = fb_subp1_read_sectors
+Shortdesc = fb subp1 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 2109
+Domain    = domain_b (409)
+Name      = fb_subp0_write_sectors
+Shortdesc = fb subp0 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 2110
+Domain    = domain_b (409)
+Name      = fb_subp1_write_sectors
+Shortdesc = fb subp1 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 2115
+Domain    = domain_b (409)
+Name      = l2_subp0_write_sector_misses
+Shortdesc = l2 subp0 write sector misses
+Longdesc  = Number of write misses in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 6
+Id        = 2116
+Domain    = domain_b (409)
+Name      = l2_subp1_write_sector_misses
+Shortdesc = l2 subp1 write sector misses
+Longdesc  = Number of write misses in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 7
+Id        = 2117
+Domain    = domain_b (409)
+Name      = l2_subp2_write_sector_misses
+Shortdesc = l2 subp2 write sector misses
+Longdesc  = Number of write misses in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 8
+Id        = 2118
+Domain    = domain_b (409)
+Name      = l2_subp3_write_sector_misses
+Shortdesc = l2 subp3 write sector misses
+Longdesc  = Number of write misses in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 9
+Id        = 2119
+Domain    = domain_b (409)
+Name      = l2_subp0_read_sector_misses
+Shortdesc = l2 subp0 read sector misses
+Longdesc  = Number of read misses in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 10
+Id        = 2120
+Domain    = domain_b (409)
+Name      = l2_subp1_read_sector_misses
+Shortdesc = l2 subp1 read sector misses
+Longdesc  = Number of read misses in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 11
+Id        = 2121
+Domain    = domain_b (409)
+Name      = l2_subp2_read_sector_misses
+Shortdesc = l2 subp2 read sector misses
+Longdesc  = Number of read misses in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 12
+Id        = 2122
+Domain    = domain_b (409)
+Name      = l2_subp3_read_sector_misses
+Shortdesc = l2 subp3 read sector misses
+Longdesc  = Number of read misses in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 13
+Id        = 2123
+Domain    = domain_b (409)
+Name      = l2_subp0_write_l1_sector_queries
+Shortdesc = l2 subp0 write sector queries
+Longdesc  = Number of write requests from L1 to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 14
+Id        = 2124
+Domain    = domain_b (409)
+Name      = l2_subp1_write_l1_sector_queries
+Shortdesc = l2 subp1 write sector queries
+Longdesc  = Number of write requests from L1 to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 15
+Id        = 2125
+Domain    = domain_b (409)
+Name      = l2_subp2_write_l1_sector_queries
+Shortdesc = l2 subp2 write sector queries
+Longdesc  = Number of write requests from L1 to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 16
+Id        = 2126
+Domain    = domain_b (409)
+Name      = l2_subp3_write_l1_sector_queries
+Shortdesc = l2 subp3 write sector queries
+Longdesc  = Number of write requests from L1 to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 17
+Id        = 2127
+Domain    = domain_b (409)
+Name      = l2_subp0_read_l1_sector_queries
+Shortdesc = l2 subp0 read sector queries
+Longdesc  = Number of read requests from L1 to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 18
+Id        = 2128
+Domain    = domain_b (409)
+Name      = l2_subp1_read_l1_sector_queries
+Shortdesc = l2 subp1 read sector queries
+Longdesc  = Number of read requests from L1 to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 19
+Id        = 2129
+Domain    = domain_b (409)
+Name      = l2_subp2_read_l1_sector_queries
+Shortdesc = l2 subp2 read sector queries
+Longdesc  = Number of read requests from L1 to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 20
+Id        = 2130
+Domain    = domain_b (409)
+Name      = l2_subp3_read_l1_sector_queries
+Shortdesc = l2 subp3 read sector queries
+Longdesc  = Number of read requests from L1 to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 21
+Id        = 2131
+Domain    = domain_b (409)
+Name      = l2_subp0_read_l1_hit_sectors
+Shortdesc = l2 subp0 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 22
+Id        = 2132
+Domain    = domain_b (409)
+Name      = l2_subp1_read_l1_hit_sectors
+Shortdesc = l2 subp1 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 23
+Id        = 2133
+Domain    = domain_b (409)
+Name      = l2_subp2_read_l1_hit_sectors
+Shortdesc = l2 subp2 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 24
+Id        = 2134
+Domain    = domain_b (409)
+Name      = l2_subp3_read_l1_hit_sectors
+Shortdesc = l2 subp3 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 25
+Id        = 2135
+Domain    = domain_b (409)
+Name      = l2_subp0_read_tex_sector_queries
+Shortdesc = l2 subp0 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 26
+Id        = 2136
+Domain    = domain_b (409)
+Name      = l2_subp1_read_tex_sector_queries
+Shortdesc = l2 subp1 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 27
+Id        = 2137
+Domain    = domain_b (409)
+Name      = l2_subp2_read_tex_sector_queries
+Shortdesc = l2 subp2 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 28
+Id        = 2138
+Domain    = domain_b (409)
+Name      = l2_subp3_read_tex_sector_queries
+Shortdesc = l2 subp3 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 29
+Id        = 2139
+Domain    = domain_b (409)
+Name      = l2_subp0_read_tex_hit_sectors
+Shortdesc = l2 subp0 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 30
+Id        = 2140
+Domain    = domain_b (409)
+Name      = l2_subp1_read_tex_hit_sectors
+Shortdesc = l2 subp1 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 31
+Id        = 2141
+Domain    = domain_b (409)
+Name      = l2_subp2_read_tex_hit_sectors
+Shortdesc = l2 subp2 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 32
+Id        = 2142
+Domain    = domain_b (409)
+Name      = l2_subp3_read_tex_hit_sectors
+Shortdesc = l2 subp3 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 33
+Id        = 2177
+Domain    = domain_b (409)
+Name      = l2_subp0_read_sysmem_sector_queries
+Shortdesc = l2_subp0_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 34
+Id        = 2178
+Domain    = domain_b (409)
+Name      = l2_subp1_read_sysmem_sector_queries
+Shortdesc = l2_subp1_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 35
+Id        = 2179
+Domain    = domain_b (409)
+Name      = l2_subp2_read_sysmem_sector_queries
+Shortdesc = l2_subp2_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 36
+Id        = 2180
+Domain    = domain_b (409)
+Name      = l2_subp3_read_sysmem_sector_queries
+Shortdesc = l2_subp3_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 37
+Id        = 2181
+Domain    = domain_b (409)
+Name      = l2_subp0_write_sysmem_sector_queries
+Shortdesc = l2_subp0_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 38
+Id        = 2182
+Domain    = domain_b (409)
+Name      = l2_subp1_write_sysmem_sector_queries
+Shortdesc = l2_subp1_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 39
+Id        = 2183
+Domain    = domain_b (409)
+Name      = l2_subp2_write_sysmem_sector_queries
+Shortdesc = l2_subp2_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 40
+Id        = 2184
+Domain    = domain_b (409)
+Name      = l2_subp3_write_sysmem_sector_queries
+Shortdesc = l2_subp3_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 41
+Id        = 2185
+Domain    = domain_b (409)
+Name      = l2_subp0_total_read_sector_queries
+Shortdesc = l2_subp0_total_read_sector_queries
+Longdesc  = Total read requests to slice 0 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 42
+Id        = 2186
+Domain    = domain_b (409)
+Name      = l2_subp1_total_read_sector_queries
+Shortdesc = l2_subp1_total_read_sector_queries
+Longdesc  = Total read requests to slice 1 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 43
+Id        = 2187
+Domain    = domain_b (409)
+Name      = l2_subp2_total_read_sector_queries
+Shortdesc = l2_subp2_total_read_sector_queries
+Longdesc  = Total read requests to slice 2 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 44
+Id        = 2188
+Domain    = domain_b (409)
+Name      = l2_subp3_total_read_sector_queries
+Shortdesc = l2_subp3_total_read_sector_queries
+Longdesc  = Total read requests to slice 3 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 45
+Id        = 2189
+Domain    = domain_b (409)
+Name      = l2_subp0_total_write_sector_queries
+Shortdesc = l2_subp0_total_write_sector_queries
+Longdesc  = Total write requests to slice 0 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 46
+Id        = 2190
+Domain    = domain_b (409)
+Name      = l2_subp1_total_write_sector_queries
+Shortdesc = l2_subp1_total_write_sector_queries
+Longdesc  = Total write requests to slice 1 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 47
+Id        = 2191
+Domain    = domain_b (409)
+Name      = l2_subp2_total_write_sector_queries
+Shortdesc = l2_subp2_total_write_sector_queries
+Longdesc  = Total write requests to slice 2 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 48
+Id        = 2192
+Domain    = domain_b (409)
+Name      = l2_subp3_total_write_sector_queries
+Shortdesc = l2_subp3_total_write_sector_queries
+Longdesc  = Total write requests to slice 3 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 1
+Id        = 2401
+Domain    = domain_c (412)
+Name      = gld_inst_8bit
+Shortdesc = gld_inst_8bit
+Longdesc  = Total number of 8-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 2402
+Domain    = domain_c (412)
+Name      = gld_inst_16bit
+Shortdesc = gld_inst_16bit
+Longdesc  = Total number of 16-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 2403
+Domain    = domain_c (412)
+Name      = gld_inst_32bit
+Shortdesc = gld_inst_32bit
+Longdesc  = Total number of 32-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 2404
+Domain    = domain_c (412)
+Name      = gld_inst_64bit
+Shortdesc = gld_inst_64bit
+Longdesc  = Total number of 64-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 2405
+Domain    = domain_c (412)
+Name      = gld_inst_128bit
+Shortdesc = gld_inst_128bit
+Longdesc  = Total number of 128-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 6
+Id        = 2406
+Domain    = domain_c (412)
+Name      = gst_inst_8bit
+Shortdesc = gst_inst_8bit
+Longdesc  = Total number of 8-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 7
+Id        = 2407
+Domain    = domain_c (412)
+Name      = gst_inst_16bit
+Shortdesc = gst_inst_16bit
+Longdesc  = Total number of 16-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 8
+Id        = 2408
+Domain    = domain_c (412)
+Name      = gst_inst_32bit
+Shortdesc = gst_inst_32bit
+Longdesc  = Total number of 32-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 9
+Id        = 2409
+Domain    = domain_c (412)
+Name      = gst_inst_64bit
+Shortdesc = gst_inst_64bit
+Longdesc  = Total number of 64-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 10
+Id        = 2410
+Domain    = domain_c (412)
+Name      = gst_inst_128bit
+Shortdesc = gst_inst_128bit
+Longdesc  = Total number of 128-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 11
+Id        = 2411
+Domain    = domain_c (412)
+Name      = rocache_gld_inst_8bit
+Shortdesc = rocache_gld_inst_8bit
+Longdesc  = Total number of 8-bit global load via read-only data cache that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 12
+Id        = 2412
+Domain    = domain_c (412)
+Name      = rocache_gld_inst_16bit
+Shortdesc = rocache_gld_inst_16bit
+Longdesc  = Total number of 16-bit global load via read-only data cache that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 13
+Id        = 2413
+Domain    = domain_c (412)
+Name      = rocache_gld_inst_32bit
+Shortdesc = rocache_gld_inst_32bit
+Longdesc  = Total number of 32-bit global load via read-only data cache that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 14
+Id        = 2414
+Domain    = domain_c (412)
+Name      = rocache_gld_inst_64bit
+Shortdesc = rocache_gld_inst_64bit
+Longdesc  = Total number of 64-bit global load via read-only data cache that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 15
+Id        = 2415
+Domain    = domain_c (412)
+Name      = rocache_gld_inst_128bit
+Shortdesc = rocache_gld_inst_128bit
+Longdesc  = Total number of 128-bit global load via read-only data cache that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 1
+Id        = 2601
+Domain    = domain_d (411)
+Name      = prof_trigger_00
+Shortdesc = prof trigger 00
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 2
+Id        = 2602
+Domain    = domain_d (411)
+Name      = prof_trigger_01
+Shortdesc = prof trigger 01
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 3
+Id        = 2603
+Domain    = domain_d (411)
+Name      = prof_trigger_02
+Shortdesc = prof trigger 02
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 4
+Id        = 2604
+Domain    = domain_d (411)
+Name      = prof_trigger_03
+Shortdesc = prof trigger 03
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 5
+Id        = 2605
+Domain    = domain_d (411)
+Name      = prof_trigger_04
+Shortdesc = prof trigger 04
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 6
+Id        = 2606
+Domain    = domain_d (411)
+Name      = prof_trigger_05
+Shortdesc = prof trigger 05
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 7
+Id        = 2607
+Domain    = domain_d (411)
+Name      = prof_trigger_06
+Shortdesc = prof trigger 06
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 8
+Id        = 2608
+Domain    = domain_d (411)
+Name      = prof_trigger_07
+Shortdesc = prof trigger 07
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 9
+Id        = 2617
+Domain    = domain_d (411)
+Name      = warps_launched
+Shortdesc = warps launched
+Longdesc  = Number of warps launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 10
+Id        = 2618
+Domain    = domain_d (411)
+Name      = threads_launched
+Shortdesc = threads launched
+Longdesc  = Number of threads launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 11
+Id        = 2620
+Domain    = domain_d (411)
+Name      = inst_issued1
+Shortdesc = Instructions issued 1
+Longdesc  = Number of single instruction issued per cycle
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 12
+Id        = 2621
+Domain    = domain_d (411)
+Name      = inst_issued2
+Shortdesc = Instructions issued 2
+Longdesc  = Number of dual instructions issued per cycle
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 13
+Id        = 2619
+Domain    = domain_d (411)
+Name      = inst_executed
+Shortdesc = Instructions executed
+Longdesc  = Number of instructions executed, do not include replays.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 14
+Id        = 2622
+Domain    = domain_d (411)
+Name      = thread_inst_executed
+Shortdesc = thread inst executed
+Longdesc  = Number of instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 15
+Id        = 2640
+Domain    = domain_d (411)
+Name      = not_predicated_off_thread_inst_executed
+Shortdesc = not_predicated_off_thread_inst_executed
+Longdesc  = Number of not predicated off instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads that execute this instruction.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 16
+Id        = 2753
+Domain    = domain_d (411)
+Name      = atom_count
+Shortdesc = atom_count
+Longdesc  = Number of warps executing atomic reduction operations. Increments by one if at least one thread in a warp executes the instruction.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 17
+Id        = 2609
+Domain    = domain_d (411)
+Name      = atom_cas_count
+Shortdesc = atom_cas_count
+Longdesc  = Number of warps executing atomic compare and swap operations. Increments by one if at least one thread in a warp executes the instruction.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 18
+Id        = 2754
+Domain    = domain_d (411)
+Name      = gred_count
+Shortdesc = gred_count
+Longdesc  = Number of warps executing reduction operations on global memory. Increments by one if at least one thread in a warp executes the instruction
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 19
+Id        = 2623
+Domain    = domain_d (411)
+Name      = shared_load
+Shortdesc = shared load
+Longdesc  = Number of executed load instructions where state space is specified as shared, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 20
+Id        = 2624
+Domain    = domain_d (411)
+Name      = shared_store
+Shortdesc = shared store
+Longdesc  = Number of executed store instructions where state space is specified as shared, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 21
+Id        = 2625
+Domain    = domain_d (411)
+Name      = local_load
+Shortdesc = local load
+Longdesc  = Number of executed load instructions where state space is specified as local, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 22
+Id        = 2626
+Domain    = domain_d (411)
+Name      = local_store
+Shortdesc = local store
+Longdesc  = Number of executed store instructions where state space is specified as local, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 23
+Id        = 2627
+Domain    = domain_d (411)
+Name      = gld_request
+Shortdesc = gld request
+Longdesc  = Number of executed load instructions where the state space is not specified and hence generic addressing is used, increments per warp on a multiprocessor. It can include the load operations from global,local and shared state space.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 24
+Id        = 2628
+Domain    = domain_d (411)
+Name      = gst_request
+Shortdesc = gst request
+Longdesc  = Number of executed store instructions where the state space is not specified and hence generic addressing is used, increments per warp on a multiprocessor. It can include the store operations to global,local and shared state space.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 25
+Id        = 2629
+Domain    = domain_d (411)
+Name      = active_cycles
+Shortdesc = active cycles
+Longdesc  = Number of cycles a multiprocessor has at least one active warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 26
+Id        = 2630
+Domain    = domain_d (411)
+Name      = active_warps
+Shortdesc = active warps
+Longdesc  = Accumulated number of active warps per cycle. For every cycle it increments by the number of active warps in the cycle which can be in the range 0 to 64.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 27
+Id        = 2631
+Domain    = domain_d (411)
+Name      = sm_cta_launched
+Shortdesc = sm cta launched
+Longdesc  = Number of thread blocks launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 28
+Id        = 2663
+Domain    = domain_d (411)
+Name      = local_load_transactions
+Shortdesc = local_load_transactions
+Longdesc  = Number of local load transactions from L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 29
+Id        = 2664
+Domain    = domain_d (411)
+Name      = local_store_transactions
+Shortdesc = local_store_transactions
+Longdesc  = Number of local store transactions to L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 30
+Id        = 2665
+Domain    = domain_d (411)
+Name      = l1_shared_load_transactions
+Shortdesc = l1_shared_load_transactions
+Longdesc  = Number of shared load transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 31
+Id        = 2666
+Domain    = domain_d (411)
+Name      = l1_shared_store_transactions
+Shortdesc = l1_shared_store_transactions
+Longdesc  = Number of shared store transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 32
+Id        = 2667
+Domain    = domain_d (411)
+Name      = __l1_global_load_transactions
+Shortdesc = __l1_global_load_transactions
+Longdesc  = Number of global load transactions from L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 33
+Id        = 2668
+Domain    = domain_d (411)
+Name      = __l1_global_store_transactions
+Shortdesc = __l1_global_store_transactions
+Longdesc  = Number of global store transactions from L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 34
+Id        = 2641
+Domain    = domain_d (411)
+Name      = l1_local_load_hit
+Shortdesc = l1 local load hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 35
+Id        = 2642
+Domain    = domain_d (411)
+Name      = l1_local_load_miss
+Shortdesc = l1 local load miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 36
+Id        = 2643
+Domain    = domain_d (411)
+Name      = l1_local_store_hit
+Shortdesc = l1 local store hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory store accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 37
+Id        = 2644
+Domain    = domain_d (411)
+Name      = l1_local_store_miss
+Shortdesc = l1 local store miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory store accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32,64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 38
+Id        = 2645
+Domain    = domain_d (411)
+Name      = l1_global_load_hit
+Shortdesc = l1 global load hit
+Longdesc  = Number of cache lines that hit in L1 cache for global memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 39
+Id        = 2646
+Domain    = domain_d (411)
+Name      = l1_global_load_miss
+Shortdesc = l1 global load miss
+Longdesc  = Number of cache lines that miss in L1 cache for global memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 40
+Id        = 2647
+Domain    = domain_d (411)
+Name      = uncached_global_load_transaction
+Shortdesc = uncached global load transaction
+Longdesc  = Number of uncached global load transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 41
+Id        = 2648
+Domain    = domain_d (411)
+Name      = global_store_transaction
+Shortdesc = global store transaction
+Longdesc  = Number of global store transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 42
+Id        = 2659
+Domain    = domain_d (411)
+Name      = shared_load_replay
+Shortdesc = shared load replay
+Longdesc  = Replays caused due to shared load bank conflict (when the addresses for two or more shared memory load requests fall in the same memory bank) or when there is no conflict but the total number of words accessed by all threads in the warp executing that instruction exceed the number of words that can be loaded in one cycle (256 bytes).
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 43
+Id        = 2660
+Domain    = domain_d (411)
+Name      = shared_store_replay
+Shortdesc = shared store replay
+Longdesc  = Replays caused due to shared store bank conflict (when the addresses for two or more shared memory store requests fall in the same memory bank) or when there is no conflict but the total number of words accessed by all threads in the warp executing that instruction exceed the number of words that can be stored in one cycle.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 44
+Id        = 2661
+Domain    = domain_d (411)
+Name      = global_ld_mem_divergence_replays
+Shortdesc = global_ld_mem_divergence_replays
+Longdesc  = Number of instruction replays for global memory loads. Instruction is replayed if the instruction is accessing more than one cache line of 128 bytes. For each extra cache line access the counter is incremented by 1.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 45
+Id        = 2662
+Domain    = domain_d (411)
+Name      = global_st_mem_divergence_replays
+Shortdesc = global_st_mem_divergence_replays
+Longdesc  = Number of instruction replays for global memory stores. Instruction is replayed if the instruction is accessing more than one cache line of 128 bytes. For each extra cache line access the counter is incremented by 1.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
