@@ -273,28 +273,28 @@ struct domain *get_domains(CUdevice device, uint32_t *num_domains)
         // domain name
         size = NAME_SHORT;
         ret = cuptiEventDomainGetAttribute(d->id,
-                                                 CUPTI_EVENT_DOMAIN_ATTR_NAME,
-                                                 &size,
-                                                 (void *)d->name);
+                                           CUPTI_EVENT_DOMAIN_ATTR_NAME,
+                                           &size,
+                                           (void *)d->name);
         check_null_terminator(d->name, size, NAME_SHORT);
         CHECK_CUPTI_ERROR(ret, "cuptiEventDomainGetAttribute");
 
         // num of profiled instances in the domain
         size = sizeof(d->profiled_inst);
         ret = cuptiDeviceGetEventDomainAttribute(device,
-                                                       d->id,
-                                                       CUPTI_EVENT_DOMAIN_ATTR_INSTANCE_COUNT,
-                                                       &size,
-                                                       (void *)&d->profiled_inst);
+                                                 d->id,
+                                                 CUPTI_EVENT_DOMAIN_ATTR_INSTANCE_COUNT,
+                                                 &size,
+                                                 (void *)&d->profiled_inst);
         CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
 
         // num of total instances in the domain
         size = sizeof(d->total_inst);
         ret = cuptiDeviceGetEventDomainAttribute(device,
-                                                       d->id,
-                                                       CUPTI_EVENT_DOMAIN_ATTR_TOTAL_INSTANCE_COUNT,
-                                                       &size,
-                                                       (void *)&d->total_inst);
+                                                 d->id,
+                                                 CUPTI_EVENT_DOMAIN_ATTR_TOTAL_INSTANCE_COUNT,
+                                                 &size,
+                                                 (void *)&d->total_inst);
         CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
 
         // num of events
@@ -304,10 +304,10 @@ struct domain *get_domains(CUdevice device, uint32_t *num_domains)
         // collection method used for events
         size = sizeof(d->collect_mthd);
         ret = cuptiDeviceGetEventDomainAttribute(device,
-                                                       d->id,
-                                                       CUPTI_EVENT_DOMAIN_ATTR_COLLECTION_METHOD,
-                                                       &size,
-                                                       (void *)&d->collect_mthd);
+                                                 d->id,
+                                                 CUPTI_EVENT_DOMAIN_ATTR_COLLECTION_METHOD,
+                                                 &size,
+                                                 (void *)&d->collect_mthd);
         CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
 
     }
@@ -360,7 +360,8 @@ static int list_domains(CUdevice dev)
     return 0;
 }
 
-static struct event *get_events_by_domain(CUpti_EventDomainID domain, uint32_t *num_events)
+static struct event *get_events_by_domain(CUpti_EventDomainID domain,
+                                          uint32_t *num_events)
 {
     CUptiResult ret = CUPTI_SUCCESS;
     CUpti_EventID *event_id = NULL;
@@ -392,9 +393,7 @@ static struct event *get_events_by_domain(CUpti_EventDomainID domain, uint32_t *
         goto fail;
     }
 
-    ret = cuptiEventDomainEnumEvents(domain,
-                                           &size,
-                                           event_id);
+    ret = cuptiEventDomainEnumEvents(domain, &size, event_id);
     CHECK_CUPTI_ERROR(ret, "cuptiEventDomainEnum_events");
 
     // enum events
@@ -407,36 +406,36 @@ static struct event *get_events_by_domain(CUpti_EventDomainID domain, uint32_t *
         // event name
         size = NAME_SHORT;
         ret = cuptiEventGetAttribute(event->id,
-                                           CUPTI_EVENT_ATTR_NAME,
-                                           &size,
-                                           (uint8_t *)event->name);
+                                     CUPTI_EVENT_ATTR_NAME,
+                                     &size,
+                                     (uint8_t *)event->name);
         CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
         check_null_terminator(events->name, size, NAME_SHORT);
 
         // event short desc
         size = DESC_SHORT;
         ret = cuptiEventGetAttribute(event->id,
-                                           CUPTI_EVENT_ATTR_SHORT_DESCRIPTION,
-                                           &size,
-                                           (uint8_t *)event->short_desc);
+                                     CUPTI_EVENT_ATTR_SHORT_DESCRIPTION,
+                                     &size,
+                                     (uint8_t *)event->short_desc);
         CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
         check_null_terminator(events->short_desc, size, NAME_SHORT);
 
         // event long desc
         size = DESC_LONG;
         ret = cuptiEventGetAttribute(event->id,
-                                           CUPTI_EVENT_ATTR_LONG_DESCRIPTION,
-                                           &size,
-                                           (uint8_t *)event->long_desc);
+                                     CUPTI_EVENT_ATTR_LONG_DESCRIPTION,
+                                     &size,
+                                     (uint8_t *)event->long_desc);
         CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
         check_null_terminator(events->short_desc, size, NAME_SHORT);
 
         // event category
         size = CATEGORY_LENGTH;
         ret = cuptiEventGetAttribute(events->id,
-                                           CUPTI_EVENT_ATTR_CATEGORY,
-                                           &size,
-                                           (&event->category));
+                                     CUPTI_EVENT_ATTR_CATEGORY,
+                                     &size,
+                                     (&event->category));
         CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
     }
 
@@ -455,24 +454,25 @@ static void print_event(struct event *e, struct domain *d)
     printf("Name      = %s\n",      e->name);
     printf("Shortdesc = %s\n",      e->short_desc);
     printf("Longdesc  = %s\n",      e->long_desc);
-
+    printf("Category  = ");
     switch (e->category) {
         case CUPTI_EVENT_CATEGORY_INSTRUCTION:
-            printf("Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION\n");
+            printf("CUPTI_EVENT_CATEGORY_INSTRUCTION");
             break;
         case CUPTI_EVENT_CATEGORY_MEMORY:
-            printf("Category  = CUPTI_EVENT_CATEGORY_MEMORY\n");
+            printf("CUPTI_EVENT_CATEGORY_MEMORY");
             break;
         case CUPTI_EVENT_CATEGORY_CACHE:
-            printf("Category  = CUPTI_EVENT_CATEGORY_CACHE\n");
+            printf("CUPTI_EVENT_CATEGORY_CACHE");
             break;
         case CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER:
-            printf("Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER\n");
+            printf("CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER");
             break;
         default:
-            printf("Category  = CUPTI_EVENT_CATEGORY_UNKNOWN\n");
+            printf("CUPTI_EVENT_CATEGORY_UNKNOWN");
             break;
     }
+    printf("\n");
 }
 
 static void list_events(struct domain *d)
