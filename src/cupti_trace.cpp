@@ -19,6 +19,7 @@
 
 #define LOOKUP_PATH     "../envytools/build/rnn/lookup"
 #define DEDMA_PATH      "../envytools/build/rnn/dedma"
+#define DEMMT_PATH      "../envytools/build/demmt/demmt"
 #define NAME_SHORT      64
 #define NAME_LONG       128
 #define DESC_SHORT      512
@@ -60,6 +61,7 @@ struct domain {
     char name[NAME_SHORT];              // domain name
     uint32_t profiled_inst;             // number of domain instances (profiled)
     uint32_t total_inst;                // number of domain instances (total)
+    uint32_t collect_mthd;		// collection method (local, global, ...):
     struct event *events;         // array of events
     uint32_t num_events;                // number of events
 };
@@ -294,6 +296,16 @@ struct domain *get_domains(CUdevice device, uint32_t *num_domains)
                                                        &size,
                                                        (void *)&d->total_inst);
         CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
+
+        // collection method used for events
+        size = sizeof(d->collect_mthd);
+        ret = cuptiDeviceGetEventDomainAttribute(device,
+                                                       d->id,
+                                                       CUPTI_EVENT_DOMAIN_ATTR_COLLECTION_METHOD,
+                                                       &size,
+                                                       (void *)&d->collect_mthd);
+        CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
+
     }
 
 fail:
@@ -310,6 +322,20 @@ static void print_domain(struct domain *d)
     printf("Name                    = %s\n",    d->name);
     printf("Profiled instance count = %d\n",    d->profiled_inst);
     printf("Total instance count    = %d\n",  d->total_inst);
+    printf("Collection method       = ");
+    switch (d->collect_mthd) {
+       case CUPTI_EVENT_COLLECTION_METHOD_PM:
+          printf("PM");
+          break;
+       case CUPTI_EVENT_COLLECTION_METHOD_SM:
+          printf("SM");
+          break;
+       case CUPTI_EVENT_COLLECTION_METHOD_INSTRUMENTED:
+          printf("INSTRUMENTED");
+          break;
+    }
+    printf("\n");
+
 }
 
 static int list_domains(CUdevice dev)
@@ -484,45 +510,87 @@ static int lookup(const char *chipset, uint32_t reg, uint32_t val)
     return 0;
 }
 
-static struct trace *parse_trace(FILE *f)
+static int decode_trace(const char *chipset, struct event *e)
+{
+    char cmd[1024], buf[1024];
+    FILE *f;
+
+    sprintf(cmd, "%s -l %s.trace -m %s -d all -e nvrm-mthd=0x20800122 -e ioctl-desc | grep dir > %s.demmt",
+            DEMMT_PATH, e->name, chipset, e->name);
+
+    if (!(f = popen(cmd, "r"))) {
+        perror("popen");
+        return -1;
+    }
+
+    while (fgets(buf, sizeof(buf), f) != NULL) {
+        printf("%s", buf);
+    }
+
+    if (pclose(f) < 0) {
+        perror("pclose");
+        return -1;
+    }
+
+    return 0;
+}
+
+static struct trace *parse_trace(const char *event_name)
 {
     struct trace *t;
-    char line[1024];
+    char line[1024], path[1024];
+    FILE *f;
 
-    if (!(t = (struct trace *)malloc(sizeof(*t)))) {
+    sprintf(path, "%s.demmt", event_name);
+
+    f = fopen(path, "r");
+    if (!f) {
+        perror("fopen");
+        return NULL;
+    }
+ 
+    if (!(t = (struct trace *)calloc(1, sizeof(*t)))) {
         perror("malloc");
         return NULL;
     }
 
-    t->nb_ioctl   = 0;
-
     while (fgets (line, sizeof(line), f) != NULL) {
-        char *token, *s;
-        int dir;
+        char *token;
 
-        // Only show post ioctl calls.
-        if (!(s = strstr(line, "RETURND")))
-            continue;
-        s += 9; // 'RETURND: '
+        // Read/write.
+        token = strstr(line, "dir:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 5, "0x%08x", &t->ioctls[t->nb_ioctl].dir);
 
-        token = strtok(s, " ");
-        while (token != NULL) {
-            if (!strncmp(token, "DIR=", 4)) {
-                dir = atoi(token + 4);
-                t->ioctls[t->nb_ioctl].dir = dir & 0x00000001;
-            } else if (!strncmp(token, "MMIO=", 5)) {
-                sscanf(token + 5, "%08x", &t->ioctls[t->nb_ioctl].reg);
-            } else if (!strncmp(token, "VALUE=", 6)) {
-                sscanf(token + 6, "%08x", &t->ioctls[t->nb_ioctl].val);
-            } else if (!strncmp(token, "MASK=", 5)) {
-                sscanf(token + 5, "%08x", &t->ioctls[t->nb_ioctl].mask);
-            }
-            token = strtok(NULL, " ");
-        }
+        // Register.
+        token = strstr(line, "mmio:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 6, "0x%08x", &t->ioctls[t->nb_ioctl].reg);
+
+        // Value.
+        token = strstr(line, "value:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 7, "0x%08x", &t->ioctls[t->nb_ioctl].val);
+
+        // Mask.
+        token = strstr(line, "mask:");
+        if (!token)
+            goto bad_trace;
+        sscanf(token + 6, "0x%08x", &t->ioctls[t->nb_ioctl].mask);
+
         t->nb_ioctl++;
     }
 
+    fclose(f);
     return t;
+
+bad_trace:
+    fclose(f);
+    free(t);
+    return NULL;
 }
 
 static int get_nb_sources(struct trace *t, uint32_t reg)
@@ -760,7 +828,12 @@ static int trace_event(const char *chipset, struct domain *d, struct event *e)
     retval = atoi(tmp);
     printf("Value     = %llu (0x%02x) \n", retval, retval);
 
-    if (!(t = parse_trace(f)))
+    if (decode_trace(chipset, e)) {
+        fprintf(stderr, "Failed to decode trace using demmt!\n");
+        return -1;
+    }
+
+    if (!(t = parse_trace(e->name)))
         return -1;
 
     for (i = 0; i < t->nb_ioctl; i++) {
