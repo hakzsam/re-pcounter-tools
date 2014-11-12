@@ -62,7 +62,7 @@ struct domain {
     uint32_t profiled_inst;             // number of domain instances (profiled)
     uint32_t total_inst;                // number of domain instances (total)
     uint32_t collect_mthd;		// collection method (local, global, ...):
-    struct event *events;         // array of events
+    struct event *events;               // array of events
     uint32_t num_events;                // number of events
 };
 
@@ -297,6 +297,10 @@ struct domain *get_domains(CUdevice device, uint32_t *num_domains)
                                                        (void *)&d->total_inst);
         CHECK_CUPTI_ERROR(ret, "cuptiDeviceEventDomainGetAttribute");
 
+        // num of events
+        ret = cuptiEventDomainGetNumEvents(d->id, &d->num_events);
+        CHECK_CUPTI_ERROR(ret, "cuptiEventDomainGetNumEvents");
+
         // collection method used for events
         size = sizeof(d->collect_mthd);
         ret = cuptiDeviceGetEventDomainAttribute(device,
@@ -318,10 +322,11 @@ fail:
 
 static void print_domain(struct domain *d)
 {
-    printf("Id                      = %d\n",    d->id);
-    printf("Name                    = %s\n",    d->name);
-    printf("Profiled instance count = %d\n",    d->profiled_inst);
-    printf("Total instance count    = %d\n",  d->total_inst);
+    printf("Id                      = %d\n", d->id);
+    printf("Name                    = %s\n", d->name);
+    printf("Profiled instance count = %d\n", d->profiled_inst);
+    printf("Total instance count    = %d\n", d->total_inst);
+    printf("Num events              = %d\n", d->num_events);
     printf("Collection method       = ");
     switch (d->collect_mthd) {
        case CUPTI_EVENT_COLLECTION_METHOD_PM:
