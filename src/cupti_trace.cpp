@@ -66,6 +66,14 @@ struct domain {
     uint32_t num_events;                // number of events
 };
 
+struct metric {
+    CUpti_MetricID id;                  // metric id
+    char name[NAME_SHORT];              // metric name
+    char short_desc[DESC_SHORT];        // short desc
+    char long_desc[DESC_LONG];          // long desc
+    CUpti_MetricCategory category;      // category
+    CUpti_MetricValueKind value_kind;   // value kind
+};
 struct ioctl_call {
     int dir;
     uint32_t reg;
@@ -488,6 +496,173 @@ static void list_events(struct domain *d)
         print_event(&events[i], d);
     }
     free(events);
+}
+
+struct metric *get_metrics(CUdevice device, uint32_t *num_metrics)
+{
+    CUpti_MetricID *metric_id = NULL;
+    CUptiResult ret = CUPTI_SUCCESS;
+    struct metric *metrics = NULL;
+    size_t size = 0;
+    uint32_t i;
+
+    ret = cuptiDeviceGetNumMetrics(device, num_metrics);
+    CHECK_CUPTI_ERROR(ret, "cuptiDeviceGetNumMetrics");
+
+    if (*num_metrics == 0) {
+        fprintf(stderr, "No metric is exposed by device = %d.\n", device);
+        ret = CUPTI_ERROR_UNKNOWN;
+        goto fail;
+    }
+
+    size = sizeof(CUpti_MetricID) * (*num_metrics);
+    metric_id = (CUpti_MetricID *)calloc(1, size);
+    if (!metric_id) {
+        fprintf(stderr, "Failed to allocate memory to metric ID.\n");
+        ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        goto fail;
+    }
+
+    metrics = (struct metric *)calloc(1, sizeof(*metrics) * (*num_metrics));
+    if (!metrics) {
+        fprintf(stderr, "Failed to allocate memory to domain data.\n");
+        ret = CUPTI_ERROR_OUT_OF_MEMORY;
+        goto fail;
+    }
+
+    ret = cuptiDeviceEnumMetrics(device, &size, metric_id);
+    CHECK_CUPTI_ERROR(ret, "cuptiDeviceNumMetrics");
+
+    // enum metrics
+    for (i = 0; i < *num_metrics; i++) {
+        struct metric *m = &metrics[i];
+
+        // metric id
+        m->id = metric_id[i];
+
+        // metric name
+        size = NAME_SHORT;
+        ret = cuptiMetricGetAttribute(m->id,
+                                      CUPTI_METRIC_ATTR_NAME,
+                                      &size,
+                                      (void *)m->name);
+        CHECK_CUPTI_ERROR(ret, "cuptiMetricGetAttribute");
+        check_null_terminator(m->name, size, NAME_SHORT);
+
+        // metric short desc
+        size = DESC_SHORT;
+        ret = cuptiMetricGetAttribute(m->id,
+                                      CUPTI_METRIC_ATTR_SHORT_DESCRIPTION,
+                                      &size,
+                                      (void *)m->short_desc);
+        CHECK_CUPTI_ERROR(ret, "cuptiMetricGetAttribute");
+        check_null_terminator(m->short_desc, size, DESC_SHORT);
+
+        // metric long desc
+        size = DESC_LONG;
+        ret = cuptiMetricGetAttribute(m->id,
+                                      CUPTI_METRIC_ATTR_LONG_DESCRIPTION,
+                                      &size,
+                                      (void *)m->long_desc);
+        CHECK_CUPTI_ERROR(ret, "cuptiMetricGetAttribute");
+        check_null_terminator(m->long_desc, size, DESC_LONG);
+
+        // metric category
+        size = sizeof(CUpti_MetricCategory);
+        ret = cuptiMetricGetAttribute(m->id,
+                                      CUPTI_METRIC_ATTR_CATEGORY,
+                                      &size,
+                                      &m->category);
+        CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
+
+        // value kind
+        size = sizeof(CUpti_MetricValueKind);
+        ret = cuptiMetricGetAttribute(m->id,
+                                      CUPTI_METRIC_ATTR_VALUE_KIND,
+                                      &size,
+                                      &m->value_kind);
+        CHECK_CUPTI_ERROR(ret, "cuptiEventGetAttribute");
+    }
+
+fail:
+    free(metric_id);
+    if (ret != CUPTI_SUCCESS)
+        return NULL;
+
+    return metrics;
+}
+
+static void print_metric(struct metric *m)
+{
+    printf("Id         = %d\n", m->id);
+    printf("Name       = %s\n", m->name);
+    printf("Shortdesc  = %s\n", m->short_desc);
+    printf("Longdesc   = %s\n", m->long_desc);
+    printf("Category   = ");
+    switch (m->category) {
+        case CUPTI_METRIC_CATEGORY_INSTRUCTION:
+            printf("CUPTI_METRIC_CATEGORY_INSTRUCTION");
+            break;
+        case CUPTI_METRIC_CATEGORY_MEMORY:
+            printf("CUPTI_METRIC_CATEGORY_MEMORY");
+            break;
+        case CUPTI_METRIC_CATEGORY_CACHE:
+            printf("CUPTI_METRIC_CATEGORY_CACHE");
+            break;
+        case CUPTI_METRIC_CATEGORY_TEXTURE:
+            printf("CUPTI_METRIC_CATEGORY_TEXTURE");
+            break;
+        case CUPTI_METRIC_CATEGORY_MULTIPROCESSOR:
+            printf("CUPTI_METRIC_CATEGORY_MULTIPROCESSOR");
+            break;
+        default:
+            printf("CUPTI_METRIC_CATEGORY_UNKNOWN");
+            break;
+    }
+    printf("\n");
+    printf("Value Kind = ");
+    switch (m->value_kind) {
+        case CUPTI_METRIC_VALUE_KIND_DOUBLE:
+            printf("CUPTI_METRIC_VALUE_KIND_DOUBLE");
+            break;
+        case CUPTI_METRIC_VALUE_KIND_UINT64:
+            printf("CUPTI_METRIC_VALUE_KIND_UINT64");
+            break;
+        case CUPTI_METRIC_VALUE_KIND_PERCENT:
+            printf("CUPTI_METRIC_VALUE_KIND_PERCENT");
+            break;
+        case CUPTI_METRIC_VALUE_KIND_THROUGHPUT:
+            printf("CUPTI_METRIC_VALUE_KIND_THROUGHPUT");
+            break;
+        case CUPTI_METRIC_VALUE_KIND_INT64:
+            printf("CUPTI_METRIC_VALUE_KIND_INT64");
+            break;
+        case CUPTI_METRIC_VALUE_KIND_UTILIZATION_LEVEL:
+            // TODO
+            printf("CUPTI_METRIC_VALUE_KIND_UTILIZATION_LEVEL");
+            break;
+        default:
+            printf("CUPTI_METRIC_VALUE_KIND_UNKNOWN");
+            break;
+    }
+    printf("\n");
+}
+
+static int list_metrics(CUdevice dev)
+{
+    struct metric *metrics = NULL;
+    uint32_t num_metrics, i;
+
+    if (!(metrics = get_metrics(dev, &num_metrics)))
+        return -1;
+
+    for (i = 0; i < num_metrics; i++) {
+        printf("\nMetric #%d\n", i + 1);
+        print_metric(&metrics[i]);
+    }
+
+    free(metrics);
+    return 0;
 }
 
 static int lookup(const char *chipset, uint32_t reg, uint32_t val)
@@ -1153,8 +1328,10 @@ int main(int argc, char **argv)
             list_events(&domains[i]);
         }
     } else if (IS_OPTS_FLAG(FLAG_LIST_METRICS)) {
-        fprintf(stderr, "Work in progress! ;)\n");
-        return -1;
+        if (list_metrics(dev) < 0) {
+            fprintf(stderr, "Cannot list metrics.\n");
+            return EXIT_FAILURE;
+        }
     }
 
 fail:
