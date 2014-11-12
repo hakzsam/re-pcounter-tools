@@ -944,6 +944,7 @@ int main(int argc, char **argv)
     size_t size;
     char chipset[128], device_name[128], event_name[128];
     int compute_capability_major, compute_capability_minor;
+    uint32_t cupti_version;
 
     if (argc < 2) {
         usage();
@@ -1042,10 +1043,15 @@ int main(int argc, char **argv)
                                          dev);
     CHECK_CU_ERROR(cuda_ret, "cuDeviceComputeCapability");
 
+    // Get the CUPTI API version.
+    cupti_ret = cuptiGetVersion(&cupti_version);
+    CHECK_CUPTI_ERROR(cupti_ret, "cuptiGetVersion");
+
     printf("CUDA Device Id  : %d\n", device_id);
     printf("CUDA Device Name: %s\n", device_name);
-    printf("CUDA Compute Capability: %d.%d\n\n", compute_capability_major,
+    printf("CUDA Compute Capability: %d.%d\n", compute_capability_major,
            compute_capability_minor);
+    printf("CUPTI Version: %d\n\n", cupti_version);
     fflush(stdout);
 
     // Trace ioctl calls.
