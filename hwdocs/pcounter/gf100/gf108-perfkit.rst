@@ -57,34 +57,31 @@ GPC domain 0:
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
   - alias(cupti): l1_local_load_miss
 
-- tex0_bank_conflicts
+- tex0_bank_conflicts_gpc0_tpcX
 
   - mode: SIMPLE
   - event_src: 0x61
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_B: 0x80000006
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000000
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): tex0_bank_conflicts_gpc0_tpc
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_MUX_B: 0x80000006
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_UNKC8: 0x80000000
+  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x0
 
-- tex0_cache_sector_misses
+- tex0_cache_sector_misses_gpc0_tpcX
 
   - mode: EVENT_B6
   - start_src: 0x0d0c0b0a/0xffff
   - event_src: 0xcf0ecfcf/0x5555
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000004
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000003
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): tex0_cache_sector_misses_gpc0_tpc0
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_MUX_C_D: 0x80000004
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_UNKC8: 0x80000003
+  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x0
 
-- tex0_cache_sector_queries
+- tex0_cache_sector_queries_gpc0_tpcX
 
   - mode: EVENT_B6
   - start_src: 0x0x11100f0e/0xffff
   - event_src: 0xcf12cfcff/0x5555
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000005
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000003
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): tex0_cache_sector_queries_gpc0_tpc0
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_MUX_C_D: 0x80000005
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_UNKC8: 0x80000003
+  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x0
 
 - tex0_cache_texel_queries
 
@@ -96,34 +93,31 @@ GPC domain 0:
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
   - other mux??
 
-- tex1_bank_conflicts
+- tex1_bank_conflicts_gpc0_tpcX
 
   - mode: SIMPLE
   - event_src: 0x61
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_B: 0x80000006
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000008
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): tex1_bank_conflicts_gpc0_tpc0
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_MUX_B: 0x80000006
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_UNKC8: 0x80000008
+  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x0
 
-- tex1_cache_sector_misses
+- tex1_cache_sector_misses_gpc0_tpcX
 
   - mode: EVENT_B6
   - start_src: 0x0d0c0b0a/0xffff
   - event_src: 0xcf0ecfcf/0x5555
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000004
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000004
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): tex1_cache_sector_misses_gpc0_tpc0
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_MUX_C_D: 0x80000004
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_UNKC8: 0x80000004
+  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x0
 
-- tex1_cache_sector_queries
+- tex1_cache_sector_queries_gpc0_tpcX
 
   - mode: EVENT_B6
   - start_src: 0x0x11100f0e/0xffff
   - event_src: 0xcf12cfcff/0x5555
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_C_D: 0x80000005
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000004
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): tex1_cache_sector_queries_gpc0_tpc0
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_MUX_C_D: 0x80000005
+  - PGRAPH.GPC[0].TPC[X].TEX.PM_UNKC8: 0x80000004
+  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x0
 
 - shd_tex_requests
 
@@ -200,61 +194,53 @@ GPC domain 0:
 
 PART domain 0:
 
-- fb_read_req_subp2
-
-  - mode: SIMPLE
-  - event_src: 0x20
-  - PBFB[0x1].PM_UNK100: 0x111
-  - alias(cupti): fb1_subp0_read_sectors, fb_read_req_subp2_fb0
-
-- fb_read_req_subp3
-
-  - mode: SIMPLE
-  - event_src: 0x20
-  - PBFB[0x1].PM_UNK100: 0x121
-  - alias(cupti): fb1_subp1_read_sectors, fb_read_req_subp3_fb0
-
-- fb_subp0_read_sectors
+- fb0_subp0_read_sectors
 
   - mode: SIMPLE
   - event_src: 0x14
   - PBFB[0].PM_UNK100: 0x111
-  - alias(cupti): fb0_subp0_read_sectors, fb_subp0_read_sectors_fb0
 
-- fb_subp0_write_sectors
-
-  - mode: SIMPLE
-  - event_src: 0x15
-  - PBFB[0].PM_UNK100: 0x111
-  - alias(cupti): fb0_subp0_write_sectors, fb_subp0_write_sectors_fb0
-
-- fb_subp1_read_sectors
+- fb0_subp1_read_sectors
 
   - mode: SIMPLE
   - event_src: 0x14
   - PBFB[0].PM_UNK100: 0x121
-  - alias(cupti): fb0_subp1_read_sectors, fb_subp1_read_sectors_fb0
 
-- fb_subp1_write_sectors
+- fb0_subp0_write_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x15
+  - PBFB[0].PM_UNK100: 0x111
+
+- fb0_subp1_write_sectors
 
   - mode: SIMPLE
   - event_src: 0x15
   - PBFB[0].PM_UNK100: 0x121
-  - alias(cupti): fb0_subp1_write_sectors, fb_subp1_write_sectors_fb0
 
-- fb_write_req_subp2
+- fb1_subp0_read_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x20
+  - PBFB[0x1].PM_UNK100: 0x111
+
+- fb1_subp1_read_sectors
+
+  - mode: SIMPLE
+  - event_src: 0x20
+  - PBFB[0x1].PM_UNK100: 0x121
+
+- fb1_subp0_write_sectors
 
   - mode: SIMPLE
   - event_src: 0x21
   - PBFB[0x1].PM_UNK100: 0x111
-  - alias(cupti): fb1_subp0_write_sectors
 
-- fb_write_req_subp3
+- fb1_subp1_write_sectors
 
   - mode: SIMPLE
   - event_src: 0x21
   - PBFB[0x1].PM_UNK100: 0x121
-  - alias(cupti): fb1_subp1_write_sectors, fb_write_req_subp3_fb0
 
 - l2_slice0_read_sectors_tex
 
