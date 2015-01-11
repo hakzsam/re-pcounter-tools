@@ -261,16 +261,16 @@ PART domain 0:
   - mode: EVENT_B4
   - start_src: 0x2f2e2d2c/0xffff
   - event_src: 0x4f301301/0x8080
+  - PMFB[0].PM_UNK28: 0x00000c01
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - TODO: other mux???
 
 - l2_slice1_read_sectors_tex
 
   - mode: EVENT_B4
   - start_src: 0x2f2e2d2c/0xffff
   - event_src: 0x4f301301/0x8080
+  - PMFB[0].PM_UNK28: 0x00000e17
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - TODO: other mux???
  
 PART domain 1:
 
@@ -313,10 +313,6 @@ HUB domain 4:
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
 ****** TODO *******
-
-l2_slice0_read_sectors_tex_fb0
-
-l2_slice1_read_sectors_tex_fb0
 
 vertex_shader_instruction_rate
 
