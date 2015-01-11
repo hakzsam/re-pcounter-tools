@@ -50,14 +50,6 @@ GPC domain 0
   - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000000
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
-- l1_local_load_transactions_miss_vsmX
-
-  - mode: SIMPLE
-  - event_src: 0x01
-  - PGRAPH.GPC[0].TPC[X].L1.PM_MUX: 0x80000001
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-  - alias(cupti): l1_local_load_miss
-
 - tex0_bank_conflicts_gpc0_tpcX
 
   - mode: SIMPLE
@@ -192,6 +184,71 @@ GPC domain 0
   - event_src: 0xcfcfcfcf/0x5555
   - PGRAPH.GPC[0].TPC[0].UNK400.PM_MUX: 0x8000000e
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+
+- l1_local_load_hit
+
+  - mode: SIMPLE
+  - event_src: 0x00
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_local_load_miss
+
+  - mode: SIMPLE
+  - event_src: 0x01
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_local_store_hit
+
+  - mode: SIMPLE
+  - event_src: 0x02
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_local_store_miss
+
+  - mode: SIMPLE
+  - event_src: 0x03
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_global_load_hit
+
+  - mode: SIMPLE
+  - event_src: 0x05
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- l1_global_load_miss
+
+  - mode: SIMPLE
+  - event_src: 0x06
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000001
+
+- uncached_global_load_transaction
+
+  - mode: SIMPLE
+  - event_src: 0x02
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000002
+
+- global_store_transaction
+
+  - mode: SIMPLE
+  - event_src: 0x03
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000002
+
+- l1_shared_bank_conflict
+
+  - mode: SIMPLE
+  - event_src: 0x00
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x80000006
+
+- sm_cta_launched
+
+  - mode: SIMPLE
+  - event_src: 0x26
+  - PGRAPH.GPC[0].TPC[0].UNK400.PM_MUX: 0x8000000e
+
+- elapsed_cycles_sm:
+
+  - mode: SIMPLE
+  - event_src: 0x00
 
 PART domain 0
 -------------
