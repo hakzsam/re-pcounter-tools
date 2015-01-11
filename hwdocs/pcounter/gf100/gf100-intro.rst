@@ -6,14 +6,120 @@ GF100 GPU Hardware events
 
 .. contents::
 
-All the events are exposed by CUPTI on Linux.
-
 Global counters
 ===============
 
-- sm_cta_launched
+GPC domain 0
+-------------
 
-  - desc: Number of thread blocks launched on a multiprocessor.
+- setup_primitive_count
+
+  - desc: Count of primitives seen by the setup unit.
+  - display: RAW
+
+- ia_requests
+
+  - desc: Number of Input Assembler requests.
+  - display: RAW
+
+- ia_l2_read_bytes
+
+  - desc: Number of bytes returned from L2 to the Input Assembler.
+  - display: RAW
+
+- shader_busy
+
+  - desc: Time the shader unit is busy
+  - display: RATIO
+
+- texture_busy
+
+  - desc: Time the texture unit is busy
+  - display: RATIO
+
+- tex0_bank_conflicts_gpc0_tpcX
+
+  - desc: Texture bank conflicts accurred while accessing data from the given texture unit in the VTPC.
+  - display: RAW
+
+- tex0_cache_sector_misses_gpc0_tpcX
+
+  - desc: Sector texture cache misses in the given texture unit in the VTPC. A sector is 32 bytes.
+  - display: RAW
+
+- tex0_cache_sector_queries_gpc0_tpcX
+
+  - desc: Sector texture cache requests in the given texture unit in the VTPC. A sector is 32 bytes.
+  - display: RAW
+
+- tex0_cache_texel_queries_gpc0_tpcX
+
+  - desc: Number of texture cache queries (32b each request)
+  - display: RAW
+
+- tex1_bank_conflicts_gpc0_tpcX
+
+  - desc: Texture bank conflicts accurred while accessing data from the given texture unit in the VTPC.
+  - display: RAW
+
+- tex1_bank_conflicts_gpc0_tpcX
+
+  - desc: Texture bank conflicts accurred while accessing data from the given texture unit in the VTPC.
+  - display: RAW
+
+- tex1_cache_sector_misses_gpc0_tpcX
+
+  - desc: Sector texture cache misses in the given texture unit in the VTPC. A sector is 32 bytes.
+  - display: RAW
+
+- tex1_cache_sector_queries_gpc0_tpcX
+
+  - desc: Sector texture cache requests in the given texture unit in the VTPC. A sector is 32 bytes.
+  - display: RAW
+
+- shd_tex_requests
+
+  - desc: Number of texel read requests from the shader unit.
+  - display: RAW
+
+- sm_instruction_count_domain_vsmX
+
+  - desc: count the number ds instructions executed in GPC0.TPCX.SM
+  - display: RAW
+
+- sm_instruction_count_geometry_vsmX
+
+  - desc: count the number gs instructions executed in GPC0.TPCX.SM
+  - display: RAW
+
+- sm_instruction_count_hull_vsmX
+
+  - desc: count the number hs instructions executed in GPC0.TPCX.SM
+  - display: RAW
+
+- sm_instruction_count_pixel_vsmX
+
+  - desc: count the number ps instructions executed in GPC0.TPCX.SM
+  - display: RAW
+
+- sm_instruction_count_vertex_vsmX
+
+  - desc: count the number vs instructions executed in GPC0.TPCX.SM
+  - display: RAW
+
+- warps_launched_vsmX
+
+  - desc: Warps launched by this VSM. Increments by 1 per warp launched.
+  - display: RAW
+
+- stream_out_bytes
+
+  - desc: Number of bytes streamed out.
+  - display: RAW
+
+- shaded_pixel_count
+
+  - desc: Number of rasterized pixels sent to the shading units.
   - display: RAW
 
 - l1_local_load_hit
@@ -61,30 +167,18 @@ Global counters
   - desc: Number of shared bank conflicts caused due to addresses for two or more shared memory requests fall in the same memory bank. Increments by N-1 and 2*(N-1) for a N-way conflict for 32 bit and 64bit shared memory accesses respectively.
   - display: RAW
 
-- tex0_cache_sector_queries
+- sm_cta_launched
 
-  - desc: Number of texture cache requests. This increments by 1 for each 32-byte access.
-  - display: RAW
-
-- tex0_cache_sector_misses
-
-  - desc: Number of texture cache misses. This increments by 1 for each 32-byte access.
-  - display: RAW
-
-- tex1_cache_sector_queries
-
-  - desc: Number of texture cache 1 requests. This increments by 1 for each 32-byte access.
-  - display: RAW
-
-- tex1_cache_sector_misses
-
-  - desc: Number of texture cache 1 misses. This increments by 1 for each 32-byte access.
+  - desc: Number of thread blocks launched on a multiprocessor.
   - display: RAW
 
 - elapsed_cycles_sm
 
   - desc: Elapsed clocks
   - display: RAW
+
+PART domain 0
+-------------
 
 - fb0_subp0_read_sectors
 
@@ -124,6 +218,26 @@ Global counters
 - fb1_subp1_write_sectors
 
   - desc: Number of DRAM write requests to sub partition 1 of DARM partition 1, increments by 1 for 32 byte access.
+  - display: RAW
+
+- l2_fb_read_bytes
+
+  - desc: Number of fb bytes read from the l2 unit.
+  - display: RAW
+
+- l2_fb_write_bytes
+
+  - desc: Number of fb bytes written by the l2 unit.
+  - display: RAW
+
+- l2_slice0_read_sectors_tex
+
+  - desc: Sector reads from TEX to L2 cache in the given slice and FB partition. A sector is 32 bytes.
+  - display: RAW
+
+- l2_slice1_read_sectors_tex
+
+  - desc: Sector reads from TEX to L2 cache in the given slice and FB partition. A sector is 32 bytes.
   - display: RAW
 
 - l2_subp0_write_sector_misses
@@ -235,6 +349,37 @@ Global counters
 
   - desc: Total write requests to slice 1 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
   - display: RAW
+
+PART domain 1
+-------------
+
+- rop_busy
+
+  - desc: Time the ROP unit is busy.
+  - display: RATIO
+
+- crop_busy
+
+  - desc: Time the crop unit is busy.
+  - display: RATIO
+
+- zrop_busy
+
+  - desc: Time the zrop unit is busy.
+  - display: RATIO
+
+HUB domain 4
+------------
+
+- gpu_busy
+
+  - desc: GPU is busy.
+  - display: RATIO
+
+- geom_busy
+
+  - desc: Time the geom unit was busy.
+  - display: RATIO
 
 Local counters
 ==============
@@ -392,4 +537,77 @@ Local counters
 - gred_count
 
   - desc: Number of warps executing reduction operations on global and shared memory. Increments by one if at least one thread in a warp executes the instruction
+  - display: RAW
+
+TODO
+====
+
+- vertex_shader_instruction_rate
+
+  - desc: Percentage of shader instructions belonging to vertex shader threads
+  - display: RAW
+
+- hull_shader_instruction_rate
+
+  - desc: Percentage of shader instructions belonging to hull shader threads
+  - display: RAW
+
+- domain_shader_instruction_rate
+
+  - desc: Percentage of shader instructions belonging to domain shader threads
+  - display: RAW
+
+- geometry_shader_instruction_rate
+
+  - desc: Percentage of shader instructions belonging to geometry shader threads
+  - display: RAW
+
+- pixel_shader_instruction_rate
+
+  - desc: Percentage of shader instructions belonging to pixel shader threads
+  - display: RAW
+
+- shd_tex_read_bytes
+
+  - desc: Number of bytes read from the tex unit by the shader unit.
+  - display: RAW
+
+- shd_l1_requests
+
+  - desc: Number of l1 requests from the shader unit.
+  - display: RAW
+
+- shd_l1_read_bytes
+
+  - desc: Number of bytes transferred from the l1 unit by the shader unit.
+  - display: RAW
+
+- tex_l2_requests
+
+  - desc: Number of l2 read requests from the texture unit.
+  - display: RAW
+
+- tex_l2_read_bytes
+
+  - desc: Number of bytes read from the l2 unit from the texture unit.
+  - display: RAW
+
+- l1_l2_requests
+
+  - desc: Number of l2 requests from the l1 unit.
+  - display: RAW
+
+- l1_l2_bytes
+
+  - desc: Number of bytes transferred to the l2 unit by the l1 unit.
+  - display: RAW
+
+- rop_l2_read_bytes
+
+  - desc: Number of bytes read to the l2 unit by the rop unit.
+  - display: RAW
+
+- rop_l2_write_bytes
+
+  - desc: Number of bytes written to the l2 unit by the rop unit.
   - display: RAW

@@ -301,22 +301,6 @@ PART domain 0
   - event_src: 0x21
   - PBFB[0x1].PM_UNK100: 0x121
 
-- l2_slice0_read_sectors_tex
-
-  - mode: EVENT_B4
-  - start_src: 0x2f2e2d2c/0xffff
-  - event_src: 0x4f301301/0x8080
-  - PMFB[0].PM_UNK28: 0x00000c01
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-
-- l2_slice1_read_sectors_tex
-
-  - mode: EVENT_B4
-  - start_src: 0x2f2e2d2c/0xffff
-  - event_src: 0x4f301301/0x8080
-  - PMFB[0].PM_UNK28: 0x00000e17
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
-
 - l2_fb_read_bytes
 
   - multi-pass event
@@ -357,6 +341,171 @@ PART domain 0
     - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
   - TODO: how to compute it!
 
+- l2_slice0_read_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x4f301301/0x8080
+  - PMFB[0].PM_UNK28: 0x00000c01
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+
+- l2_slice1_read_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x4f301301/0x8080
+  - PMFB[0].PM_UNK28: 0x00000e17
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+
+- l2_subp0_write_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x04
+  - PMFB[0].PM_UNK28: 0xc1
+
+- l2_subp1_write_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x04
+  - PMFB[0].PM_UNK28: 0xd1
+
+- l2_subp0_read_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x05
+  - PMFB[0].PM_UNK28: 0xc1
+
+- l2_subp1_read_sector_misses
+
+  - mode: SIMPLE
+  - event_src: 0x05
+  - PMFB[0].PM_UNK28: 0xd1
+
+- l2_subp0_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013012/0x8080
+  - PMFB[0].PM_UNK28: 0x1001
+
+- l2_subp1_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013012/0x8080
+  - PMFB[0].PM_UNK28: 0x1217
+
+- l2_subp0_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0].PM_UNK28: 0x1001
+
+- l2_subp1_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0].PM_UNK28: 0x1217
+
+- l2_subp0_read_tex_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0].PM_UNK28: 0xc01
+
+- l2_subp1_read_tex_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00013013/0x8080
+  - PMFB[0].PM_UNK28: 0xe17
+
+- l2_subp0_read_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0].PM_UNK28: 0x1003
+
+- l2_subp1_read_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0].PM_UNK28: 0x1219
+
+- l2_subp0_read_tex_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0].PM_UNK28: 0xc03
+
+- l2_subp1_read_tex_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x01301307/0x8000
+  - PMFB[0].PM_UNK28: 0xe19
+
+- l2_subp0_read_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001130d/0x8080
+  - PMFB[0].PM_UNK28: 0xe01
+
+- l2_subp1_read_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001130d/0x8080
+  - PMFB[0].PM_UNK28: 0x17
+
+- l2_subp0_write_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001120d/0x8080
+  - PMFB[0].PM_UNK28: 0x1
+
+- l2_subp1_write_sysmem_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x0001120d/0x8080
+  - PMFB[0].PM_UNK28: 0x17
+
+- l2_subp0_total_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000113/0x8888
+  - PMFB[0].PM_UNK28: 0x1
+
+- l2_subp1_total_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000113/0x8888
+  - PMFB[0].PM_UNK28: 0x17
+
+- l2_subp0_total_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000112/0x8888
+  - PMFB[0].PM_UNK28: 0x1
+
+- l2_subp1_total_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_src: 0x2f2e2d2c/0xffff
+  - event_src: 0x00000112/0x8888
+  - PMFB[0].PM_UNK28: 0x17
 PART domain 1
 -------------
 
