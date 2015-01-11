@@ -9,7 +9,8 @@ GF108 GPU Hardware events configuration
 Global counters
 ===============
 
-GPC domain 0:
+GPC domain 0
+------------
 
 - setup_primitive_count
 
@@ -192,7 +193,8 @@ GPC domain 0:
   - PGRAPH.GPC[0].TPC[0].UNK400.PM_MUX: 0x8000000e
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
-PART domain 0:
+PART domain 0
+-------------
 
 - fb0_subp0_read_sectors
 
@@ -298,7 +300,8 @@ PART domain 0:
     - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
   - TODO: how to compute it!
 
-PART domain 1:
+PART domain 1
+-------------
 
 - rop_busy:
 
@@ -322,7 +325,8 @@ PART domain 1:
   - PGRAPH.ROP[0].ZROP.PM_MUX_A_B: 0x80000007
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
-HUB domain 4:
+HUB domain 4
+------------
 
 - gpu_busy:
 
@@ -337,6 +341,150 @@ HUB domain 4:
   - event_src: 0x6f6f2f2e/0x8888
   - PGRAPH.UNK600.PM_MUX: 0x8000000c
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+
+Local counters
+==============
+
+GPC 0, TPC 0:
+
+All of these counters need to enable PM_MUX.
+
+- atom_count
+
+  - pm_sigsel_0: 0x63
+  - pm_srcsel_0: 0x30
+
+- gred_count
+
+  - pm_sigsel_0: 0x63
+  - pm_srcsel_0: 0x40
+
+- inst_issued1_0
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x10
+
+- inst_issued2_0
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x20
+
+- inst_issued1_1
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x40
+
+- inst_issued2_1
+
+  - pm_sigsel_0: 0x7e
+  - pm_srcsel_0: 0x50
+
+- thread_inst_executed_0
+- thread_inst_executed_1
+- thread_inst_executed_2
+- thread_inst_executed_3
+
+  - pm_sigsel_0: 0xa3a3a3a3 (0: a3, 1: a5, 2: a4, 3: a6)
+  - pm_sigsel_1: 0xa3a3 (0: a3, 1: a5, 2: a4, 3: a6)
+  - pm_srcsel_0: 0x00
+  - pm_srcsel_1: 0x11
+  - pm_srcsel_2: 0x22
+  - pm_srcsel_3: 0x33
+  - pm_srcsel_4: 0x44
+  - pm_srcsel_5: 0x55
+
+- inst_executed
+
+  - pm_sigsel_0: 0x2d2d2d
+  - pm_srcsel_0: 0x00
+  - pm_srcsel_1: 0x11
+  - pm_srcsel_2: 0x22
+
+- prof_trigger_00
+- prof_trigger_01
+- prof_trigger_02
+- prof_trigger_03
+- prof_trigger_04
+- prof_trigger_05
+- prof_trigger_06
+- prof_trigger_07
+
+  - pm_sigsel_0: 0x01
+  - pm_srcsel_0: 0x00 (0: 00, 1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70)
+
+- active_warps
+
+  - pm_sigsel_0: 0x24242424
+  - pm_sigsel_1: 0x2424
+  - pm_srcsel_0: 0x10
+  - pm_srcsel_1: 0x21
+  - pm_srcsel_2: 0x32
+  - pm_srcsel_3: 0x43
+  - pm_srcsel_4: 0x54
+  - pm_srcsel_5: 0x65
+
+- active_cycles
+
+  - pm_sigsel_0: 0x11
+  - pm_srcsel_0: 0x00
+
+- branch
+
+  - pm_sigsel_0: 0x1a1a
+  - pm_srcsel_0: 0x00
+  - pm_srcsel_1: 0x11
+
+- divergent_branch
+
+  - pm_sigsel_0: 0x1919
+  - pm_srcsel_0: 0x20
+  - pm_srcsel_1: 0x31
+
+- warps_launched
+
+  - pm_sigsel_0: 0x26
+  - pm_srcsel_0: 0x00
+
+- threads_launched
+
+  - pm_sigsel_0: 0x26262626
+  - pm_sigsel_1: 0x2626
+  - pm_srcsel_0: 0x10
+  - pm_srcsel_1: 0x21
+  - pm_srcsel_2: 0x32
+  - pm_srcsel_3: 0x43
+  - pm_srcsel_4: 0x54
+  - pm_srcsel_5: 0x65
+
+- local_load
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x20
+
+- local_store
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x50
+
+- gld_request
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x30
+
+- gst_request
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x60
+
+- shared_load
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x10
+
+- shared_store
+
+  - pm_sigsel_0: 0x64
+  - pm_srcsel_0: 0x40
 
 ****** TODO *******
 
