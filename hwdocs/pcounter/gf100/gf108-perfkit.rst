@@ -9,7 +9,7 @@ GF108 GPU Hardware events configuration
 Global counters
 ===============
 
-GPC[0][0]:
+GPC domain 0:
 
 - setup_primitive_count
 
@@ -190,7 +190,7 @@ GPC[0][0]:
   - PGRAPH.GPC[0].TPC[0].POLY.PM_MUX: 0x0000009f
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x
 
-PART[0][0]:
+PART domain 0:
 
 - fb_read_req_subp2
 
@@ -264,7 +264,7 @@ PART[0][0]:
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
   - TODO: other mux???
  
-PART[0][1]:
+PART domain 1:
 
 - rop_busy:
 
@@ -288,7 +288,7 @@ PART[0][1]:
   - PGRAPH.ROP[0].ZROP.PM_MUX_A_B: 0x80000007
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
-HUB_DOM[4]:
+HUB domain 4:
 
 - gpu_busy:
 
@@ -307,23 +307,39 @@ HUB_DOM[4]:
 ****** TODO *******
 
 l2_slice0_read_sectors_tex_fb0
+
 l2_slice1_read_sectors_tex_fb0
+
 vertex_shader_instruction_rate
+
 hull_shader_instruction_rate
+
 domain_shader_instruction_rate
+
 geometry_shader_instruction_rate
+
 pixel_shader_instruction_rate
 
 shaded_pixel_count
-shd_tex_requests
+
 shd_tex_read_bytes
+
 shd_l1_requests
+
 shd_l1_read_bytes
+
 tex_l2_requests
+
 tex_l2_read_bytes
+
 l1_l2_requests
+
 l1_l2_bytes
+
 rop_l2_read_bytes
+
 rop_l2_write_bytes
+
 l2_fb_read_bytes
+
 l2_fb_write_bytes
