@@ -486,7 +486,8 @@ All of these counters need to enable PM_MUX.
   - pm_sigsel_0: 0x64
   - pm_srcsel_0: 0x40
 
-****** TODO *******
+TODO
+====
 
 vertex_shader_instruction_rate
 
