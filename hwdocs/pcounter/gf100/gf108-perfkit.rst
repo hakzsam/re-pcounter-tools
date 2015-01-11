@@ -188,7 +188,15 @@ GPC domain 0:
   - start_src: 0x4d4c4b4a/0xffff
   - event_src: 0xcfcfcfcf/0x5555
   - PGRAPH.GPC[0].TPC[0].POLY.PM_MUX: 0x0000009f
-  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+
+- shaded_pixel_count
+
+  - mode: EVENT_B4
+  - start_src: 0x23222120/0xffff
+  - event_src: 0xcfcfcfcf/0x5555
+  - PGRAPH.GPC[0].TPC[0].UNK400.PM_MUX: 0x8000000e
+  - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
 PART domain 0:
 
@@ -319,8 +327,6 @@ domain_shader_instruction_rate
 geometry_shader_instruction_rate
 
 pixel_shader_instruction_rate
-
-shaded_pixel_count
 
 shd_tex_read_bytes
 
