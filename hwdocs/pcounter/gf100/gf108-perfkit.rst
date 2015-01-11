@@ -272,6 +272,26 @@ PART domain 0:
   - PMFB[0].PM_UNK28: 0x00000e17
   - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
 
+- l2_fb_read_bytes
+
+  - multi-pass event
+  - event 0
+
+    - mode: EVENT_B4
+    - start_src: 0x2f2e2d2c/0xffff
+    - event_src: 0x4f0d1301/0x8080
+    - PMFB[0].PM_UNK28: 0x00000001
+    - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+
+  - event 1
+
+    - mode: EVENT_B4
+    - start_src: 0x2f2e2d2c/0xffff
+    - event_src: 0x4f0c1301/0x8080
+    - PMFB[0].PM_UNK28: 0x00000001
+    - PGRAPH.GPC[0].TPC[0].L1.PM_MUX: 0x0
+  - TODO: how to compute it!
+
 - l2_fb_write_bytes
 
   - multi-pass event
@@ -361,5 +381,3 @@ l1_l2_bytes
 rop_l2_read_bytes
 
 rop_l2_write_bytes
-
-l2_fb_read_bytes
