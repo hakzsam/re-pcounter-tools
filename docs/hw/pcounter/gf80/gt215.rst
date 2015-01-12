@@ -1,41 +1,110 @@
-.. _nva3-graphics-counter:
+.. _gt215-gpu-hw-events-config:
 
-=====================
-NVA3 Graphics Counter
-=====================
+=======================================
+GT215 GPU Hardware events configuration
+=======================================
 
 .. contents::
 
-All the following signals use QUAD event mode.
+Global counters
+===============
 
-GPU signals
-===========
+All the following hardware events use QUAD counting mode.
 
-- gpu_busy = 100% - gpu_idle
-- gpu_idle = 100% - gpu_busy
+PCOUNTER domain 1
+-----------------
 
-+-----------------------+----------+-----------------+
-|                       |   CTRL   |      EVENT      |
-+-------------------+---+----------+----------+------+
-| signal            |SET| CTR_MODE |    SRC   |  OP  |
-+===================+===+==========+==========+======+
-| gpu_busy/gpu_idle | 1 |  SIMPLE  |0xecececcb|0xaaaa|
-+-------------------+---+----------+----------+------+
+- trailer: 0xec
 
-IA signals
-==========
+- gpu_busy
 
-+----------------------------------+----------+-----------------+----------+
-|                                  |   CTRL   |      EVENT      |    MUX   |
-+------------------------------+---+----------+----------+------+----------+
-| signal                       |SET| CTR_MODE |    SRC   |  OP  | 0x400c0c |
-+==============================+===+==========+==========+======+==========+
-| input_assembler_busy         | 1 |  SIMPLE  |0x48495a5b|0xf888|0x00000001|
-+------------------------------+---+----------+----------+------+----------+
-| input_assembler_waits_for_fb | 1 |  SIMPLE  |0xececec51|0xaaaa|0x00000001|
-+------------------------------+---+----------+----------+------+----------+
-| vertex_attribute_count       | 1 |  SIMPLE  |0x48495a5b|0xf888|0x00000001|
-+------------------------------+---+----------+----------+------+----------+
+  - mode: SIMPLE
+  - event_src: 0xcb
+
+- input_assembler_busy/vertex_attribute_count
+
+  - mode: SIMPLE
+  - event_src: 0x48495a5b/0xf888
+  - PGRAPH.VFETCH.UNK0C: 0x1
+
+- input_assembler_waits_for_fb
+
+  - mode: SIMPLE
+  - event_src: 0x51
+  - PGRAPH.VFETCH.UNK0C: 0x1
+
+- geom_vertex_in_count
+
+  - mode: EVENT_B4
+  - start_src: 0xec565554/0xffff
+  - event_src: 0xecececec/0x5555
+  - PGRAPH.VFETCH.UNK0C: 0x0
+
+- geom_primitive_in_count
+
+  - mode: SIMPLE
+  - event_src: 0x4e
+  - PGRAPH.VFETCH.UNK0C: 0x1
+
+- geom_vertex_out_count
+
+  - mode: SIMPLE
+  - event_src: 0x85
+
+- geom_primitive_out_count
+
+  - mode: SIMPLE
+  - event_src: 0x84
+
+- stream_out_busy
+
+  - mode: SIMPLE
+  - event_src: 0xecec8786/0x8888
+
+- setup_primitive_count
+
+  - mode: SIMPLE
+  - event_src: 0xe0
+
+- setup_primitive_culled_count
+
+  - mode: SIMPLE
+  - event_src: 0xb2
+
+- setup_point_count
+
+  - mode: SIMPLE
+  - event_src: 0xece7e6e1/0x8080
+
+- setup_line_count
+
+  - mode: SIMPLE
+  - event_src: 0xece7e6e2/0x8080
+
+- setup_triangle_count
+
+  - mode: SIMPLE
+  - event_src: 0xece7e6e3/0x8080
+
+- rasterizer_tiles_killed_by_zcull_count
+
+  - mode: EVENT_B6
+  - start_src: 0x0a090807/0xffff
+  - event_src: 0x0c0becec/0x5555
+  - PGRAPH.ZCULL.PM_UNKA4: 0x7
+
+- rasterizer_tiles_in_count
+
+  - mode: EVENT_B6
+  - start_src: 0x0a090807/0xffff
+  - event_src: 0x0c0becec/0x5555
+  - PGRAPH.ZCULL.PM_UNKA4: 0x0
+
+PCOUNTER domain 2
+-----------------
+
+- trailer: 0xcc
+
 
 GEOM signals
 ============
@@ -51,51 +120,6 @@ The geom_waits_for_shader signal depends of MP counters.
 +--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
 | geom_waits_for_shader    | 3 |  SIMPLE  |    N/A   | N/A  |0x05040100|0x22f2|  0x523e2a16  |  0x1  |    N/A   |
 +--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
-| geom_vertex_in_count     | 1 | EVENT_B4 |0xec565554|0xffff|0xecececec|0x5555|     N/A      |  N/A  |0x00000000|
-+--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
-| geom_primitive_in_count  | 1 |  SIMPLE  |    N/A   | N/A  |0xececec4e|0xaaaa|     N/A      |  N/A  |0x00000001|
-+--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
-| geom_vertex_out_count    | 1 |  SIMPLE  |    N/A   | N/A  |0xececec85|0xaaaa|     N/A      |  N/A  |    N/A   |
-+--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
-| geom_primitive_out_count | 1 |  SIMPLE  |    N/A   | N/A  |0xececec84|0xaaaa|     N/A      |  N/A  |    N/A   |
-+--------------------------+---+----------+----------+------+----------+------+--------------+-------+----------+
-
-SO signals
-==========
-
-.. _so-todo:
-TODO
-----
-
-- write an OpenGL 3.0 program which uses the GL_EXT_transform_feedback for
-  testing stream_out_busy
-
-+---------------------+----------+-----------------+
-|                     |   CTRL   |      EVENT      |
-+-----------------+---+----------+----------+------+
-| signal          |SET| CTR_MODE |    SRC   |  OP  |
-+=================+===+==========+==========+======+
-| stream_out_busy | 1 |  SIMPLE  |0xecec8786|0x8888|
-+-----------------+---+----------+----------+------+
-
-SETUP signals
-=============
-
-+----------------------------------+----------+-----------------+
-|                                  |   CTRL   |      EVENT      |
-+------------------------------+---+----------+----------+------+
-| signal                       |SET| CTR_MODE |    SRC   |  OP  |
-+==============================+===+==========+==========+======+
-| setup_primitive_count        | 1 |  SIMPLE  |0xececece0|0xaaaa|
-+------------------------------+---+----------+----------+------+
-| setup_point_count            | 1 |  SIMPLE  |0xece7e6e1|0x8080|
-+------------------------------+---+----------+----------+------+
-| setup_line_count             | 1 |  SIMPLE  |0xece7e6e2|0x8080|
-+------------------------------+---+----------+----------+------+
-| setup_triangle_count         | 1 |  SIMPLE  |0xece7e6e3|0x8080|
-+------------------------------+---+----------+----------+------+
-| setup_primitive_culled_count | 1 |  SIMPLE  |0xecececb2|0xaaaa|
-+------------------------------+---+----------+----------+------+
 
 VS signals
 ==========
@@ -170,10 +194,6 @@ TODO
 | shaded_pixel_count_0                   | 2 |  SIMPLE  |    N/A   |  N/A |0xcc020100|0x0404| see above|    N/A   |
 +----------------------------------------+---+----------+----------+------+----------+------+----------+----------+
 | shaded_pixel_count_1                   | 2 | EVENT_B6 |0x03020100|0xffff|0x0504cc07|0xaaaa| see above|    N/A   |
-+----------------------------------------+---+----------+----------+------+----------+------+----------+----------+
-| rasterizer_tiles_killed_by_zcull_count | 1 | EVENT_B6 |0x0a090807|0xffff|0x0c0becec|0x5555|    N/A   |    0x7   |
-+----------------------------------------+---+----------+----------+------+----------+------+----------+----------+
-| rasterizer_tiles_in_count              | 1 | EVENT_B6 |0x0a090807|0xffff|0x0c0becec|0x5555|    N/A   |    0x0   |
 +----------------------------------------+---+----------+----------+------+----------+------+----------+----------+
 | rasterizer_pixels_out_count_0          | 2 |  SIMPLE  |    N/A   |  N/A |0xcccc0607|0x8888|0x80000016|    N/A   |
 +----------------------------------------+---+----------+----------+------+----------+------+----------+----------+
