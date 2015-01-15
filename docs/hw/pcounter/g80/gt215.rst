@@ -1,8 +1,8 @@
-.. _nva3-graphics-counter:
+.. _gt215-gt218-gpu-hw-events-config:
 
-=====================
-NVA3 Graphics Counter
-=====================
+=============================================
+GT215:GT218 GPU Hardware events configuration
+=============================================
 
 .. contents::
 
