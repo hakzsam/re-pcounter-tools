@@ -1,0 +1,109 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GT 610
+
+Event# 1
+Id        = 197
+Name      = fb_subp0_read_sectors
+Shortdesc = fb subp0 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 198
+Name      = fb_subp1_read_sectors
+Shortdesc = fb subp1 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 199
+Name      = fb_subp0_write_sectors
+Shortdesc = fb subp0 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 200
+Name      = fb_subp1_write_sectors
+Shortdesc = fb subp1 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 209
+Name      = l2_subp0_write_sector_misses
+Shortdesc = l2 subp0 write sector misses
+Longdesc  = Number of write misses in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 6
+Id        = 211
+Name      = l2_subp0_read_sector_misses
+Shortdesc = l2 subp0 read sector misses
+Longdesc  = Number of read misses in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 7
+Id        = 213
+Name      = l2_subp0_write_sector_queries
+Shortdesc = l2 subp0 write sector queries
+Longdesc  = Number of write requests from L1 to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 8
+Id        = 215
+Name      = l2_subp0_read_sector_queries
+Shortdesc = l2 subp0 read sector queries
+Longdesc  = Number of read requests from L1 to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 9
+Id        = 217
+Name      = l2_subp0_read_tex_sector_queries
+Shortdesc = l2 subp0 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 10
+Id        = 223
+Name      = l2_subp0_read_hit_sectors
+Shortdesc = l2_subp0_read_hit_sectors
+Longdesc  = Number of read requests from L1 that hit in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 11
+Id        = 225
+Name      = l2_subp0_read_tex_hit_sectors
+Shortdesc = l2_subp0_read_tex_hit_sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 12
+Id        = 243
+Name      = l2_subp0_read_sysmem_sector_queries
+Shortdesc = l2_subp0_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 13
+Id        = 245
+Name      = l2_subp0_write_sysmem_sector_queries
+Shortdesc = l2_subp0_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 14
+Id        = 247
+Name      = l2_subp0_total_read_sector_queries
+Shortdesc = l2_subp0_total_read_sector_queries
+Longdesc  = Total read requests to slice 0 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 15
+Id        = 249
+Name      = l2_subp0_total_write_sector_queries
+Shortdesc = l2_subp0_total_write_sector_queries
+Longdesc  = Total write requests to slice 0 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+

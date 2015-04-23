@@ -1,0 +1,221 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GT 610
+
+Event# 1
+Id        = 0
+Name      = local_load
+Shortdesc = local load
+Longdesc  = Number of executed load instructions where state space is specified as local, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 1
+Name      = local_store
+Shortdesc = local store
+Longdesc  = Number of executed store instructions where state space is specified as local, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 2
+Name      = gld_request
+Shortdesc = gld request
+Longdesc  = Number of executed load instructions where the state space is not specified and hence generic addressing is used, increments per warp on a multiprocessor. It can include the load operations from global,local and share state space.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 3
+Name      = gst_request
+Shortdesc = gst request
+Longdesc  = Number of executed store instructions where the state space is not specified and hence generic addressing is used, increments per warp on a multiprocessor. It can include the store operations to global,local and share state space.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 4
+Name      = shared_load
+Shortdesc = shared load
+Longdesc  = Number of executed load instructions where state space is specified as shared, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 6
+Id        = 5
+Name      = shared_store
+Shortdesc = shared store
+Longdesc  = Number of executed store instructions where state space is specified as shared, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 7
+Id        = 6
+Name      = branch
+Shortdesc = branch
+Longdesc  = Number of branch instructions executed per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 8
+Id        = 10
+Name      = divergent_branch
+Shortdesc = divergent branch
+Longdesc  = Number of divergent branches within a warp. This counter will be incremented by one if at least one thread in a warp diverges (that is, follows a different execution path) via a conditional branch.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 9
+Id        = 37
+Name      = warps_launched
+Shortdesc = warps launched
+Longdesc  = Number of warps launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 10
+Id        = 38
+Name      = threads_launched
+Shortdesc = threads launched
+Longdesc  = Number of threads launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 11
+Id        = 52
+Name      = active_warps
+Shortdesc = active warps
+Longdesc  = Accumulated number of active warps per cycle. For every cycle it increments by the number of active warps in the cycle which can be in the range 0 to 48.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 12
+Id        = 15
+Name      = active_cycles
+Shortdesc = active cycles
+Longdesc  = Number of cycles a multiprocessor has at least one active warp.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 13
+Id        = 181
+Name      = prof_trigger_00
+Shortdesc = prof trigger 00
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 14
+Id        = 182
+Name      = prof_trigger_01
+Shortdesc = prof trigger 01
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 15
+Id        = 183
+Name      = prof_trigger_02
+Shortdesc = prof trigger 02
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 16
+Id        = 184
+Name      = prof_trigger_03
+Shortdesc = prof trigger 03
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 17
+Id        = 185
+Name      = prof_trigger_04
+Shortdesc = prof trigger 04
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 18
+Id        = 186
+Name      = prof_trigger_05
+Shortdesc = prof trigger 05
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 19
+Id        = 187
+Name      = prof_trigger_06
+Shortdesc = prof trigger 06
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 20
+Id        = 188
+Name      = prof_trigger_07
+Shortdesc = prof trigger 07
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 21
+Id        = 26
+Name      = inst_executed
+Shortdesc = instructions executed
+Longdesc  = Number of instructions executed, do not include replays.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 22
+Id        = 45
+Name      = thread_inst_executed_0
+Shortdesc = thread inst executed_0
+Longdesc  = Number of instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads in the warp that execute the instruction in pipeline 0.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 23
+Id        = 46
+Name      = thread_inst_executed_2
+Shortdesc = thread inst executed_2
+Longdesc  = Number of instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads in the warp that execute the instruction in pipeline 2.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 24
+Id        = 47
+Name      = thread_inst_executed_1
+Shortdesc = thread inst executed_1
+Longdesc  = Number of instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads in the warp that execute the instruction in pipeline 1.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 25
+Id        = 48
+Name      = thread_inst_executed_3
+Shortdesc = thread inst executed_3
+Longdesc  = Number of instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads in the warp that execute the instruction in pipeline 3.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 26
+Id        = 17
+Name      = inst_issued1_0
+Shortdesc = instructions issued1_0
+Longdesc  = Number of single instruction issued per cycle in pipeline 0.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 27
+Id        = 18
+Name      = inst_issued2_0
+Shortdesc = instructions issued2_0
+Longdesc  = Number of dual instructions issued per cycle in pipeline 0.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 28
+Id        = 19
+Name      = inst_issued1_1
+Shortdesc = instructions issued1_1
+Longdesc  = Number of single instruction issued per cycle in pipeline 1.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 29
+Id        = 20
+Name      = inst_issued2_1
+Shortdesc = instructions issued2_1
+Longdesc  = Number of dual instructions issued per cycle in pipeline 1.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 30
+Id        = 251
+Name      = atom_count
+Shortdesc = atom_count
+Longdesc  = Number of warps executing atomic reduction operations for thread-to-thread communication. Increments by one if at least one thread in a warp executes the instruction
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 31
+Id        = 252
+Name      = gred_count
+Shortdesc = gred_count
+Longdesc  = Number of warps executing reduction operations on global and shared memory. Increments by one if at least one thread in a warp executes the instruction
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
