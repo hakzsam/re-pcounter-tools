@@ -6,9 +6,9 @@ GF108 GPU Hardware events CUPTI
 
 .. contents::
 
-NVIDIA: 346.59-1 (Linux)
+NVIDIA: 349.16-1 (Linux)
 
-CUDA: 7.0.28-1
+CUDA: 7.0.28-2
 
 Global counters
 ===============
