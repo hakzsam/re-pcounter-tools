@@ -1,10 +1,14 @@
-.. _gk107-gpu-hw-events-config:
+.. _gk107-gpu-hw-events-cfg-cupti:
 
-=======================================
-GK107 GPU Hardware events configuration
-=======================================
+===============================
+GK107 GPU Hardware events CUPTI
+===============================
 
 .. contents::
+
+NVIDIA: 349.16-1 (Linux)
+
+CUDA: 7.0.28-2
 
 Global counters
 ===============
