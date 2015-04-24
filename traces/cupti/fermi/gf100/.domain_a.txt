@@ -1,0 +1,39 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 750
+
+Event# 1
+Id        = 67108865
+Name      = tex0_cache_sector_queries
+Shortdesc = tex0 cache sector queries
+Longdesc  = Number of texture cache 0 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 2
+Id        = 67108866
+Name      = tex1_cache_sector_queries
+Shortdesc = tex1 cache sector queries
+Longdesc  = Number of texture cache 1 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 3
+Id        = 67108867
+Name      = tex0_cache_sector_misses
+Shortdesc = tex0 cache sector misses
+Longdesc  = Number of texture cache 0 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 4
+Id        = 67108868
+Name      = tex1_cache_sector_misses
+Shortdesc = tex1 cache sector misses
+Longdesc  = Number of texture cache 1 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 5
+Id        = 67108913
+Name      = elapsed_cycles_sm
+Shortdesc = elapsed_cycles_sm
+Longdesc  = Elapsed clocks
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
