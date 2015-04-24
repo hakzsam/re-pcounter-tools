@@ -1067,7 +1067,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : elapsed_cycles_sm 
-Event Value : 57810
+Event Value : 58046
 (w) register: 180100, value: 00000000, mask: ffffffff <== PCOUNTER.GPC_DOM[0].FILTER[0] => { SRC_MASK = 0 }
 (w) register: 1b4050, value: 00000000, mask: ffffffff <== PCOUNTER.MAIN+0x50
 (w) register: 1b4054, value: 00000000, mask: ffffffff <== PCOUNTER.MAIN+0x54
@@ -1117,7 +1117,7 @@ Event Value : 57810
 (w) register: 18006c, value: 000000ed, mask: ffffffff <== PCOUNTER.GPC_DOM[0].SWAP_SRC[0] => 0xed
 (w) register: 18006c, value: 000000ed, mask: ffffffff <== PCOUNTER.GPC_DOM[0].SWAP_SRC[0] => 0xed
 (r) register: 180070, value: 00000000, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_CYCLES[0] => 0
-(r) register: 180070, value: 0000e1d2, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_CYCLES[0] => 0xe1d2
+(r) register: 180070, value: 0000e2be, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_CYCLES[0] => 0xe2be
 (w) register: 1800a0, value: 00000001, mask: ffffffff <== PCOUNTER.GPC_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1800a0, value: 00000001, mask: ffffffff <== PCOUNTER.GPC_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'elapsed_cycles_sm' saved in file 'elapsed_cycles_sm.trace'
@@ -1127,7 +1127,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb_subp0_read_sectors 
-Event Value : 6382
+Event Value : 6374
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1163,9 +1163,9 @@ Event Value : 6382
 (w) register: 1b4008, value: 00000701, mask: ffffffff <== PCOUNTER.MAIN+0x8
 (w) register: 1b4104, value: ffffffff, mask: ffffffff <== PCOUNTER.MAIN+0x104
 (r) register: 110100, value: 00000000, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0
-(r) register: 110100, value: 00000121, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0x121
-(w) register: 110100, value: 00000111, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x111
-(w) register: 110100, value: 00000111, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x111
+(r) register: 110100, value: 00000000, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0
+(w) register: 110100, value: 00000110, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x110
+(w) register: 110100, value: 00000110, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x110
 (w) register: 1a009c, value: 00040002, mask: ffffffff <== PCOUNTER.PART_DOM[0].CTRL[0] => { MODE = QUAD | CTR_MODE = SIMPLE | EVENT_CTR_PERIOD = ONE | EVENT_IMPORT_MODE = CONTINUOUS | FLAG_IMPORT_MODE = CONTINUOUS | UNK9 = 0 | UNK18 = 0x1 | PERIODIC_PERIOD = DISABLED | QUAD_STATE = EMPTY | UNK26 = 0 | SINGLE_STATE = INACTIVE }
 (w) register: 1a0040, value: 00000000, mask: ffffffff <== PCOUNTER.PART_DOM[0].PRE_SRC[0] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 1a0044, value: 00000000, mask: ffffffff <== PCOUNTER.PART_DOM[0].PRE_OP[0] => { FUNC = 0 | ARG2 = SRC2 | ARG3_SRC = SRC3 }
@@ -1191,13 +1191,13 @@ Event Value : 6382
 (r) register: 1410dc, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0].COMP+0x1c
 (r) register: 1410dc, value: 112b0007, mask: 00000000 ==> PMFB[0].SUBP[0].COMP+0x1c
 (r) register: 110100, value: 00000000, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0
-(r) register: 110100, value: 00000111, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0x111
+(r) register: 110100, value: 00000110, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0x110
 (w) register: 110100, value: 00000111, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x111
 (w) register: 110100, value: 00000111, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x111
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 000018ee, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18ee
+(r) register: 1a008c, value: 000018e6, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18e6
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb_subp0_read_sectors' saved in file 'fb_subp0_read_sectors.trace'
@@ -1207,7 +1207,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb_subp1_read_sectors 
-Event Value : 6377
+Event Value : 6370
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1277,7 +1277,7 @@ Event Value : 6377
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 000018e9, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18e9
+(r) register: 1a008c, value: 000018e2, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18e2
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb_subp1_read_sectors' saved in file 'fb_subp1_read_sectors.trace'
@@ -1287,7 +1287,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb_subp0_write_sectors 
-Event Value : 2981
+Event Value : 3090
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1357,7 +1357,7 @@ Event Value : 2981
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00000ba5, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xba5
+(r) register: 1a008c, value: 00000c12, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc12
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb_subp0_write_sectors' saved in file 'fb_subp0_write_sectors.trace'
@@ -1367,7 +1367,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb_subp1_write_sectors 
-Event Value : 3084
+Event Value : 3068
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1437,7 +1437,7 @@ Event Value : 3084
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00000c0c, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc0c
+(r) register: 1a008c, value: 00000bfc, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xbfc
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb_subp1_write_sectors' saved in file 'fb_subp1_write_sectors.trace'
@@ -1447,7 +1447,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : l2_subp0_write_sector_misses 
-Event Value : 6232
+Event Value : 6058
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1483,9 +1483,9 @@ Event Value : 6232
 (w) register: 1b4008, value: 00000701, mask: ffffffff <== PCOUNTER.MAIN+0x8
 (w) register: 1b4104, value: ffffffff, mask: ffffffff <== PCOUNTER.MAIN+0x104
 (r) register: 14125c, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
-(r) register: 14125c, value: 00000601, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(r) register: 14125c, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000060, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000060, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 1a009c, value: 00040002, mask: ffffffff <== PCOUNTER.PART_DOM[0].CTRL[0] => { MODE = QUAD | CTR_MODE = SIMPLE | EVENT_CTR_PERIOD = ONE | EVENT_IMPORT_MODE = CONTINUOUS | FLAG_IMPORT_MODE = CONTINUOUS | UNK9 = 0 | UNK18 = 0x1 | PERIODIC_PERIOD = DISABLED | QUAD_STATE = EMPTY | UNK26 = 0 | SINGLE_STATE = INACTIVE }
 (w) register: 1a0040, value: 00000000, mask: ffffffff <== PCOUNTER.PART_DOM[0].PRE_SRC[0] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 1a0044, value: 00000000, mask: ffffffff <== PCOUNTER.PART_DOM[0].PRE_OP[0] => { FUNC = 0 | ARG2 = SRC2 | ARG3_SRC = SRC3 }
@@ -1512,16 +1512,16 @@ Event Value : 6232
 (r) register: 1410dc, value: 112b0007, mask: 00000000 ==> PMFB[0].SUBP[0].COMP+0x1c
 (r) register: 14125c, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
 (r) register: 140028, value: 00000000, mask: 00000000 ==> PMFB[0].PM_UNK28 => 0
-(r) register: 14125c, value: 00000661, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
-(r) register: 140028, value: 00070001, mask: 00000000 ==> PMFB[0].PM_UNK28 => 0x70001
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(r) register: 14125c, value: 00000060, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
+(r) register: 140028, value: 00070000, mask: 00000000 ==> PMFB[0].PM_UNK28 => 0x70000
+(w) register: 14125c, value: 00000061, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 140028, value: 00070001, mask: ffffffff <== PMFB[0].PM_UNK28 => 0x70001
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000061, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 140028, value: 00070001, mask: ffffffff <== PMFB[0].PM_UNK28 => 0x70001
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00001858, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x1858
+(r) register: 1a008c, value: 000017aa, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x17aa
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'l2_subp0_write_sector_misses' saved in file 'l2_subp0_write_sector_misses.trace'
@@ -1531,7 +1531,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : l2_subp0_read_sector_misses 
-Event Value : 12669
+Event Value : 12718
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1567,9 +1567,9 @@ Event Value : 12669
 (w) register: 1b4008, value: 00000701, mask: ffffffff <== PCOUNTER.MAIN+0x8
 (w) register: 1b4104, value: ffffffff, mask: ffffffff <== PCOUNTER.MAIN+0x104
 (r) register: 14125c, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
-(r) register: 14125c, value: 00000661, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(r) register: 14125c, value: 00000061, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000061, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000061, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 1a009c, value: 00040002, mask: ffffffff <== PCOUNTER.PART_DOM[0].CTRL[0] => { MODE = QUAD | CTR_MODE = SIMPLE | EVENT_CTR_PERIOD = ONE | EVENT_IMPORT_MODE = CONTINUOUS | FLAG_IMPORT_MODE = CONTINUOUS | UNK9 = 0 | UNK18 = 0x1 | PERIODIC_PERIOD = DISABLED | QUAD_STATE = EMPTY | UNK26 = 0 | SINGLE_STATE = INACTIVE }
 (w) register: 1a0040, value: 00000000, mask: ffffffff <== PCOUNTER.PART_DOM[0].PRE_SRC[0] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 1a0044, value: 00000000, mask: ffffffff <== PCOUNTER.PART_DOM[0].PRE_OP[0] => { FUNC = 0 | ARG2 = SRC2 | ARG3_SRC = SRC3 }
@@ -1596,16 +1596,16 @@ Event Value : 12669
 (r) register: 1410dc, value: 112b0007, mask: 00000000 ==> PMFB[0].SUBP[0].COMP+0x1c
 (r) register: 14125c, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
 (r) register: 140028, value: 00000000, mask: 00000000 ==> PMFB[0].PM_UNK28 => 0
-(r) register: 14125c, value: 00000661, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
+(r) register: 14125c, value: 00000061, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
 (r) register: 140028, value: 00070001, mask: 00000000 ==> PMFB[0].PM_UNK28 => 0x70001
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000061, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 140028, value: 00070001, mask: ffffffff <== PMFB[0].PM_UNK28 => 0x70001
-(w) register: 14125c, value: 00000661, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
+(w) register: 14125c, value: 00000061, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 140028, value: 00070001, mask: ffffffff <== PMFB[0].PM_UNK28 => 0x70001
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 0000317d, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x317d
+(r) register: 1a008c, value: 000031ae, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x31ae
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'l2_subp0_read_sector_misses' saved in file 'l2_subp0_read_sector_misses.trace'
@@ -1651,7 +1651,7 @@ Event Value : 6250
 (w) register: 1b4008, value: 00000701, mask: ffffffff <== PCOUNTER.MAIN+0x8
 (w) register: 1b4104, value: ffffffff, mask: ffffffff <== PCOUNTER.MAIN+0x104
 (r) register: 14125c, value: 00000000, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
-(r) register: 14125c, value: 00000661, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
+(r) register: 14125c, value: 00000061, mask: 00000000 ==> PMFB[0].SUBP[0]+0x25c
 (w) register: 14125c, value: 00000801, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 14125c, value: 00000801, mask: ffffffff <== PMFB[0].SUBP[0]+0x25c
 (w) register: 1a009c, value: 00040002, mask: ffffffff <== PCOUNTER.PART_DOM[0].CTRL[0] => { MODE = QUAD | CTR_MODE = SIMPLE | EVENT_CTR_PERIOD = ONE | EVENT_IMPORT_MODE = CONTINUOUS | FLAG_IMPORT_MODE = CONTINUOUS | UNK9 = 0 | UNK18 = 0x1 | PERIODIC_PERIOD = DISABLED | QUAD_STATE = EMPTY | UNK26 = 0 | SINGLE_STATE = INACTIVE }
@@ -3218,8 +3218,8 @@ Event Value : 3136
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 504674, value: 00000ad8, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0xad8
-(w) register: 504678, value: 000000b4, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0xb4
+(w) register: 504674, value: 00000ae6, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0xae6
+(w) register: 504678, value: 000000ad, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0xad
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
@@ -3413,7 +3413,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : active_warps 
-Event Value : 2375148
+Event Value : 2357218
 (w) register: 504604, value: 24242424, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x24 | 1 = 0x24 | 2 = 0x24 | 3 = 0x24 }
 (w) register: 504608, value: 00002424, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0x24 | 1 = 0x24 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -3450,12 +3450,12 @@ Event Value : 2375148
 (w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
 (w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
 (w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00004eb8, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x4eb8
-(w) register: 504678, value: 000056f2, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x56f2
-(w) register: 50467c, value: 00005692, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x5692
-(w) register: 504680, value: 00007e01, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0x7e01
-(w) register: 504684, value: 00003ce4, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0x3ce4
-(w) register: 504688, value: 0000d146, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0xd146
+(w) register: 504674, value: 00005562, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x5562
+(w) register: 504678, value: 000057c0, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x57c0
+(w) register: 50467c, value: 00005d5a, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x5d5a
+(w) register: 504680, value: 000071df, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0x71df
+(w) register: 504684, value: 00003bf6, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0x3bf6
+(w) register: 504688, value: 0000d17a, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0xd17a
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
@@ -3481,7 +3481,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : active_cycles 
-Event Value : 56980
+Event Value : 57261
 (w) register: 504604, value: 00000011, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x11 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -3503,7 +3503,7 @@ Event Value : 56980
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 0000de94, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0xde94
+(w) register: 504674, value: 0000dfad, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0xdfad
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
@@ -3941,9 +3941,9 @@ Event Value : 28169
 (w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504674, value: 000028d5, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x28d5
-(w) register: 504678, value: 0000228e, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x228e
-(w) register: 50467c, value: 00000006, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x6
+(w) register: 504674, value: 0000288f, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x288f
+(w) register: 504678, value: 000022a1, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x22a1
+(w) register: 50467c, value: 0000000e, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0xe
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
@@ -4241,7 +4241,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_issued1_0 
-Event Value : 10202
+Event Value : 10366
 (w) register: 504604, value: 0000007e, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x7e | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4263,7 +4263,7 @@ Event Value : 10202
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 000027da, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x27da
+(w) register: 504674, value: 0000287e, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x287e
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
@@ -4337,7 +4337,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 610
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_issued1_1 
-Event Value : 10289
+Event Value : 10210
 (w) register: 504604, value: 0000007e, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x7e | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4359,7 +4359,7 @@ Event Value : 10289
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00002831, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x2831
+(w) register: 504674, value: 000027e2, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x27e2
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
