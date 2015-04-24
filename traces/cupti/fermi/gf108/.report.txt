@@ -611,7 +611,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : global_store_transaction 
-Event Value : 787
+Event Value : 784
 (w) register: 180100, value: 00000000, mask: ffffffff <== PCOUNTER.GPC_DOM[0].FILTER[0] => { SRC_MASK = 0 }
 (w) register: 1b4050, value: 00000000, mask: ffffffff <== PCOUNTER.MAIN+0x50
 (w) register: 1b4054, value: 00000000, mask: ffffffff <== PCOUNTER.MAIN+0x54
@@ -677,7 +677,7 @@ Event Value : 787
 (w) register: 18006c, value: 000000cd, mask: ffffffff <== PCOUNTER.GPC_DOM[0].SWAP_SRC[0] => 0xcd
 (w) register: 18006c, value: 000000cd, mask: ffffffff <== PCOUNTER.GPC_DOM[0].SWAP_SRC[0] => 0xcd
 (r) register: 18008c, value: 00000000, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_PRE[0] => 0
-(r) register: 18008c, value: 00000313, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_PRE[0] => 0x313
+(r) register: 18008c, value: 00000310, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_PRE[0] => 0x310
 (w) register: 1800a0, value: 00000001, mask: ffffffff <== PCOUNTER.GPC_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1800a0, value: 00000001, mask: ffffffff <== PCOUNTER.GPC_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'global_store_transaction' saved in file 'global_store_transaction.trace'
@@ -1139,7 +1139,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : elapsed_cycles_sm 
-Event Value : 24973
+Event Value : 25108
 (w) register: 180100, value: 00000000, mask: ffffffff <== PCOUNTER.GPC_DOM[0].FILTER[0] => { SRC_MASK = 0 }
 (w) register: 1b4050, value: 00000000, mask: ffffffff <== PCOUNTER.MAIN+0x50
 (w) register: 1b4054, value: 00000000, mask: ffffffff <== PCOUNTER.MAIN+0x54
@@ -1189,7 +1189,7 @@ Event Value : 24973
 (w) register: 18006c, value: 000000cd, mask: ffffffff <== PCOUNTER.GPC_DOM[0].SWAP_SRC[0] => 0xcd
 (w) register: 18006c, value: 000000cd, mask: ffffffff <== PCOUNTER.GPC_DOM[0].SWAP_SRC[0] => 0xcd
 (r) register: 180070, value: 00000000, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_CYCLES[0] => 0
-(r) register: 180070, value: 0000618d, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_CYCLES[0] => 0x618d
+(r) register: 180070, value: 00006214, mask: 00000000 ==> PCOUNTER.GPC_DOM[0].CTR_CYCLES[0] => 0x6214
 (w) register: 1800a0, value: 00000001, mask: ffffffff <== PCOUNTER.GPC_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1800a0, value: 00000001, mask: ffffffff <== PCOUNTER.GPC_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'elapsed_cycles_sm' saved in file 'elapsed_cycles_sm.trace'
@@ -1199,7 +1199,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb0_subp0_read_sectors 
-Event Value : 3155
+Event Value : 3169
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1235,7 +1235,7 @@ Event Value : 3155
 (w) register: 1b4008, value: 00000701, mask: ffffffff <== PCOUNTER.MAIN+0x8
 (w) register: 1b4104, value: ffffffff, mask: ffffffff <== PCOUNTER.MAIN+0x104
 (r) register: 110100, value: 00000000, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0
-(r) register: 110100, value: 00000111, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0x111
+(r) register: 110100, value: 00000121, mask: 00000000 ==> PBFB[0].PM_UNK100 => 0x121
 (w) register: 110100, value: 00000111, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x111
 (w) register: 110100, value: 00000111, mask: ffffffff <== PBFB[0].PM_UNK100 => 0x111
 (w) register: 1a009c, value: 00040002, mask: ffffffff <== PCOUNTER.PART_DOM[0].CTRL[0] => { MODE = QUAD | CTR_MODE = SIMPLE | EVENT_CTR_PERIOD = ONE | EVENT_IMPORT_MODE = CONTINUOUS | FLAG_IMPORT_MODE = CONTINUOUS | UNK9 = 0 | UNK18 = 0x1 | PERIODIC_PERIOD = DISABLED | QUAD_STATE = EMPTY | UNK26 = 0 | SINGLE_STATE = INACTIVE }
@@ -1269,7 +1269,7 @@ Event Value : 3155
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00000c53, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc53
+(r) register: 1a008c, value: 00000c61, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc61
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb0_subp0_read_sectors' saved in file 'fb0_subp0_read_sectors.trace'
@@ -1279,7 +1279,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb0_subp1_read_sectors 
-Event Value : 3144
+Event Value : 3145
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1349,7 +1349,7 @@ Event Value : 3144
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00000c48, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc48
+(r) register: 1a008c, value: 00000c49, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc49
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb0_subp1_read_sectors' saved in file 'fb0_subp1_read_sectors.trace'
@@ -1519,7 +1519,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb1_subp0_read_sectors 
-Event Value : 3162
+Event Value : 3164
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1555,7 +1555,7 @@ Event Value : 3162
 (w) register: 1b4008, value: 00000701, mask: ffffffff <== PCOUNTER.MAIN+0x8
 (w) register: 1b4104, value: ffffffff, mask: ffffffff <== PCOUNTER.MAIN+0x104
 (r) register: 111100, value: 00000000, mask: 00000000 ==> PBFB[0x1].PM_UNK100 => 0
-(r) register: 111100, value: 00000111, mask: 00000000 ==> PBFB[0x1].PM_UNK100 => 0x111
+(r) register: 111100, value: 00000121, mask: 00000000 ==> PBFB[0x1].PM_UNK100 => 0x121
 (w) register: 111100, value: 00000111, mask: ffffffff <== PBFB[0x1].PM_UNK100 => 0x111
 (w) register: 111100, value: 00000111, mask: ffffffff <== PBFB[0x1].PM_UNK100 => 0x111
 (w) register: 1a009c, value: 00040002, mask: ffffffff <== PCOUNTER.PART_DOM[0].CTRL[0] => { MODE = QUAD | CTR_MODE = SIMPLE | EVENT_CTR_PERIOD = ONE | EVENT_IMPORT_MODE = CONTINUOUS | FLAG_IMPORT_MODE = CONTINUOUS | UNK9 = 0 | UNK18 = 0x1 | PERIODIC_PERIOD = DISABLED | QUAD_STATE = EMPTY | UNK26 = 0 | SINGLE_STATE = INACTIVE }
@@ -1589,7 +1589,7 @@ Event Value : 3162
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00000c5a, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc5a
+(r) register: 1a008c, value: 00000c5c, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc5c
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb1_subp0_read_sectors' saved in file 'fb1_subp0_read_sectors.trace'
@@ -1599,7 +1599,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : fb1_subp1_read_sectors 
-Event Value : 3172
+Event Value : 3156
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -1669,7 +1669,7 @@ Event Value : 3172
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 00000c64, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc64
+(r) register: 1a008c, value: 00000c54, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0xc54
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'fb1_subp1_read_sectors' saved in file 'fb1_subp1_read_sectors.trace'
@@ -1999,7 +1999,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : l2_subp0_read_sector_misses 
-Event Value : 6308
+Event Value : 6313
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -2069,7 +2069,7 @@ Event Value : 6308
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 000018a4, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18a4
+(r) register: 1a008c, value: 000018a9, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18a9
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'l2_subp0_read_sector_misses' saved in file 'l2_subp0_read_sector_misses.trace'
@@ -2079,7 +2079,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : l2_subp1_read_sector_misses 
-Event Value : 6317
+Event Value : 6320
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -2149,7 +2149,7 @@ Event Value : 6317
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a008c, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0
-(r) register: 1a008c, value: 000018ad, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18ad
+(r) register: 1a008c, value: 000018b0, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_PRE[0] => 0x18b0
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'l2_subp1_read_sector_misses' saved in file 'l2_subp1_read_sector_misses.trace'
@@ -3363,7 +3363,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : l2_subp0_total_read_sector_queries 
-Event Value : 6272
+Event Value : 6277
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -3439,7 +3439,7 @@ Event Value : 6272
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a0080, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_EVENT[0] => 0
-(r) register: 1a0080, value: 00001880, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_EVENT[0] => 0x1880
+(r) register: 1a0080, value: 00001885, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_EVENT[0] => 0x1885
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'l2_subp0_total_read_sector_queries' saved in file 'l2_subp0_total_read_sector_queries.trace'
@@ -3449,7 +3449,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : l2_subp1_total_read_sector_queries 
-Event Value : 6285
+Event Value : 6280
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022548, value: 00000000, mask: 00000000 ==> PUNITS.HW_PART_DISABLE_MASK => 0
 (r) register: 022438, value: 00000000, mask: 00000000 ==> PUNITS.DESIGN_PART_COUNT => 0
@@ -3525,7 +3525,7 @@ Event Value : 6285
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (w) register: 1a006c, value: 0000004d, mask: ffffffff <== PCOUNTER.PART_DOM[0].SWAP_SRC[0] => 0x4d
 (r) register: 1a0080, value: 00000000, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_EVENT[0] => 0
-(r) register: 1a0080, value: 0000188d, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_EVENT[0] => 0x188d
+(r) register: 1a0080, value: 00001888, mask: 00000000 ==> PCOUNTER.PART_DOM[0].CTR_EVENT[0] => 0x1888
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 (w) register: 1a00a0, value: 00000001, mask: ffffffff <== PCOUNTER.PART_DOM[0].QUAD_ACK_TRIGGER[0] => 0x1
 Trace of 'l2_subp1_total_read_sector_queries' saved in file 'l2_subp1_total_read_sector_queries.trace'
@@ -3728,10 +3728,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -3776,10 +3776,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -3803,7 +3803,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : gld_inst_32bit 
-Event Value : 49824
+Event Value : 50336
 (w) register: 504604, value: 00000002, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x2 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -3824,10 +3824,10 @@ Event Value : 49824
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 0000c2a0, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0xc2a0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 0000c4a0, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0xc4a0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -3872,10 +3872,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -3920,10 +3920,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -3968,10 +3968,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4016,10 +4016,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4043,7 +4043,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : gst_inst_32bit 
-Event Value : 25344
+Event Value : 24912
 (w) register: 504604, value: 00000002, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x2 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4064,10 +4064,10 @@ Event Value : 25344
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00006300, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x6300
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00006150, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x6150
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4112,10 +4112,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4160,10 +4160,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4208,10 +4208,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4256,10 +4256,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4283,7 +4283,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : gld_request 
-Event Value : 1568
+Event Value : 1584
 (w) register: 504604, value: 00000064, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x64 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4304,10 +4304,10 @@ Event Value : 1568
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000620, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x620
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000630, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x630
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4331,7 +4331,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : gst_request 
-Event Value : 784
+Event Value : 800
 (w) register: 504604, value: 00000064, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x64 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4352,10 +4352,10 @@ Event Value : 784
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000310, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x310
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000320, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x320
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4400,10 +4400,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4448,10 +4448,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4475,7 +4475,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : branch 
-Event Value : 1568
+Event Value : 1584
 (w) register: 504604, value: 00001a1a, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x1a | 1 = 0x1a | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4498,12 +4498,12 @@ Event Value : 1568
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 504674, value: 00000568, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x568
-(w) register: 504678, value: 0000005c, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x5c
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 504674, value: 00000540, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x540
+(r) register: 504678, value: 00000078, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x78
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4550,12 +4550,12 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4579,7 +4579,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : warps_launched 
-Event Value : 792
+Event Value : 784
 (w) register: 504604, value: 00000026, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x26 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4600,10 +4600,10 @@ Event Value : 792
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000318, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x318
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000310, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x310
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4658,20 +4658,20 @@ Event Value : 25088
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000310, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x310
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000310, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x310
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4695,7 +4695,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : active_warps 
-Event Value : 960053
+Event Value : 964794
 (w) register: 504604, value: 24242424, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x24 | 1 = 0x24 | 2 = 0x24 | 3 = 0x24 }
 (w) register: 504608, value: 00002424, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0x24 | 1 = 0x24 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4726,20 +4726,20 @@ Event Value : 960053
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00001d37, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x1d37
-(w) register: 504678, value: 00002373, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x2373
-(w) register: 50467c, value: 00002256, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x2256
-(w) register: 504680, value: 00002ac8, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0x2ac8
-(w) register: 504684, value: 00001a72, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0x1a72
-(w) register: 504688, value: 000055db, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x55db
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
+(r) register: 504674, value: 00001872, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x1872
+(r) register: 504678, value: 00001d02, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x1d02
+(r) register: 50467c, value: 00001db9, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x1db9
+(r) register: 504680, value: 000027ae, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0x27ae
+(r) register: 504684, value: 0000219b, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0x219b
+(r) register: 504688, value: 000054c2, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x54c2
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4763,7 +4763,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : active_cycles 
-Event Value : 24025
+Event Value : 23883
 (w) register: 504604, value: 00000011, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x11 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -4784,10 +4784,10 @@ Event Value : 24025
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00005dd9, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x5dd9
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00005d4b, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x5d4b
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4832,10 +4832,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4880,10 +4880,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4928,10 +4928,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -4976,10 +4976,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5024,10 +5024,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5072,10 +5072,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5120,10 +5120,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5168,10 +5168,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5195,7 +5195,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_executed 
-Event Value : 14112
+Event Value : 14201
 (w) register: 504604, value: 002d2d2d, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x2d | 1 = 0x2d | 2 = 0x2d | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5220,14 +5220,14 @@ Event Value : 14112
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504674, value: 000014d8, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x14d8
-(w) register: 504678, value: 00001120, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x1120
-(w) register: 50467c, value: 00000002, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x2
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504674, value: 000014cb, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x14cb
+(r) register: 504678, value: 00001149, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0x1149
+(r) register: 50467c, value: 00000007, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0x7
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5251,7 +5251,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : thread_inst_executed_0 
-Event Value : 191424
+Event Value : 190080
 (w) register: 504604, value: a3a3a3a3, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0xa3 | 1 = 0xa3 | 2 = 0xa3 | 3 = 0xa3 }
 (w) register: 504608, value: 0000a3a3, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0xa3 | 1 = 0xa3 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5282,20 +5282,20 @@ Event Value : 191424
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 0000175e, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x175e
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00001734, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x1734
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5350,20 +5350,20 @@ Event Value : 38016
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 000004a4, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x4a4
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 000004a4, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x4a4
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5418,20 +5418,20 @@ Event Value : 188160
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 000016f8, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x16f8
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 000016f8, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x16f8
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5455,7 +5455,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : thread_inst_executed_3 
-Event Value : 37632
+Event Value : 38592
 (w) register: 504604, value: a6a6a6a6, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0xa6 | 1 = 0xa6 | 2 = 0xa6 | 3 = 0xa6 }
 (w) register: 504608, value: 0000a6a6, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0xa6 | 1 = 0xa6 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5486,20 +5486,20 @@ Event Value : 37632
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504678, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
-(w) register: 50467c, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
-(w) register: 504680, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
-(w) register: 504684, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
-(w) register: 504688, value: 00000498, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x498
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504678, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
+(r) register: 50467c, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
+(r) register: 504680, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x3] => 0
+(r) register: 504684, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x4] => 0
+(r) register: 504688, value: 000004b6, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x5] => 0x4b6
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5523,7 +5523,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_issued1_0 
-Event Value : 5607
+Event Value : 5686
 (w) register: 504604, value: 0000007e, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x7e | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5544,10 +5544,10 @@ Event Value : 5607
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 000015e7, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x15e7
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00001636, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x1636
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5571,7 +5571,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_issued2_0 
-Event Value : 1208
+Event Value : 1200
 (w) register: 504604, value: 0000007e, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x7e | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5592,10 +5592,10 @@ Event Value : 1208
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 000004b8, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x4b8
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 000004b0, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x4b0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5619,7 +5619,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_issued1_1 
-Event Value : 5526
+Event Value : 5436
 (w) register: 504604, value: 0000007e, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x7e | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5640,10 +5640,10 @@ Event Value : 5526
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00001596, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x1596
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 0000153c, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x153c
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5667,7 +5667,7 @@ CUDA Device Number: 0
 CUDA Device Name: GeForce GT 440
 Launching kernel: blocks 196, thread/block 256
 Event Name : inst_issued2_1 
-Event Value : 1200
+Event Value : 1218
 (w) register: 504604, value: 0000007e, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0] => { 0 = 0x7e | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 504608, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_SIGSEL[0x1] => { 0 = 0 | 1 = 0 | 2 = 0 | 3 = 0 }
 (w) register: 50465c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MODE => { 0 = LOGOP | 1 = LOGOP | 2 = LOGOP | 3 = LOGOP | 4 = LOGOP | 5 = LOGOP | 6 = LOGOP | 7 = LOGOP }
@@ -5688,10 +5688,10 @@ Event Value : 1200
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 000004b0, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x4b0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 000004c2, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0x4c2
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5736,10 +5736,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
@@ -5784,10 +5784,10 @@ Event Value : 0
 (r) register: 504600, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
 (w) register: 504600, value: 80000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_MUX => { SEL = 0 | ENABLE }
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504674, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
-(w) register: 504670, value: 00000000, mask: 00000000 <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504674, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
+(r) register: 504670, value: 00000000, mask: 00000000 ==> PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER_OVERFLOW => { 0 }
 (w) register: 504674, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0] => 0
 (w) register: 504678, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x1] => 0
 (w) register: 50467c, value: 00000000, mask: ffffffff <== PGRAPH.GPC[0].TPC[0].MP.PM_COUNTER[0x2] => 0
