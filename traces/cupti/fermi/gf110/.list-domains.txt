@@ -1,0 +1,28 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 570
+
+Domain# 1
+Id         = 100
+Name       = domain_a
+Profiled instance count = 4
+Total instance count = 15
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_PM
+Domain# 2
+Id         = 109
+Name       = domain_b
+Profiled instance count = 5
+Total instance count = 5
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_PM
+Domain# 3
+Id         = 220
+Name       = domain_c
+Profiled instance count = 15
+Total instance count = 15
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_INSTRUMENTED
+Domain# 4
+Id         = 111
+Name       = domain_d
+Profiled instance count = 15
+Total instance count = 15
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_SM
