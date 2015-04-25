@@ -1,0 +1,74 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 660
+
+Event# 1
+Id        = 2401
+Name      = gld_inst_8bit
+Shortdesc = gld_inst_8bit
+Longdesc  = Total number of 8-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 2402
+Name      = gld_inst_16bit
+Shortdesc = gld_inst_16bit
+Longdesc  = Total number of 16-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 2403
+Name      = gld_inst_32bit
+Shortdesc = gld_inst_32bit
+Longdesc  = Total number of 32-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 2404
+Name      = gld_inst_64bit
+Shortdesc = gld_inst_64bit
+Longdesc  = Total number of 64-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 2405
+Name      = gld_inst_128bit
+Shortdesc = gld_inst_128bit
+Longdesc  = Total number of 128-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 6
+Id        = 2406
+Name      = gst_inst_8bit
+Shortdesc = gst_inst_8bit
+Longdesc  = Total number of 8-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 7
+Id        = 2407
+Name      = gst_inst_16bit
+Shortdesc = gst_inst_16bit
+Longdesc  = Total number of 16-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 8
+Id        = 2408
+Name      = gst_inst_32bit
+Shortdesc = gst_inst_32bit
+Longdesc  = Total number of 32-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 9
+Id        = 2409
+Name      = gst_inst_64bit
+Shortdesc = gst_inst_64bit
+Longdesc  = Total number of 64-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 10
+Id        = 2410
+Name      = gst_inst_128bit
+Shortdesc = gst_inst_128bit
+Longdesc  = Total number of 128-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
