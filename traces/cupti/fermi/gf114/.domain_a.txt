@@ -1,0 +1,109 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 560
+
+Event# 1
+Id        = 164
+Name      = sm_cta_launched
+Shortdesc = sm cta launched
+Longdesc  = Number of thread blocks launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 2
+Id        = 165
+Name      = l1_local_load_hit
+Shortdesc = l1 local load hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory load accesses. In case of perfect coalescing this increments by 1, 2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 3
+Id        = 166
+Name      = l1_local_load_miss
+Shortdesc = l1 local load miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory load accesses. In case of perfect coalescing this increments by 1, 2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 4
+Id        = 167
+Name      = l1_local_store_hit
+Shortdesc = l1 local store hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory store accesses. In case of perfect coalescing this increments by 1, 2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 5
+Id        = 168
+Name      = l1_local_store_miss
+Shortdesc = l1 local store miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory store accesses. In case of perfect coalescing this increments by 1, 2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 6
+Id        = 169
+Name      = l1_global_load_hit
+Shortdesc = l1 global load hit
+Longdesc  = Number of cache lines that hit in L1 cache for global memory load accesses. In case of perfect coalescing this increments by 1, 2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 7
+Id        = 170
+Name      = l1_global_load_miss
+Shortdesc = l1 global load miss
+Longdesc  = Number of cache lines that miss in L1 cache for global memory load accesses. In case of perfect coalescing this increments by 1, 2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 8
+Id        = 171
+Name      = uncached_global_load_transaction
+Shortdesc = uncached global load transaction
+Longdesc  = Number of uncached global load transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 9
+Id        = 172
+Name      = global_store_transaction
+Shortdesc = global store transaction
+Longdesc  = Number of global store transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 10
+Id        = 176
+Name      = l1_shared_bank_conflict
+Shortdesc = shared bank conflict
+Longdesc  = Number of shared bank conflicts caused due to addresses for two or more shared memory requests fall in the same memory bank. Increments by N-1 and 2*(N-1) for a N-way conflict for 32 bit and 64bit shared memory accesses respectively.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 11
+Id        = 160
+Name      = tex0_cache_sector_queries
+Shortdesc = tex0 cache sector queries
+Longdesc  = Number of texture cache requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 12
+Id        = 161
+Name      = tex0_cache_sector_misses
+Shortdesc = tex0 cache sector misses
+Longdesc  = Number of texture cache misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 13
+Id        = 162
+Name      = tex1_cache_sector_queries
+Shortdesc = tex1 cache sector queries
+Longdesc  = Number of texture cache 1 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 14
+Id        = 163
+Name      = tex1_cache_sector_misses
+Shortdesc = tex1 cache sector misses
+Longdesc  = Number of texture cache 1 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 15
+Id        = 242
+Name      = elapsed_cycles_sm
+Shortdesc = elapsed_cycles_sm
+Longdesc  = Elapsed clocks
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
