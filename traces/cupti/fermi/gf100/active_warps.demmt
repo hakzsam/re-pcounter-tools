@@ -13,7 +13,7 @@ LOG:         4: dir: 0x00000101, mmio: 0x00514664, value: 0x00000000, mask: 0xff
 LOG:         5: dir: 0x00000101, mmio: 0x00514668, value: 0x00000000, mask: 0xffffffff
 LOG:         6: dir: 0x00000101, mmio: 0x0051466c, value: 0x00000000, mask: 0xffffffff
 LOG:         0: dir: 0x00000000, mmio: 0x00514600, value: 0x00000000, mask: 0x00000000
-LOG:         0: dir: 0x00000000, mmio: 0x00514600, value: 0x80000000, mask: 0x00000000
+LOG:         0: dir: 0x00000000, mmio: 0x00514600, value: 0x00000000, mask: 0x00000000
 LOG:         0: dir: 0x00000001, mmio: 0x00514600, value: 0x80000000, mask: 0xffffffff
 LOG:         0: dir: 0x00000001, mmio: 0x00514600, value: 0x80000000, mask: 0xffffffff
 LOG:         0: dir: 0x00000100, mmio: 0x00514674, value: 0x00000000, mask: 0x00000000
@@ -22,12 +22,12 @@ LOG:         2: dir: 0x00000100, mmio: 0x0051467c, value: 0x00000000, mask: 0x00
 LOG:         3: dir: 0x00000100, mmio: 0x00514680, value: 0x00000000, mask: 0x00000000
 LOG:         4: dir: 0x00000100, mmio: 0x00514684, value: 0x00000000, mask: 0x00000000
 LOG:         5: dir: 0x00000100, mmio: 0x00514688, value: 0x00000000, mask: 0x00000000
-LOG:         0: dir: 0x00000100, mmio: 0x00514674, value: 0x000003c8, mask: 0x00000000
-LOG:         1: dir: 0x00000100, mmio: 0x00514678, value: 0x00000418, mask: 0x00000000
-LOG:         2: dir: 0x00000100, mmio: 0x0051467c, value: 0x000003d1, mask: 0x00000000
-LOG:         3: dir: 0x00000100, mmio: 0x00514680, value: 0x00000508, mask: 0x00000000
-LOG:         4: dir: 0x00000100, mmio: 0x00514684, value: 0x00000b7f, mask: 0x00000000
-LOG:         5: dir: 0x00000100, mmio: 0x00514688, value: 0x00000d4e, mask: 0x00000000
+LOG:         0: dir: 0x00000100, mmio: 0x00514674, value: 0x0000036a, mask: 0x00000000
+LOG:         1: dir: 0x00000100, mmio: 0x00514678, value: 0x00000462, mask: 0x00000000
+LOG:         2: dir: 0x00000100, mmio: 0x0051467c, value: 0x000003b1, mask: 0x00000000
+LOG:         3: dir: 0x00000100, mmio: 0x00514680, value: 0x0000053d, mask: 0x00000000
+LOG:         4: dir: 0x00000100, mmio: 0x00514684, value: 0x00000afd, mask: 0x00000000
+LOG:         5: dir: 0x00000100, mmio: 0x00514688, value: 0x00000deb, mask: 0x00000000
 LOG:         0: dir: 0x00000100, mmio: 0x00514670, value: 0x00000000, mask: 0x00000000
 LOG:         0: dir: 0x00000100, mmio: 0x00514670, value: 0x00000000, mask: 0x00000000
 LOG:         0: dir: 0x00000101, mmio: 0x00514674, value: 0x00000000, mask: 0xffffffff

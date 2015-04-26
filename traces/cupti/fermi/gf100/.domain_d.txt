@@ -1,4 +1,5 @@
-CUDA Device Id  : 1
+Assuming default device id 0
+CUDA Device Id  : 0
 CUDA Device Name: GeForce GTX 470
 
 Event# 1

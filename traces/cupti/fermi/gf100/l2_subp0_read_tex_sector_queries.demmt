@@ -33,7 +33,7 @@ LOG:         11: dir: 0x00000001, mmio: 0x001b4044, value: 0xffffffff, mask: 0xf
 LOG:         12: dir: 0x00000001, mmio: 0x001b4008, value: 0x00000701, mask: 0xffffffff
 LOG:         13: dir: 0x00000001, mmio: 0x001b4104, value: 0xffffffff, mask: 0xffffffff
 LOG:         0: dir: 0x00000000, mmio: 0x00140028, value: 0x00000000, mask: 0x00000000
-LOG:         0: dir: 0x00000000, mmio: 0x00140028, value: 0x20070e97, mask: 0x00000000
+LOG:         0: dir: 0x00000000, mmio: 0x00140028, value: 0x20071297, mask: 0x00000000
 LOG:         0: dir: 0x00000001, mmio: 0x00140028, value: 0x00070c91, mask: 0xffffffff
 LOG:         0: dir: 0x00000001, mmio: 0x00140028, value: 0x00070c91, mask: 0xffffffff
 LOG:         0: dir: 0x00000001, mmio: 0x001a009c, value: 0x00040002, mask: 0xffffffff
