@@ -1,8 +1,8 @@
 .. _gk107-gpu-hw-events-cfg-cupti:
 
-===============================
-GK107 GPU Hardware events CUPTI
-===============================
+=====================================
+GK107:GK106 GPU Hardware events CUPTI
+=====================================
 
 .. contents::
 
