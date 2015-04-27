@@ -79,14 +79,14 @@ PART domain 0
 
   - mode: SIMPLE
   - signal: 0x15
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x61
 
 - l2_subp0_read_sector_misses
 
   - mode: SIMPLE
   - signal: 0x16
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x61
 
 - l2_subp0_write_sector_queries
@@ -94,7 +94,7 @@ PART domain 0
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x00121023/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x801
 
 - l2_subp0_read_sector_queries
@@ -102,7 +102,7 @@ PART domain 0
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x00121024/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x801
 
 - l2_subp0_read_tex_sector_queries
@@ -110,7 +110,7 @@ PART domain 0
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x00121024/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x601
 
 - l2_subp0_read_hit_sectors
@@ -118,7 +118,7 @@ PART domain 0
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x12102418/0x8000
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x803
 
 - l2_subp0_read_tex_hit_sectors
@@ -126,7 +126,7 @@ PART domain 0
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x12102418/0x8000
-  - PMFB[0].PM_UNK28: 0x70001
+  - PMFB[0].PM_UNK28: 0x1
   - PMFB[0].SUBP[0].PM_UNK25C: 0x603
 
 - l2_subp0_read_sysmem_sector_queries
@@ -134,32 +134,32 @@ PART domain 0
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x0012241e/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
-  - PMFB[0].SUBP[0].PM_UNK25C: 0x801
+  - PMFB[0].PM_UNK28: 0x1
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x1
 
 - l2_subp0_write_sysmem_sector_queries
 
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x0012231e/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
-  - PMFB[0].SUBP[0].PM_UNK25C: 0x801
+  - PMFB[0].PM_UNK28: 0x1
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x1
 
 - l2_subp0_total_read_sector_queries
 
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x00001224/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
-  - PMFB[0].SUBP[0].PM_UNK25C: 0x801
+  - PMFB[0].PM_UNK28: 0x1
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x1
 
 - l2_subp0_total_write_sector_queries
 
   - mode: EVENT_B4
   - start_ctr: 0x0f0e0d0c/0xffff
   - event_ctr: 0x00001223/0x8080
-  - PMFB[0].PM_UNK28: 0x70001
-  - PMFB[0].SUBP[0].PM_UNK25C: 0x801
+  - PMFB[0].PM_UNK28: 0x1
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x1
 
 Local counters
 ==============
