@@ -126,25 +126,25 @@ PART domain 0
 
   - mode: SIMPLE
   - signal: 0x04
-  - PMFB[0].PM_UNK28: 0x20070f07
+  - PMFB[0].PM_UNK28: 0x70101
 
 - l2_subp1_write_sector_misses
 
   - mode: SIMPLE
   - signal: 0x04
-  - PMFB[0].PM_UNK28: 0x20070f17
+  - PMFB[0].PM_UNK28: 0x70111
 
 - l2_subp0_read_sector_misses
 
   - mode: SIMPLE
   - signal: 0x00
-  - PMFB[0].PM_UNK28: 0x20070e87
+  - PMFB[0].PM_UNK28: 0x70081
 
 - l2_subp1_read_sector_misses
 
   - mode: SIMPLE
   - signal: 0x00
-  - PMFB[0].PM_UNK28: 0x20070e97
+  - PMFB[0].PM_UNK28: 0x70091
 
 - l2_subp0_write_sector_queries
 
