@@ -1,0 +1,340 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 770
+
+Event# 1
+Id        = 2107
+Name      = fb_subp0_read_sectors
+Shortdesc = fb subp0 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 2108
+Name      = fb_subp1_read_sectors
+Shortdesc = fb subp1 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 2109
+Name      = fb_subp0_write_sectors
+Shortdesc = fb subp0 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 2110
+Name      = fb_subp1_write_sectors
+Shortdesc = fb subp1 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 2115
+Name      = l2_subp0_write_sector_misses
+Shortdesc = l2 subp0 write sector misses
+Longdesc  = Number of write misses in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 6
+Id        = 2116
+Name      = l2_subp1_write_sector_misses
+Shortdesc = l2 subp1 write sector misses
+Longdesc  = Number of write misses in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 7
+Id        = 2117
+Name      = l2_subp2_write_sector_misses
+Shortdesc = l2 subp2 write sector misses
+Longdesc  = Number of write misses in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 8
+Id        = 2118
+Name      = l2_subp3_write_sector_misses
+Shortdesc = l2 subp3 write sector misses
+Longdesc  = Number of write misses in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 9
+Id        = 2119
+Name      = l2_subp0_read_sector_misses
+Shortdesc = l2 subp0 read sector misses
+Longdesc  = Number of read misses in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 10
+Id        = 2120
+Name      = l2_subp1_read_sector_misses
+Shortdesc = l2 subp1 read sector misses
+Longdesc  = Number of read misses in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 11
+Id        = 2121
+Name      = l2_subp2_read_sector_misses
+Shortdesc = l2 subp2 read sector misses
+Longdesc  = Number of read misses in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 12
+Id        = 2122
+Name      = l2_subp3_read_sector_misses
+Shortdesc = l2 subp3 read sector misses
+Longdesc  = Number of read misses in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 13
+Id        = 2123
+Name      = l2_subp0_write_l1_sector_queries
+Shortdesc = l2 subp0 write sector queries
+Longdesc  = Number of write requests from L1 to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 14
+Id        = 2124
+Name      = l2_subp1_write_l1_sector_queries
+Shortdesc = l2 subp1 write sector queries
+Longdesc  = Number of write requests from L1 to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 15
+Id        = 2125
+Name      = l2_subp2_write_l1_sector_queries
+Shortdesc = l2 subp2 write sector queries
+Longdesc  = Number of write requests from L1 to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 16
+Id        = 2126
+Name      = l2_subp3_write_l1_sector_queries
+Shortdesc = l2 subp3 write sector queries
+Longdesc  = Number of write requests from L1 to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 17
+Id        = 2127
+Name      = l2_subp0_read_l1_sector_queries
+Shortdesc = l2 subp0 read sector queries
+Longdesc  = Number of read requests from L1 to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 18
+Id        = 2128
+Name      = l2_subp1_read_l1_sector_queries
+Shortdesc = l2 subp1 read sector queries
+Longdesc  = Number of read requests from L1 to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 19
+Id        = 2129
+Name      = l2_subp2_read_l1_sector_queries
+Shortdesc = l2 subp2 read sector queries
+Longdesc  = Number of read requests from L1 to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 20
+Id        = 2130
+Name      = l2_subp3_read_l1_sector_queries
+Shortdesc = l2 subp3 read sector queries
+Longdesc  = Number of read requests from L1 to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 21
+Id        = 2131
+Name      = l2_subp0_read_l1_hit_sectors
+Shortdesc = l2 subp0 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 22
+Id        = 2132
+Name      = l2_subp1_read_l1_hit_sectors
+Shortdesc = l2 subp1 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 23
+Id        = 2133
+Name      = l2_subp2_read_l1_hit_sectors
+Shortdesc = l2 subp2 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 24
+Id        = 2134
+Name      = l2_subp3_read_l1_hit_sectors
+Shortdesc = l2 subp3 read l1 hit sectors
+Longdesc  = Number of read requests from L1 that hit in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 25
+Id        = 2135
+Name      = l2_subp0_read_tex_sector_queries
+Shortdesc = l2 subp0 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 26
+Id        = 2136
+Name      = l2_subp1_read_tex_sector_queries
+Shortdesc = l2 subp1 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 27
+Id        = 2137
+Name      = l2_subp2_read_tex_sector_queries
+Shortdesc = l2 subp2 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 28
+Id        = 2138
+Name      = l2_subp3_read_tex_sector_queries
+Shortdesc = l2 subp3 read tex sector queries
+Longdesc  = Number of read requests from Texture cache to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 29
+Id        = 2139
+Name      = l2_subp0_read_tex_hit_sectors
+Shortdesc = l2 subp0 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 30
+Id        = 2140
+Name      = l2_subp1_read_tex_hit_sectors
+Shortdesc = l2 subp1 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 31
+Id        = 2141
+Name      = l2_subp2_read_tex_hit_sectors
+Shortdesc = l2 subp2 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 32
+Id        = 2142
+Name      = l2_subp3_read_tex_hit_sectors
+Shortdesc = l2 subp3 read tex hit sectors
+Longdesc  = Number of read requests from Texture cache that hit in slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 33
+Id        = 2177
+Name      = l2_subp0_read_sysmem_sector_queries
+Shortdesc = l2_subp0_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 34
+Id        = 2178
+Name      = l2_subp1_read_sysmem_sector_queries
+Shortdesc = l2_subp1_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 35
+Id        = 2179
+Name      = l2_subp2_read_sysmem_sector_queries
+Shortdesc = l2_subp2_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 36
+Id        = 2180
+Name      = l2_subp3_read_sysmem_sector_queries
+Shortdesc = l2_subp3_read_sysmem_sector_queries
+Longdesc  = Number of system memory read requests to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 37
+Id        = 2181
+Name      = l2_subp0_write_sysmem_sector_queries
+Shortdesc = l2_subp0_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 0 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 38
+Id        = 2182
+Name      = l2_subp1_write_sysmem_sector_queries
+Shortdesc = l2_subp1_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 1 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 39
+Id        = 2183
+Name      = l2_subp2_write_sysmem_sector_queries
+Shortdesc = l2_subp2_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 2 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 40
+Id        = 2184
+Name      = l2_subp3_write_sysmem_sector_queries
+Shortdesc = l2_subp3_write_sysmem_sector_queries
+Longdesc  = Number of system memory write requests to slice 3 of L2 cache. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 41
+Id        = 2185
+Name      = l2_subp0_total_read_sector_queries
+Shortdesc = l2_subp0_total_read_sector_queries
+Longdesc  = Total read requests to slice 0 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 42
+Id        = 2186
+Name      = l2_subp1_total_read_sector_queries
+Shortdesc = l2_subp1_total_read_sector_queries
+Longdesc  = Total read requests to slice 1 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 43
+Id        = 2187
+Name      = l2_subp2_total_read_sector_queries
+Shortdesc = l2_subp2_total_read_sector_queries
+Longdesc  = Total read requests to slice 2 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 44
+Id        = 2188
+Name      = l2_subp3_total_read_sector_queries
+Shortdesc = l2_subp3_total_read_sector_queries
+Longdesc  = Total read requests to slice 3 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 45
+Id        = 2189
+Name      = l2_subp0_total_write_sector_queries
+Shortdesc = l2_subp0_total_write_sector_queries
+Longdesc  = Total write requests to slice 0 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 46
+Id        = 2190
+Name      = l2_subp1_total_write_sector_queries
+Shortdesc = l2_subp1_total_write_sector_queries
+Longdesc  = Total write requests to slice 1 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 47
+Id        = 2191
+Name      = l2_subp2_total_write_sector_queries
+Shortdesc = l2_subp2_total_write_sector_queries
+Longdesc  = Total write requests to slice 2 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 48
+Id        = 2192
+Name      = l2_subp3_total_write_sector_queries
+Shortdesc = l2_subp3_total_write_sector_queries
+Longdesc  = Total write requests to slice 3 of L2 cache. This includes requests from  L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+

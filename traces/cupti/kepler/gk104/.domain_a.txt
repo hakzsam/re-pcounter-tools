@@ -1,0 +1,67 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 770
+
+Event# 1
+Id        = 2082
+Name      = tex0_cache_sector_queries
+Shortdesc = tex0 cache sector queries
+Longdesc  = Number of texture cache 0 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 2
+Id        = 2083
+Name      = tex1_cache_sector_queries
+Shortdesc = tex1 cache sector queries
+Longdesc  = Number of texture cache 1 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 3
+Id        = 2084
+Name      = tex2_cache_sector_queries
+Shortdesc = tex2 cache sector queries
+Longdesc  = Number of texture cache 2 requests. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 4
+Id        = 2085
+Name      = tex3_cache_sector_queries
+Shortdesc = tex3 cache sector queries
+Longdesc  = Number of texture cache 3 requests. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 5
+Id        = 2086
+Name      = tex0_cache_sector_misses
+Shortdesc = tex0 cache sector misses
+Longdesc  = Number of texture cache 0 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 6
+Id        = 2087
+Name      = tex1_cache_sector_misses
+Shortdesc = tex1 cache sector misses
+Longdesc  = Number of texture cache 1 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 7
+Id        = 2088
+Name      = tex2_cache_sector_misses
+Shortdesc = tex2 cache sector misses
+Longdesc  = Number of texture cache 2 misses. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 8
+Id        = 2089
+Name      = tex3_cache_sector_misses
+Shortdesc = tex3 cache sector misses
+Longdesc  = Number of texture cache 3 misses. This increments by 1 for each 32-byte access. Value will be 0 for devices that contain only 2 texture units.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 9
+Id        = 2193
+Name      = elapsed_cycles_sm
+Shortdesc = elapsed_cycles_sm
+Longdesc  = Elapsed clocks
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
