@@ -1,0 +1,319 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GT 720
+
+Event# 1
+Id        = 2601
+Name      = prof_trigger_00
+Shortdesc = prof trigger 00
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 2
+Id        = 2602
+Name      = prof_trigger_01
+Shortdesc = prof trigger 01
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 3
+Id        = 2603
+Name      = prof_trigger_02
+Shortdesc = prof trigger 02
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 4
+Id        = 2604
+Name      = prof_trigger_03
+Shortdesc = prof trigger 03
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 5
+Id        = 2605
+Name      = prof_trigger_04
+Shortdesc = prof trigger 04
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 6
+Id        = 2606
+Name      = prof_trigger_05
+Shortdesc = prof trigger 05
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 7
+Id        = 2607
+Name      = prof_trigger_06
+Shortdesc = prof trigger 06
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 8
+Id        = 2608
+Name      = prof_trigger_07
+Shortdesc = prof trigger 07
+Longdesc  = User profiled generic trigger that can be inserted in any place of the code to collect the related information. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_PROFILE_TRIGGER
+
+Event# 9
+Id        = 2617
+Name      = warps_launched
+Shortdesc = warps launched
+Longdesc  = Number of warps launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 10
+Id        = 2618
+Name      = threads_launched
+Shortdesc = threads launched
+Longdesc  = Number of threads launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 11
+Id        = 2620
+Name      = inst_issued1
+Shortdesc = Instructions issued 1
+Longdesc  = Number of single instruction issued per cycle
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 12
+Id        = 2621
+Name      = inst_issued2
+Shortdesc = Instructions issued 2
+Longdesc  = Number of dual instructions issued per cycle
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 13
+Id        = 2619
+Name      = inst_executed
+Shortdesc = Instructions executed
+Longdesc  = Number of instructions executed, do not include replays.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 14
+Id        = 2622
+Name      = thread_inst_executed
+Shortdesc = thread inst executed
+Longdesc  = Number of instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 15
+Id        = 2640
+Name      = not_predicated_off_thread_inst_executed
+Shortdesc = not_predicated_off_thread_inst_executed
+Longdesc  = Number of not predicated off instructions executed by all threads, does not include replays. For each instruction it increments by the number of threads that execute this instruction.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 16
+Id        = 2753
+Name      = atom_count
+Shortdesc = atom_count
+Longdesc  = Number of warps executing atomic reduction operations. Increments by one if at least one thread in a warp executes the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 17
+Id        = 2609
+Name      = atom_cas_count
+Shortdesc = atom_cas_count
+Longdesc  = Number of warps executing atomic compare and swap operations. Increments by one if at least one thread in a warp executes the instruction.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 18
+Id        = 2754
+Name      = gred_count
+Shortdesc = gred_count
+Longdesc  = Number of warps executing reduction operations on global memory. Increments by one if at least one thread in a warp executes the instruction
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 19
+Id        = 2623
+Name      = shared_load
+Shortdesc = shared load
+Longdesc  = Number of executed load instructions where state space is specified as shared, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 20
+Id        = 2624
+Name      = shared_store
+Shortdesc = shared store
+Longdesc  = Number of executed store instructions where state space is specified as shared, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 21
+Id        = 2625
+Name      = local_load
+Shortdesc = local load
+Longdesc  = Number of executed load instructions where state space is specified as local, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 22
+Id        = 2626
+Name      = local_store
+Shortdesc = local store
+Longdesc  = Number of executed store instructions where state space is specified as local, increments per warp on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 23
+Id        = 2627
+Name      = gld_request
+Shortdesc = gld request
+Longdesc  = Number of executed load instructions where the state space is not specified and hence generic addressing is used, increments per warp on a multiprocessor. It can include the load operations from global,local and shared state space.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 24
+Id        = 2628
+Name      = gst_request
+Shortdesc = gst request
+Longdesc  = Number of executed store instructions where the state space is not specified and hence generic addressing is used, increments per warp on a multiprocessor. It can include the store operations to global,local and shared state space.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 25
+Id        = 2629
+Name      = active_cycles
+Shortdesc = active cycles
+Longdesc  = Number of cycles a multiprocessor has at least one active warp.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 26
+Id        = 2630
+Name      = active_warps
+Shortdesc = active warps
+Longdesc  = Accumulated number of active warps per cycle. For every cycle it increments by the number of active warps in the cycle which can be in the range 0 to 64.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 27
+Id        = 2631
+Name      = sm_cta_launched
+Shortdesc = sm cta launched
+Longdesc  = Number of thread blocks launched on a multiprocessor.
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
+Event# 28
+Id        = 2663
+Name      = local_load_transactions
+Shortdesc = local_load_transactions
+Longdesc  = Number of local load transactions from L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 29
+Id        = 2664
+Name      = local_store_transactions
+Shortdesc = local_store_transactions
+Longdesc  = Number of local store transactions to L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 30
+Id        = 2665
+Name      = l1_shared_load_transactions
+Shortdesc = l1_shared_load_transactions
+Longdesc  = Number of shared load transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 31
+Id        = 2666
+Name      = l1_shared_store_transactions
+Shortdesc = l1_shared_store_transactions
+Longdesc  = Number of shared store transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 32
+Id        = 2667
+Name      = __l1_global_load_transactions
+Shortdesc = __l1_global_load_transactions
+Longdesc  = Number of global load transactions from L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 33
+Id        = 2668
+Name      = __l1_global_store_transactions
+Shortdesc = __l1_global_store_transactions
+Longdesc  = Number of global store transactions from L1 cache. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 34
+Id        = 2641
+Name      = l1_local_load_hit
+Shortdesc = l1 local load hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 35
+Id        = 2642
+Name      = l1_local_load_miss
+Shortdesc = l1 local load miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 36
+Id        = 2643
+Name      = l1_local_store_hit
+Shortdesc = l1 local store hit
+Longdesc  = Number of cache lines that hit in L1 cache for local memory store accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 37
+Id        = 2644
+Name      = l1_local_store_miss
+Shortdesc = l1 local store miss
+Longdesc  = Number of cache lines that miss in L1 cache for local memory store accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32,64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 38
+Id        = 2645
+Name      = l1_global_load_hit
+Shortdesc = l1 global load hit
+Longdesc  = Number of cache lines that hit in L1 cache for global memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 39
+Id        = 2646
+Name      = l1_global_load_miss
+Shortdesc = l1 global load miss
+Longdesc  = Number of cache lines that miss in L1 cache for global memory load accesses. In case of perfect coalescing this increments by 1,2, and 4 for 32, 64 and 128 bit accesses by a warp respectively.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 40
+Id        = 2647
+Name      = uncached_global_load_transaction
+Shortdesc = uncached global load transaction
+Longdesc  = Number of uncached global load transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 41
+Id        = 2648
+Name      = global_store_transaction
+Shortdesc = global store transaction
+Longdesc  = Number of global store transactions. Increments by 1 per transaction. Transaction can be 32/64/96/128B.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 42
+Id        = 2661
+Name      = global_ld_mem_divergence_replays
+Shortdesc = global_ld_mem_divergence_replays
+Longdesc  = Number of instruction replays for global memory loads. Instruction is replayed if the instruction is accessing more than one cache line of 128 bytes. For each extra cache line access the counter is incremented by 1.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 43
+Id        = 2662
+Name      = global_st_mem_divergence_replays
+Shortdesc = global_st_mem_divergence_replays
+Longdesc  = Number of instruction replays for global memory stores. Instruction is replayed if the instruction is accessing more than one cache line of 128 bytes. For each extra cache line access the counter is incremented by 1.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 44
+Id        = 2659
+Name      = shared_load_replay
+Shortdesc = shared load replay
+Longdesc  = Replays caused due to shared load bank conflict (when the addresses for two or more shared memory load requests fall in the same memory bank) or when there is no conflict but the total number of words accessed by all threads in the warp executing that instruction exceed the number of words that can be loaded in one cycle (256 bytes).
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 45
+Id        = 2660
+Name      = shared_store_replay
+Shortdesc = shared store replay
+Longdesc  = Replays caused due to shared store bank conflict (when the addresses for two or more shared memory store requests fall in the same memory bank) or when there is no conflict but the total number of words accessed by all threads in the warp executing that instruction exceed the number of words that can be stored in one cycle.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+

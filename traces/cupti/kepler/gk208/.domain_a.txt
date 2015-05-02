@@ -1,0 +1,123 @@
+Assuming default device id 0
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GT 720
+
+Event# 1
+Id        = 2082
+Name      = tex0_cache_sector_queries
+Shortdesc = tex0 cache sector queries
+Longdesc  = Number of texture cache 0 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 2
+Id        = 2083
+Name      = tex1_cache_sector_queries
+Shortdesc = tex1 cache sector queries
+Longdesc  = Number of texture cache 1 requests. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 3
+Id        = 2086
+Name      = tex0_cache_sector_misses
+Shortdesc = tex0 cache sector misses
+Longdesc  = Number of texture cache 0 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 4
+Id        = 2087
+Name      = tex1_cache_sector_misses
+Shortdesc = tex1 cache sector misses
+Longdesc  = Number of texture cache 1 misses. This increments by 1 for each 32-byte access.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 5
+Id        = 2165
+Name      = rocache_subp0_gld_warp_count_32b
+Shortdesc = rocache_subp0_gld_warp_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 0 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 6
+Id        = 2166
+Name      = rocache_subp1_gld_warp_count_32b
+Shortdesc = rocache_subp1_gld_warp_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 1 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 7
+Id        = 2169
+Name      = rocache_subp0_gld_warp_count_64b
+Shortdesc = rocache_subp0_gld_warp_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 0 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 8
+Id        = 2170
+Name      = rocache_subp1_gld_warp_count_64b
+Shortdesc = rocache_subp1_gld_warp_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 1 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 9
+Id        = 2173
+Name      = rocache_subp0_gld_warp_count_128b
+Shortdesc = rocache_subp0_gld_warp_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 0 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 10
+Id        = 2174
+Name      = rocache_subp1_gld_warp_count_128b
+Shortdesc = rocache_subp1_gld_warp_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 1 of read-only data cache. Increments per warp.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 11
+Id        = 2153
+Name      = rocache_subp0_gld_thread_count_32b
+Shortdesc = rocache_subp0_gld_thread_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 0 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 12
+Id        = 2154
+Name      = rocache_subp1_gld_thread_count_32b
+Shortdesc = rocache_subp1_gld_thread_count_32b
+Longdesc  = Number of 8-bit, 16-bit, and 32-bit global load requests via slice 1 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 13
+Id        = 2157
+Name      = rocache_subp0_gld_thread_count_64b
+Shortdesc = rocache_subp0_gld_thread_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 0 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 14
+Id        = 2158
+Name      = rocache_subp1_gld_thread_count_64b
+Shortdesc = rocache_subp1_gld_thread_count_64b
+Longdesc  = Number of 64-bit global load requests via slice 1 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 15
+Id        = 2161
+Name      = rocache_subp0_gld_thread_count_128b
+Shortdesc = rocache_subp0_gld_thread_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 0 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 16
+Id        = 2162
+Name      = rocache_subp1_gld_thread_count_128b
+Shortdesc = rocache_subp1_gld_thread_count_128b
+Longdesc  = Number of 128-bit global load requests via slice 1 of read-only data cache. For each instruction it increments by the number of threads in the warp that execute the instruction.
+Category  = CUPTI_EVENT_CATEGORY_CACHE
+
+Event# 17
+Id        = 2193
+Name      = elapsed_cycles_sm
+Shortdesc = elapsed_cycles_sm
+Longdesc  = Elapsed clocks
+Category  = CUPTI_EVENT_CATEGORY_INSTRUCTION
+
