@@ -193,37 +193,37 @@ GPC domain 0
 
   - TODO: multi-events
 
-- inst_issued0_0_vsm0
+- inst_issued0_0
 
   - mode: SIMPLE:
   - event_src: 0x31
   - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x8000007e
 
-- inst_issued0_1_vsm0
+- inst_issued0_1
 
   - mode: SIMPLE:
   - event_src: 0x34
   - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x8000007e
 
-- inst_issued1_0_vsm0
+- inst_issued1_0
 
   - mode: SIMPLE:
   - event_src: 0x32
   - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x8000007e
 
-- inst_issued1_1_vsm0
+- inst_issued1_1
 
   - mode: SIMPLE:
   - event_src: 0x35
   - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x8000007e
 
-- inst_issued2_0_vsm0
+- inst_issued2_0
 
   - mode: SIMPLE:
   - event_src: 0x33
   - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x8000007e
 
-- inst_issued2_1_vsm0
+- inst_issued2_1
 
   - mode: SIMPLE:
   - event_src: 0x36
