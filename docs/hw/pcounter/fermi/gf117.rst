@@ -94,7 +94,7 @@ GPC domain 0
 
 - inst_executed_cs_ratio
 
-  - TODO: multi-events
+  - TODO
 
 - inst_executed_global_loads
 
@@ -117,7 +117,7 @@ GPC domain 0
 
 - inst_executed_gs_ratio
 
-  - TODO: multi-events
+  - TODO
 
 - inst_executed_local_loads
 
@@ -140,7 +140,7 @@ GPC domain 0
 
 - inst_executed_ps_ratio
 
-  - TODO: multi-events
+  - TODO
 
 - inst_executed_red
 
@@ -169,7 +169,7 @@ GPC domain 0
 
 - inst_executed_tcs_ratio
 
-  - TODO: multi-events
+  - TODO
 
 - inst_executed_tes
 
@@ -180,7 +180,7 @@ GPC domain 0
 
 - inst_executed_tes_ratio
 
-  - TODO: multi-events
+  - TODO
 
 - inst_executed_vs
 
@@ -191,7 +191,7 @@ GPC domain 0
 
 - inst_executed_vs_ratio
 
-  - TODO: multi-events
+  - TODO
 
 - inst_issued0_0
 
@@ -259,7 +259,7 @@ GPC domain 0
 
 - l1_l2_requests
 
-  - TODO: multi-events
+  - TODO
 
 - l1_local_load_transactions_hit
 
@@ -352,14 +352,6 @@ GPC domain 0
   - event_src: 0xefefefef/0x5555
   - PGRAPH.GPC[0].TPC[0].POLY.PM_MUX: 0x0000009f
 
-- texture_busy
-
-  - mode: SIMPLE
-  - event_src: 0x5b5c5d5e/0xfffe
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_A: 0x80000022
-  - PGRAPH.GPC[0].TPC_ALL.TEX.PM_UNKC8: 0x00000000
-  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000000
-
 - tex0_bank_conflicts_gpc0_tpc0
 
   - mode: SIMPLE
@@ -434,12 +426,13 @@ GPC domain 0
 
   - TODO: probably something like queries / misses
 
-- threads_launched
+- texture_busy
 
-  - mode: EVENT_B6
-  - start_src: 0x35343332/0xffff
-  - event_src: 0x3736ef31/0xaaaa
-  - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x80000026
+  - mode: SIMPLE
+  - event_src: 0x5b5c5d5e/0xfffe
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_MUX_A: 0x80000022
+  - PGRAPH.GPC[0].TPC_ALL.TEX.PM_UNKC8: 0x00000000
+  - PGRAPH.GPC[0].TPC[0].TEX.PM_UNKC8: 0x80000000
 
 - thread_inst_executed_00
 
@@ -469,6 +462,13 @@ GPC domain 0
   - event_src: 0x3635efef/0x5555
   - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x800000a6
 
+- threads_launched
+
+  - mode: EVENT_B6
+  - start_src: 0x35343332/0xffff
+  - event_src: 0x3736ef31/0xaaaa
+  - PGRAPH.GPC[0].TPC[0].MP.PM_MUX: 0x80000026
+
 - warps_launched
 
   - mode: SIMPLE
@@ -485,14 +485,6 @@ PART domain 0
 - fb_read_sectors
 
   - fb_subp0_read_sectors + fb_subp1_read_sectors
-
-- fb_write_bytes
-
-  - same config as fb_write_sectors but final result is fb_write_sectors * 32
-
-- fb_write_sectors
-
-  - fb_subp0_write_sectors + fb_subp1_write_sectors
 
 - fb_subp0_read_sectors
 
@@ -518,29 +510,37 @@ PART domain 0
   - signal: 0x01
   - PBFB[0].PM_UNK100: 0x121
 
+- fb_write_bytes
+
+  - same config as fb_write_sectors but final result is fb_write_sectors * 32
+
+- fb_write_sectors
+
+  - fb_subp0_write_sectors + fb_subp1_write_sectors
+
 - l2_read_bytes_mem
 
-  - TODO: multi-events
+  - TODO
 
 - l2_read_bytes_rop
 
-  - TODO: multi-events
+  - TODO
 
 - l2_read_bytes_sysmem
 
-  - TODO: multi-events
+  - TODO
 
 - l2_read_bytes_tex
 
-  - TODO: multi-events
+  - TODO
 
 - l2_read_bytes_vidmem
 
-  - TODO: multi-events
+  - TODO
 
 - l2_read_sectors_tex
 
-  - TODO: multi-events
+  - TODO
 
 - l2_slice0_read_hit_sectors_atomic
 
@@ -638,21 +638,21 @@ PART domain 0
   - PMFB[0].SUBP[0]+0x25c: 0x00000001
   - PMFB[0].PM_UNK28: 0x00000001
 
-- l2_writes_bytes_mem
+- l2_write_bytes_mem
 
-  - TODO: multi-events
+  - TODO
 
 - l2_write_bytes_rop
 
-  - TODO: multi-events
+  - TODO
 
 - l2_write_bytes_sysmem
 
-  - TODO: multi-events
+  - TODO
 
 - l2 _write_bytes_vidmem
 
-  - TODO: multi-events
+  - TODO
 
 PART domain 1
 -------------
