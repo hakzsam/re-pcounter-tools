@@ -1,14 +1,17 @@
-.. _gf100-gpu-hw-events-cfg-cupti:
+.. _gf100-gpu-hw-events:
 
-===============================
-GF100 GPU Hardware events CUPTI
-===============================
+=========================
+GF100 GPU Hardware events
+=========================
 
 .. contents::
 
-NVIDIA: 349.16-1 (Linux)
 
-CUDA: 7.0.28-1
+NVIDIA: 352.30-3
+
+CUDA: 7.0.28-2
+
+Linux Graphics Debugger: 1.0
 
 Global counters
 ===============
@@ -98,6 +101,14 @@ GPC domain 0
 PART domain 0
 -------------
 
+- fb_read_bytes
+
+  - same config as fb_read_sectors but final result is fb_read_sectors * 32
+
+- fb_read_sectors
+
+  - fb_subp0_read_sectors + fb_subp1_read_sectors
+
 - fb_subp0_read_sectors
 
   - mode: SIMPLE
@@ -121,6 +132,328 @@ PART domain 0
   - mode: SIMPLE
   - signal: 0x10
   - PBFB_BROADCAST.PM_UNK100: 0x121
+
+- fb_write_bytes
+
+  - same config as fb_write_sectors but final result is fb_write_sectors * 32
+
+- fb_write_sectors
+
+  - fb_subp0_write_sectors + fb_subp1_write_sectors
+
+- l2_read_bytes_mem
+
+  - TODO
+
+- l2_read_bytes_rop
+
+  - TODO
+
+- l2_read_bytes_sysmem
+
+  - TODO
+
+- l2_read_bytes_tex
+
+  - TODO
+
+- l2_read_bytes_vidmem
+
+  - TODO
+
+- l2_read_sectors_tex
+
+  - TODO
+
+- l2_slice0_read_hit_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x02282f21/0x8000
+  - PMFB[0].PM_UNK28: 0x00000003
+
+- l2_slice0_read_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f022f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000003
+
+- l2_slice0_read_hit_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x022f1f21/0x8000
+  - PMFB[0].PM_UNK28: 0x00001003
+
+- l2_slice0_read_hit_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x021f2f21/0x8000
+  - PMFB[0].PM_UNK28: 0x00000c03
+
+- l2_slice0_read_hit_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x02012f21/0x8000
+  - PMFB[0].PM_UNK28: 0x00000003
+
+- l2_slice0_read_hit_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x02002f21/0x8000
+  - PMFB[0].PM_UNK28: 0x00000003
+
+- l2_slice0_read_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f282f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_read_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f6f2f21/0x8888
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_read_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f2f1f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00001001
+
+- l2_slice0_read_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f1f2f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000c01
+
+- l2_slice0_read_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f012f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_read_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f002f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f282e21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f6f2e21/0x8888
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f2e1f21/0x8080
+  - PMFB[0].PM_UNK28: 0x00001001
+
+- l2_slice0_write_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f1f2e21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000c01
+
+- l2_slice0_write_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f012e21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f002e21/0x8080
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice1_read_hit_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x02282f21/0x8000
+  - PMFB[0].PM_UNK28: 0x20000019
+
+- l2_slice1_read_hit_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f022f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000019
+
+- l2_slice1_read_hit_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x022f1f21/0x8000
+  - PMFB[0].PM_UNK28: 0x20001219
+
+- l2_slice1_read_hit_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x021f2f21/0x8000
+  - PMFB[0].PM_UNK28: 0x20000e19
+
+- l2_slice1_read_hit_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x02012f21/0x8000
+  - PMFB[0].PM_UNK28: 0x20000019
+
+- l2_slice1_read_hit_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x02002f21/0x8000
+  - PMFB[0].PM_UNK28: 0x20000019
+
+- l2_slice1_read_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f282f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000007
+
+- l2_slice1_read_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f6f2f21/0x8888
+  - PMFB[0].PM_UNK28: 0x20000007
+
+- l2_slice1_read_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f2f1f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20001207
+
+- l2_slice1_read_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f1f2f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000e07
+
+- l2_slice1_read_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f012f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000017
+
+- l2_slice1_read_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f002f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000017
+
+- l2_slice1_write_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f282e21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000007
+
+- l2_slice1_write_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f6f2e21/0x8888
+  - PMFB[0].PM_UNK28: 0x20000007
+
+- l2_slice1_write_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f2e1f21/0x8080
+  - PMFB[0].PM_UNK28: 0x20001207
+
+- l2_slice1_write_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f1f2e21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000e07
+
+- l2_slice1_write_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f012e21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000017
+
+- l2_slice1_write_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x1e1d1c1b/0xffff
+  - event_src: 0x6f002e21/0x8080
+  - PMFB[0].PM_UNK28: 0x20000017
+
+- l2_write_bytes_mem
+
+  - TODO
+
+- l2_write_bytes_rop
+
+  - TODO
+
+- l2_write_bytes_sysmem
+
+  - TODO
+
+- l2 _write_bytes_vidmem
+
+  - TODO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - l2_subp0_write_sector_misses
 
