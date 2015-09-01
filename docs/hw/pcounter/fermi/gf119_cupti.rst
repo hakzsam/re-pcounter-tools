@@ -51,30 +51,6 @@ All following events use the same config as GF108, nice!
 PART domain 0
 -------------
 
-- fb_subp0_read_sectors
-
-  - mode: SIMPLE
-  - signal: 0x00
-  - PBFB[0].PM_UNK100: 0x111
-
-- fb_subp1_read_sectors
-
-  - mode: SIMPLE
-  - signal: 0x00
-  - PBFB[0].PM_UNK100: 0x121
-
-- fb_subp0_write_sectors
-
-  - mode: SIMPLE
-  - signal: 0x01
-  - PBFB[0].PM_UNK100: 0x111
-
-- fb_subp1_write_sectors
-
-  - mode: SIMPLE
-  - signal: 0x01
-  - PBFB[0].PM_UNK100: 0x121
-
 - l2_subp0_write_sector_misses
 
   - mode: SIMPLE
