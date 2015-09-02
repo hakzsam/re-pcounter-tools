@@ -590,6 +590,13 @@ PART domain 0
   - PMFB[0].SUBP[0]+0x25c: 0x00000003
   - PMFB[0].PM_UNK28: 0x00000001
 
+- l2_slice0_read_miss_sectors
+
+  - mode: SIMPLE
+  - signal: 0x16
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x00000061
+  - PMFB[0].PM_UNK28: 0x00000001
+
 - l2_slice0_read_sectors_atomic
 
   - mode: EVENT_B4
@@ -635,6 +642,77 @@ PART domain 0
   - mode: EVENT_B4
   - start_src: 0x0f0e0d0c/0xffff
   - event_src: 0x4f1d2412/0x8080
+  - PMFB[0].SUBP[0]+0x25c: 0x00000001
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_total_read_sector_queries
+
+  - mode: EVENT_B4
+  - start_ctr: 0x0f0e0d0c/0xffff
+  - event_ctr: 0x4f4f1224/0x8080
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x00000001
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_total_write_sector_queries
+
+  - mode: EVENT_B4
+  - start_ctr: 0x0f0e0d0c/0xffff
+  - event_ctr: 0x4f4f1223/0x8080
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x00000001
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_miss_sectors
+
+  - mode: SIMPLE
+  - signal: 0x15
+  - PMFB[0].SUBP[0].PM_UNK25C: 0x00000061
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors_atomic
+
+  - mode: EVENT_B4
+  - start_src: 0x0f0e0d0c/0xffff
+  - event_src: 0x4f172312/0x8080
+  - PMFB[0].SUBP[0]+0x25c: 0x00000001
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x0f0e0d0c/0xffff
+  - event_src: 0x4f4f2312/0x8888
+  - PMFB[0].SUBP[0]+0x25c: 0x00000001
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors_l1
+
+  - mode: EVENT_B4
+  - start_src: 0x0f0e0d0c/0xffff
+  - event_src: 0x4f231012/0x8080
+  - PMFB[0].SUBP[0]+0x25c: 0x00000801
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sectors_tex
+
+  - mode: EVENT_B4
+  - start_src: 0x0f0e0d0c/0xffff
+  - event_src: 0x4f102312/0x8080
+  - PMFB[0].SUBP[0]+0x25c: 0x00000601
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_sysmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x0f0e0d0c/0xffff
+  - event_src: 0x4f1e2312/0x8080
+  - PMFB[0].SUBP[0]+0x25c: 0x00000001
+  - PMFB[0].PM_UNK28: 0x00000001
+
+- l2_slice0_write_vidmem_sectors
+
+  - mode: EVENT_B4
+  - start_src: 0x0f0e0d0c/0xffff
+  - event_src: 0x4f1d2312/0x8080
   - PMFB[0].SUBP[0]+0x25c: 0x00000001
   - PMFB[0].PM_UNK28: 0x00000001
 
