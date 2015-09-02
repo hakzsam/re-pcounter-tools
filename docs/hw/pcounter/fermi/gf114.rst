@@ -1,7 +1,7 @@
-.. _gf116-gpu-hw-events:
+.. _gf114-gpu-hw-events:
 
 =========================
-GF116 GPU Hardware events
+GF114 GPU Hardware events
 =========================
 
 .. contents::
