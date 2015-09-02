@@ -1,7 +1,7 @@
-.. _gf117-gpu-hw-events:
+.. _gf119-gpu-hw-events:
 
 =========================
-GF117 GPU Hardware events
+GF119 GPU Hardware events
 =========================
 
 .. contents::
