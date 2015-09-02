@@ -219,6 +219,21 @@ PART domain 0
   - event_ctr: 0x00000112/0x8888
   - PMFB[0].PM_UNK28: 0x17
 
+HUB domain 4
+------------
+
+- geom_busy
+
+  - mode: SIMPLE
+  - event_src: 0x6f6f2f2e/0x8888
+  - PGRAPH.UNK6000.PM_MUX: 0x8000000c
+
+- gpu_busy:
+
+  - mode: SIMPLE
+  - event_src: 0x02
+  - PGRAPH.DISPATCH.PM_MUX: 0x00000007
+
 Local counters
 ==============
 
