@@ -1,8 +1,8 @@
-.. _gf114-gpu-hw-events-cfg-cupti:
+.. _gf114-gpu-hw-events:
 
-=====================================
-GF114:GF116 GPU Hardware events CUPTI
-=====================================
+=========================
+GF114 GPU Hardware events
+=========================
 
 .. contents::
 
