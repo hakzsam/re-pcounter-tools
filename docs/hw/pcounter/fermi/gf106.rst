@@ -1,0 +1,9 @@
+.. _gf106-gpu-hw-events:
+
+=========================
+GF106 GPU Hardware events
+=========================
+
+.. contents::
+
+Untested, but should be similar to GF104.
