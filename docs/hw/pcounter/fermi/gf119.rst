@@ -166,7 +166,7 @@ PART domain 0
   - PMFB[0].SUBP[0]+0x25c: 0x00000801
   - PMFB[0].PM_UNK28: 0x00000001
 
-- l1_slice0_read_sectors_tex
+- l2_slice0_read_sectors_tex
 
   - mode: EVENT_B4
   - start_src: 0x0f0e0d0c/0xffff
