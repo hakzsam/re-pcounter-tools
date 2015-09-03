@@ -37,19 +37,19 @@ PART domain 0
   - signal: 0x14
   - PBFB[0].PM_UNK100: 0x111
 
-- fb0_subp1_read_sectors
+- fb_subp1_read_sectors
 
   - mode: SIMPLE
   - signal: 0x14
   - PBFB[0].PM_UNK100: 0x121
 
-- fb0_subp0_write_sectors
+- fb_subp0_write_sectors
 
   - mode: SIMPLE
   - signal: 0x15
   - PBFB[0].PM_UNK100: 0x111
 
-- fb0_subp1_write_sectors
+- fb_subp1_write_sectors
 
   - mode: SIMPLE
   - signal: 0x15
