@@ -1,0 +1,31 @@
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 960
+
+Event# 1
+Id        = 67108869
+Name      = fb_subp0_read_sectors
+Shortdesc = Fb subp0 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 67108870
+Name      = fb_subp1_read_sectors
+Shortdesc = Fb subp1 read sectors
+Longdesc  = Number of DRAM read requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 67108871
+Name      = fb_subp0_write_sectors
+Shortdesc = Fb subp0 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 0, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 67108872
+Name      = fb_subp1_write_sectors
+Shortdesc = Fb subp1 write sectors
+Longdesc  = Number of DRAM write requests to sub partition 1, increments by 1 for 32 byte access.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+

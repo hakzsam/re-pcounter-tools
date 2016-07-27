@@ -1,0 +1,33 @@
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 960
+
+Domain# 1
+Id         = 18874369
+Name       = domain_a
+Profiled instance count = 8
+Total instance count = 8
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_PM
+Domain# 2
+Id         = 17825801
+Name       = domain_b
+Profiled instance count = 2
+Total instance count = 2
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_PM
+Domain# 3
+Id         = 17825807
+Name       = domain_c
+Profiled instance count = 8
+Total instance count = 8
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_INSTRUMENTED
+Domain# 4
+Id         = 18874382
+Name       = domain_d
+Profiled instance count = 8
+Total instance count = 8
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_SM
+Domain# 5
+Id         = 18874378
+Name       = domain_e
+Profiled instance count = 4
+Total instance count = 4
+Event collection method = CUPTI_EVENT_COLLECTION_METHOD_PM

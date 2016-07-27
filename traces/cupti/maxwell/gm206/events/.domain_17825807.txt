@@ -1,0 +1,73 @@
+CUDA Device Id  : 0
+CUDA Device Name: GeForce GTX 960
+
+Event# 1
+Id        = 67108914
+Name      = gld_inst_8bit
+Shortdesc = Global 8-bit load instructions
+Longdesc  = Total number of 8-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 2
+Id        = 67108915
+Name      = gld_inst_16bit
+Shortdesc = Global 16-bit load instructions
+Longdesc  = Total number of 16-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 3
+Id        = 67108916
+Name      = gld_inst_32bit
+Shortdesc = Global 32-bit load instructions
+Longdesc  = Total number of 32-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 4
+Id        = 67108917
+Name      = gld_inst_64bit
+Shortdesc = Global 64-bit load instructions
+Longdesc  = Total number of 64-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 5
+Id        = 67108918
+Name      = gld_inst_128bit
+Shortdesc = Global 128-bit load instructions
+Longdesc  = Total number of 128-bit global load instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 6
+Id        = 67108919
+Name      = gst_inst_8bit
+Shortdesc = Global 8-bit store instructions
+Longdesc  = Total number of 8-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 7
+Id        = 67108920
+Name      = gst_inst_16bit
+Shortdesc = Global 16-bit store instructions
+Longdesc  = Total number of 16-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 8
+Id        = 67108921
+Name      = gst_inst_32bit
+Shortdesc = Global 32-bit store instructions
+Longdesc  = Total number of 32-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 9
+Id        = 67108922
+Name      = gst_inst_64bit
+Shortdesc = Global 64-bit store instructions
+Longdesc  = Total number of 64-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
+Event# 10
+Id        = 67108923
+Name      = gst_inst_128bit
+Shortdesc = Global 128-bit store instructions
+Longdesc  = Total number of 128-bit global store instructions that are executed by all the threads across all thread blocks.
+Category  = CUPTI_EVENT_CATEGORY_MEMORY
+
